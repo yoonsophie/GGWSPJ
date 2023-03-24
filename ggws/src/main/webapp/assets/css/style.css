@@ -19,10 +19,16 @@ a {
 
 .content {
   padding: 7rem 0; }
-
+.info{
+	text-align : center;
+  	vertical-align : middle;;
+}
 h2 {
   font-size: 20px; }
-
+.info{
+	padding-top:30px;
+	margin:10px;
+}
 .custom-table {
   min-width: 900px; }
   .custom-table thead tr, .custom-table thead th {
