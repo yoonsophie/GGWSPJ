@@ -46,9 +46,9 @@
 				    </div>
 				  </div>
 				  <div class="row mb-3">
-				    <label for="inputEmail3" class="col-sm-2 col-form-label">파일등록</label>
+				    <label for="filename" class="col-sm-2 col-form-label">파일등록</label>
 				    <div class="col-sm-10">
-				      <input type="file">
+				      <input type="file" name="filename">
 				    </div>
 				  </div>
 				  <!-- 등록 및 초기화 -->
