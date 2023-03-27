@@ -326,11 +326,11 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">보드디테일</h1>
+                    <h1 class="mb-5 text-gray-800 text-center">보드디테일</h1>
                     
                     <div class="content">
 		<div class="container">
-			<h1 class="mb-5">이수호 게시글</h1>
+			<!-- <h1 class="mb-5 text-gray-800 text-center">이수호 게시글</h1> -->
 			<div class="table-responsive">
 			
 				<form>
