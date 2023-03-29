@@ -1,14 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<!--<?xml version="1.0" encoding="UTF-8"?>
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>com.smhrd</groupId>
   <artifactId>ggws</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-
+  <version>0.0.1-SNAPSHOT</version>
   <name>ggws Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
@@ -80,9 +78,6 @@
 		    <artifactId>cos</artifactId>
 		    <version>2020.4</version>
 		</dependency>
-
-    
-    
   </dependencies>
 
   <build>
@@ -120,5 +115,19 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <resources>
+          <resource>
+              <directory>src/main/java</directory>
+              <includes>
+                  <include>**/*.xml</include>
+              </includes>
+          </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+      </resources>
   </build>
 </project>

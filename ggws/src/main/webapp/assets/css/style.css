@@ -29,14 +29,18 @@ h2 {
 	padding-top:30px;
 	margin:10px;
 }
+/* Create Table 이미지 및 파일선택 CSS */
 #preview{
-	width:80px;
-	height:80px;
-	padding:40px;
+	width:100px;
+	height:100px;
+
 }
 #preview input{
-	width:40px;
-	height:40px;
+	width:50px;
+	height:50px;
+}
+#fileimg{
+	border:0.5px dot #b3b3b3;
 }
 .btn-file {
     position: relative;
@@ -46,8 +50,8 @@ h2 {
     position: absolute;
     top: 0;
     right: 0;
-    min-width: 70%;
-    min-height: 70%;
+    min-width: 80%;
+    min-height: 80%;
     font-size: 100px;
     text-align: right;
     filter: alpha(opacity=0);
