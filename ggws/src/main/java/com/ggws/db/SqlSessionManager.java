@@ -18,8 +18,7 @@ public class SqlSessionManager {
 		Reader reader;
 	
 		try {
-			reader = Resources.getResourceAsReader(resource);
-			
+			reader = Resources.getResourceAsReader(resource);			
 			// SqlSessionFactoryBuilder: mybatis 설정파일을 바탕으로 SqlSessionFactory 생성
 			sqlSession = new SqlSessionFactoryBuilder().build(reader);
 		} catch (IOException e) {

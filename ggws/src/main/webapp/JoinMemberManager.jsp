@@ -1,7 +1,3 @@
-<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
-<%@page import="com.ggws.model.MemberVO"%>
-<%@page import="java.util.List"%>
-<%@page import="com.ggws.model.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -25,11 +21,6 @@
 	<title>회원관리</title>
 </head>
 <body style="text-align: center;">
-	<%
-		MemberDAO dao = new MemberDAO();
-		List<MemberVO> list = dao.select();
-		System.out.print(list.size());
-	%>
 	<div class="content">
     
     <div class="container">
@@ -45,17 +36,17 @@
       <!-- 회원메뉴탭 -->	      
 		      <ul class="nav nav-tabs">
 		        <li class="nav-item">
-		          <a class="nav-link active" aria-current="page" href="#">전체회원</a>
+		          <a class="nav-link" aria-current="page" href="MemberManager.jsp">전체회원</a>
 		        </li>
 		        <li class="nav-item">
-		          <a class="nav-link" aria-current="page" href="JoinMemberManager.jsp">가입신청 회원</a>
+		          <a class="nav-link active" aria-current="page" href="#">가입신청 회원</a>
 		        </li>
 		        <li class="nav-item">
 		          <a class="nav-link" aria-current="page" href="GhostMemberManager.jsp">휴면회원</a>
 		        </li>        
 		      </ul>
       <div class="table-responsive">
-
+        <form action="#">
           <table class="table table-striped custom-table">
             <thead>
             <!-- <th scope="col">회원테이블 헤더</th> -->
@@ -66,18 +57,19 @@
                   <div class="control__indicator"></div>
                   </label>
                 </th>
-                <th scope="col">이름(계정)</th>
-                <th scope="col">회원등급</th>
-                <th scope="col" style="width:111px">성별</th>
+                <th scope="col" style="width:190px">이름(계정)</th>
                 <th scope="col">나이</th>
-                <th scope="col">신뢰도</th>
-                <th scope="col">가입일자</th>
+                <th scope="col">성별</th>
+                <th scope="col">지역</th>
+                <th scope="col" style="width:200px">전화번호</th>
+                <th scope="col">신청일자</th>
                 <th scope="col"></th>
+                <!-- <th scope="col"></th> -->
               </tr>
             </thead>
             
-            <tfoot>
-            <!-- 회원테이블 푸터(회원등급 변경) -->
+            <!-- <tfoot>
+            회원테이블 푸터(회원등급 변경)
               <tr>
                 <th colspan="2" ></th>
                 <th colspan="1" scope="row">선택한 회원</th>
@@ -93,33 +85,90 @@
                   <th></th>
                   <th></th>
                   <th><input type="submit" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                      <label class="btn btn-outline-primary" for="btnradio1">변경</label></th>
+                      <label class="btn btn-outline-primary" for="btnradio1">변경</label>
+                  </th>
               </tr>
-              </tfoot>
+              </tfoot> -->
               
 	           <tbody>
 	           <!-- 회원테이블 회원리스트
 	           		이름(ID), 회원등급, 가입일자, 성별, 신뢰도 -->
-	             <%for(MemberVO m:list){ %>
-		             <tr scope="row">
-		              <td>
-		                <label class="control control--checkbox">
-		                <input type="checkbox" />
-		                <div class="control__indicator"></div>
-		                </label>
-		              </td>
-		              <td>
-		                <strong><%=m.getUser_nick() %></strong>
-		                <small class="d-block"><%=m.getUser_id() %></small>
-		              </td>
-		              <td>정회원</td>
-		              <td><%=m.getUser_gender() %></td>
-		              <td><%=m.getUser_age() %></td>
-		              <td><%=m.getUser_trust() %></td>
-		              <td><%=m.getUser_date() %></td>
-		              <td><a href="#" class="more">Delete</a></td> 
-		             </tr>	
-	             <%} %>      
+	             <tr scope="row">
+	              <td>
+	                <label class="control control--checkbox">
+	                <input type="checkbox" />
+	                <div class="control__indicator"></div>
+	                </label>
+	              </td>
+	              <td>
+	                <strong>이수호</strong>
+	                <small class="d-block">(dltngh123)</small>
+	              </td>
+	              <td>26</td>
+	              <td>남</td>
+	              <td>광주</td>
+	              <td>010-1234-5678</td>
+	              <td>2023-03-26</td>
+	              <td><a href="#" class="more">수락</a>
+	              <a href="#" class="more" style="color:red">거절</a></td> 
+	             </tr>
+	             <tr scope="row">
+	              <td>
+	                <label class="control control--checkbox">
+	                <input type="checkbox" />
+	                <div class="control__indicator"></div>
+	                </label>
+	              </td>
+	              <td>
+	                <strong>이수호</strong>
+	                <small class="d-block">(dltngh123)</small>
+	              </td>
+	             <td>26</td>
+	              <td>남</td>
+	              <td>광주</td>
+	              <td>010-1234-5678</td>
+	              <td>2023-03-26</td>
+	              <td><a href="#" class="more">수락</a>
+	              	<a href="#" class="more" style="color:red">거절</a></td> 
+	             </tr>
+	             <tr scope="row">
+	              <td>
+	                <label class="control control--checkbox">
+	                <input type="checkbox" />
+	                <div class="control__indicator"></div>
+	                </label>
+	              </td>
+	              <td>
+	                <strong>이수호</strong>
+	                <small class="d-block">(dltngh123)</small>
+	              </td>
+	              <td>26</td>
+	              <td>남</td>
+	              <td>광주</td>
+	              <td>010-1234-5678</td>
+	              <td>2023-03-26</td>
+	              <td><a href="#" class="more">수락</a>
+	              	<a href="#" class="more" style="color:red">거절</a></td> 
+	             </tr>
+	              <tr scope="row">
+	              <td>
+	                <label class="control control--checkbox">
+	                <input type="checkbox" />
+	                <div class="control__indicator"></div>
+	                </label>
+	              </td>
+	              <td>
+	                <strong>이수호</strong>
+	                <small class="d-block">(dltngh123)</small>
+	              </td>
+	              <td>26</td>
+	              <td>남</td>
+	              <td>광주</td>
+	              <td>010-1234-5678</td>
+	              <td>2023-03-26</td>
+	              <td><a href="#" class="more">수락</a>
+	              <a href="#" class="more" style="color:red">거절</a></td> 
+	             </tr>                      
 	           </tbody>
 	          </table>
 	          
@@ -141,7 +190,7 @@
               </li>
             </ul>
           </nav>
-
+        </form>
       </div>
 
     </div>
