@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +11,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+	 <meta charset='utf-8' />
+  <!-- »≠∏È «ÿªÛµµø° µ˚∂Û ±€¿⁄ ≈©±‚ ¥Î¿¿(∏πŸ¿œ ¥Î¿¿) -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <!-- jquery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- fullcalendar CDN -->
+  <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.css' rel='stylesheet' />
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
+  <!-- fullcalendar ææÓ CDN -->
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js'></script>
+  
+   <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+<style>
+  /* body Ω∫≈∏¿œ */
+  html, body {
+    overflow: hidden;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+   /*  font-size: 14px; */
+  }
+  /* ƒ∂∏∞¥ı ¿ß¿« «ÿ¥ı Ω∫≈∏¿œ(≥Ø¬•∞° ¿÷¥¬ ∫Œ∫–) */
+  .fc-header-toolbar {
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+</style>
     <title>SB Admin 2 - Charts</title>
 
     <!-- Custom fonts for this template-->
@@ -31,14 +65,14 @@
 		<ul
 			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
 			id="accordionSidebar">
-			<!-- Sidebar - Brand ÎèôÌò∏ÌöåÎ™Ö-->
+			<!-- Sidebar - Brand µø»£»∏∏Ì-->
 			<a
 				class="sidebar-brand d-flex align-items-center justify-content-center"
 				href="index.html">
 				<div class="sidebar-brand-icon rotate-n-15">
 					<i class="fas fa-laugh-wink"></i>
 				</div>
-				<div class="sidebar-brand-text mx-3">ÎèôÌò∏ÌöåÎ™Ö</div>
+				<div class="sidebar-brand-text mx-3">µø»£»∏∏Ì</div>
 			</a>
 
 			<!-- Divider -->
@@ -46,14 +80,14 @@
 
 			<!-- Nav Item - Dashboard -->
 			<li class="nav-item active"><a class="nav-link"
-				href="index.html"> <i class="fas fa-fw fa-home"></i> <span>ÌôàÏúºÎ°ú</span></a>
+				href="index.html"> <i class="fas fa-fw fa-home"></i> <span>»®¿∏∑Œ</span></a>
 			</li>
 
 			<!-- Divider -->
 			<hr class="sidebar-divider" />
 
-			<!-- Heading Î©îÎâ¥-->
-			<div class="sidebar-heading">Î©îÎâ¥</div>
+			<!-- Heading ∏ﬁ¥∫-->
+			<div class="sidebar-heading">∏ﬁ¥∫</div>
 
 			<!-- Nav Item - Pages Collapse Menu -->
 			<li class="nav-item"><a class="nav-link collapsed" href="#"
@@ -78,26 +112,25 @@
 
 			<!-- Nav Item - Charts -->
 			<li class="nav-item"><a class="nav-link" href="charts.html">
-					<i class="fas fa-fw fa-chart-area"></i> <span>Í≥µÏßÄÏÇ¨Ìï≠</span>
+					<i class="fas fa-fw fa-chart-area"></i> <span>∞¯¡ˆªÁ«◊</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="calendar.html">
-					<i class="fas fa-fw fa-calendar"></i> <span>Îã¨Î†•</span>
+					<i class="fas fa-fw fa-calendar"></i> <span>¥ﬁ∑¬</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="board.html">
-					<i class="fas fa-fw fa-list"></i> <span>Í≤åÏãúÌåê</span>
+					<i class="fas fa-fw fa-list"></i> <span>∞‘Ω√∆«</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="ballot.html">
-					<i class="fas fa-fw fa-check"></i> <span>Ìà¨Ìëú</span>
+					<i class="fas fa-fw fa-check"></i> <span>≈ı«•</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="chat.html">
-					<i class="fas fa-fw fa-comments"></i> <span>Ï±ÑÌåÖ</span>
+					<i class="fas fa-fw fa-comments"></i> <span>√§∆√</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="matching.html">
-					<i class="fas fa-fw fa-handshake"></i> <span>Îß§Ïπ≠</span>
+					<i class="fas fa-fw fa-handshake"></i> <span>∏≈ƒ™</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="analysis.html">
-					<i class="fas fa-fw fa-chart-bar"></i> <span>Î∂ÑÏÑù</span>
-			</a></li>
+			<li class="nav-item"><a class="nav-link" href="analysis.html"> <i
+					class="fas fa-fw fa-chart-bar"></i> <span>∫–ºÆ</span></a></li>
 
 			<!-- Divider -->
 			<hr class="sidebar-divider d-none d-md-block" />
@@ -238,7 +271,7 @@
                                     <div class="font-weight-bold">
                                         <div class="text-truncate">Hi there! I am wondering if you can help me with a
                                             problem I've been having.</div>
-                                        <div class="small text-gray-500">Emily Fowler ¬∑ 58m</div>
+                                        <div class="small text-gray-500">Emily Fowler °§ 58m</div>
                                     </div>
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -250,7 +283,7 @@
                                     <div>
                                         <div class="text-truncate">I have the photos that you ordered last month, how
                                             would you like them sent to you?</div>
-                                        <div class="small text-gray-500">Jae Chun ¬∑ 1d</div>
+                                        <div class="small text-gray-500">Jae Chun °§ 1d</div>
                                     </div>
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -262,7 +295,7 @@
                                     <div>
                                         <div class="text-truncate">Last month's report looks great, I am very happy with
                                             the progress so far, keep up the good work!</div>
-                                        <div class="small text-gray-500">Morgan Alvarez ¬∑ 2d</div>
+                                        <div class="small text-gray-500">Morgan Alvarez °§ 2d</div>
                                     </div>
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -274,7 +307,7 @@
                                     <div>
                                         <div class="text-truncate">Am I a good boy? The reason I ask is because someone
                                             told me that people say this to all dogs, even if they aren't good...</div>
-                                        <div class="small text-gray-500">Chicken the Dog ¬∑ 2w</div>
+                                        <div class="small text-gray-500">Chicken the Dog °§ 2w</div>
                                     </div>
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
@@ -322,82 +355,269 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Îß§Ïπ≠</h1>
-                    
-                    <!-- Îß§Ïπ≠... -->
-                    <div class="row">
-                    	<div class="col-md-6 mb-4">
-							<div class="card border-bottom-primary shadow h-100 py-2">
-								<div class="card-body">
-									<div class="row no-gutters align-items-center">
-										<div class="col mr-2">
-											<div
-												class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-												Earnings (Monthly)</div>
-											<div class="h5 mb-0 font-weight-bold text-gray-800">
-												$40,000</div>
-										</div>
-										<div class="col-auto">
-											<button class="h6 mb-0 text-gray-800" style="border-color: white">
-											Ïã†Ï≤≠ÌïòÍ∏∞</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-                    </div>
-                    
-                   
-                    
-                    <div class="row">
-                    	<div class="col-md-6 mb-4">
-							<div class="card border-bottom-secondary shadow h-100 py-2">
-								<div class="card-body">
-									<div class="row no-gutters align-items-center">
-										<div class="col mr-2">
-											<div
-												class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-												Earnings (Monthly)</div>
-											<div class="h5 mb-0 font-weight-bold text-gray-800">
-												$40,000</div>
-										</div>
-										<div class="col-auto">
-											<button class="h6 mb-0 text-gray-800" style="border-color: white">
-											Ïã†Ï≤≠ÌïòÍ∏∞</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-                    </div>
-                    
-                   
-                    
-                    <div class="row">
-                    	<div class="col-md-6 mb-4">
-							<div class="card border-bottom-success shadow h-100 py-2">
-								<div class="card-body">
-									<div class="row no-gutters align-items-center">
-										<div class="col mr-2">
-											<div
-												class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-												Earnings (Monthly)</div>
-											<div class="h5 mb-0 font-weight-bold text-gray-800">
-												$40,000</div>
-										</div>
-										<div class="col-auto">
-											<button class="h6 mb-0 text-gray-800" style="border-color: white">
-											Ïã†Ï≤≠ÌïòÍ∏∞</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-                    </div>
-                    
-                   
-            <!-- End of Main Content -->
+					<!-- Page Heading -->
+					<h1 class="h3 mb-2 text-gray-800">¥ﬁ∑¬</h1>
+
+
+					<div id='calendar-container'>
+						<div id='calendar'></div>
+						
+
+						 <!-- insertModal -->
+  <div class="modal fade insertModal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">¿œ¡§ µÓ∑œ</h4>
+          <button type="button" class="close" onclick="initModal('insertModal', g_arg)">&times;</button>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+         
+          <div class="form-group">
+			<label for="title">¿œ¡§≥ªøÎ:</label>
+			<input type="textbox" class="form-control" placeholder="" id="title" name="title">
+		  </div>
+		  <div class="form-group">
+			<label for="start">Ω√¿€Ω√∞£:</label>
+			<select class="form-control" id="start" onchange="startChange()">
+				<option value="09:00">09:00</option>
+				<option value="09:30">09:30</option>
+				<option value="10:00">10:00</option>
+				<option value="10:30">10:30</option>
+				<option value="11:00">11:00</option>
+				<option value="11:30">11:30</option>
+				<option value="12:00">12:00</option>
+				<option value="12:30">12:30</option>
+				<option value="13:00">13:00</option>
+				<option value="13:30">13:30</option>
+				<option value="14:00">14:00</option>
+				<option value="14:30">14:30</option>
+				<option value="15:00">15:00</option>
+				<option value="15:30">15:30</option>
+				<option value="16:00">16:00</option>
+				<option value="16:30">16:30</option>
+				<option value="17:00">17:00</option>
+				<option value="17:30">17:30</option>
+				<option value="18:00">18:00</option>
+				<option value="18:30">18:30</option>
+			</select>
+		  </div>
+		   <div class="form-group">
+			<label for="end">¡æ∑·Ω√∞£:</label>
+			<select class="form-control" id="end">
+				<option value="09:30">09:30</option>
+				<option value="10:00">10:00</option>
+				<option value="10:30">10:30</option>
+				<option value="11:00">11:00</option>
+				<option value="11:30">11:30</option>
+				<option value="12:00">12:00</option>
+				<option value="12:30">12:30</option>
+				<option value="13:00">13:00</option>
+				<option value="13:30">13:30</option>
+				<option value="14:00">14:00</option>
+				<option value="14:30">14:30</option>
+				<option value="15:00">15:00</option>
+				<option value="15:30">15:30</option>
+				<option value="16:00">16:00</option>
+				<option value="16:30">16:30</option>
+				<option value="17:00">17:00</option>
+				<option value="17:30">17:30</option>
+				<option value="18:00">18:00</option>
+				<option value="18:30">18:30</option>
+				<option value="19:00">19:00</option>
+			</select>
+		  </div>
+		  <div class="form-group">
+			  <label for="allDay">¡æ¿œø©∫Œ:</label>
+			  <div class="form-check">
+				<label class="form-check-label">
+					<input type="radio" class="form-check-input" value="true" name="allDay">øπ
+				</label>
+			  </div>
+		
+			  <div class="form-check">
+				<label class="form-check-label">
+					<input type="radio" checked="checked" class="form-check-input" value="false" name="allDay">æ∆¥œø¿
+				</label>
+			  </div>
+			</div>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+		  <button type="button" class="btn btn-dark  float-right deleteBtn" onclick="deleteSch('insertModal', g_arg)">ªË¡¶</button>
+		  <button type="button" class="btn btn-warning float-right insertBtn" onclick="insertSch('insertModal', g_arg)">µÓ∑œ</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+						
+					</div>
+					<script>
+					
+					vo = new calendarVO(title);
+					dao = new calendarDAO();
+					list = dao.showCalendar();
+					
+							$(function() {
+								// calendar element √ÎµÊ
+								var calendarEl = $('#calendar')[0];
+								// full-calendar ª˝º∫«œ±‚
+								var calendar = new FullCalendar.Calendar(
+										calendarEl,
+										{
+											height : '700px', // calendar ≥Ù¿Ã º≥¡§
+											expandRows : true, // »≠∏Èø° ∏¬∞‘ ≥Ù¿Ã ¿Áº≥¡§
+											slotMinTime : '08:00', // Day ƒ∂∏∞¥ıø°º≠ Ω√¿€ Ω√∞£
+											slotMaxTime : '24:00', // Day ƒ∂∏∞¥ıø°º≠ ¡æ∑· Ω√∞£
+											// «ÿ¥ıø° «•Ω√«“ ≈¯πŸ
+											headerToolbar : {
+												left : 'prev,next today',
+												center : 'title',
+												right : 'dayGridMonth,timeGridWeek,timeGridDay listWeek'
+											},
+											initialView : 'dayGridMonth', // √ ±‚ ∑ŒµÂ µ…∂ß ∫∏¿Ã¥¬ ƒ∂∏∞¥ı »≠∏È(±‚∫ª º≥¡§: ¥ﬁ)
+											//initialDate: '2021-07-15', // √ ±‚ ≥Ø¬• º≥¡§ (º≥¡§«œ¡ˆ æ ¿∏∏È ø¿¥√ ≥Ø¬•∞° ∫∏¿Œ¥Ÿ.)
+											navLinks : true, // ≥Ø¬•∏¶ º±≈√«œ∏È Day ƒ∂∏∞¥ı≥™ Week ƒ∂∏∞¥ı∑Œ ∏µ≈©
+											editable : true, // ºˆ¡§ ∞°¥…?
+											selectable : true, // ¥ﬁ∑¬ ¿œ¿⁄ µÂ∑°±◊ º≥¡§∞°¥…
+											selectMirror : true,
+											nowIndicator : true, // «ˆ¿Á Ω√∞£ ∏∂≈©
+											dayMaxEvents : true, // ¿Ã∫•∆Æ∞° ø¿πˆµ«∏È ≥Ù¿Ã ¡¶«— (+ ∏Ó ∞≥Ωƒ¿∏∑Œ «•«ˆ)
+											
+											locale : 'ko', // «—±πæÓ º≥¡§
+											/* select: function() {
+												$("#myModal").modal("show");	//¿œ¿⁄ ≈¨∏Ø Ω√ ∏¥ﬁ »£√‚
+										      }, */
+										      eventClick: function(arg) {
+										    	  insertModalOpen(arg);//¿Ã∫•∆Æ ≈¨∏Ø Ω√ ∏¥ﬁ »£√‚
+										      },
+											  
+											eventAdd : function(obj) { // ¿Ã∫•∆Æ∞° √ﬂ∞°µ«∏È πﬂª˝«œ¥¬ ¿Ã∫•∆Æ
+												console.log(obj);
+											},
+											eventChange : function(obj) { // ¿Ã∫•∆Æ∞° ºˆ¡§µ«∏È πﬂª˝«œ¥¬ ¿Ã∫•∆Æ
+												console.log(obj);
+
+											},
+											eventRemove : function(obj) { // ¿Ã∫•∆Æ∞° ªË¡¶µ«∏È πﬂª˝«œ¥¬ ¿Ã∫•∆Æ
+												console.log(obj);
+											},
+											select : function(arg) { // ƒ∂∏∞¥ıø°º≠ µÂ∑°±◊∑Œ ¿Ã∫•∆Æ∏¶ ª˝º∫«“ ºˆ ¿÷¥Ÿ.
+												insertModalOpen(arg);
+												/* if (title) {
+													calendar.addEvent({
+														title : title,
+														start : arg.start,
+														end : arg.end,
+														allDay : arg.allDay
+													})
+												} */
+												calendar.unselect()
+											},
+											 eventSources: [
+
+												    // your event source
+												    {
+												      url: list
+												      
+												    } 
+										});
+								// ƒ∂∏∞¥ı ∑£¥ı∏µ
+								calendar.render();
+							});
+							
+							//∏¥ﬁ√ ±‚»≠
+							  function initModal(modal, arg){
+								$('.'+modal+' #title').val('');
+								$('.'+modal+' #start').val('09:00');
+								$('.'+modal+' #end').val('09:30');
+								$('.'+modal+' #allDay').val('0');
+								$('.'+modal+' input[name="allDay"]').val(['false']);
+								$('.'+modal).modal('hide');
+								g_arg = null;
+							  }
+							  //¿œ¡§µÓ∑œ√¢ ∏¥ﬁ
+							  function insertModalOpen(arg){
+							
+								g_arg = arg;
+								//∞™¿Ã ¿÷¥¬∞ÊøÏ ºº∆√
+								if(g_arg.event != undefined){
+									$('.insertModal .deleteBtn').css('display', 'inline');
+									$('.insertModal .empl_nm').css('display', 'inline');
+									$('.insertModal #empl_nm').val(g_arg.event.extendedProps.empl_nm);
+									$('.insertModal #title').val(g_arg.event.title);
+									$('.insertModal #start').val(stringFormat(g_arg.event.start.getHours())+':'+stringFormat(g_arg.event.start.getMinutes()));
+									$('.insertModal #end').val(stringFormat(g_arg.event.end.getHours())+':'+stringFormat(g_arg.event.end.getMinutes()));
+									$('.insertModal input[name="allDay"]').val([g_arg.event.allDay]);
+									//ªÁøÎ¿⁄ ∞Ë¡§¿Ã ¥Î«• ∞Ë¡§¿Ã∏È
+									if(id == ceo){
+										//«ÿ¥Á ¿Ã∫•∆Æ∞° ¥Î«•∞° µÓ∑œ«— ¿œ¡§¿Ã∏È
+										if(id == g_arg.event.extendedProps.regid){
+											//¥Î«•¿œ¡§¿∫ Ω¬¿Œ/π›∑¡ πˆ∆∞ º˚±Ë
+											$('.insertModal .approvalBtn').css('display', 'none');
+											$('.insertModal .rejectBtn').css('display', 'none');
+											$('.insertModal .deleteBtn').css('display', 'inline');
+											$('.insertModal .insertBtn').css('display', 'inline');
+										//«ÿ¥Á ¿Ã∫•∆Æ∞° ¥Î«•∞° µÓ∑œ«— ¿œ¡§¿Ã æ∆¥œ∏È
+										}else{
+											//Ω¬¿Œµ» ¿Ã∫•∆Æ∏È Ω¬¿Œπˆ∆∞ º˚±Ë
+											if(g_arg.event.extendedProps.allowyn == '1'){
+												$('.insertModal .approvalBtn').css('display', 'none');	
+											}else{
+												$('.insertModal .approvalBtn').css('display', 'inline');
+											}
+											//¥Î«•¥¬ ∏µÁ πˆ∆∞ ªÁøÎ ∞°¥…
+											$('.insertModal .rejectBtn').css('display', 'inline');
+											$('.insertModal .deleteBtn').css('display', 'inline');
+											$('.insertModal .insertBtn').css('display', 'inline');	
+										}
+									//¿œπ› ¿”¡˜ø¯ ∞Ë¡§¿Ã∏È
+									}else{
+										//«ÿ¥Á ¿Ã∫•∆Æ∞° ∑Œ±◊¿Œ∞Ë¡§¿Ã µÓ∑œ«— ¿Ã∫•∆Æ∏È
+										if(id == g_arg.event.extendedProps.regid){
+											$('.insertModal .deleteBtn').css('display', 'inline');
+											$('.insertModal .insertBtn').css('display', 'inline');
+										//≥≤¿« ¿Ã∫•∆Æ∏È
+										}else{
+											$('.insertModal .deleteBtn').css('display', 'none');
+											$('.insertModal .insertBtn').css('display', 'none');
+										}		
+										//¥Î«• ø‹ø£ Ω¬¿Œ/π›∑¡ ∫“∞°
+										$('.insertModal .approvalBtn').css('display', 'none');
+										$('.insertModal .rejectBtn').css('display', 'none');
+									}
+								//Ω≈±‘ ¿Ã∫•∆Æ
+								}else{
+									//month ø‹ week, day¥¬ Ω√∞£ ∞™±Ó¡ˆ πﬁæ∆øÕº≠ ∞™ πŸ¿Œµ˘ ex)09:00
+									if(g_arg.startStr.length > 10){
+										$('.insertModal #start').val(g_arg.startStr.substr(11, 5));
+										$('.insertModal #end').val(g_arg.endStr.substr(11, 5));
+									}
+									//µÓ∑œ¿⁄ º˚±Ë(readonly)
+									$('.insertModal .empl_nm').css('display', 'none');
+									//µÓ∑œπˆ∆∞ ø‹ º˚±Ë
+									$('.insertModal .insertBtn').css('display', 'inline');
+									$('.insertModal .deleteBtn').css('display', 'none');
+									$('.insertModal .approvalBtn').css('display', 'none');
+									$('.insertModal .rejectBtn').css('display', 'none');
+								}
+								//∏¥ﬁ√¢ show
+								$('.insertModal').modal({backdrop: 'static'});
+								console.log(arg);
+								$('.insertModal #title').focus();
+							  }
+							 
+							  
+					</script>
+
+
+
+
+					<!-- End of Main Content -->
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
@@ -428,7 +648,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">√ó</span>
+                        <span aria-hidden="true">°ø</span>
                     </button>
                 </div>
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>

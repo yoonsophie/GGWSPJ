@@ -18,6 +18,14 @@
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
   <!-- fullcalendar 언어 CDN -->
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js'></script>
+  
+   <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
 <style>
   /* body 스타일 */
   html, body {
@@ -344,127 +352,187 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">달력</h1>
-                    
-                    
-                     <div id='calendar-container'>
-    <div id='calendar'></div>
+					<!-- Page Heading -->
+					<h1 class="h3 mb-2 text-gray-800">달력</h1>
+
+
+					<div id='calendar-container'>
+						<div id='calendar'></div>
+						
+
+						 <!-- insertModal -->
+  <div class="modal fade insertModal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">일정 등록</h4>
+          <button type="button" class="close" onclick="initModal('insertModal', g_arg)">&times;</button>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+         
+          <div class="form-group">
+			<label for="title">일정내용:</label>
+			<input type="textbox" class="form-control" placeholder="" id="title" name="title">
+		  </div>
+		  <div class="form-group">
+			<label for="start">시작시간:</label>
+			<select class="form-control" id="start" onchange="startChange()">
+				<option value="09:00">09:00</option>
+				<option value="09:30">09:30</option>
+				<option value="10:00">10:00</option>
+				<option value="10:30">10:30</option>
+				<option value="11:00">11:00</option>
+				<option value="11:30">11:30</option>
+				<option value="12:00">12:00</option>
+				<option value="12:30">12:30</option>
+				<option value="13:00">13:00</option>
+				<option value="13:30">13:30</option>
+				<option value="14:00">14:00</option>
+				<option value="14:30">14:30</option>
+				<option value="15:00">15:00</option>
+				<option value="15:30">15:30</option>
+				<option value="16:00">16:00</option>
+				<option value="16:30">16:30</option>
+				<option value="17:00">17:00</option>
+				<option value="17:30">17:30</option>
+				<option value="18:00">18:00</option>
+				<option value="18:30">18:30</option>
+			</select>
+		  </div>
+		   <div class="form-group">
+			<label for="end">종료시간:</label>
+			<select class="form-control" id="end">
+				<option value="09:30">09:30</option>
+				<option value="10:00">10:00</option>
+				<option value="10:30">10:30</option>
+				<option value="11:00">11:00</option>
+				<option value="11:30">11:30</option>
+				<option value="12:00">12:00</option>
+				<option value="12:30">12:30</option>
+				<option value="13:00">13:00</option>
+				<option value="13:30">13:30</option>
+				<option value="14:00">14:00</option>
+				<option value="14:30">14:30</option>
+				<option value="15:00">15:00</option>
+				<option value="15:30">15:30</option>
+				<option value="16:00">16:00</option>
+				<option value="16:30">16:30</option>
+				<option value="17:00">17:00</option>
+				<option value="17:30">17:30</option>
+				<option value="18:00">18:00</option>
+				<option value="18:30">18:30</option>
+				<option value="19:00">19:00</option>
+			</select>
+		  </div>
+		  <div class="form-group">
+			  <label for="allDay">종일여부:</label>
+			  <div class="form-check">
+				<label class="form-check-label">
+					<input type="radio" class="form-check-input" value="true" name="allDay">예
+				</label>
+			  </div>
+		
+			  <div class="form-check">
+				<label class="form-check-label">
+					<input type="radio" checked="checked" class="form-check-input" value="false" name="allDay">아니오
+				</label>
+			  </div>
+			</div>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+		  <button type="button" class="btn btn-dark  float-right deleteBtn" onclick="deleteSch('insertModal', g_arg)">삭제</button>
+		  <button type="button" class="btn btn-warning float-right insertBtn" onclick="insertSch('insertModal', g_arg)">등록</button>
+        </div>
+        
+      </div>
+    </div>
   </div>
-  <script>
-  (function(){
-    $(function(){
-      // calendar element 취득
-      var calendarEl = $('#calendar')[0];
-      // full-calendar 생성하기
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        height: '700px', // calendar 높이 설정
-        expandRows: true, // 화면에 맞게 높이 재설정
-        slotMinTime: '08:00', // Day 캘린더에서 시작 시간
-        slotMaxTime: '24:00', // Day 캘린더에서 종료 시간
-        // 해더에 표시할 툴바
-        headerToolbar: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay listWeek'
-        },
-        initialView: 'dayGridMonth', // 초기 로드 될때 보이는 캘린더 화면(기본 설정: 달)
-        //initialDate: '2021-07-15', // 초기 날짜 설정 (설정하지 않으면 오늘 날짜가 보인다.)
-        navLinks: true, // 날짜를 선택하면 Day 캘린더나 Week 캘린더로 링크
-        editable: true, // 수정 가능?
-        selectable: true, // 달력 일자 드래그 설정가능
-        nowIndicator: true, // 현재 시간 마크
-        dayMaxEvents: true, // 이벤트가 오버되면 높이 제한 (+ 몇 개식으로 표현)
-        locale: 'ko', // 한국어 설정
-        eventAdd: function(obj) { // 이벤트가 추가되면 발생하는 이벤트
-          console.log(obj);
-        },
-        eventChange: function(obj) { // 이벤트가 수정되면 발생하는 이벤트
-          console.log(obj);
-        },
-        eventRemove: function(obj){ // 이벤트가 삭제되면 발생하는 이벤트
-          console.log(obj);
-        },
-        select: function(arg) { // 캘린더에서 드래그로 이벤트를 생성할 수 있다.
-          var title = prompt('Event Title:');
-          if (title) {
-            calendar.addEvent({
-              title: title,
-              start: arg.start,
-              end: arg.end,
-              allDay: arg.allDay
-            })
-          }
-          calendar.unselect()
-        },
-        // 이벤트 
-        events: [
-          {
-            title: 'All Day Event',
-            start: '2023-03-01',
-          },
-          {
-            title: 'Long Event',
-            start: '2023-03-07',
-            end: '2023-03-10'
-          },
-          {
-            groupId: 999,
-            title: 'Repeating Event',
-            start: '2023-03-09T16:00:00'
-          },
-          {
-            groupId: 999,
-            title: 'Repeating Event',
-            start: '2023-03-16T16:00:00'
-          },
-          {
-            title: 'Conference',
-            start: '2023-03-11',
-            end: '2023-03-13'
-          },
-          {
-            title: 'Meeting',
-            start: '2023-03-12T10:30:00',
-            end: '2023-03-12T12:30:00'
-          },
-          {
-            title: 'Lunch',
-            start: '2023-03-12T12:00:00'
-          },
-          {
-            title: 'Meeting',
-            start: '2023-03-12T14:30:00'
-          },
-          {
-            title: 'Happy Hour',
-            start: '2023-03-12T17:30:00'
-          },
-          {
-            title: 'Dinner',
-            start: '2023-03-12T20:00:00'
-          },
-          {
-            title: 'Birthday Party',
-            start: '2023-03-13T07:00:00'
-          },
-          {
-            title: 'Click for Google',
-            url: 'http://google.com/', // 클릭시 해당 url로 이동
-            start: '2023-03-28'
-          }
-        ]
-      });
-      // 캘린더 랜더링
-      calendar.render();
-    });
-  })();
-</script>
-                    
-                    
-                    
-                   
-            <!-- End of Main Content -->
+						
+					</div>
+					<script>
+					
+							$(function() {
+								// calendar element 취득
+								var calendarEl = $('#calendar')[0];
+								// full-calendar 생성하기
+								var calendar = new FullCalendar.Calendar(
+										calendarEl,
+										{
+											height : '700px', // calendar 높이 설정
+											expandRows : true, // 화면에 맞게 높이 재설정
+											slotMinTime : '08:00', // Day 캘린더에서 시작 시간
+											slotMaxTime : '24:00', // Day 캘린더에서 종료 시간
+											// 해더에 표시할 툴바
+											headerToolbar : {
+												left : 'prev,next today',
+												center : 'title',
+												right : 'dayGridMonth,timeGridWeek,timeGridDay listWeek'
+											},
+											initialView : 'dayGridMonth', // 초기 로드 될때 보이는 캘린더 화면(기본 설정: 달)
+											//initialDate: '2021-07-15', // 초기 날짜 설정 (설정하지 않으면 오늘 날짜가 보인다.)
+											navLinks : true, // 날짜를 선택하면 Day 캘린더나 Week 캘린더로 링크
+											editable : true, // 수정 가능?
+											selectable : true, // 달력 일자 드래그 설정가능
+											selectMirror : true,
+											nowIndicator : true, // 현재 시간 마크
+											dayMaxEvents : true, // 이벤트가 오버되면 높이 제한 (+ 몇 개식으로 표현)
+											
+											locale : 'ko', // 한국어 설정
+											/* select: function() {
+												$("#myModal").modal("show");	//일자 클릭 시 모달 호출
+										      }, */
+										      eventClick: function(arg) {
+										    	  insertModalOpen(arg);//이벤트 클릭 시 모달 호출
+										      },
+											  
+											eventAdd : function(obj) { // 이벤트가 추가되면 발생하는 이벤트
+												console.log(obj);
+											},
+											eventChange : function(obj) { // 이벤트가 수정되면 발생하는 이벤트
+												console.log(obj);
+
+											},
+											eventRemove : function(obj) { // 이벤트가 삭제되면 발생하는 이벤트
+												console.log(obj);
+											},
+											
+										select : function(arg) { // 캘린더에서 드래그로 이벤트를 생성할 수 있다.
+											//insertModalOpen(arg);
+											var title = prompt('Event Title:');
+											if (title) {
+												calendar.addEvent({
+													title : title,
+													start : arg.start,
+													end : arg.end,
+													allDay : arg.allDay
+												})
+											}
+											calendar.unselect()
+										},
+									// 가져오기
+									/* eventSources: [
+										{
+											url:
+											
+										}
+										
+									] */
+										
+										
+									});
+							// 캘린더 랜더링
+							calendar.render();
+						});
+					</script>
+
+
+
+
+					<!-- End of Main Content -->
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
