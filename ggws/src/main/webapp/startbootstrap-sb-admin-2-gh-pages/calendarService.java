@@ -9,6 +9,7 @@ import org.json.simple.parser.JSONParser;
 import com.ggws.Command.Command;
 import com.ggws.model.calendarDAO;
 import com.ggws.model.calendarVO;
+import com.google.gson.Gson;
 
 public class calendarService implements Command {
 
@@ -20,7 +21,8 @@ public class calendarService implements Command {
 		 * JSONObject jsonObject = (JSONObject) jsonParser.parse(addEvent);
 		 */
 		
-		
+		Gson gson = new Gson();
+		gson.toString()
 		
 		String title = request.getParameter("allData");
 		System.out.println(title);
