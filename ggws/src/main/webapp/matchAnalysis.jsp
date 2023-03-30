@@ -7,9 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 	<div>
-		<canvas id="myChart"></canvas>
+	<div class="graphBox">
+		<canvas id="myChart" width="384" height="210"></canvas>
+	</div>
+	<!-- 푸시 -->
+	<div class="graphBox">
+		<canvas id="myChart" width="384" height="210"></canvas>
+	</div>
 	</div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -36,6 +41,7 @@
     }
   });
 </script>
+
 				
 </body>
 </html>
