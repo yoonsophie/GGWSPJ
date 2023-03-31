@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+     <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<style>
+		.fc-event{
+			margin-top:5px;
+			cursor:move;
+		}
+	
+	</style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.5/index.global.min.js'></script>
+    <script>
+    var calendar = null;
+    $(document).ready(function() {
+        var Calendar = FullCalendar.Calendar;
+        var Draggable = FullCalendar.Draggable;
+
+        var containerEl = document.getElementById('external-events');
+        var calendarEl = document.getElementById('calendar');
+        var checkbox = document.getElementById('drop-remove');
+
+        // initialize the external events
+        // -----------------------------------------------------------------
+
+        new Draggable(containerEl, {
+          itemSelector: '.fc-event',
+          eventData: function(eventEl) {
+            return {
+              title: eventEl.innerText
+            };
+          }
+        });
+
+        // initialize the calendar
+        // -----------------------------------------------------------------
+		
+        calendar = new Calendar(calendarEl, {
+          headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay'
+          },
+          locale:'ko',
+          editable: true,
+          droppable: true, // this allows things to be dropped onto the calendar
+          drop: function(info) {
+            // is the "remove after drop" checkbox checked?
+            if (checkbox.checked) {
+              // if so, remove the element from the "Draggable Events" list
+              info.draggedEl.parentNode.removeChild(info.draggedEl);
+            }
+          }
+        });
+
+        calendar.render();
+      });
+    
+  
+      
+      // 1. 전체 이벤트 데이터를 추출
+      // 2. ajax로 서버에 전송 -> DB저장
+      function allSave(){
+    	  var allEvent = calendar.getEvents();
+    	  
+    	  
+    	  var events = new Array();
+    	  for(var i=0; i < allEvent.length; i++){
+    			
+    		  var obj = new Object();
+    		  
+    		 obj.title = allEvent[i]._def.title; // 이벤트 명칭
+    		  obj.allday = allEvent[i]._def.allDay; // 하루종일인지 알려주는 boolean
+    		  obj.start = allEvent[i]._instance.range.start; // 시간시작
+    		  obj.end = allEvent[i]._instance.range.end;  // 시간끝 
+    		   
+    		 events.push(obj);
+    	  }
+    	  var jsondata = JSON.stringify(events);
+    	  console.log(jsondata)
+    		
+    	  savedata(jsondata);
+    	  
+      }
+      
+      function savedata(jsondata){
+    	  $.ajax({
+    		  type: 'POST',
+    		  url: 'calendarService.java',
+    		  data:{"alldata": jsondata},
+    		  dataType: 'text',
+    		  async: false
+    	  })
+    	  .done(function(result){
+    		 // alert(result);
+    	  }) //성공시
+    	  .fail(function(request, status, error){
+    		  alert("에러발생 :" + error);
+    	  }) //실패시
+      }
+
+    </script>
+  </head>
+<body>
+	<div id='external-events' style="float:left; width:15%; padding-right:30px; padding-left:20px">
+		<p>
+			<strong>드래그하세요</strong>
+		</p>
+
+		<div
+			class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+			<div class='fc-event-main'>My Event 1</div>
+		</div>
+		<div
+			class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+			<div class='fc-event-main'>My Event 2</div>
+		</div>
+		<div
+			class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+			<div class='fc-event-main'>My Event 3</div>
+		</div>
+		<div
+			class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+			<div class='fc-event-main'>My Event 4</div>
+		</div>
+		<div
+			class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
+			<div class='fc-event-main'>My Event 5</div>
+		</div>
+
+		<p>
+			<input type='checkbox' id='drop-remove' /> <label for='drop-remove'>드래그앤드롭후
+				제거</label>
+		</p>
+	</div>
+	<div style="float:left; width:80%" >
+		<div id='calendar'></div>
+		<div>
+			<button style="cursor:pointer" onclick="javascript:allSave();">전체저장</button>
+		</div> 
+	</div>
+</body>
+</html>

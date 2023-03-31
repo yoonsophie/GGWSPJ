@@ -4,4 +4,24 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>BoardWriteService</servlet-name>
+  	<display-name>BoardWriteService</display-name>
+  	<description></description>
+  	<servlet-class>com.ggws.controller.BoardWriteService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeleteMember</servlet-name>
+  	<display-name>DeleteMember</display-name>
+  	<description></description>
+  	<servlet-class>com.ggws.controller.DeleteMember</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>BoardWriteService</servlet-name>
+  	<url-pattern>/BoardWriteService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteMember</servlet-name>
+  	<url-pattern>/DeleteMember</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ggws.db.calendarMapper">
+	
+	<insert id="insertCalendar" parameterType="calendarVO">
+        insert into schedule_info
+        values(seq_schd.nextval, 1, 'test', 'type', #{title}, 'content', #{start}, #{end}, sysdate)
+     </insert>
+     
+     <select id="selectCalendar" resultType="calendarVO">
+       	select * from schedule_info
+     	
+     </select>
+	
+</mapper>

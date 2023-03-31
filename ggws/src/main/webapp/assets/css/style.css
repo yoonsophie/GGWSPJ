@@ -19,10 +19,48 @@ a {
 
 .content {
   padding: 7rem 0; }
-
+.info{
+	text-align : center;
+  	vertical-align : middle;;
+}
 h2 {
   font-size: 20px; }
+.info{
+	padding-top:30px;
+	margin:10px;
+}
+/* Create Table 이미지 및 파일선택 CSS */
+#preview{
+	width:100px;
+	height:100px;
 
+}
+#preview input{
+	width:50px;
+	height:50px;
+}
+#fileimg{
+	border:0.5px dot #b3b3b3;
+}
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 80%;
+    min-height: 80%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
 .custom-table {
   min-width: 900px; }
   .custom-table thead tr, .custom-table thead th {
@@ -122,3 +160,4 @@ h2 {
   background-color: #007bff;
   opacity: .2;
   border: 2px solid #007bff; }
+
