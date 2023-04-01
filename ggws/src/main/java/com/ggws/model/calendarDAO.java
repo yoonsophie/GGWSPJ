@@ -1,12 +1,14 @@
 package com.ggws.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.springframework.stereotype.Repository;
 
 import com.ggws.db.SqlSessionManager;
-import com.ggws.model.calendarVO.BoardVO;
+
 
 public class calendarDAO {
 
@@ -24,14 +26,12 @@ public class calendarDAO {
 	
 	public List<calendarVO> showCalendar() {
 		List<calendarVO> list = null;
-
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		list = sqlSession.selectList("selectCalendar");
+		list = sqlSession.selectList("showCalendar");
 		sqlSession.close();
 		return list;
 		
 	}
-	
 	
 	
 }

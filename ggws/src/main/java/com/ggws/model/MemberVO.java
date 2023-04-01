@@ -35,6 +35,15 @@ public class MemberVO {
 		this.user_date = user_date;
 	}
 	
+	// 로그인용
+	public MemberVO(String user_id, String user_pw) {
+		super();
+		this.user_id = user_id;
+		this.user_pw = user_pw;
+	}
+	
+	
+	
 	
 	
 }

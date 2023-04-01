@@ -16,6 +16,12 @@
   	<description></description>
   	<servlet-class>com.ggws.controller.DeleteMember</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>frontController</servlet-name>
+  	<display-name>frontController</display-name>
+  	<description></description>
+  	<servlet-class>com.ggws.frontController.frontController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>BoardWriteService</servlet-name>
   	<url-pattern>/BoardWriteService</url-pattern>
@@ -23,5 +29,9 @@
   <servlet-mapping>
   	<servlet-name>DeleteMember</servlet-name>
   	<url-pattern>/DeleteMember</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>frontController</servlet-name>
+  	<url-pattern>/frontController</url-pattern>
   </servlet-mapping>
 </web-app>

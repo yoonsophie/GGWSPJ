@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import com.ggws.db.SqlSessionManager;
 
 
+
 public class MemberDAO {
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	
@@ -26,4 +27,15 @@ public class MemberDAO {
 		sqlSession.close();
 		return cnt;
 		}
+	
+	// 로그인
+	public MemberVO login(MemberVO vo) {
+			SqlSession sqlSession = sqlSessionFactory.openSession(true);
+			MemberVO resultVO = sqlSession.selectOne("com.ggws.db.MemberMapper.loginMember", vo); 
+			sqlSession.close();
+			return resultVO;
+		}
+		
+	
+	
 }

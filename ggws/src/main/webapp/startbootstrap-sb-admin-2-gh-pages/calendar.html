@@ -349,109 +349,117 @@
                 </nav>
                 <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
+				<!-- Begin Page Content -->
+				<div class="container-fluid">
 
 					<!-- Page Heading -->
-					<h1 class="h3 mb-2 text-gray-800">달력</h1>
+					<div class="col-xl-10">
+						<div class="card shadow">
+							<div class="card-body">
+								<div id='calendar-container'>
+									<div id='calendar'></div>
+								</div>
+							</div>
+						</div>
+						ㄴ
+						<!-- insertModal -->
+						<div class="modal fade insertModal" id="myModal">
+							<div class="modal-dialog">
+								<div class="modal-content">
 
+									<!-- Modal Header -->
+									<div class="modal-header">
+										<h4 class="modal-title">일정 등록</h4>
+										<button type="button" class="close"
+											onclick="initModal('insertModal', g_arg)">&times;</button>
+									</div>
+									<!-- Modal body -->
+									<div class="modal-body">
 
-					<div id='calendar-container'>
-						<div id='calendar'></div>
-						
+										<div class="form-group">
+											<label for="title">일정내용:</label> <input type="textbox"
+												class="form-control" placeholder="" id="title" name="title">
+										</div>
+										<div class="form-group">
+											<label for="start">시작시간:</label> <select class="form-control"
+												id="start" onchange="startChange()">
+												<option value="09:00">09:00</option>
+												<option value="09:30">09:30</option>
+												<option value="10:00">10:00</option>
+												<option value="10:30">10:30</option>
+												<option value="11:00">11:00</option>
+												<option value="11:30">11:30</option>
+												<option value="12:00">12:00</option>
+												<option value="12:30">12:30</option>
+												<option value="13:00">13:00</option>
+												<option value="13:30">13:30</option>
+												<option value="14:00">14:00</option>
+												<option value="14:30">14:30</option>
+												<option value="15:00">15:00</option>
+												<option value="15:30">15:30</option>
+												<option value="16:00">16:00</option>
+												<option value="16:30">16:30</option>
+												<option value="17:00">17:00</option>
+												<option value="17:30">17:30</option>
+												<option value="18:00">18:00</option>
+												<option value="18:30">18:30</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="end">종료시간:</label> <select class="form-control"
+												id="end">
+												<option value="09:30">09:30</option>
+												<option value="10:00">10:00</option>
+												<option value="10:30">10:30</option>
+												<option value="11:00">11:00</option>
+												<option value="11:30">11:30</option>
+												<option value="12:00">12:00</option>
+												<option value="12:30">12:30</option>
+												<option value="13:00">13:00</option>
+												<option value="13:30">13:30</option>
+												<option value="14:00">14:00</option>
+												<option value="14:30">14:30</option>
+												<option value="15:00">15:00</option>
+												<option value="15:30">15:30</option>
+												<option value="16:00">16:00</option>
+												<option value="16:30">16:30</option>
+												<option value="17:00">17:00</option>
+												<option value="17:30">17:30</option>
+												<option value="18:00">18:00</option>
+												<option value="18:30">18:30</option>
+												<option value="19:00">19:00</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="allDay">종일여부:</label>
+											<div class="form-check">
+												<label class="form-check-label"> <input type="radio"
+													class="form-check-input" value="true" name="allDay">예
+												</label>
+											</div>
 
-						 <!-- insertModal -->
-  <div class="modal fade insertModal" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">일정 등록</h4>
-          <button type="button" class="close" onclick="initModal('insertModal', g_arg)">&times;</button>
-        </div>
-        <!-- Modal body -->
-        <div class="modal-body">
-         
-          <div class="form-group">
-			<label for="title">일정내용:</label>
-			<input type="textbox" class="form-control" placeholder="" id="title" name="title">
-		  </div>
-		  <div class="form-group">
-			<label for="start">시작시간:</label>
-			<select class="form-control" id="start" onchange="startChange()">
-				<option value="09:00">09:00</option>
-				<option value="09:30">09:30</option>
-				<option value="10:00">10:00</option>
-				<option value="10:30">10:30</option>
-				<option value="11:00">11:00</option>
-				<option value="11:30">11:30</option>
-				<option value="12:00">12:00</option>
-				<option value="12:30">12:30</option>
-				<option value="13:00">13:00</option>
-				<option value="13:30">13:30</option>
-				<option value="14:00">14:00</option>
-				<option value="14:30">14:30</option>
-				<option value="15:00">15:00</option>
-				<option value="15:30">15:30</option>
-				<option value="16:00">16:00</option>
-				<option value="16:30">16:30</option>
-				<option value="17:00">17:00</option>
-				<option value="17:30">17:30</option>
-				<option value="18:00">18:00</option>
-				<option value="18:30">18:30</option>
-			</select>
-		  </div>
-		   <div class="form-group">
-			<label for="end">종료시간:</label>
-			<select class="form-control" id="end">
-				<option value="09:30">09:30</option>
-				<option value="10:00">10:00</option>
-				<option value="10:30">10:30</option>
-				<option value="11:00">11:00</option>
-				<option value="11:30">11:30</option>
-				<option value="12:00">12:00</option>
-				<option value="12:30">12:30</option>
-				<option value="13:00">13:00</option>
-				<option value="13:30">13:30</option>
-				<option value="14:00">14:00</option>
-				<option value="14:30">14:30</option>
-				<option value="15:00">15:00</option>
-				<option value="15:30">15:30</option>
-				<option value="16:00">16:00</option>
-				<option value="16:30">16:30</option>
-				<option value="17:00">17:00</option>
-				<option value="17:30">17:30</option>
-				<option value="18:00">18:00</option>
-				<option value="18:30">18:30</option>
-				<option value="19:00">19:00</option>
-			</select>
-		  </div>
-		  <div class="form-group">
-			  <label for="allDay">종일여부:</label>
-			  <div class="form-check">
-				<label class="form-check-label">
-					<input type="radio" class="form-check-input" value="true" name="allDay">예
-				</label>
-			  </div>
-		
-			  <div class="form-check">
-				<label class="form-check-label">
-					<input type="radio" checked="checked" class="form-check-input" value="false" name="allDay">아니오
-				</label>
-			  </div>
-			</div>
-        </div>
-        <!-- Modal footer -->
-        <div class="modal-footer">
-		  <button type="button" class="btn btn-dark  float-right deleteBtn" onclick="deleteSch('insertModal', g_arg)">삭제</button>
-		  <button type="button" class="btn btn-warning float-right insertBtn" onclick="insertSch('insertModal', g_arg)">등록</button>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-						
+											<div class="form-check">
+												<label class="form-check-label"> <input type="radio"
+													checked="checked" class="form-check-input" value="false"
+													name="allDay">아니오
+												</label>
+											</div>
+										</div>
+									</div>
+									<!-- Modal footer -->
+									<div class="modal-footer">
+										<button type="button"
+											class="btn btn-dark  float-right deleteBtn"
+											onclick="deleteSch('insertModal', g_arg)">삭제</button>
+										<button type="button"
+											class="btn btn-warning float-right insertBtn"
+											onclick="insertSch('insertModal', g_arg)">등록</button>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
 					</div>
 					<script>
 					
@@ -534,18 +542,18 @@
 
 					<!-- End of Main Content -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+					<!-- Footer -->
+					<footer class="sticky-footer bg-white">
+						<div class="container my-auto">
+							<div class="copyright text-center my-auto">
+								<span>Copyright &copy; Your Website 2020</span>
+							</div>
+						</div>
+					</footer>
+					<!-- End of Footer -->
 
-        </div>
-        <!-- End of Content Wrapper -->
+				</div>
+				<!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
