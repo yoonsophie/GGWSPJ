@@ -10,17 +10,27 @@
   	<description></description>
   	<servlet-class>com.ggws.controller.BoardWriteService</servlet-class>
   </servlet>
+  
   <servlet>
   	<servlet-name>DeleteMember</servlet-name>
   	<display-name>DeleteMember</display-name>
   	<description></description>
   	<servlet-class>com.ggws.controller.DeleteMember</servlet-class>
   </servlet>
+  
+
   <servlet>
-  	<servlet-name>frontController</servlet-name>
-  	<display-name>frontController</display-name>
+  	<servlet-name>noticeBoardService</servlet-name>
+  	<display-name>noticeBoardService</display-name>
   	<description></description>
-  	<servlet-class>com.ggws.frontController.frontController</servlet-class>
+  	<servlet-class>com.ggws.controller.noticeBoardService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>noticeBoardDetailService</servlet-name>
+  	<display-name>noticeBoardDetailService</display-name>
+  	<description></description>
+  	<servlet-class>com.ggws.controller.noticeBoardDetailService</servlet-class>
+
   </servlet>
   <servlet-mapping>
   	<servlet-name>BoardWriteService</servlet-name>
@@ -30,8 +40,15 @@
   	<servlet-name>DeleteMember</servlet-name>
   	<url-pattern>/DeleteMember</url-pattern>
   </servlet-mapping>
+  
+
+
   <servlet-mapping>
-  	<servlet-name>frontController</servlet-name>
-  	<url-pattern>/frontController</url-pattern>
+  	<servlet-name>noticeBoardService</servlet-name>
+  	<url-pattern>/noticeBoardService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>noticeBoardDetailService</servlet-name>
+  	<url-pattern>/noticeBoardDetailService</url-pattern>
   </servlet-mapping>
 </web-app>

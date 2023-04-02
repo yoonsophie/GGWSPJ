@@ -33,7 +33,7 @@ public class LoginService implements Command {
 			System.out.println("로그인 성공");
 			 HttpSession session = request.getSession(); 
 			 session.setAttribute("login",resultVO);
-			result = "html5up-stellar/index.html?login_id"+id;
+			result = "html5up-stellar/index.jsp?login_id"+id;
 		} else {
 			System.out.println("로그인 실패");
 			result= "index.html";

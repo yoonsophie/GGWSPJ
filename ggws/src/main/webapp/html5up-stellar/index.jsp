@@ -56,7 +56,7 @@
 										</header>
 										<p>우리 동호회는 말이여 암튼 사람들이 친절허구 말이여 어쩌구 말이여 </p>
 										<ul class="actions">
-											<li><a href="#" class="button">들어가기</a></li>
+											<li><a href="../startbootstrap-sb-admin-2-gh-pages/index.jsp?login_id"+id class="button">들어가기</a></li>
 										</ul>
 									</div>
 									<span class="image"><img src="images/pic01.jpg" alt="" /></span>
@@ -66,13 +66,11 @@
 								<div class="spotlight">
 									<div class="content">
 										<header class="major">
-											<h2>Ipsum sed adipiscing</h2>
+											<h2>축구 2팀</h2>
 										</header>
-										<p>Sed lorem ipsum dolor sit amet nullam consequat feugiat consequat magna
-										adipiscing magna etiam amet veroeros. Lorem ipsum dolor tempus sit cursus.
-										Tempus nisl et nullam lorem ipsum dolor sit amet aliquam.</p>
+										<p>우리 동호회는 말이여 암튼 사람들이 친절허구 말이여 어쩌구 말이여 </p>
 										<ul class="actions">
-											<li><a href="generic.html" class="button">Learn More</a></li>
+											<li><a href="../startbootstrap-sb-admin-2-gh-pages/index.jsp?login_id"+id class="button">들어가기</a></li>
 										</ul>
 									</div>
 									<span class="image"><img src="images/pic01.jpg" alt="" /></span>
@@ -82,13 +80,11 @@
 								<div class="spotlight">
 									<div class="content">
 										<header class="major">
-											<h2>Ipsum sed adipiscing</h2>
+											<h2>축구 3팀</h2>
 										</header>
-										<p>Sed lorem ipsum dolor sit amet nullam consequat feugiat consequat magna
-										adipiscing magna etiam amet veroeros. Lorem ipsum dolor tempus sit cursus.
-										Tempus nisl et nullam lorem ipsum dolor sit amet aliquam.</p>
+										<p>우리 동호회는 말이여 암튼 사람들이 친절허구 말이여 어쩌구 말이여 </p>
 										<ul class="actions">
-											<li><a href="generic.html" class="button">Learn More</a></li>
+											<li><a href="../startbootstrap-sb-admin-2-gh-pages/index.jsp?login_id"+id class="button">들어가기</a></li>
 										</ul>
 									</div>
 									<span class="image"><img src="images/pic01.jpg" alt="" /></span>
@@ -98,13 +94,11 @@
 								<div class="spotlight">
 									<div class="content">
 										<header class="major">
-											<h2>Ipsum sed adipiscing</h2>
+											<h2>축구 4팀</h2>
 										</header>
-										<p>Sed lorem ipsum dolor sit amet nullam consequat feugiat consequat magna
-										adipiscing magna etiam amet veroeros. Lorem ipsum dolor tempus sit cursus.
-										Tempus nisl et nullam lorem ipsum dolor sit amet aliquam.</p>
+										<p>우리 동호회는 말이여 암튼 사람들이 친절허구 말이여 어쩌구 말이여 </p>
 										<ul class="actions">
-											<li><a href="generic.html" class="button">Learn More</a></li>
+											<li><a href="../startbootstrap-sb-admin-2-gh-pages/index.jsp?login_id"+id class="button">들어가기</a></li>
 										</ul>
 									</div>
 									<span class="image"><img src="images/pic01.jpg" alt="" /></span>
@@ -112,6 +106,8 @@
 							</section>
 
 
+						
+						
 						
 
 						
@@ -133,7 +129,7 @@
 							<h2>동호회를 직접 만들고싶으신가요?</h2>
 							<p>어쩌고 해서 어쩌구 저쩌고 어쩌고 해서 어쩌구 저쩌고 어쩌고 해서 어쩌구 저쩌고 어쩌고 해서 어쩌구 저쩌고 어쩌고 해서 어쩌구 저쩌고 어쩌고 해서 어쩌구 저쩌고 </p>
 							<ul class="actions">
-								<li><a href="generic.html" class="button">동호회 생성하기</a></li>
+								<li><a href="generic.jsp" class="button">동호회 생성하기</a></li>
 							</ul>
 						</section>
 						<section>

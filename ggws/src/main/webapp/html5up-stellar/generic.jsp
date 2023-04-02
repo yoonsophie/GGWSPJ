@@ -12,8 +12,12 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-	
 		
+		
+		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+	
+	
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -41,15 +45,71 @@
 								
 								</span>
 								</span>
-								<h2>동호회를 멋진말로 소개해보세요</h2>
-								<p style="width:80%; float:left"><input type="text" >
-								</p>
-								<button class="button_custom" style="margin-top:3px; margin-left:5px" >확인</button>
-								<br>
-								<br>
-								<br>
-								<span></span>
-								<h2>뭐 어쩌고를 선택</h2>
+							<section>
+								<div style="float:left">
+									<h2>동호회를 멋진말로 소개해보세요</h2>
+									<p style="width:80%; float:left"><input type="text" >
+									</p>
+									<button class="button_custom" style="margin-top:3px; margin-left:5px" >확인</button>
+									<br>
+									<br>
+									<br>
+									<span></span>
+									<h2>뭐 어쩌고를 선택</h2>
+								</div>
+							</section>
+							<section  style="margin-left:100px;">
+								<div>
+									<div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
+							<div class="form-wrap">
+								<div class="tab">
+									
+									<div class="tab-content">
+										<div class="tab-content-inner active" data-content="signup">
+											<h3 class="cursive-font">뭐 선택하는거</h3>
+											<form action="#">
+												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="activities">Persons</label>
+														<select name="#" id="activities" class="form-control">
+															<option value="">Persons</option>
+															<option value="">1</option>
+															<option value="">2</option>
+															<option value="">3</option>
+															<option value="">4</option>
+															<option value="">5+</option>
+														</select>
+													</div>
+												</div>
+												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="date-start">Date</label>
+														<input type="text" id="date" class="form-control">
+													</div>
+												</div>
+												<div class="row form-group">
+													<div class="col-md-12">
+														<label for="date-start">Time</label>
+														<input type="text" id="time" class="form-control">
+													</div>
+												</div>
+
+												<div class="row form-group">
+													<div class="col-md-12">
+														<input type="submit" class="btn btn-primary btn-block" value="Reserve Now">
+													</div>
+												</div>
+											</form>	
+										</div>
+
+										
+									</div>
+								</div>
+							</div>
+						</div>
+								
+								</div>
+								</section>
 							</section>
 							
 					</div>
@@ -57,10 +117,10 @@
 				<!-- Footer -->
 					<footer id="footer">
 						<section>
-							<h2>Aliquam sed mauris</h2>
-							<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
+							<h2>다른 동호회 보러가기</h2>
+							<p>아직 준비가 안되셨나요? 다른 동호회에 먼저 참여해보시는건 어떨까영? 머 이런거</p>
 							<ul class="actions">
-								<li><a href="#" class="button">Learn More</a></li>
+								<li><a href="index.html" class="button">돌아가기</a></li>
 							</ul>
 						</section>
 						<section>
@@ -83,6 +143,7 @@
 						</section>
 						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 					</footer>
+					
 
 			</div>
 
