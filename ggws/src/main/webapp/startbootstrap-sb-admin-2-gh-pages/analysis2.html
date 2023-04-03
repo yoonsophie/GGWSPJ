@@ -89,16 +89,20 @@
 			<li class="nav-item"><a class="nav-link" href="ballot.html">
 					<i class="fas fa-fw fa-check"></i> <span>투표</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="chat.html"> <i
-					class="fas fa-fw fa-comments"></i> <span>채팅</span>
+
+			<!-- Nav Item - Tables -->
+			<li class="nav-item"><a class="nav-link" href="chat.html">
+					<i class="fas fa-fw fa-comments"></i> <span>채팅</span>
 			</a></li>
+
+			<!-- Nav Item - calendar -->
 			<li class="nav-item"><a class="nav-link" href="matching.html">
 					<i class="fas fa-fw fa-handshake"></i> <span>매칭</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="analysis.html">
 					<i class="fas fa-fw fa-chart-bar"></i> <span>분석</span>
 			</a></li>
-			
+
 			<!-- Divider -->
 			<hr class="sidebar-divider d-none d-md-block" />
 
@@ -323,31 +327,91 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">채팅</h1>
-                    
-                            
-            <h1 class="h3 mb-1 text-gray-800">CHATTING</h1>
-            <p class="mb-4">채팅채팅 회원들이랑 채팅채팅</p>
+                    <h1 class="h3 mb-2 text-gray-800">경기분석</h1>
+                   		<div class="row">
 
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="card mb-4">
-                  <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">
-                      Overflow Hidden Utilty
-                    </h6>
-                  </div>
-                  <div class="card-body">
-                    Use <code>.o-hidden</code> to set the overflow property of
-                    any element to hidden.
-                  </div>
+                        <div class="col-xl-8 col-lg-7">
+
+                            <!-- Area Chart -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">전체 팀 경기수</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas id="myAreaChart"></canvas>
+                                    </div>
+                                    <hr>
+                                    Styling for the area chart can be found in the
+                                    <code>/js/demo/chart-area-demo.js</code> file.
+                                </div>
+                            </div>
+
+
+                            <!-- Bar Chart -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">전체 팀 승리횟수</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-bar">
+                                        <canvas id="myBarChart"></canvas>
+                                    </div>
+                                    <hr>
+                                    Styling for the bar chart can be found in the
+                                    <code>/js/demo/chart-bar-demo.js</code> file.
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Project -->
+                        <div class="col-xl-4 col-lg-6">
+                            <!-- Project Card Example -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">상대전적</h6>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="small font-weight-bold">A팀 <span
+                                            class="float-right">10전 2승 4무 4패</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 20%"
+                                            aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
+                                    </div>
+                                    <h4 class="small font-weight-bold">B팀 <span
+                                            class="float-right">10전 4승 4무 2패</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 40%"
+                                            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+                                    </div>
+                                    <h4 class="small font-weight-bold">C팀 <span
+                                            class="float-right">10전 6승 1무 3패</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar" role="progressbar" style="width: 60%"
+                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+                                    </div>
+                                    <h4 class="small font-weight-bold">D팀 <span
+                                            class="float-right">10전 8승 2무</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 80%"
+                                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                                    </div>
+                                    <h4 class="small font-weight-bold">E팀 <span
+                                            class="float-right">10전 전승</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 100%"
+                                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-              </div>
+                <!-- /.container-fluid -->
+
             </div>
-          </div>
-                    
-                   
-                   
             <!-- End of Main Content -->
 
             <!-- Footer -->

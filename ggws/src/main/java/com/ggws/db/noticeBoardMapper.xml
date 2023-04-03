@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.ggws.db.noticeBoardMapper">
+	<insert id="noticeBoardInsert" parameterType="noticeBoardVO">
+		insert into club_board (
+			   board_seq
+			 , club_seq
+			 , user_id
+			 , board_type
+			 , board_title
+			 , board_content
+			 , board_date
+			 , board_mod_date
+		)
+		
+		values (
+			   seq_board.nextval
+			 , #{ club_seq }
+			 , #{ user_id }
+			 , #{ board_type }
+			 , #{ board_title }
+			 , #{ board_content }
+			 , sysdate
+			 , sysdate )
+	</insert>
+
+	<select id="noticeBoardList" resultType="noticeBoardVO" parameterType="noticeBoardVO">
+		select 
+			   board_seq 
+			 , user_id 
+			 , board_title 
+			 , board_content 
+			 , board_date
+		  from club_board
+		 where club_seq = #{ club_seq }
+		   and board_type = #{ board_type }
+		 order by board_date desc
+	</select>
+
+	<select id="noticeBoardDetail" resultType="noticeBoardVO" parameterType="Bigdecimal">
+		select
+			   board_seq
+			 , user_id
+			 , board_title
+			 , board_content
+			 , board_date
+		  from club_board
+		 where board_seq = #{ board_seq }
+	</select>
+	
+</mapper>

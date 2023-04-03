@@ -1,5 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="kr">
 
 <head>
 
@@ -77,7 +81,7 @@
 				</div></li>
 
 			<!-- Nav Item - Charts -->
-			<li class="nav-item"><a class="nav-link" href="notification.html">
+			<li class="nav-item"><a class="nav-link" href="charts.html">
 					<i class="fas fa-fw fa-chart-area"></i> <span>공지사항</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="calendar.html">
@@ -98,7 +102,7 @@
 			<li class="nav-item"><a class="nav-link" href="analysis.html">
 					<i class="fas fa-fw fa-chart-bar"></i> <span>분석</span>
 			</a></li>
-			
+
 			<!-- Divider -->
 			<hr class="sidebar-divider d-none d-md-block" />
 
@@ -323,33 +327,13 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">채팅</h1>
-                    
-                            
-            <h1 class="h3 mb-1 text-gray-800">CHATTING</h1>
-            <p class="mb-4">채팅채팅 회원들이랑 채팅채팅</p>
-
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="card mb-4">
-                  <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">
-                      Overflow Hidden Utilty
-                    </h6>
-                  </div>
-                  <div class="card-body">
-                    Use <code>.o-hidden</code> to set the overflow property of
-                    any element to hidden.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-                    
-                   
-                   
+                    <h1 class="h3 mb-2 text-gray-800">공지사항</h1>
+      				<div class="row">
+      					<div class="col">
+      						<button type="button" class="btn btn-primary">공지사항</button>
+      					</div>
+      				</div>
             <!-- End of Main Content -->
-
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">

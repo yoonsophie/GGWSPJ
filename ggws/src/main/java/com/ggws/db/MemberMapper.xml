@@ -6,7 +6,12 @@
 	<select id="selectall" resultType="MemberVO">
 		select * from user_info
 	</select>
+	
 	<delete id="deletemember" parameterType="String">
 		delete form affiliated_club where user_id=#{id}
 	</delete>
+	
+	<select id="loginMember" resultType="MemberVO" parameterType="MemberVO">
+	  	select * from user_info where user_id=#{user_id} and user_pw=#{user_pw}
+    </select>
 </mapper>

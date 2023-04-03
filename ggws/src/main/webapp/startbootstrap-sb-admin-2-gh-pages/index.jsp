@@ -1,3 +1,6 @@
+<%@page import="com.ggws.model.MemberVO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +11,7 @@
 <meta name="description" content="" />
 <meta name="author" content="" />
 <meta charset='utf-8' />
-<!-- í™”ë©´ í•´ìƒë„ì— ë”°ë¼ ê¸€ì í¬ê¸° ëŒ€ì‘(ëª¨ë°”ì¼ ëŒ€ì‘) -->
+<!-- È­¸é ÇØ»óµµ¿¡ µû¶ó ±ÛÀÚ Å©±â ´ëÀÀ(¸ğ¹ÙÀÏ ´ëÀÀ) -->
 <meta name="viewport"
 	content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <!-- jquery CDN -->
@@ -19,17 +22,17 @@
 	rel='stylesheet' />
 <script
 	src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
-<!-- fullcalendar ì–¸ì–´ CDN -->
+<!-- fullcalendar ¾ğ¾î CDN -->
 <script
 	src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js'></script>
 <style>
-/* body ìŠ¤íƒ€ì¼ */
+/* body ½ºÅ¸ÀÏ */
 /* html, body {
     overflow: hidden;
     font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
     font-size: 14px;
   } */
-/* ìº˜ë¦°ë” ìœ„ì˜ í•´ë” ìŠ¤íƒ€ì¼(ë‚ ì§œê°€ ìˆëŠ” ë¶€ë¶„) */
+/* Ä¶¸°´õ À§ÀÇ ÇØ´õ ½ºÅ¸ÀÏ(³¯Â¥°¡ ÀÖ´Â ºÎºĞ) */
 .fc-header-toolbar {
 	font-size: 13px;
 	padding-top: 1em;
@@ -38,7 +41,7 @@
 }
 </style>
 
-<title>ìŠ¤ë™ìœ„ì—…ê´€ì‹œ</title>
+<title>½ºµ¿À§¾÷°ü½Ã</title>
 
 <!-- Custom fonts for this template-->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
@@ -52,10 +55,95 @@
 </head>
 
 <body id="page-top">
+		<%
+				MemberVO login_vo = (MemberVO) session.getAttribute("login_vo");
+				if (login_vo != null) {
+					System.out.print(login_vo.getUser_id());
+				}
+			%>
 	<!-- Page Wrapper -->
 	<div id="wrapper">
 		<!-- Sidebar -->
-		
+		<ul
+			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+			id="accordionSidebar">
+			<!-- Sidebar - Brand µ¿È£È¸¸í-->
+			<a
+				class="sidebar-brand d-flex align-items-center justify-content-center"
+				href="index.html">
+				<div class="sidebar-brand-icon rotate-n-15">
+					<i class="fas fa-laugh-wink"></i>
+				</div>
+				<div class="sidebar-brand-text mx-3">µ¿È£È¸¸í</div>
+			</a>
+
+			<!-- Divider -->
+			<hr class="sidebar-divider my-0" />
+
+			<!-- Nav Item - Dashboard -->
+			<li class="nav-item active"><a class="nav-link"
+				href="index.html"> <i class="fas fa-fw fa-home"></i> <span>È¨À¸·Î</span></a>
+			</li>
+
+			<!-- Divider -->
+			<hr class="sidebar-divider" />
+
+			<!-- Heading ¸Ş´º-->
+			<div class="sidebar-heading">¸Ş´º</div>
+
+			<!-- Nav Item - Pages Collapse Menu -->
+			<li class="nav-item"><a class="nav-link collapsed" href="#"
+				data-toggle="collapse" data-target="#collapsePages"
+				aria-expanded="true" aria-controls="collapsePages">
+					<i class="fas fa-fw fa-folder"></i> <span>Pages</span>
+			</a>
+				<div id="collapsePages" class="collapse"
+					aria-labelledby="headingPages" data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<h6 class="collapse-header">Login Screens:</h6>
+						<a class="collapse-item" href="login.html">Login</a> <a
+							class="collapse-item" href="register.html">Register</a> <a
+							class="collapse-item" href="forgot-password.html">Forgot
+							Password</a>
+						<div class="collapse-divider"></div>
+						<h6 class="collapse-header">Other Pages:</h6>
+						<a class="collapse-item" href="404.html">404 Page</a> <a
+							class="collapse-item" href="blank.html">Blank Page</a>
+					</div>
+				</div></li>
+
+			<!-- Nav Item - Charts -->
+			<li class="nav-item"><a class="nav-link" href="notification.html">
+					<i class="fas fa-fw fa-star"></i> <span>°øÁö»çÇ×</span>
+			</a></li>
+			<li class="nav-item"><a class="nav-link" href="calendar.html">
+					<i class="fas fa-fw fa-calendar"></i> <span>´Ş·Â</span>
+			</a></li>
+			<li class="nav-item"><a class="nav-link" href="board.html">
+					<i class="fas fa-fw fa-list"></i> <span>°Ô½ÃÆÇ</span>
+			</a></li>
+			<li class="nav-item"><a class="nav-link" href="ballot.html">
+					<i class="fas fa-fw fa-check"></i> <span>ÅõÇ¥</span>
+			</a></li>
+			<li class="nav-item"><a class="nav-link" href="chat.html"> <i
+					class="fas fa-fw fa-comments"></i> <span>Ã¤ÆÃ</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="matching.html">
+					<i class="fas fa-fw fa-handshake"></i> <span>¸ÅÄª</span>
+			</a></li>
+			<li class="nav-item"><a class="nav-link" href="analysis.html"> <i
+					class="fas fa-fw fa-chart-bar"></i> <span>ºĞ¼®</span></a></li>
+
+
+			<!-- Divider -->
+			<hr class="sidebar-divider d-none d-md-block" />
+
+			<!-- Sidebar Toggler (Sidebar) -->
+			<div class="text-center d-none d-md-inline">
+				<button class="rounded-circle border-0" id="sidebarToggle"></button>
+			</div>
+
+			
+		</ul>
 		<!-- End of Sidebar -->
 
 		<!-- Content Wrapper -->
@@ -92,8 +180,7 @@
 						<li class="nav-item dropdown no-arrow d-sm-none"><a
 							class="nav-link dropdown-toggle" href="#" id="searchDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"> <i
-								class="fas fa-search fa-fw"></i>
+							aria-expanded="false"> <i class="fas fa-search fa-fw"></i>
 						</a> <!-- Dropdown - Messages -->
 							<div
 								class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
@@ -117,9 +204,8 @@
 						<li class="nav-item dropdown no-arrow mx-1"><a
 							class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"> <i
-								class="fas fa-bell fa-fw"></i> <!-- Counter - Alerts --> <span
-								class="badge badge-danger badge-counter">3+</span>
+							aria-expanded="false"> <i class="fas fa-bell fa-fw"></i> <!-- Counter - Alerts -->
+								<span class="badge badge-danger badge-counter">3+</span>
 						</a> <!-- Dropdown - Alerts -->
 							<div
 								class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -133,8 +219,8 @@
 									</div>
 									<div>
 										<div class="small text-gray-500">December 12, 2019</div>
-										<span class="font-weight-bold">A
-											new monthly report is ready to download!</span>
+										<span class="font-weight-bold">A new monthly report is
+											ready to download!</span>
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="mr-3">
@@ -165,8 +251,8 @@
 						<li class="nav-item dropdown no-arrow mx-1"><a
 							class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"> <i
-								class="fas fa-envelope fa-fw"></i> <!-- Counter - Messages --> <span
+							aria-expanded="false"> <i class="fas fa-envelope fa-fw"></i>
+								<!-- Counter - Messages --> <span
 								class="badge badge-danger badge-counter">7</span>
 						</a> <!-- Dropdown - Messages -->
 							<div
@@ -182,7 +268,7 @@
 									<div class="font-weight-bold">
 										<div class="text-truncate">Hi there! I am wondering if
 											you can help me with a problem I've been having.</div>
-										<div class="small text-gray-500">Emily Fowler Â· 58m</div>
+										<div class="small text-gray-500">Emily Fowler ¡¤ 58m</div>
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="dropdown-list-image mr-3">
@@ -193,7 +279,7 @@
 									<div>
 										<div class="text-truncate">I have the photos that you
 											ordered last month, how would you like them sent to you?</div>
-										<div class="small text-gray-500">Jae Chun Â· 1d</div>
+										<div class="small text-gray-500">Jae Chun ¡¤ 1d</div>
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="dropdown-list-image mr-3">
@@ -205,7 +291,7 @@
 										<div class="text-truncate">Last month's report looks
 											great, I am very happy with the progress so far, keep up the
 											good work!</div>
-										<div class="small text-gray-500">Morgan Alvarez Â· 2d</div>
+										<div class="small text-gray-500">Morgan Alvarez ¡¤ 2d</div>
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="dropdown-list-image mr-3">
@@ -217,7 +303,7 @@
 										<div class="text-truncate">Am I a good boy? The reason I
 											ask is because someone told me that people say this to all
 											dogs, even if they aren't good...</div>
-										<div class="small text-gray-500">Chicken the Dog Â· 2w</div>
+										<div class="small text-gray-500">Chicken the Dog ¡¤ 2w</div>
 									</div>
 								</a> <a class="dropdown-item text-center small text-gray-500"
 									href="#">Read More Messages</a>
@@ -225,13 +311,17 @@
 
 						<div class="topbar-divider d-none d-sm-block"></div>
 
+						<%
+							String login_id = request.getParameter("login_id");
+						%>
 						<!-- Nav Item - User Information -->
 						<li class="nav-item dropdown no-arrow"><a
 							class="nav-link dropdown-toggle" href="#" id="userDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false"> <span
-								class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas
-									McGee</span> <img class="img-profile rounded-circle"
+								class="mr-2 d-none d-lg-inline text-gray-600 small">
+								<%=login_vo.getUser_nick() %>
+								</span> <img class="img-profile rounded-circle"
 								src="img/undraw_profile.svg" />
 						</a> <!-- Dropdown - User Information -->
 							<div
@@ -268,19 +358,19 @@
 					<!-- Content Row -->
 					<div class="row">
 						<!-- Earnings (Monthly) Card Example -->
-						<div class="col-xl-3 col-md-6 mb-4">
+						<div class="col-md-6 mb-4">
 							<div class="card border-left-primary shadow h-100 py-2">
 								<div class="card-body">
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
 											<div
 												class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-												Earnings (Monthly)</div>
+												°øÁö»çÇ×</div>
 											<div class="h5 mb-0 font-weight-bold text-gray-800">
-												$40,000</div>
+												¿À´ÃºÎÅÍ »õ·Î¿î ¾îÂ¼°íÀúÂ¼°í°¡ ¾îÂ¼°íµË´Ï´Ù</div>
 										</div>
 										<div class="col-auto">
-											<i class="fas fa-calendar fa-2x text-gray-300"></i>
+											<i class="fas fa-check fa-2x text-gray-300"></i>
 										</div>
 									</div>
 								</div>
@@ -288,99 +378,119 @@
 						</div>
 
 						<!-- Earnings (Monthly) Card Example -->
-						<div class="col-xl-3 col-md-6 mb-4">
+						<div class="col-md-6 mb-4">
 							<div class="card border-left-success shadow h-100 py-2">
 								<div class="card-body">
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
 											<div
 												class="text-xs font-weight-bold text-success text-uppercase mb-1">
-												Earnings (Annual)</div>
+												¿©±â¿¡ ¹» ¶ç¿ï±õ¼Í</div>
 											<div class="h5 mb-0 font-weight-bold text-gray-800">
-												$215,000</div>
+												¾îÂ¼±¸Àú¤Ã¤¹±¸</div>
 										</div>
 										<div class="col-auto">
-											<i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+											<i class="fas fa-envelope fa-2x text-gray-300"></i>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 
-						<!-- Earnings (Monthly) Card Example -->
-						<div class="col-xl-3 col-md-6 mb-4">
-							<div class="card border-left-info shadow h-100 py-2">
-								<div class="card-body">
-									<div class="row no-gutters align-items-center">
-										<div class="col mr-2">
-											<div
-												class="text-xs font-weight-bold text-info text-uppercase mb-1">
-												Tasks</div>
-											<div class="row no-gutters align-items-center">
-												<div class="col-auto">
-													<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-														50%</div>
-												</div>
-												<div class="col">
-													<div class="progress progress-sm mr-2">
-														<div class="progress-bar bg-info" role="progressbar"
-															style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-															aria-valuemax="100"></div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-auto">
-											<i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Pending Requests Card Example -->
-						<div class="col-xl-3 col-md-6 mb-4">
-							<div class="card border-left-warning shadow h-100 py-2">
-								<div class="card-body">
-									<div class="row no-gutters align-items-center">
-										<div class="col mr-2">
-											<div
-												class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-												Pending Requests</div>
-											<div class="h5 mb-0 font-weight-bold text-gray-800">18
-											</div>
-										</div>
-										<div class="col-auto">
-											<i class="fas fa-comments fa-2x text-gray-300"></i>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+					
 					</div>
 
 					<!-- Content Row -->
 
 					<div class="row">
-						<a href="index.html"><div class="col-xl-3 col-md-6 mb-4">
-							<div class="card border-bottom-primary shadow h-100 py-2">
-								<div class="card-body">
-									<div class="row no-gutters align-items-center">
-										<div class="col mr-2">
-											<div
-												class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-												Pending Requests</div>
-											<div class="h5 mb-0 font-weight-bold text-gray-800">18
-											</div>
-										</div>
-										<div class="col-auto">
-											<i class="fas fa-comments fa-2x text-gray-300"></i>
-										</div>
-									</div>
+						<!-- Area Chart -->
+						<div class="col-xl-12">
+							<div class="card shadow">
+								<!-- Card Header - Dropdown -->
+								<div
+									class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+									<h6 class="m-0 font-weight-bold text-primary">´Ş·Â</h6>
+
 								</div>
-							</div></a>
+								<!-- Card Body -->
+								<div class="card-body">
+									<!-- ´Ş·ÂºÎºĞ -->
+									<div id='calendar-container'>
+										<div id='calendar'></div>
+									</div>
+								
+									<script>
+										 
+										(function() {
+											$(function() {
+												// calendar element Ãëµæ
+												var calendarEl = $('#calendar')[0];
+												// full-calendar »ı¼ºÇÏ±â
+												var calendar = new FullCalendar.Calendar(
+														calendarEl,
+														{
+															height : '700px', // calendar ³ôÀÌ ¼³Á¤
+															expandRows : true, // È­¸é¿¡ ¸Â°Ô ³ôÀÌ Àç¼³Á¤
+															expandCols : true,
+															slotMinTime : '08:00', // Day Ä¶¸°´õ¿¡¼­ ½ÃÀÛ ½Ã°£
+															slotMaxTime : '24:00', // Day Ä¶¸°´õ¿¡¼­ Á¾·á ½Ã°£
+															// ÇØ´õ¿¡ Ç¥½ÃÇÒ Åø¹Ù
+															headerToolbar : {
+																left : 'prev,next today',
+																center : 'title',
+																right : 'dayGridMonth,timeGridWeek,timeGridDay listWeek'
+															},
+															initialView : 'dayGridMonth', // ÃÊ±â ·Îµå µÉ¶§ º¸ÀÌ´Â Ä¶¸°´õ È­¸é(±âº» ¼³Á¤: ´Ş)
+															//initialDate: '2021-07-15', // ÃÊ±â ³¯Â¥ ¼³Á¤ (¼³Á¤ÇÏÁö ¾ÊÀ¸¸é ¿À´Ã ³¯Â¥°¡ º¸ÀÎ´Ù.)
+															navLinks : true, // ³¯Â¥¸¦ ¼±ÅÃÇÏ¸é Day Ä¶¸°´õ³ª Week Ä¶¸°´õ·Î ¸µÅ©
+															//editable: true, // ¼öÁ¤ °¡´É?
+															//selectable: true, // ´Ş·Â ÀÏÀÚ µå·¡±× ¼³Á¤°¡´É
+															nowIndicator : true, // ÇöÀç ½Ã°£ ¸¶Å©
+															dayMaxEvents : true, // ÀÌº¥Æ®°¡ ¿À¹öµÇ¸é ³ôÀÌ Á¦ÇÑ (+ ¸î °³½ÄÀ¸·Î Ç¥Çö)
+															locale : 'ko', // ÇÑ±¹¾î ¼³Á¤
+															eventAdd : function(
+																	obj) { // ÀÌº¥Æ®°¡ Ãß°¡µÇ¸é ¹ß»ıÇÏ´Â ÀÌº¥Æ®
+																console
+																		.log(obj);
+															},
+															eventChange : function(
+																	obj) { // ÀÌº¥Æ®°¡ ¼öÁ¤µÇ¸é ¹ß»ıÇÏ´Â ÀÌº¥Æ®
+																console
+																		.log(obj);
+															},
+															eventRemove : function(
+																	obj) { // ÀÌº¥Æ®°¡ »èÁ¦µÇ¸é ¹ß»ıÇÏ´Â ÀÌº¥Æ®
+																console
+																		.log(obj);
+															},
+															select : function(
+																	arg) { // Ä¶¸°´õ¿¡¼­ µå·¡±×·Î ÀÌº¥Æ®¸¦ »ı¼ºÇÒ ¼ö ÀÖ´Ù.
+																var title = prompt('Event Title:');
+																if (title) {
+																	calendar
+																			.addEvent({
+																				title : title,
+																				start : arg.start,
+																				end : arg.end,
+																				allDay : arg.allDay
+																			})
+																}
+																calendar
+																		.unselect()
+															},
+															
+														});
+												// Ä¶¸°´õ ·£´õ¸µ
+												calendar.render();
+											});
+										})();
+									</script>
+
+
+
+								</div>
+							</div>
 						</div>
-						
 					</div>
 				</div>
 				<!-- /.container-fluid -->
@@ -402,7 +512,89 @@
 
 			<!-- End of Footer -->
 		</div>
-		
+		<ul
+			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+			id="accordionSidebar">
+			<!-- Sidebar - Brand µ¿È£È¸¸í-->
+			
+
+			<!-- Divider -->
+			<hr class="sidebar-divider my-0" />
+
+			<!-- Nav Item - Dashboard -->
+			<li class="nav-item active"><a class="nav-link"
+				href="index.html"> <i class="fas fa-fw fa-crown"></i> <span>È¸Àå¾ÆÀÌµğ</span></a>
+			</li>
+
+			<!-- Nav Item - Pages Collapse Menu -->
+			<!-- <li class="nav-item"><a class="nav-link collapsed" href="#"
+				data-toggle="collapse" data-target="#collapseTwo"
+				aria-expanded="true" aria-controls="collapseTwo"> <i
+					class="fas fa-fw fa-cog"></i> <span>¼³Á¤</span>
+			</a>
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+					data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<h6 class="collapse-header">Custom Components:</h6>
+						<a class="collapse-item" href="buttons.html">Buttons</a> <a
+							class="collapse-item" href="cards.html">Cards</a>
+					</div>
+				</div></li>
+
+			Nav Item - Utilities Collapse Menu
+			<li class="nav-item"><a class="nav-link collapsed" href="#"
+				data-toggle="collapse" data-target="#collapseUtilities"
+				aria-expanded="true" aria-controls="collapseUtilities">
+					<i class="fas fa-fw fa-wrench"></i> <span>Ã¤ÆÃ¸ñ·Ï?</span>
+			</a>
+				<div id="collapseUtilities" class="collapse"
+					aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<h6 class="collapse-header">Custom Utilities:</h6>
+						<a class="collapse-item" href="utilities-color.html">Colors</a> <a
+							class="collapse-item" href="utilities-border.html">Borders</a> <a
+							class="collapse-item" href="utilities-animation.html">Animations</a>
+						<a class="collapse-item" href="utilities-other.html">Other</a>
+					</div>
+				</div></li> -->
+
+			<!-- Divider -->
+			<hr class="sidebar-divider" />
+
+			<!-- Heading -->
+			<div class="sidebar-heading">È¸¿ø¸ñ·Ï</div>
+
+			<!-- Nav Item - Charts -->
+			<li class="nav-item"><a class="nav-link" href="#">
+					<i class="fas fa-fw fa-hashtag"></i> <span>±è¾Æ¹«°³</span>
+			</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">
+					<i class="fas fa-fw fa-hashtag"></i> <span>±è¾Æ¹«°³</span>
+			</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">
+					<i class="fas fa-fw fa-hashtag"></i> <span>±è¾Æ¹«°³</span>
+			</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">
+					<i class="fas fa-fw fa-hashtag"></i> <span>±è¾Æ¹«°³</span>
+			</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">
+					<i class="fas fa-fw fa-hashtag"></i> <span>±è¾Æ¹«°³</span>
+			</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">
+					<i class="fas fa-fw fa-hashtag"></i> <span>±è¾Æ¹«°³</span>
+			</a></li>
+
+
+			<!-- Divider -->
+			<hr class="sidebar-divider d-none d-md-block" />
+
+			<!-- Sidebar Toggler (Sidebar) -->
+			<!-- <div class="text-center d-none d-md-inline">
+				<button class="rounded-circle border-0" id="sidebarToggle"></button>
+			</div> -->
+
+			
+		</ul>
 		<!-- End of Content Wrapper -->
 	</div>
 	<!-- End of Page Wrapper -->
@@ -421,7 +613,7 @@
 					<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
 					<button class="close" type="button" data-dismiss="modal"
 						aria-label="Close">
-						<span aria-hidden="true">Ã—</span>
+						<span aria-hidden="true">¡¿</span>
 					</button>
 				</div>
 				<div class="modal-body">Select "Logout" below if you are ready

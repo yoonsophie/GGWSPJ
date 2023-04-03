@@ -6,13 +6,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.ggws.db.calendarMapper">
 	
 	<insert id="insertCalendar" parameterType="calendarVO">
-        insert into schedule_info
-        values(seq_schd.nextval, 1, 'test', 'type', #{title}, 'content', #{start}, #{end}, sysdate)
+        insert into calendar values(#{title},#{startday},#{endday}, 'true')
      </insert>
      
-     <select id="selectCalendar" resultType="calendarVO">
-       	select * from schedule_info
-     	
+     <select id="showCalendar" resultType="calendarVO">
+       	select * from calendar
      </select>
 	
 </mapper>

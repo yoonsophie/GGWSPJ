@@ -80,7 +80,7 @@
 				</div></li>
 
 			<!-- Nav Item - Charts -->
-			<li class="nav-item"><a class="nav-link" href="charts.html">
+			<li class="nav-item"><a class="nav-link" href="notification.html">
 					<i class="fas fa-fw fa-chart-area"></i> <span>공지사항</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="calendar.html">
