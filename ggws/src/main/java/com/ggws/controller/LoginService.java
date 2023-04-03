@@ -31,9 +31,9 @@ public class LoginService implements Command {
 		
 		if(resultVO != null) {
 			System.out.println("로그인 성공");
-			 HttpSession session = request.getSession(); 
-			 session.setAttribute("login",resultVO);
-			result = "html5up-stellar/index.jsp?login_id"+id;
+			HttpSession session =  request.getSession();
+			session.setAttribute("login_vo", resultVO);
+			result = "html5up-stellar/football.jsp?user_id"+id;
 		} else {
 			System.out.println("로그인 실패");
 			result= "index.html";

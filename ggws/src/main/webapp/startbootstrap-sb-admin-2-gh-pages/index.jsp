@@ -55,7 +55,12 @@
 </head>
 
 <body id="page-top">
-	
+		<%
+				MemberVO login_vo = (MemberVO) session.getAttribute("login_vo");
+				if (login_vo != null) {
+					System.out.print(login_vo.getUser_id());
+				}
+			%>
 	<!-- Page Wrapper -->
 	<div id="wrapper">
 		<!-- Sidebar -->
@@ -108,7 +113,7 @@
 				</div></li>
 
 			<!-- Nav Item - Charts -->
-			<li class="nav-item"><a class="nav-link" href="charts.html">
+			<li class="nav-item"><a class="nav-link" href="notification.html">
 					<i class="fas fa-fw fa-star"></i> <span>공지사항</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="calendar.html">
@@ -315,8 +320,7 @@
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false"> <span
 								class="mr-2 d-none d-lg-inline text-gray-600 small">
-								<%-- <%=login_id %> --%>
-								아무개
+								<%=login_vo.getUser_nick() %>
 								</span> <img class="img-profile rounded-circle"
 								src="img/undraw_profile.svg" />
 						</a> <!-- Dropdown - User Information -->
@@ -400,7 +404,7 @@
 
 					<div class="row">
 						<!-- Area Chart -->
-						<div class="col-xl-10">
+						<div class="col-xl-12">
 							<div class="card shadow">
 								<!-- Card Header - Dropdown -->
 								<div
@@ -409,34 +413,13 @@
 
 								</div>
 								<!-- Card Body -->
-								<div class="card-body" >
+								<div class="card-body">
 									<!-- 달력부분 -->
 									<div id='calendar-container'>
 										<div id='calendar'></div>
 									</div>
 								
 									<script>
-									/*  $.ajax({
-										  url: "",
-										  type: "POST",
-										  data: {'year' : '2023'},
-										  dataType: "JSON",
-										  traditional: true,
-										  async: false, //동기
-										  success : function(data, status, xhr){
-											  //alert(xhr.status);
-											  $.each(data, function(key, value){
-												    sch = value; //스케줄 저장
-												    
-											  });
-										  },
-										  error : function(xhr, status, error){
-											    //alert(xhr.responseText);
-											  alert('데이터 로딩 실패<br>새로고침 해주세요');
-										  }
-										});
-										//
- */
 										 
 										(function() {
 											$(function() {
@@ -495,62 +478,7 @@
 																calendar
 																		.unselect()
 															},
-															// 이벤트 
-															/* events : [
-																	{
-																		title : 'All Day Event',
-																		start : '2023-03-01',
-																	},
-																	{
-																		title : 'Long Event',
-																		start : '2023-03-07',
-																		end : '2023-03-10'
-																	},
-																	{
-																		groupId : 999,
-																		title : 'Repeating Event',
-																		start : '2023-03-09T16:00:00'
-																	},
-																	{
-																		groupId : 999,
-																		title : 'Repeating Event',
-																		start : '2023-03-16T16:00:00'
-																	},
-																	{
-																		title : 'Conference',
-																		start : '2023-03-11',
-																		end : '2023-03-13'
-																	},
-																	{
-																		title : 'Meeting',
-																		start : '2023-03-12T10:30:00',
-																		end : '2023-03-12T12:30:00'
-																	},
-																	{
-																		title : 'Lunch',
-																		start : '2023-03-12T12:00:00'
-																	},
-																	{
-																		title : 'Meeting',
-																		start : '2023-03-12T14:30:00'
-																	},
-																	{
-																		title : 'Happy Hour',
-																		start : '2023-03-12T17:30:00'
-																	},
-																	{
-																		title : 'Dinner',
-																		start : '2023-03-12T20:00:00'
-																	},
-																	{
-																		title : 'Birthday Party',
-																		start : '2023-03-13T07:00:00'
-																	},
-																	{
-																		title : 'Click for Google',
-																		url : 'http://google.com/', // 클릭시 해당 url로 이동
-																		start : '2023-03-28'
-																	} ] */
+															
 														});
 												// 캘린더 랜더링
 												calendar.render();

@@ -4,6 +4,7 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+ 
   <servlet>
   	<servlet-name>BoardWriteService</servlet-name>
   	<display-name>BoardWriteService</display-name>
@@ -17,7 +18,20 @@
   	<description></description>
   	<servlet-class>com.ggws.controller.DeleteMember</servlet-class>
   </servlet>
+  
 
+  <servlet>
+  	<servlet-name>noticeBoardService</servlet-name>
+  	<display-name>noticeBoardService</display-name>
+  	<description></description>
+  	<servlet-class>com.ggws.controller.noticeBoardService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>noticeBoardDetailService</servlet-name>
+  	<display-name>noticeBoardDetailService</display-name>
+  	<description></description>
+  	<servlet-class>com.ggws.controller.noticeBoardDetailService</servlet-class>
+</servlet>
   <servlet>
   	<servlet-name>noticeBoardWriteService</servlet-name>
   	<display-name>noticeBoardWriteService</display-name>
@@ -30,7 +44,14 @@
   	<description></description>
   	<servlet-class>com.ggws.controller.noticeBoardService</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>noticeBoardDetailService</servlet-name>
+  	<display-name>noticeBoardDetailService</display-name>
+  	<description></description>
+  	<servlet-class>com.ggws.controller.noticeBoardDetailService</servlet-class>
+  </servlet>
  
+  
   <servlet-mapping>
   	<servlet-name>BoardWriteService</servlet-name>
   	<url-pattern>/BoardWriteService</url-pattern>
@@ -39,6 +60,8 @@
   	<servlet-name>DeleteMember</servlet-name>
   	<url-pattern>/DeleteMember</url-pattern>
   </servlet-mapping>
+  
+
 
   <servlet-mapping>
   	<servlet-name>noticeBoardWriteService</servlet-name>
@@ -52,4 +75,8 @@
   	<servlet-name>noticeBoardDetailService</servlet-name>
   	<url-pattern>/noticeBoardDetailService</url-pattern>
   </servlet-mapping>
+
+ 
+  
 </web-app>
+
