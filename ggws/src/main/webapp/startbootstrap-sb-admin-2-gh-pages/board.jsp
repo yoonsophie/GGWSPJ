@@ -66,7 +66,7 @@
 			
 
 			<!-- Nav Item - Charts -->
-			<li class="nav-item"><a class="nav-link" href="charts.jsp">
+			<li class="nav-item"><a class="nav-link" href="notification.jsp">
 					<i class="fas fa-fw fa-chart-area"></i> <span>공지사항</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="calendar.jsp">
