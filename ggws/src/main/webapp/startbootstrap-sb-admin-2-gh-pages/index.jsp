@@ -132,10 +132,7 @@
 			<li class="nav-item"><a class="nav-link" href="calendar.jsp">
 					<i class="fas fa-fw fa-calendar"></i> <span>달력</span>
 			</a></li>
-<<<<<<< HEAD
-			
-=======
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
+
 			<li class="nav-item"><a class="nav-link" href="board.jsp">
 					<i class="fas fa-fw fa-list"></i> <span>게시판</span>
 			</a></li>
@@ -144,10 +141,10 @@
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="chatTeam.jsp"> <i
 					class="fas fa-fw fa-comments"></i> <span>채팅</span></a></li>
-			<li class="nav-item"><a class="nav-link" href="matching.html">
+			<li class="nav-item"><a class="nav-link" href="matching.jsp">
 					<i class="fas fa-fw fa-handshake"></i> <span>매칭</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="analysis.html"> <i
+			<li class="nav-item"><a class="nav-link" href="analysis.jsp"> <i
 					class="fas fa-fw fa-chart-bar"></i> <span>분석</span></a></li>
 			<li class="nav-item"><a class="nav-link" href="memberMng.jsp"> <i
 					class="fas fa-fw fa-ghost"></i> <span>회원관리</span></a></li>
@@ -345,9 +342,9 @@
 								<!-- 프로필 사진 프사 -->
 								</span> 
 								<% if(psa==null){%>
-									<img class='img-profile rounded-circle' alt='이미지' src='img/regi_pic.png' >
+									<img class='img-profile rounded-circle'  src='img/regi_pic.png' >
 								<%}else{ %>
-									<img class='img-profile rounded-circle' alt='이미지' src='./profilePic/<%=psa%>'>
+									<img class='img-profile rounded-circle'  src='./profilePic/<%=psa%>'>
 								<%} %> 
 						</a> <!-- Dropdown - User Information -->
 							<div
@@ -596,9 +593,9 @@
 							aria-expanded="false">
 							<% String psa2 = pdao.getPsa(u.getUser_id());
 								 if(psa2==null){%>
-									<img class='img-profile rounded-circle' alt='이미지' src='img/regi_pic.png'>
+									<img class='img-profile rounded-circle' src='img/regi_pic.png'>
 							<%}else{ %>
-									<img class='img-profile rounded-circle' alt='이미지' src='./profilePic/<%=psa2%>'>
+									<img class='img-profile rounded-circle' src='./profilePic/<%=psa2%>'>
 							<%} %> 
 						<span> <%=u.getUser_nick() %> </span>
 				        </a>

@@ -56,9 +56,9 @@
 					<!-- Nav -->
 					<nav id="nav" class="w-font">
 						<ul>
-							<li><a href="football.jsp">绵备</a></li>
+							<li><a href="football.jsp" class="active">绵备</a></li>
 							<li><a href="baseball.jsp">具备</a></li>
-							<li><a href="basketball.jsp" class="active">丑备</a></li>
+							<li><a href="basketball.jsp">丑备</a></li>
 							<li><a href="volleyball.jsp">硅备</a></li>
 						</ul>
 					</nav>

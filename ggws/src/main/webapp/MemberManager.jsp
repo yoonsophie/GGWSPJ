@@ -1,4 +1,3 @@
-<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.ggws.model.MemberVO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.ggws.model.MemberDAO"%>

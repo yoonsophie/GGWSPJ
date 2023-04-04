@@ -25,10 +25,33 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    
+    <style >
+    			@font-face {
+    font-family: 'ARCHISCULPTURE_v200';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2303@1.0/ARCHISCULPTURE_v200.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+     @font-face {
+    font-family: 'Dovemayo_gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+        .w-font {
+            font-family: 'Dovemayo_gothic', sans-serif; /* 웹 폰트 지정 */
+        }
+        .w-title{
+        	 font-family: 'ARCHISCULPTURE_v200', sans-serif;
+        }
+       
+    </style>
 
 </head>
 
-<body id="page-top">
+<body id="page-top" class="w-font">
 		<%
 				MemberVO login_vo = (MemberVO) session.getAttribute("login_vo");
 				if (login_vo != null) {

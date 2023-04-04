@@ -105,7 +105,7 @@
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="chatTeam.jsp"> <i
 					class="fas fa-fw fa-comments"></i> <span>채팅</span></a></li>
-			<li class="nav-item"><a class="nav-link" href="matching.jps">
+			<li class="nav-item"><a class="nav-link" href="matching.jsp">
 					<i class="fas fa-fw fa-handshake"></i> <span>매칭</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="analysis.jsp"> <i

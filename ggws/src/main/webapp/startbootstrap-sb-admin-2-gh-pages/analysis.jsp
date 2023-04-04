@@ -27,10 +27,33 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    
+    <style>
+    			@font-face {
+    font-family: 'ARCHISCULPTURE_v200';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2303@1.0/ARCHISCULPTURE_v200.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+     @font-face {
+    font-family: 'Dovemayo_gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+        .w-font {
+            font-family: 'Dovemayo_gothic', sans-serif; /* 웹 폰트 지정 */
+        }
+        .w-title{
+        	 font-family: 'ARCHISCULPTURE_v200', sans-serif;
+        }
+       
+    </style>
 
 </head>
 
-<body id="page-top">
+<body id="page-top" class="w-font">
 			<%
 				MemberVO login_vo = (MemberVO) session.getAttribute("login_vo");
 				if (login_vo != null) {
@@ -491,52 +514,6 @@
     let win4 = parseInt(team4_win);
     </script>
 
-<<<<<<< HEAD
-
-=======
-					<!-- End of Main Content -->
-
-					<!-- Footer -->
-					<footer class="sticky-footer bg-white">
-						<div class="container my-auto">
-							<div class="copyright text-center my-auto">
-								<span>Copyright &copy; Your Website 2020</span>
-							</div>
-						</div>
-					</footer>
-					<!-- End of Footer -->
-
-				</div>
-				<!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">��</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.jsp">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
