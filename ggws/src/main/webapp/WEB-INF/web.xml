@@ -55,6 +55,19 @@
   	<display-name>test</display-name>
   	<description></description>
   	<servlet-class>com.ggws.controller.test</servlet-class>
+  	</servlet>
+  	
+  	<servlet>
+  	<servlet-name>ballotService</servlet-name>
+  	<display-name>ballotService</display-name>
+  	<description></description>
+  	<servlet-class>com.ggws.controller.ballotService</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ballotDetailService</servlet-name>
+  	<display-name>ballotDetailService</display-name>
+  	<description></description>
+  	<servlet-class>com.ggws.controller.ballotDetailService</servlet-class>
   </servlet>
  
   
@@ -81,9 +94,15 @@
   	<servlet-name>noticeBoardDetailService</servlet-name>
   	<url-pattern>/noticeBoardDetailService</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
+<!--   <servlet-mapping>
   	<servlet-name>test</servlet-name>
   	<url-pattern>/test</url-pattern>
+  	<servlet-name>ballotService</servlet-name>
+  	<url-pattern>/ballotService</url-pattern>
+  </servlet-mapping> -->
+  <servlet-mapping>
+  	<servlet-name>ballotDetailService</servlet-name>
+  	<url-pattern>/ballotDetailService</url-pattern>
   </servlet-mapping>
 
  
