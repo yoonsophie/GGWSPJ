@@ -32,6 +32,12 @@
   	<description></description>
   	<servlet-class>com.ggws.controller.noticeBoardDetailService</servlet-class>
 </servlet>
+<servlet>
+  	<servlet-name>frontController</servlet-name>
+  	<display-name>frontController</display-name>
+  	<description></description>
+  	<servlet-class>com.ggws.frontController.frontController</servlet-class>
+  </servlet>
   <servlet>
   	<servlet-name>noticeBoardWriteService</servlet-name>
   	<display-name>noticeBoardWriteService</display-name>
@@ -51,6 +57,14 @@
   	<servlet-class>com.ggws.controller.noticeBoardDetailService</servlet-class>
   </servlet>
   <servlet>
+<<<<<<< HEAD
+  	<servlet-name>BoardDeleteService</servlet-name>
+  	<display-name>BoardDeleteService</display-name>
+  	<description></description>
+  	<servlet-class>com.ggws.controller.BoardDeleteService</servlet-class>
+  </servlet>
+  
+=======
   	<servlet-name>test</servlet-name>
   	<display-name>test</display-name>
   	<description></description>
@@ -70,6 +84,7 @@
   	<servlet-class>com.ggws.controller.ballotDetailService</servlet-class>
   </servlet>
  
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
   
   <servlet-mapping>
   	<servlet-name>BoardWriteService</servlet-name>
@@ -79,9 +94,10 @@
   	<servlet-name>DeleteMember</servlet-name>
   	<url-pattern>/DeleteMember</url-pattern>
   </servlet-mapping>
-  
-
-
+  <servlet-mapping>
+  	<servlet-name>frontController</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>noticeBoardWriteService</servlet-name>
   	<url-pattern>/noticeBoardWriteService</url-pattern>
@@ -94,6 +110,14 @@
   	<servlet-name>noticeBoardDetailService</servlet-name>
   	<url-pattern>/noticeBoardDetailService</url-pattern>
   </servlet-mapping>
+<<<<<<< HEAD
+  <servlet-mapping>
+  	<servlet-name>BoardDeleteService</servlet-name>
+  	<url-pattern>/BoardDeleteService</url-pattern>
+  </servlet-mapping>
+  
+ 
+=======
 <!--   <servlet-mapping>
   	<servlet-name>test</servlet-name>
   	<url-pattern>/test</url-pattern>
@@ -104,6 +128,7 @@
   	<servlet-name>ballotDetailService</servlet-name>
   	<url-pattern>/ballotDetailService</url-pattern>
   </servlet-mapping>
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 
  
   

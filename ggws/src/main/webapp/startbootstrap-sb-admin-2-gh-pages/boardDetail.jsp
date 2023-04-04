@@ -1,3 +1,6 @@
+<%@page import="com.ggws.model.BoardVO"%>
+<%@page import="com.ggws.model.BoardDAO"%>
+<%@page import="java.math.BigDecimal"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -66,7 +69,11 @@
 			<li class="nav-item"><a class="nav-link" href="calendar.jsp">
 					<i class="fas fa-fw fa-calendar"></i> <span>달력</span>
 			</a></li>
+<<<<<<< HEAD
+			<li class="nav-item"><a class="nav-link" href="boardMain.jsp">
+=======
 			<li class="nav-item"><a class="nav-link" href="board.jsp">
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 					<i class="fas fa-fw fa-list"></i> <span>게시판</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="ballot.jsp">
@@ -311,27 +318,30 @@
 		<div class="container">
 			<h1 class="mb-5">이수호 게시글</h1>
 			<div class="table-responsive">
-			
-				<form>
+				<%
+				int board_seq = Integer.parseInt(request.getParameter("board_seq")); 
+				BoardDAO dao = new BoardDAO();
+				BoardVO detail_vo = dao.detailBoard(board_seq);%>
+				<form >
 				<!-- 제목 -->
 				  <div class="row mb-3">
 				    <label for="inputEmail3" class="col-sm-2 col-form-label">제목</label>
 				    <div class="col-sm-10" style="padding:6px">
-				      <span>안녕</span>
+				      <span><%=detail_vo.getBoard_title() %></span>
 				    </div>
 				  </div>
 				  <!-- 작성자-->
 				  <div class="row mb-3">
 				    <label for="inputPassword3" class="col-sm-2 col-form-label">작성자</label>
 				    <div class="col-sm-10" style="padding:6px">
-				      <span>이수호</span>
+				      <span><%=detail_vo.getUser_id() %></span>
 				    </div>
 				  </div>
 				  <!-- 내용-->
 				  <div class="row mb-3">
 				    <label for="inputPassword3" class="col-sm-2 col-form-label">내용</label>
 				    <div class="col-sm-10" style="padding:6px">				    	
-				      <span>안녕하세요.</span>
+				      <span><%=detail_vo.getBoard_content() %></span>
 				   <!-- 업로드된 파일 -->   
 				    </div>
 				  </div>
@@ -344,7 +354,11 @@
 				  <!-- 등록 및 초기화 -->
 				  
 				   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+<<<<<<< HEAD
+					<a href="boardMain.jsp"><button class="btn btn-primary me-md-2" type="button">뒤로가기</button></a> 
+=======
 					<a href="BoardMain.jsp"><button class="btn btn-primary me-md-2" type="button">뒤로가기</button></a> 
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 					</div>
 
 				</form>  

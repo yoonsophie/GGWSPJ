@@ -11,9 +11,7 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.ggws.model.BoardDAO;
 import com.ggws.model.BoardVO;
 
-/**
- * Servlet implementation class BoardWriteService
- */
+
 public class BoardWriteService implements Command {
 
 	@Override
@@ -42,18 +40,18 @@ public class BoardWriteService implements Command {
 		}
 		
 		// DB에 저장하기 위해 게시글 정보 가져오기
-		String title = multi.getParameter("title");
-		String writer = multi.getParameter("writer");
+		String board_title = multi.getParameter("board_title");
+		String user_id = multi.getParameter("user_id");
 		String filename = multi.getFilesystemName("filename");
-		String content = multi.getParameter("content");
+		String board_content = multi.getParameter("board_content");
 		
-		System.out.println("title : " + title);
-		System.out.println("writer : " + writer);
+		System.out.println("title : " + board_title);
+		System.out.println("writer : " + user_id);
 		System.out.println("filename : " + filename);
-		System.out.println("content : " + content);
+		System.out.println("content : " + board_content);
 					
 		// vo로 담기
-		BoardVO vo = new BoardVO(title, writer, filename, content);
+		BoardVO vo = new BoardVO(board_title, user_id, board_content);
 		BoardDAO dao = new BoardDAO();
 		int cnt = dao.upload(vo);
 					
@@ -67,7 +65,7 @@ public class BoardWriteService implements Command {
 			System.out.println("업로드 실패~");
 		}
 		// response.sendRedirect("BoardMain.jsp");
-		String moveURL = "board.html";			
+		String moveURL = "boardMain.jsp";			
 		return moveURL;
 	}
 
