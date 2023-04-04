@@ -40,6 +40,23 @@ public class noticeBoardDAO {
 		
 		return vo;
 	}
+
+	public String check(noticeBoardVO vo) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		String user_id = sqlSession.selectOne("checkMember",vo);
+		sqlSession.close();
+		
+		return user_id;
+	}
+
+	public int delete(BigDecimal boardSeq) {
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		int cnt = sqlSession.delete("deleteNoticeBoard", boardSeq);
+		sqlSession.close();
+		return cnt;
+	}
 	
 	
 	

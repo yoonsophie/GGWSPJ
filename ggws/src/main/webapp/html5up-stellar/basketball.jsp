@@ -42,20 +42,22 @@
 					<div id="main">
 
 						<!-- Introduction -->
+						<%String names[] = {"농구사랑", "신장이아니라 심장으로하는거야", "키크는 운동", "버저비터"}; %>
+						<%String pics[] = {"https://cdn.pixabay.com/photo/2013/05/02/21/23/basketball-108622__340.jpg","https://cdn.pixabay.com/photo/2016/11/18/22/10/man-1837119__340.jpg","https://cdn.pixabay.com/photo/2016/06/23/02/06/basketball-1474505__340.jpg"}; %>
 						<%for(int i = 0; i < 3; i++) {%>
 							<section id="intro" class="main">
 								<div class="spotlight">
 									<div class="content">
 										<header class="major">
 										
-											<h2>농구 <%=i+1 %>팀</h2>
+											<h2><%=names[i] %></h2>
 										</header>
 										<p>우리 동호회는 말이여 암튼 사람들이 친절허구 말이여 어쩌구 말이여 </p>
 										<ul class="actions">
 											<li><a href="../startbootstrap-sb-admin-2-gh-pages/index.jsp" class="button">들어가기</a></li>
 										</ul>
 									</div>
-									<span class="image"><img src="images/basketball_pic.jpg" alt="" style="width:150; height:300px"/></span>
+									<span class="image"><img src=<%=pics[i] %> alt="" style="width:150; height:300px"/></span>
 								</div>
 							</section>
 											<%} %>
