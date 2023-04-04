@@ -1,3 +1,6 @@
+<%@page import="com.ggws.model.psaDAO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.ggws.model.MemberDAO"%>
 <%@page import="com.ggws.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -41,7 +44,7 @@
 }
 </style>
 
-<title>스동위업관시</title>
+<title>이모저모</title>
 
 <!-- Custom fonts for this template-->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
@@ -60,6 +63,12 @@
 				if (login_vo != null) {
 					System.out.print(login_vo.getUser_id());
 				}
+				
+				MemberDAO dao = new MemberDAO();
+				List<MemberVO> list = dao.selectAllMember();
+				
+				psaDAO pdao = new psaDAO();
+				String psa = pdao.getPsa(login_vo.getUser_id());
 			%>
 	<!-- Page Wrapper -->
 	<div id="wrapper">
@@ -82,7 +91,7 @@
 
 			<!-- Nav Item - Dashboard -->
 			<li class="nav-item active"><a class="nav-link"
-				href="index.html"> <i class="fas fa-fw fa-home"></i> <span>홈으로</span></a>
+				href="index.jsp"> <i class="fas fa-fw fa-home"></i> <span>홈으로</span></a>
 			</li>
 
 			<!-- Divider -->
@@ -125,7 +134,7 @@
 			<li class="nav-item"><a class="nav-link" href="ballot.html">
 					<i class="fas fa-fw fa-check"></i> <span>투표</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="chat.html"> <i
+			<li class="nav-item"><a class="nav-link" href="chatTeam.jsp"> <i
 					class="fas fa-fw fa-comments"></i> <span>채팅</span></a></li>
 			<li class="nav-item"><a class="nav-link" href="matching.html">
 					<i class="fas fa-fw fa-handshake"></i> <span>매칭</span>
@@ -321,8 +330,13 @@
 							aria-expanded="false"> <span
 								class="mr-2 d-none d-lg-inline text-gray-600 small">
 								<%=login_vo.getUser_nick() %>
-								</span> <img class="img-profile rounded-circle"
-								src="img/undraw_profile.svg" />
+								<!-- 프로필 사진 프사 -->
+								</span> 
+								<% if(psa==null){%>
+									<img class='img-profile rounded-circle' alt='이미지' src='img/regi_pic.png' >
+								<%}else{ %>
+									<img class='img-profile rounded-circle' alt='이미지' src='./profilePic/<%=psa%>'>
+								<%} %> 
 						</a> <!-- Dropdown - User Information -->
 							<div
 								class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -332,9 +346,9 @@
 								</a> <a class="dropdown-item" href="#"> <i
 									class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
 									Settings
-								</a> <a class="dropdown-item" href="#"> <i
+								</a> <a class="dropdown-item" href="profilePic.jsp"> <i
 									class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-									Activity Log
+									프로필 사진 프사 변경
 								</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="#" data-toggle="modal"
@@ -512,11 +526,13 @@
 
 			<!-- End of Footer -->
 		</div>
-		<ul
+
+		
+		
+				<!-- 오른쪽 회원목록 -->
+      <ul
 			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
 			id="accordionSidebar">
-			<!-- Sidebar - Brand 동호회명-->
-			
 
 			<!-- Divider -->
 			<hr class="sidebar-divider my-0" />
@@ -526,38 +542,6 @@
 				href="index.html"> <i class="fas fa-fw fa-crown"></i> <span>회장아이디</span></a>
 			</li>
 
-			<!-- Nav Item - Pages Collapse Menu -->
-			<!-- <li class="nav-item"><a class="nav-link collapsed" href="#"
-				data-toggle="collapse" data-target="#collapseTwo"
-				aria-expanded="true" aria-controls="collapseTwo"> <i
-					class="fas fa-fw fa-cog"></i> <span>설정</span>
-			</a>
-				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-					data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
-						<h6 class="collapse-header">Custom Components:</h6>
-						<a class="collapse-item" href="buttons.html">Buttons</a> <a
-							class="collapse-item" href="cards.html">Cards</a>
-					</div>
-				</div></li>
-
-			Nav Item - Utilities Collapse Menu
-			<li class="nav-item"><a class="nav-link collapsed" href="#"
-				data-toggle="collapse" data-target="#collapseUtilities"
-				aria-expanded="true" aria-controls="collapseUtilities">
-					<i class="fas fa-fw fa-wrench"></i> <span>채팅목록?</span>
-			</a>
-				<div id="collapseUtilities" class="collapse"
-					aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
-						<h6 class="collapse-header">Custom Utilities:</h6>
-						<a class="collapse-item" href="utilities-color.html">Colors</a> <a
-							class="collapse-item" href="utilities-border.html">Borders</a> <a
-							class="collapse-item" href="utilities-animation.html">Animations</a>
-						<a class="collapse-item" href="utilities-other.html">Other</a>
-					</div>
-				</div></li> -->
-
 			<!-- Divider -->
 			<hr class="sidebar-divider" />
 
@@ -565,36 +549,51 @@
 			<div class="sidebar-heading">회원목록</div>
 
 			<!-- Nav Item - Charts -->
-			<li class="nav-item"><a class="nav-link" href="#">
-					<i class="fas fa-fw fa-hashtag"></i> <span>김아무개</span>
-			</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">
-					<i class="fas fa-fw fa-hashtag"></i> <span>김아무개</span>
-			</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">
-					<i class="fas fa-fw fa-hashtag"></i> <span>김아무개</span>
-			</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">
-					<i class="fas fa-fw fa-hashtag"></i> <span>김아무개</span>
-			</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">
-					<i class="fas fa-fw fa-hashtag"></i> <span>김아무개</span>
-			</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">
-					<i class="fas fa-fw fa-hashtag"></i> <span>김아무개</span>
-			</a></li>
-
-
-			<!-- Divider -->
-			<hr class="sidebar-divider d-none d-md-block" />
-
-			<!-- Sidebar Toggler (Sidebar) -->
-			<!-- <div class="text-center d-none d-md-inline">
-				<button class="rounded-circle border-0" id="sidebarToggle"></button>
-			</div> -->
-
-			
-		</ul>
+			<% for(MemberVO u:list){ %>
+		
+					<li class="nav-item dropdown no-arrow"> 
+						<a class="nav-link dropdown-toggle"
+							href="#"
+							id="userDropdown"
+							role="button"
+							data-toggle="dropdown"
+							aria-haspopup="true"
+							aria-expanded="false">
+						<!-- <i class="fas fa-fw fa-hashtag"></i>  -->
+						<img
+		                    class="img-profile rounded-circle"
+		                    src="img/undraw_profile_3.svg"
+		                 />
+						<span> <%=u.getUser_nick() %> </span>
+				        </a>
+		                <!-- Dropdown - User Information -->
+		                <div
+		                  class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+		                  aria-labelledby="userDropdown"
+		                >
+		                  <a class="dropdown-item" href="#">
+		                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+		                    Profile
+		                  </a>
+		                  <a class="dropdown-item" href="http://localhost:8090/ggws/startbootstrap-sb-admin-2-gh-pages/chatDM.jsp?toID=<%=u.getUser_id()%>">
+		                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+		                    Chatting
+		                  </a>
+		                  <div class="dropdown-divider"></div>
+		                  <a
+		                    class="dropdown-item"
+		                    href="#"
+		                    data-toggle="modal"
+		                    data-target="#logoutModal"
+		                  >
+		                    <i
+		                      class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
+		                    ></i>
+		                    Logout
+		                  </a>
+		                </div>
+		             </li>
+			<%} %>
 		<!-- End of Content Wrapper -->
 	</div>
 	<!-- End of Page Wrapper -->

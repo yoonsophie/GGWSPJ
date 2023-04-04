@@ -36,7 +36,7 @@ public class LoginService implements Command {
 			result = "html5up-stellar/football.jsp?user_id"+id;
 		} else {
 			System.out.println("로그인 실패");
-			result= "index.html";
+			result= "index.jsp";
 		}
 		return result;
 		

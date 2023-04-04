@@ -10,6 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ggws.Command.Command;
 import com.ggws.controller.LoginService;
+import com.ggws.controller.chatlistService;
+import com.ggws.controller.chatlistServiceTeam;
+import com.ggws.controller.chatsubmitService;
+import com.ggws.controller.chatsubmitServiceTeam;
+import com.ggws.controller.psaService;
 
 @WebServlet("*.do")
 public class frontController extends HttpServlet {
@@ -40,14 +45,35 @@ public class frontController extends HttpServlet {
 				if(result.equals("LoginService.do")) {
 					// 로그인기능		
 					 service = new LoginService();
-				
+				}else if (result.equals("startbootstrap-sb-admin-2-gh-pages/chatsubmitService.do")) {
+					//1대1 채팅 테이블 insert 기능
+					service = new chatsubmitService();
+				} else if (result.equals("startbootstrap-sb-admin-2-gh-pages/chatsubmitServiceTeam.do")) {
+					//팀 채팅창 서브밋
+					service = new chatsubmitServiceTeam();
+				}else if (result.equals("startbootstrap-sb-admin-2-gh-pages/chatlistService.do")) {
+					// 1대1 채팅창
+					service = new chatlistService();
+				} else if (result.equals("startbootstrap-sb-admin-2-gh-pages/chatlistServiceTeam.do")) {
+					//팀 채팅창
+					service = new chatlistServiceTeam();
+				}else if (result.equals("startbootstrap-sb-admin-2-gh-pages/psaService.do")) {
+					//프사
+					service = new psaService();
+				}else {
+					System.out.println("실패");
 				}
 				
 				String moveURL = service.execute(request, response);
-				response.sendRedirect(moveURL);
-
+			//	response.sendRedirect(moveURL);
 				
-	
+				
+				  if(moveURL.length() > 100) { 
+					  response.setCharacterEncoding("UTF-8");
+					  response.getWriter().print(moveURL); 
+				  }else { response.sendRedirect(moveURL);
+				  }
+				 
 	
 	
 	}
