@@ -309,100 +309,59 @@
 								<div class="card-body">
                  
 
-		<div class="container-fluid px-4">
-			<div class="card mb-4">
-				<div class="card-header" align="right">
-					<a class="btn btn-primary float-end" href="ballotWrite.jsp">
-						<!-- <i class="fas fa-table me-1"></i> --> 만들기
-					</a>
-				</div>
-				<div class="card-body">
-					<div class="row">
-						<table class="table table-hover table-striped">
-							<thead>
-								<tr>
-									<th>번호</th>
-									<th>제목</th>
-									<th>작성자</th>
-									<th>투표종료일</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td><a href="BallotBoxContentService"
-										data-bs-toggle="modal" data-bs-target="#exampleModal"
-										id="votesBtn">제목</a></td>
-									<td>신석우</td>
-									<td>2023-04-04</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<div class="row">
-						<div class="col-sm-12 col-md-5">
-							<div class="dataTables_info" id="dataTable_info" role="status"
-								aria-live="polite"></div>
-						</div>
-						<div class="col-sm-12 col-md-7">
-							<nav aria-label="Page navigation example">
-								<ul class="pagination justify-content-start" align="center">
-									<li class="page-item disabled"><a class="page-link">이전</a>
-									</li>
-									<li class="page-item"><a class="page-link" href="#">1</a></li>
-									<li class="page-item"><a class="page-link" href="#">2</a></li>
-									<li class="page-item"><a class="page-link" href="#">3</a></li>
-									<li class="page-item"><a class="page-link" href="#">다음</a>
-									</li>
-								</ul>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-		</div>
 		
-		<!-- Modal -->
-		<div class="modal fade" id="exampleModal" tabindex="-1"
-			aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<form action="BallotBoxDetailService">
-					<input type="hidden" name="bbox_seq" value="">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="btn-close" data-bs-dismiss="modal"
-								aria-label="Close"></button>
-						</div>
-						<div class="modal-body">
-							<div class="container-fluid">
-								<h4 class="mt-4">투표창</h4>
-								<div class="card">
-									<div class="card-body">
-										<div class="row">
-											<div class="col">
-												<table class="">
-													<tr>
-														<td><input type="radio" class="customCheckbox"
-															id="cb1" name="choice" value=""> <label for="cb1">1번</label></td>
-													</tr>
-												</table>
-											</div>
-										</div>
-									</div>
-								</div>
+		
+			<%
+	String userId = "test";
+	int clubSeq = 1;
+	%>
+
+		<div class="container">
+			<div class="card">
+				<h5 class="card-header border border-primary-subtitle">투표함</h5>
+				<div class="card-body">
+					<form action="ballotService" method="post">
+						<div class="row mb-3">
+							<label for="ballotTitle3" class="col-sm-2 col-form-label"
+								autofocus>제목</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="ballotTitle3"
+									name="ballotTitle">
 							</div>
 						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary"
-								data-bs-dismiss="modal">닫기</button>
-							<button type="submit" class="btn btn-primary">확인</button>
+						<div class="row mb-3">
+							<label for="ballotContent1" class="col-sm-2 col-form-label">항목</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="ballotContent1"
+									name="ballotContent">
+							</div>
 						</div>
-					</div>
-				</form>
+						<div class="row mb-3">
+							<div class="col bbox-content-add" align="center">
+								<button type="button" class="btn btn-outline-primary"
+									id="addContentBtn">항목 추가</button>
+								<button type="button" class="btn btn-outline-primary btn-sm"
+									id="delContentBtn">삭제</button>
+							</div>
+						</div>
+						<div class="row mb-3">
+							<label for="ballotEndDate3" class="col-sm-2 col-form-label">종료일</label>
+							<div class="col-sm-10">
+								<input type="date" class="form-control" id="ballotEndDate3"
+									name="ballotEndDate">
+							</div>
+						</div>
+						<input type="hidden" value="<%=userId%>" name="userId"> <input
+							type="hidden" value="<%=clubSeq%>" name="clubSeq">
+							<div align="right">
+						<button type="submit" class="btn btn-primary">생성</button>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
 
+	<script src="./assets/js/writeBallot.js" type="text/javascript"></script>
 	
 	</div>
 	</div>

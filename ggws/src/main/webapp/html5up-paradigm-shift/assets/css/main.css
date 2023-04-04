@@ -1,11 +1,13 @@
-@import url(fontawesome-all.min.css);
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600,700,300i,600i,700i|Raleway:600,800");
 
-/*
-	Paradigm Shift by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+
+
+@font-face {
+    font-family: 'KCC-Ganpan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -22,6 +24,7 @@ section, summary, time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
+	font-family: 'KCC-Ganpan',sans-serif;
 	font: inherit;
 	vertical-align: baseline;}
 
@@ -30,6 +33,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;}
 
 body {
+	font-family: 'KCC-Ganpan';
+	font: inherit;
 	line-height: 1;
 }
 
@@ -105,9 +110,13 @@ input, select, textarea {
 	body {
 		background: #ffffff;
 		overflow-x: hidden;
+		font-family: 'KCC-Ganpan';
+	font: inherit;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
+		font-family: 'KCC-Ganpan';
+	font: inherit;
 			-moz-animation: none !important;
 			-webkit-animation: none !important;
 			-ms-animation: none !important;
@@ -163,7 +172,6 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: #000000;
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 1rem;
 		font-weight: 300;
 		letter-spacing: 0.0375em;
@@ -200,7 +208,6 @@ input, select, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #000000;
-		font-family: "Raleway", Helvetica, sans-serif;
 		font-weight: 600;
 		letter-spacing: 0.175em;
 		line-height: 1.75;
@@ -214,7 +221,6 @@ input, select, textarea {
 		}
 
 	h1 {
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 5rem;
 		font-weight: 700;
 		letter-spacing: -0.05em;
@@ -317,7 +323,6 @@ input, select, textarea {
 	code {
 		background: rgba(144, 144, 144, 0.1);
 		border-radius: 0.325rem;
-		font-family: "Courier New", monospace;
 		font-size: 0.9rem;
 		margin: 0 0.25rem;
 		padding: 0.25rem 0.65rem;
@@ -325,7 +330,6 @@ input, select, textarea {
 
 	pre {
 		-webkit-overflow-scrolling: touch;
-		font-family: "Courier New", monospace;
 		font-size: 0.9rem;
 		margin: 0 0 2rem 0;
 		width: 100%;
@@ -1865,7 +1869,6 @@ input, select, textarea {
 		color: #000000 !important;
 		cursor: pointer;
 		display: inline-block;
-		font-family: "Raleway", Helvetica, sans-serif;
 		font-size: 0.6rem;
 		font-weight: 600;
 		height: 3rem;
@@ -2141,7 +2144,6 @@ input, select, textarea {
 	label {
 		color: #000000;
 		display: block;
-		font-family: "Raleway", Helvetica, sans-serif;
 		font-size: 0.75rem;
 		font-weight: 600;
 		letter-spacing: 0.175em;
@@ -2206,7 +2208,6 @@ input, select, textarea {
 			color: #000000;
 			cursor: pointer;
 			display: inline-block;
-			font-family: "Source Sans Pro", Helvetica, sans-serif;
 			font-size: 1rem;
 			font-weight: 300;
 			letter-spacing: 0.0375em;
@@ -2226,7 +2227,6 @@ input, select, textarea {
 				text-rendering: auto;
 				line-height: 1;
 				text-transform: none !important;
-				font-family: 'Font Awesome 5 Free';
 				font-weight: 900;
 			}
 
@@ -2331,7 +2331,6 @@ input, select, textarea {
 			text-rendering: auto;
 			line-height: 1;
 			text-transform: none !important;
-			font-family: 'Font Awesome 5 Free';
 			font-weight: 400;
 		}
 
@@ -2343,9 +2342,6 @@ input, select, textarea {
 			font-weight: 900;
 		}
 
-		.icon.brands:before {
-			font-family: 'Font Awesome 5 Brands';
-		}
 
 /* Image */
 
@@ -3263,7 +3259,6 @@ input, select, textarea {
 				}
 
 				#wrapper section > header h1 + p {
-					font-family: "Raleway", Helvetica, sans-serif;
 					font-size: 0.8rem;
 					letter-spacing: 0.175em;
 					line-height: 2.5;

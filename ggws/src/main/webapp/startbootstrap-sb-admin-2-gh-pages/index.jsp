@@ -92,7 +92,7 @@
 			<div class="sidebar-heading">메뉴</div>
 
 			<!-- Nav Item - Charts -->
-			<li class="nav-item"><a class="nav-link" href="notification.jsp">
+			<li class="nav-item"><a class="nav-link" href="../noticeBoardService">
 					<i class="fas fa-fw fa-bookmark"></i> <span>공지사항</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="calendar.jsp">

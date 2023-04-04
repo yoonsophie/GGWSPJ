@@ -14,6 +14,7 @@ public class LoginService implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		
 		MemberVO resultVO = null;
 		String result = "";
 		
@@ -21,7 +22,7 @@ public class LoginService implements Command {
 		String id = (String)request.getParameter("user_id");
 		String pw = (String)request.getParameter("user_pw");
 		
-		System.out.println(id + pw);
+		/* System.out.println(id + pw); */
 		
 		// email, pw 한 번에 필드에 저장
 		MemberVO vo = new MemberVO(id, pw);

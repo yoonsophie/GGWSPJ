@@ -1,4 +1,3 @@
-<%@page import="ch.qos.logback.core.net.SyslogOutputStream"%>
 <%@page import="com.ggws.controller.LoginService"%>
 <%@page import="com.ggws.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -24,10 +23,11 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+	
+	
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-primary" >
 
     <div class="container">
 
@@ -45,7 +45,7 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">어서오세용</h1>
+                                        <h1 class="h4 text-gray-900 mb-4" >어서오세용</h1>
                                     </div>
 									<form class="user" action="../LoginService.do" method="post">
                                         <div class="form-group">

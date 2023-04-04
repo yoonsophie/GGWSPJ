@@ -328,14 +328,20 @@
 								</tr>
 							</thead>
 							<tbody>
+								<%String names[] ={"김승민", "이수호", "장영주", "조승재"}; %>
+								<%String titles[] ={"팀복 디자인", "4월 첫째주 일정 조율 - 정기일정x 이벤트 일정", "팀 색깔", "동호회 이름"}; %>
+								<%String dates[] ={"2023-04-04", "2023-03-31", "2023-03-31", "2023-03-27"}; %>
+								<%for(int i=0; i< names.length; i++){ %>
 								<tr>
-									<td>1</td>
+								
+									<td><%=i+1 %></td>
 									<td><a href="BallotBoxContentService"
 										data-bs-toggle="modal" data-bs-target="#exampleModal"
-										id="votesBtn">제목</a></td>
-									<td>신석우</td>
-									<td>2023-04-04</td>
+										id="votesBtn"><%=titles[i] %></a></td>
+									<td><%=names[i] %></td>
+									<td><%=dates[i] %></td>
 								</tr>
+							<%} %>
 							</tbody>
 						</table>
 					</div>
@@ -347,13 +353,15 @@
 						<div class="col-sm-12 col-md-7">
 							<nav aria-label="Page navigation example">
 								<ul class="pagination justify-content-start" align="center">
-									<li class="page-item disabled"><a class="page-link">이전</a>
-									</li>
-									<li class="page-item"><a class="page-link" href="#">1</a></li>
-									<li class="page-item"><a class="page-link" href="#">2</a></li>
-									<li class="page-item"><a class="page-link" href="#">3</a></li>
-									<li class="page-item"><a class="page-link" href="#">다음</a>
-									</li>
+									<li class="page-item"><a class="page-link" href="#"
+											aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+										</a></li>
+										<li class="page-item"><a class="page-link" href="#">1</a></li>
+										<li class="page-item"><a class="page-link" href="#">2</a></li>
+										<li class="page-item"><a class="page-link" href="#">3</a></li>
+										<li class="page-item"><a class="page-link" href="#"
+											aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+										</a></li>
 								</ul>
 							</nav>
 						</div>

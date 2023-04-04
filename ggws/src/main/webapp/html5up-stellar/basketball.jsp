@@ -52,7 +52,12 @@
 										
 											<h2><%=names[i] %></h2>
 										</header>
+										<%if(i==0){ %>
 										<p>우리 동호회는 말이여 암튼 사람들이 친절허구 말이여 어쩌구 말이여 </p>
+										<p>우리 동호회는 말이여 암튼 사람들이 친절허구 말이여 어쩌구 말이여 </p>
+										<p>우리 동호회는 말이여 암튼 사람들이 친절허구 말이여 어쩌구 말이여 </p>
+										<p>우리 동호회는 말이여 암튼 사람들이 친절허구 말이여 어쩌구 말이여 </p>
+										<%} %>
 										<ul class="actions">
 											<li><a href="../startbootstrap-sb-admin-2-gh-pages/index.jsp" class="button">들어가기</a></li>
 										</ul>

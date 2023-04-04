@@ -42,7 +42,7 @@
 							</div>
 						</div>
 						<div class="row mb-3">
-							<div class="col bbox-content-add">
+							<div class="col bbox-content-add" align="center">
 								<button type="button" class="btn btn-outline-primary"
 									id="addContentBtn">항목 추가</button>
 								<button type="button" class="btn btn-outline-primary btn-sm"
