@@ -1,3 +1,5 @@
+<%@page import="com.ggws.model.BoardVO"%>
+<%@page import="com.ggws.model.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,7 +15,9 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
+	<%int board_seq = Integer.parseInt(request.getParameter("board_seq"));
+			BoardDAO dao = new BoardDAO();
+			BoardVO detail_vo = dao.detailBoard(board_seq);%>
 	<div class="content">
 		<div class="container">
 			<h1 class="mb-5">이수호 게시글</h1>
@@ -24,21 +28,21 @@
 				  <div class="row mb-3">
 				    <label for="inputEmail3" class="col-sm-2 col-form-label">제목</label>
 				    <div class="col-sm-10" style="padding:6px">
-				      <span>안녕</span>
+				      <span><%=detail_vo.getBoard_title() %></span>
 				    </div>
 				  </div>
 				  <!-- 작성자-->
 				  <div class="row mb-3">
 				    <label for="inputPassword3" class="col-sm-2 col-form-label">작성자</label>
 				    <div class="col-sm-10" style="padding:6px">
-				      <span>이수호</span>
+				      <span><%=detail_vo.getUser_id() %></span>
 				    </div>
 				  </div>
 				  <!-- 내용-->
 				  <div class="row mb-3">
 				    <label for="inputPassword3" class="col-sm-2 col-form-label">내용</label>
 				    <div class="col-sm-10" style="padding:6px">				    	
-				      <span>안녕하세요.</span>
+				      <span><%=detail_vo.getBoard_content() %></span>
 				   <!-- 업로드된 파일 -->   
 				    </div>
 				  </div>

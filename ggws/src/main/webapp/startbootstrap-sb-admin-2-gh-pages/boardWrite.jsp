@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +21,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <!-- ∞‘Ω√∆« πˆ∆∞ -->
+    <!-- Í≤åÏãúÌåê Î≤ÑÌäº -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
@@ -34,14 +34,14 @@
 		<ul
 			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
 			id="accordionSidebar">
-			<!-- Sidebar - Brand µø»£»∏∏Ì-->
+			<!-- Sidebar - Brand ÎèôÌò∏ÌöåÎ™Ö-->
 			<a
 				class="sidebar-brand d-flex align-items-center justify-content-center"
 				href="index.html">
 				<div class="sidebar-brand-icon rotate-n-15">
 					<i class="fas fa-laugh-wink"></i>
 				</div>
-				<div class="sidebar-brand-text mx-3">µø»£»∏∏Ì</div>
+				<div class="sidebar-brand-text mx-3">ÎèôÌò∏ÌöåÎ™Ö</div>
 			</a>
 
 			<!-- Divider -->
@@ -49,14 +49,14 @@
 
 			<!-- Nav Item - Dashboard -->
 			<li class="nav-item active"><a class="nav-link"
-				href="index.html"> <i class="fas fa-fw fa-home"></i> <span>»®¿∏∑Œ</span></a>
+				href="index.html"> <i class="fas fa-fw fa-home"></i> <span>ÌôàÏúºÎ°ú</span></a>
 			</li>
 
 			<!-- Divider -->
 			<hr class="sidebar-divider" />
 
-			<!-- Heading ∏ﬁ¥∫-->
-			<div class="sidebar-heading">∏ﬁ¥∫</div>
+			<!-- Heading Î©îÎâ¥-->
+			<div class="sidebar-heading">Î©îÎâ¥</div>
 
 			<!-- Nav Item - Pages Collapse Menu -->
 			<li class="nav-item"><a class="nav-link collapsed" href="#"
@@ -81,26 +81,26 @@
 
 			<!-- Nav Item - Charts -->
 			<li class="nav-item"><a class="nav-link" href="notification.html">
-					<i class="fas fa-fw fa-chart-area"></i> <span>∞¯¡ˆªÁ«◊</span>
+					<i class="fas fa-fw fa-chart-area"></i> <span>Í≥µÏßÄÏÇ¨Ìï≠</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="calendar.html">
-					<i class="fas fa-fw fa-calendar"></i> <span>¥ﬁ∑¬</span>
+					<i class="fas fa-fw fa-calendar"></i> <span>Îã¨Î†•</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="board.html">
-					<i class="fas fa-fw fa-list"></i> <span>∞‘Ω√∆«</span>
+			<li class="nav-item"><a class="nav-link" href="boardMain.jsp">
+					<i class="fas fa-fw fa-list"></i> <span>Í≤åÏãúÌåê</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="ballot.html">
-					<i class="fas fa-fw fa-check"></i> <span>≈ı«•</span>
+					<i class="fas fa-fw fa-check"></i> <span>Ìà¨Ìëú</span>
 			</a></li>
 
 			<!-- Nav Item - Tables -->
 			<li class="nav-item"><a class="nav-link" href="chat.html">
-					<i class="fas fa-fw fa-comments"></i> <span>√§∆√</span>
+					<i class="fas fa-fw fa-comments"></i> <span>Ï±ÑÌåÖ</span>
 			</a></li>
 
 			<!-- Nav Item - calendar -->
 			<li class="nav-item"><a class="nav-link" href="matching.html">
-					<i class="fas fa-fw fa-handshake"></i> <span>∏≈ƒ™</span>
+					<i class="fas fa-fw fa-handshake"></i> <span>Îß§Ïπ≠</span>
 			</a></li>
 
 			<!-- Divider -->
@@ -242,7 +242,7 @@
                                     <div class="font-weight-bold">
                                         <div class="text-truncate">Hi there! I am wondering if you can help me with a
                                             problem I've been having.</div>
-                                        <div class="small text-gray-500">Emily Fowler °§ 58m</div>
+                                        <div class="small text-gray-500">Emily Fowler ¬∑ 58m</div>
                                     </div>
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -254,7 +254,7 @@
                                     <div>
                                         <div class="text-truncate">I have the photos that you ordered last month, how
                                             would you like them sent to you?</div>
-                                        <div class="small text-gray-500">Jae Chun °§ 1d</div>
+                                        <div class="small text-gray-500">Jae Chun ¬∑ 1d</div>
                                     </div>
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -266,7 +266,7 @@
                                     <div>
                                         <div class="text-truncate">Last month's report looks great, I am very happy with
                                             the progress so far, keep up the good work!</div>
-                                        <div class="small text-gray-500">Morgan Alvarez °§ 2d</div>
+                                        <div class="small text-gray-500">Morgan Alvarez ¬∑ 2d</div>
                                     </div>
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -278,7 +278,7 @@
                                     <div>
                                         <div class="text-truncate">Am I a good boy? The reason I ask is because someone
                                             told me that people say this to all dogs, even if they aren't good...</div>
-                                        <div class="small text-gray-500">Chicken the Dog °§ 2w</div>
+                                        <div class="small text-gray-500">Chicken the Dog ¬∑ 2w</div>
                                     </div>
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
@@ -327,50 +327,50 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="mb-5 text-gray-800 text-center">∞‘Ω√±€ ¿€º∫</h1>
+                    <h1 class="mb-5 text-gray-800 text-center">Í≤åÏãúÍ∏Ä ÏûëÏÑ±</h1>
                                  
                     <div class="content">
 						<div class="container">
-							<!-- <h1 class="mb-5">∞‘Ω√±€ ¿€º∫</h1> -->
+							<!-- <h1 class="mb-5">Í≤åÏãúÍ∏Ä ÏûëÏÑ±</h1> -->
 							<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-							  <a href="board.html"><button class="btn btn-primary" type="button">µ⁄∑Œ∞°±‚</button></a>
+							  <a href="boardMain.jsp"><button class="btn btn-primary" type="button">Îí§Î°úÍ∞ÄÍ∏∞</button></a>
 							 <!--  <button class="btn btn-primary" type="button">Button</button> -->
 							</div>
 							<p></p>
 							<div class="table-responsive">
-								<form action="BoardWriteService" method="post" enctype="multipart/form-data">
-								<!-- ¡¶∏Ò ¿‘∑¬ -->
+								<form action="BoardWriteService.do" method="post" enctype="multipart/form-data">
+								<!-- Ï†úÎ™© ÏûÖÎ†• -->
 								  <div class="row mb-3">
-								    <label for="inputEmail3" class="col-sm-2 col-form-label">¡¶∏Ò</label>
+								    <label for="inputEmail3" class="col-sm-2 col-form-label">Ï†úÎ™©</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" placeholder="¡¶∏Ò¿ª ¿‘∑¬«œººø‰." name="title">
+								      <input type="text" class="form-control" placeholder="Ï†úÎ™©ÏùÑ ÏûÖÎ†•ÌïòÏÑ∏Ïöî." name="board_title">
 								    </div>
 								  </div>
-								  <!-- ¿€º∫¿⁄ ¿‘∑¬ -->
+								  <!-- ÏûëÏÑ±Ïûê ÏûÖÎ†• -->
 								  <div class="row mb-3">
-								    <label for="inputPassword3" class="col-sm-2 col-form-label" >¿€º∫¿⁄</label>
+								    <label for="inputPassword3" class="col-sm-2 col-form-label" >ÏûëÏÑ±Ïûê</label>
 								    <div class="col-sm-10">
-								      <input type="text" class="form-control" placeholder="¿€º∫¿⁄∏¶ ¿‘∑¬«œººø‰." name="writer">
+								      <input type="text" class="form-control" placeholder="ÏûëÏÑ±ÏûêÎ•º ÏûÖÎ†•ÌïòÏÑ∏Ïöî." name="user_id">
 								    </div>
 								  </div>
-								  <!-- ≥ªøÎ ¿‘∑¬ -->
+								  <!-- ÎÇ¥Ïö© ÏûÖÎ†• -->
 								  <div class="row mb-3">
-								    <label for="inputPassword3" class="col-sm-2 col-form-label">≥ªøÎ</label>
+								    <label for="inputPassword3" class="col-sm-2 col-form-label">ÎÇ¥Ïö©</label>
 								    <div class="col-sm-10">				    	
-								      <textarea class="form-control" rows="5" placeholder="≥ªøÎ¿ª ¿‘∑¬«œººø‰." name="contents"></textarea>
-								   <!-- ∆ƒ¿œ æ˜∑ŒµÂ -->   
+								      <textarea class="form-control" rows="5" placeholder="ÎÇ¥Ïö©ÏùÑ ÏûÖÎ†•ÌïòÏÑ∏Ïöî." name="board_content"></textarea>
+								   <!-- ÌååÏùº ÏóÖÎ°úÎìú -->   
 								    </div>
 								  </div>
 								  <div class="row mb-3">
-								    <label for="inputEmail3" class="col-sm-2 col-form-label">∆ƒ¿œµÓ∑œ</label>
+								    <label for="inputEmail3" class="col-sm-2 col-form-label">ÌååÏùºÎì±Î°ù</label>
 								    <div class="col-sm-10">
 								      <input type="file" name="filename">
 								    </div>
 								  </div>
-								  <!-- µÓ∑œ π◊ √ ±‚»≠ -->
+								  <!-- Îì±Î°ù Î∞è Ï¥àÍ∏∞Ìôî -->
 								   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-										 <button type="reset" class="btn btn-primary me-md-2">√ ±‚»≠</button>
-										 <button class="btn btn-primary me-md-2" type="submit">µÓ∑œ«œ±‚</button>
+										 <button type="reset" class="btn btn-primary me-md-2">Ï¥àÍ∏∞Ìôî</button>
+										 <button class="btn btn-primary me-md-2" type="submit">Îì±Î°ùÌïòÍ∏∞</button>
 										  <!-- <button class="btn btn-primary" type="button">Button</button> -->
 									</div>
 								</form>  
@@ -411,7 +411,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">°ø</span>
+                        <span aria-hidden="true">√ó</span>
                     </button>
                 </div>
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>

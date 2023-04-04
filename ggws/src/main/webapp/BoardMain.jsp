@@ -1,3 +1,7 @@
+<%@page import="com.ggws.model.MemberVO"%>
+<%@page import="com.ggws.model.BoardVO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.ggws.model.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,6 +17,11 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+	<%
+	BoardDAO dao = new BoardDAO();
+	List<BoardVO> list = dao.showBoard();	
+	MemberVO login_vo = (MemberVO) session.getAttribute("login_vo");
+	%>	
 	<div class="content">
 		<div class="container">
 		<!-- 제목 -->
@@ -31,27 +40,16 @@
 				    </tr>
 				  </thead>
 				  <tbody class="table-group-divider">
+				    <%for(int i=0; i<list.size();i++){ %>
 				    <tr>
-				      <th scope="row">1</th>
-				      <td><a href="BoardDetail.jsp">이수호</a></td>
-				      <td>Otto</td>
-				      <td>@mdo</td>
-				      <td><a href="#">x</a></td>
+				      <th scope="row"><%=i+1 %></th>
+				      <td><a href="BoardDetail.jsp?board_seq=<%=list.get(i).getBoard_seq()%>"><%=list.get(i).getBoard_title()%></a></td>
+				      <td><%=list.get(i).getUser_id() %></td>
+				      <td><%=list.get(i).getBoard_date() %></td>
+				      
+				      <td><a href="BoardDeleteService.do?board_title=<%=list.get(i).getBoard_title()%>">Delete</a></td>
 				    </tr>
-				    <tr>
-				      <th scope="row">2</th>
-				      <td><a href="BoardDetail.jsp">Mark</a></td>
-				      <td>Thornton</td>
-				      <td>@fat</td>
-				      <td><a href="#">x</a></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">3</th>
-				      <td><a href="BoardDetail.jsp">Mark</a></td>
-				      <td>Thornton</td>
-				      <td>@twitter</td>
-				      <td><a href="#">x</a></td>
-				    </tr>
+				    <%} %>
 				  </tbody>
 				</table>
 				 <!-- 회원리스트 페이지 페이지 넘기기 -->

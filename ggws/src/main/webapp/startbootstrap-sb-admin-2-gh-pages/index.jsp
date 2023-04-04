@@ -55,7 +55,7 @@
 </head>
 
 <body id="page-top">
-		<%
+			<%
 				MemberVO login_vo = (MemberVO) session.getAttribute("login_vo");
 				if (login_vo != null) {
 					System.out.print(login_vo.getUser_id());
@@ -119,7 +119,7 @@
 			<li class="nav-item"><a class="nav-link" href="calendar.html">
 					<i class="fas fa-fw fa-calendar"></i> <span>달력</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="board.html">
+			<li class="nav-item"><a class="nav-link" href="boardMain.jsp">
 					<i class="fas fa-fw fa-list"></i> <span>게시판</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="ballot.html">
@@ -130,7 +130,7 @@
 			<li class="nav-item"><a class="nav-link" href="matching.html">
 					<i class="fas fa-fw fa-handshake"></i> <span>매칭</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="analysis.html"> <i
+			<li class="nav-item"><a class="nav-link" href="analysis.jsp"> <i
 					class="fas fa-fw fa-chart-bar"></i> <span>분석</span></a></li>
 
 
