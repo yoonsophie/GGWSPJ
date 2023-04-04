@@ -419,7 +419,7 @@
 		                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
 		                    Profile
 		                  </a>
-		                  <a class="dropdown-item" href="http://localhost:8090/ggws/startbootstrap-sb-admin-2-gh-pages/chatDM.jsp?toID=<%=u.getUser_email()%>">
+		                  <a class="dropdown-item" href="http://localhost:8090/ggws/startbootstrap-sb-admin-2-gh-pages/chatDM.jsp?toID=<%=u.getUser_id()%>">
 		                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
 		                    Chatting
 		                  </a>

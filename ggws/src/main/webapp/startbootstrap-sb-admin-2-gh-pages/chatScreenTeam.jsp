@@ -20,7 +20,7 @@
 		String fromName=null;
 		MemberVO login_vo2 = (MemberVO) session.getAttribute("login_vo");
 		if(login_vo2 != null){
-			fromID=login_vo2.getUser_email();
+			fromID=login_vo2.getUser_id();
 			fromName = login_vo2.getUser_nick();
 		}else{			
 			System.out.println("                                                   로긴VO가 NULL이다                   ");
@@ -102,7 +102,7 @@
 					'<div class="col-lg-12">' + 
 					'<div class="media">'+
 					'<a class="pull-left" href="#">'+
-					'<img class="media-object img-circle" style="width:30px; height:30px;" src="img/undraw_profile_1.svg" alt="">' +
+					'<img class="media-object img-circle" style="width:30px; height:30px;" src="img/regi_pic.png" alt="">' +
 					'</a>' +
 					'<div class="media-body"><span>'+
 					'<h4 class="media-heading">'+

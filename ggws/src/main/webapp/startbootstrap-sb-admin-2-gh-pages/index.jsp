@@ -69,6 +69,7 @@
 				
 				psaDAO pdao = new psaDAO();
 				String psa = pdao.getPsa(login_vo.getUser_id());
+				System.out.println("프사 인덱스 화면 : "+psa);
 			%>
 	<!-- Page Wrapper -->
 	<div id="wrapper">

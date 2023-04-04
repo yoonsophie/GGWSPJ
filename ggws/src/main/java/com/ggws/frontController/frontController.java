@@ -31,13 +31,13 @@ public class frontController extends HttpServlet {
 				
 				// ContextRoot출력
 				String contextPath = request.getContextPath();
-				System.out.println(contextPath);
+				//System.out.println(contextPath);
 				
 				// 요청한 값만 출력하기(substring 메소드 사용)
 				// substring( start ) : start 위치부터 끝까지 문자열 자르기
 				// substring( start, end ) : start 위치부터 end 전까지 문자열 자르기
 				String result =  reqURI.substring(contextPath.length()+1);
-				System.out.println(result);
+				//System.out.println(result);
 				
 				Command service = null;
 				
@@ -68,12 +68,11 @@ public class frontController extends HttpServlet {
 			//	response.sendRedirect(moveURL);
 				
 				
-				  if(moveURL.length() > 100) { 
+				  if(moveURL.length() > 50) { 
 					  response.setCharacterEncoding("UTF-8");
 					  response.getWriter().print(moveURL); 
 				  }else { response.sendRedirect(moveURL);
 				  }
-				 
 	
 	
 	}

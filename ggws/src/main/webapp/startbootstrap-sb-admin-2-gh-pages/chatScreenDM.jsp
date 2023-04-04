@@ -1,3 +1,4 @@
+<%@page import="com.ggws.model.psaDAO"%>
 <%@page import="com.ggws.model.chatDAO"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.ggws.model.MemberVO"%>
@@ -20,7 +21,7 @@
 		String fromName=null;
 		MemberVO login_vo2 = (MemberVO) session.getAttribute("login_vo");
 		if(login_vo2 != null){
-			fromID=login_vo2.getUser_email();
+			fromID=login_vo2.getUser_id();
 			fromName = login_vo2.getUser_nick();
 		}else{			
 			System.out.println("                                                   로긴VO가 NULL이다                   ");
@@ -31,11 +32,23 @@
 		chatDAO dao1 = new chatDAO();
 		if(request.getParameter("toID") != null){
 			toID = (String) request.getParameter("toID");
-		toName = dao1.getChatName(toID);
+			toName = dao1.getChatName(toID);
 		}
-			
-		
+
+
+ 		psaDAO pdao2 = new psaDAO();
+		String image = "";
+		String psa3 = pdao2.getPsa(login_vo2.getUser_id());
+		System.out.println(psa3);
+ 		if(psa3==null){
+			psa3 = "regi_pic.png";
+		} 
+
+ 		
 	%>
+	
+	
+	
 	
 	<!--  "../ggws2/src/main/java/com/ggws/controller/chatsubmitService" -->
 	<script type="text/javascript">
@@ -89,8 +102,6 @@
 					if(res==null) {console.log("없음")}
 					for(var i = 0; i < res.length; i++){
 						if(res[i].fromID==fromID){
-							//res[i].fromID = '나'	
-							//str = res[i].fromID.split('@');
 							res[i].fromID = fromName;
 						}else{
 							res[i].fromID = toName;
@@ -104,13 +115,14 @@
 				    } */
 			});
 		};
-		
+
+
 		function addChat(chatName, chatContent, chatTime){
 			$('#chatList').append('<div class="row">'+
 					'<div class="col-lg-12">' + 
 					'<div class="media">'+
 					'<a class="pull-left" href="#">'+
-					'<img class="media-object img-circle" style="width:30px; height:30px;" src="img/undraw_profile_1.svg" alt="">' +
+					'<img class="media-object img-circle" style="width:30px; height:30px;" src="img/regi_pic.png" alt="">' +
 					'</a>' +
 					'<div class="media-body"><span>'+
 					'<h4 class="media-heading">'+
