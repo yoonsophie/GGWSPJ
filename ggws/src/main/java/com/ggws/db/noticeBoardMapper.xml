@@ -51,4 +51,16 @@
 		 where board_seq = #{ board_seq }
 	</select>
 	
+	<select id="checkMember" resultType="String" parameterType="noticeBoardVO">
+		select user_id
+		from affiliated_club
+		where club_seq = #{ club_seq }
+		and user_id = #{ board_type }
+		and club_user_tier = 1
+	</select>
+	
+	<delete id="deleteNoticeBoard" parameterType="BigDecimal">
+		delete from club_board 
+		 where board_seq = #{ boardSeq }
+	</delete>
 </mapper>

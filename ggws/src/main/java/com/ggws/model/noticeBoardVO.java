@@ -51,5 +51,8 @@ public class noticeBoardVO {
 		
 	}
 	
+	public noticeBoardVO(noticeBoardVO vo) {
+		this(vo.club_seq , vo.user_id);
+	}
 	
 }
