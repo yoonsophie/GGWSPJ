@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,14 +11,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	 <meta charset='utf-8' />
-  <!-- í™”ë©´ í•´ìƒë„ì— ë”°ë¼ ê¸€ì í¬ê¸° ëŒ€ì‘(ëª¨ë°”ì¼ ëŒ€ì‘) -->
+  <!-- È­¸é ÇØ»óµµ¿¡ µû¶ó ±ÛÀÚ Å©±â ´ëÀÀ(¸ğ¹ÙÀÏ ´ëÀÀ) -->
   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
   <!-- jquery CDN -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- fullcalendar CDN -->
   <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.css' rel='stylesheet' />
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
-  <!-- fullcalendar ì–¸ì–´ CDN -->
+  <!-- fullcalendar ¾ğ¾î CDN -->
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js'></script>
   
    <!-- bootstrap 4 -->
@@ -27,13 +29,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   
 <style>
-  /* body ìŠ¤íƒ€ì¼ */
+  /* body ½ºÅ¸ÀÏ */
   html, body {
     overflow: hidden;
     font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
    /*  font-size: 14px; */
   }
-  /* ìº˜ë¦°ë” ìœ„ì˜ í•´ë” ìŠ¤íƒ€ì¼(ë‚ ì§œê°€ ìˆëŠ” ë¶€ë¶„) */
+  /* Ä¶¸°´õ À§ÀÇ ÇØ´õ ½ºÅ¸ÀÏ(³¯Â¥°¡ ÀÖ´Â ºÎºĞ) */
   .fc-header-toolbar {
     padding-top: 1em;
     padding-left: 1em;
@@ -62,14 +64,14 @@
 		<ul
 			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
 			id="accordionSidebar">
-			<!-- Sidebar - Brand ë™í˜¸íšŒëª…-->
+			<!-- Sidebar - Brand µ¿È£È¸¸í-->
 			<a
 				class="sidebar-brand d-flex align-items-center justify-content-center"
-				href="index.html">
+				href="index.jsp">
 				<div class="sidebar-brand-icon rotate-n-15">
 					<i class="fas fa-laugh-wink"></i>
 				</div>
-				<div class="sidebar-brand-text mx-3">ë™í˜¸íšŒëª…</div>
+				<div class="sidebar-brand-text mx-3">µ¿È£È¸¸í</div>
 			</a>
 
 			<!-- Divider -->
@@ -77,57 +79,38 @@
 
 			<!-- Nav Item - Dashboard -->
 			<li class="nav-item active"><a class="nav-link"
-				href="index.html"> <i class="fas fa-fw fa-home"></i> <span>í™ˆìœ¼ë¡œ</span></a>
+				href="index.jsp"> <i class="fas fa-fw fa-home"></i> <span>È¨À¸·Î</span></a>
 			</li>
 
 			<!-- Divider -->
 			<hr class="sidebar-divider" />
 
-			<!-- Heading ë©”ë‰´-->
-			<div class="sidebar-heading">ë©”ë‰´</div>
+			<!-- Heading ¸Ş´º-->
+			<div class="sidebar-heading">¸Ş´º</div>
 
-			<!-- Nav Item - Pages Collapse Menu -->
-			<li class="nav-item"><a class="nav-link collapsed" href="#"
-				data-toggle="collapse" data-target="#collapsePages"
-				aria-expanded="true" aria-controls="collapsePages"> <i
-					class="fas fa-fw fa-folder"></i> <span>Pages</span>
-			</a>
-				<div id="collapsePages" class="collapse"
-					aria-labelledby="headingPages" data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
-						<h6 class="collapse-header">Login Screens:</h6>
-						<a class="collapse-item" href="login.html">Login</a> <a
-							class="collapse-item" href="register.html">Register</a> <a
-							class="collapse-item" href="forgot-password.html">Forgot
-							Password</a>
-						<div class="collapse-divider"></div>
-						<h6 class="collapse-header">Other Pages:</h6>
-						<a class="collapse-item" href="404.html">404 Page</a> <a
-							class="collapse-item" href="blank.html">Blank Page</a>
-					</div>
-				</div></li>
+			
 
 			<!-- Nav Item - Charts -->
-			<li class="nav-item"><a class="nav-link" href="notification.html">
-					<i class="fas fa-fw fa-chart-area"></i> <span>ê³µì§€ì‚¬í•­</span>
+			<li class="nav-item"><a class="nav-link" href="notification.jsp">
+					<i class="fas fa-fw fa-chart-area"></i> <span>°øÁö»çÇ×</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="calendar.html">
-					<i class="fas fa-fw fa-calendar"></i> <span>ë‹¬ë ¥</span>
+			<li class="nav-item"><a class="nav-link" href="calendar.jsp">
+					<i class="fas fa-fw fa-calendar"></i> <span>´Ş·Â</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="board.html">
-					<i class="fas fa-fw fa-list"></i> <span>ê²Œì‹œíŒ</span>
+			<li class="nav-item"><a class="nav-link" href="board.jsp">
+					<i class="fas fa-fw fa-list"></i> <span>°Ô½ÃÆÇ</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="ballot.html">
-					<i class="fas fa-fw fa-check"></i> <span>íˆ¬í‘œ</span>
+			<li class="nav-item"><a class="nav-link" href="ballot.jsp">
+					<i class="fas fa-fw fa-check"></i> <span>ÅõÇ¥</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="chat.html">
-					<i class="fas fa-fw fa-comments"></i> <span>ì±„íŒ…</span>
+			<li class="nav-item"><a class="nav-link" href="chat.jsp">
+					<i class="fas fa-fw fa-comments"></i> <span>Ã¤ÆÃ</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="matching.html">
-					<i class="fas fa-fw fa-handshake"></i> <span>ë§¤ì¹­</span>
+			<li class="nav-item"><a class="nav-link" href="matching.jsp">
+					<i class="fas fa-fw fa-handshake"></i> <span>¸ÅÄª</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="analysis.html"> <i
-					class="fas fa-fw fa-chart-bar"></i> <span>ë¶„ì„</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="analysis.jsp"> <i
+					class="fas fa-fw fa-chart-bar"></i> <span>ºĞ¼®</span></a></li>
 
 			<!-- Divider -->
 			<hr class="sidebar-divider d-none d-md-block" />
@@ -194,122 +177,117 @@
                             </div>
                         </li>
 
-                        <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw"></i>
-                                <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">3+</span>
-                            </a>
-                            <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="alertsDropdown">
-                                <h6 class="dropdown-header">
-                                    Alerts Center
-                                </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <i class="fas fa-file-alt text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 12, 2019</div>
-                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-success">
-                                            <i class="fas fa-donate text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 7, 2019</div>
-                                        $290.29 has been deposited into your account!
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-warning">
-                                            <i class="fas fa-exclamation-triangle text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 2, 2019</div>
-                                        Spending Alert: We've noticed unusually high spending for your account.
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                            </div>
-                        </li>
+                        		<!-- Nav Item - Alerts -->
+						<li class="nav-item dropdown no-arrow mx-1"><a
+							class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
+							role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"> <i class="fas fa-bell fa-fw"></i> <!-- Counter - Alerts -->
+								<span class="badge badge-danger badge-counter">4+</span>
+						</a> <!-- Dropdown - Alerts -->
+							<div
+								class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+								aria-labelledby="alertsDropdown">
+								<h6 class="dropdown-header">Alerts Center</h6>
+								<a class="dropdown-item d-flex align-items-center" href="notification.jsp">
+									<div class="mr-3">
+										<div class="icon-circle bg-primary">
+											<i class="fas fa-bookmark text-white"></i>
+										</div>
+									</div>
+									<div>
+										<div class="small text-gray-500">2023-04-03</div>
+										<span class="font-weight-bold">»õ·Î¿î °øÁö»çÇ×ÀÌ µî·ÏµÇ¾ú½À´Ï´Ù.</span>
+									</div>
+								</a> <a class="dropdown-item d-flex align-items-center" href="#">
+									<div class="mr-3">
+										<div class="icon-circle bg-success">
+											<i class="fas fa-heart text-white"></i>
+										</div>
+									</div>
+									<div>
+										<div class="small text-gray-500">2023-04-01</div>
+										»õ·Î¿î Ä£±¸½ÅÃ»ÀÌ ÀÖ½À´Ï´Ù!
+									</div>
+								</a> <a class="dropdown-item d-flex align-items-center" href="#">
+									<div class="mr-3">
+										<div class="icon-circle bg-success">
+											<i class="fas fa-heart text-white"></i>
+										</div>
+									</div>
+									<div>
+										<div class="small text-gray-500">2023-04-01</div>
+										»õ·Î¿î Ä£±¸½ÅÃ»ÀÌ ÀÖ½À´Ï´Ù!
+									</div>
+								</a> <a class="dropdown-item d-flex align-items-center" href="#">
+									<div class="mr-3">
+										<div class="icon-circle bg-warning">
+											<i class="fas fa-exclamation-triangle text-white"></i>
+										</div>
+									</div>
+									<div>
+										<div class="small text-gray-500">2023-03-30</div>
+										»õ·Î¿î ÅõÇ¥°¡ ÁøÇàÁßÀÔ´Ï´Ù.
+									</div>
+								</a> <a class="dropdown-item text-center small text-gray-500"
+									href="#">´õº¸±â</a>
+							</div></li>
 
-                        <!-- Nav Item - Messages -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-envelope fa-fw"></i>
-                                <!-- Counter - Messages -->
-                                <span class="badge badge-danger badge-counter">7</span>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="messagesDropdown">
-                                <h6 class="dropdown-header">
-                                    Message Center
-                                </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
-                                            alt="...">
-                                        <div class="status-indicator bg-success"></div>
-                                    </div>
-                                    <div class="font-weight-bold">
-                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
-                                            problem I've been having.</div>
-                                        <div class="small text-gray-500">Emily Fowler Â· 58m</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
-                                            alt="...">
-                                        <div class="status-indicator"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">I have the photos that you ordered last month, how
-                                            would you like them sent to you?</div>
-                                        <div class="small text-gray-500">Jae Chun Â· 1d</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
-                                            alt="...">
-                                        <div class="status-indicator bg-warning"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">Last month's report looks great, I am very happy with
-                                            the progress so far, keep up the good work!</div>
-                                        <div class="small text-gray-500">Morgan Alvarez Â· 2d</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
-                                            alt="...">
-                                        <div class="status-indicator bg-success"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                                            told me that people say this to all dogs, even if they aren't good...</div>
-                                        <div class="small text-gray-500">Chicken the Dog Â· 2w</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-                            </div>
-                        </li>
+
+                       <!-- Nav Item - Messages -->
+						<li class="nav-item dropdown no-arrow mx-1"><a
+							class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
+							role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"> <i class="fas fa-envelope fa-fw"></i>
+								<!-- Counter - Messages --> <span
+								class="badge badge-danger badge-counter">7</span>
+						</a> <!-- Dropdown - Messages -->
+							<div
+								class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+								aria-labelledby="messagesDropdown">
+								<h6 class="dropdown-header text-s">ÂÊÁöÇÔ</h6>
+								<a class="dropdown-item d-flex align-items-center" href="#">
+									<div class="dropdown-list-image mr-3">
+										<img class="rounded-circle" src="img/undraw_profile_1.svg"
+											alt="..." />
+										<div class="status-indicator bg-success"></div>
+									</div>
+									<div class="font-weight-bold">
+										<div class="text-truncate">³»ÀÏ Àú³á¿¡ ¹¹ÇÔ</div>
+										<div class="small text-gray-500">¾çÁø¿µ ¡¤ 58ºĞ Àü</div>
+									</div>
+								</a> <a class="dropdown-item d-flex align-items-center" href="#">
+									<div class="dropdown-list-image mr-3">
+										<img class="rounded-circle" src="img/undraw_profile_2.svg"
+											alt="..." />
+										<div class="status-indicator"></div>
+									</div>
+									<div>
+										<div class="text-truncate">³»ÀÏ Áø¿µÀÌ°¡ °°ÀÌ ¹ä¸ÔÀÚ´Âµ¥?? ´Ô °¥²¨ÀÓ??</div>
+										<div class="small text-gray-500">Àå¿µÁÖ ¡¤ 1½Ã°£ 22ºĞ Àü</div>
+									</div>
+								</a> <a class="dropdown-item d-flex align-items-center" href="#">
+									<div class="dropdown-list-image mr-3">
+										<img class="rounded-circle" src="img/undraw_profile_3.svg"
+											alt="..." />
+										<div class="status-indicator bg-warning"></div>
+									</div>
+									<div>
+										<div class="text-truncate">±×·³ ´ÙÀ½ °æ±â¿¡ º¸ÀÚ</div>
+										<div class="small text-gray-500">ÇØ¸ğ¼ö ¡¤ 2ÀÏ Àü</div>
+									</div>
+								</a> <a class="dropdown-item d-flex align-items-center" href="#">
+									<div class="dropdown-list-image mr-3">
+										<img class="rounded-circle"
+											src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="..." />
+										<div class="status-indicator bg-success"></div>
+									</div>
+									<div>
+										<div class="text-truncate">¾Æ´Ï ¾îÁ¦ ¹«½¼ÀÏ ÀÖ¾ú´ÂÁö ¾Ë¾Æ? ±×³É µÚ¿¡¼­ ³î°íÀÖ¾ú°Åµç?? ±Ùµ¥ °©ÀÚ±â Áø¿µÀÌ°¡ ¼ÅÇÃ ÃãÀ» Ãß´Â°Å¾ß ´ë¹ÚÀÌÁö ¾Ê³Ä</div>
+										<div class="small text-gray-500">Á¤½Â¿ø ¡¤ 4ÀÏ Àü</div>
+									</div>
+								</a> <a class="dropdown-item text-center small text-gray-500"
+									href="#">´õº¸±â</a>
+							</div></li>
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -371,7 +349,7 @@
 
 									<!-- Modal Header -->
 									<div class="modal-header">
-										<h4 class="modal-title">ì¼ì • ë“±ë¡</h4>
+										<h4 class="modal-title">ÀÏÁ¤ µî·Ï</h4>
 										<button type="button" class="close"
 											onclick="initModal('insertModal', g_arg)">&times;</button>
 									</div>
@@ -379,11 +357,11 @@
 									<div class="modal-body">
 
 										<div class="form-group">
-											<label for="title">ì¼ì •ë‚´ìš©:</label> <input type="textbox"
+											<label for="title">ÀÏÁ¤³»¿ë:</label> <input type="textbox"
 												class="form-control" placeholder="" id="title" name="title">
 										</div>
 										<div class="form-group">
-											<label for="start">ì‹œì‘ì‹œê°„:</label> <select class="form-control"
+											<label for="start">½ÃÀÛ½Ã°£:</label> <select class="form-control"
 												id="start" onchange="startChange()">
 												<option value="09:00">09:00</option>
 												<option value="09:30">09:30</option>
@@ -408,7 +386,7 @@
 											</select>
 										</div>
 										<div class="form-group">
-											<label for="end">ì¢…ë£Œì‹œê°„:</label> <select class="form-control"
+											<label for="end">Á¾·á½Ã°£:</label> <select class="form-control"
 												id="end">
 												<option value="09:30">09:30</option>
 												<option value="10:00">10:00</option>
@@ -433,17 +411,17 @@
 											</select>
 										</div>
 										<div class="form-group">
-											<label for="allDay">ì¢…ì¼ì—¬ë¶€:</label>
+											<label for="allDay">Á¾ÀÏ¿©ºÎ:</label>
 											<div class="form-check">
 												<label class="form-check-label"> <input type="radio"
-													class="form-check-input" value="true" name="allDay">ì˜ˆ
+													class="form-check-input" value="true" name="allDay">¿¹
 												</label>
 											</div>
 
 											<div class="form-check">
 												<label class="form-check-label"> <input type="radio"
 													checked="checked" class="form-check-input" value="false"
-													name="allDay">ì•„ë‹ˆì˜¤
+													name="allDay">¾Æ´Ï¿À
 												</label>
 											</div>
 										</div>
@@ -452,10 +430,10 @@
 									<div class="modal-footer">
 										<button type="button"
 											class="btn btn-dark  float-right deleteBtn"
-											onclick="deleteSch('insertModal', g_arg)">ì‚­ì œ</button>
+											onclick="deleteSch('insertModal', g_arg)">»èÁ¦</button>
 										<button type="button"
 											class="btn btn-warning float-right insertBtn"
-											onclick="insertSch('insertModal', g_arg)">ë“±ë¡</button>
+											onclick="insertSch('insertModal', g_arg)">µî·Ï</button>
 									</div>
 
 								</div>
@@ -466,51 +444,51 @@
 					<script>
 					
 							$(function() {
-								// calendar element ì·¨ë“
+								// calendar element Ãëµæ
 								var calendarEl = $('#calendar')[0];
-								// full-calendar ìƒì„±í•˜ê¸°
+								// full-calendar »ı¼ºÇÏ±â
 								var calendar = new FullCalendar.Calendar(
 										calendarEl,
 										{
-											height : '700px', // calendar ë†’ì´ ì„¤ì •
-											expandRows : true, // í™”ë©´ì— ë§ê²Œ ë†’ì´ ì¬ì„¤ì •
-											slotMinTime : '08:00', // Day ìº˜ë¦°ë”ì—ì„œ ì‹œì‘ ì‹œê°„
-											slotMaxTime : '24:00', // Day ìº˜ë¦°ë”ì—ì„œ ì¢…ë£Œ ì‹œê°„
-											// í•´ë”ì— í‘œì‹œí•  íˆ´ë°”
+											height : '700px', // calendar ³ôÀÌ ¼³Á¤
+											expandRows : true, // È­¸é¿¡ ¸Â°Ô ³ôÀÌ Àç¼³Á¤
+											slotMinTime : '08:00', // Day Ä¶¸°´õ¿¡¼­ ½ÃÀÛ ½Ã°£
+											slotMaxTime : '24:00', // Day Ä¶¸°´õ¿¡¼­ Á¾·á ½Ã°£
+											// ÇØ´õ¿¡ Ç¥½ÃÇÒ Åø¹Ù
 											headerToolbar : {
 												left : 'prev,next today',
 												center : 'title',
 												right : 'dayGridMonth,timeGridWeek,timeGridDay listWeek'
 											},
-											initialView : 'dayGridMonth', // ì´ˆê¸° ë¡œë“œ ë ë•Œ ë³´ì´ëŠ” ìº˜ë¦°ë” í™”ë©´(ê¸°ë³¸ ì„¤ì •: ë‹¬)
-											//initialDate: '2021-07-15', // ì´ˆê¸° ë‚ ì§œ ì„¤ì • (ì„¤ì •í•˜ì§€ ì•Šìœ¼ë©´ ì˜¤ëŠ˜ ë‚ ì§œê°€ ë³´ì¸ë‹¤.)
-											navLinks : true, // ë‚ ì§œë¥¼ ì„ íƒí•˜ë©´ Day ìº˜ë¦°ë”ë‚˜ Week ìº˜ë¦°ë”ë¡œ ë§í¬
-											editable : true, // ìˆ˜ì • ê°€ëŠ¥?
-											selectable : true, // ë‹¬ë ¥ ì¼ì ë“œë˜ê·¸ ì„¤ì •ê°€ëŠ¥
+											initialView : 'dayGridMonth', // ÃÊ±â ·Îµå µÉ¶§ º¸ÀÌ´Â Ä¶¸°´õ È­¸é(±âº» ¼³Á¤: ´Ş)
+											//initialDate: '2021-07-15', // ÃÊ±â ³¯Â¥ ¼³Á¤ (¼³Á¤ÇÏÁö ¾ÊÀ¸¸é ¿À´Ã ³¯Â¥°¡ º¸ÀÎ´Ù.)
+											navLinks : true, // ³¯Â¥¸¦ ¼±ÅÃÇÏ¸é Day Ä¶¸°´õ³ª Week Ä¶¸°´õ·Î ¸µÅ©
+											editable : true, // ¼öÁ¤ °¡´É?
+											selectable : true, // ´Ş·Â ÀÏÀÚ µå·¡±× ¼³Á¤°¡´É
 											selectMirror : true,
-											nowIndicator : true, // í˜„ì¬ ì‹œê°„ ë§ˆí¬
-											dayMaxEvents : true, // ì´ë²¤íŠ¸ê°€ ì˜¤ë²„ë˜ë©´ ë†’ì´ ì œí•œ (+ ëª‡ ê°œì‹ìœ¼ë¡œ í‘œí˜„)
+											nowIndicator : true, // ÇöÀç ½Ã°£ ¸¶Å©
+											dayMaxEvents : true, // ÀÌº¥Æ®°¡ ¿À¹öµÇ¸é ³ôÀÌ Á¦ÇÑ (+ ¸î °³½ÄÀ¸·Î Ç¥Çö)
 											
-											locale : 'ko', // í•œêµ­ì–´ ì„¤ì •
+											locale : 'ko', // ÇÑ±¹¾î ¼³Á¤
 											/* select: function() {
-												$("#myModal").modal("show");	//ì¼ì í´ë¦­ ì‹œ ëª¨ë‹¬ í˜¸ì¶œ
+												$("#myModal").modal("show");	//ÀÏÀÚ Å¬¸¯ ½Ã ¸ğ´Ş È£Ãâ
 										      }, */
 										      eventClick: function(arg) {
-										    	  insertModalOpen(arg);//ì´ë²¤íŠ¸ í´ë¦­ ì‹œ ëª¨ë‹¬ í˜¸ì¶œ
+										    	  insertModalOpen(arg);//ÀÌº¥Æ® Å¬¸¯ ½Ã ¸ğ´Ş È£Ãâ
 										      },
 											  
-											eventAdd : function(obj) { // ì´ë²¤íŠ¸ê°€ ì¶”ê°€ë˜ë©´ ë°œìƒí•˜ëŠ” ì´ë²¤íŠ¸
+											eventAdd : function(obj) { // ÀÌº¥Æ®°¡ Ãß°¡µÇ¸é ¹ß»ıÇÏ´Â ÀÌº¥Æ®
 												console.log(obj);
 											},
-											eventChange : function(obj) { // ì´ë²¤íŠ¸ê°€ ìˆ˜ì •ë˜ë©´ ë°œìƒí•˜ëŠ” ì´ë²¤íŠ¸
+											eventChange : function(obj) { // ÀÌº¥Æ®°¡ ¼öÁ¤µÇ¸é ¹ß»ıÇÏ´Â ÀÌº¥Æ®
 												console.log(obj);
 
 											},
-											eventRemove : function(obj) { // ì´ë²¤íŠ¸ê°€ ì‚­ì œë˜ë©´ ë°œìƒí•˜ëŠ” ì´ë²¤íŠ¸
+											eventRemove : function(obj) { // ÀÌº¥Æ®°¡ »èÁ¦µÇ¸é ¹ß»ıÇÏ´Â ÀÌº¥Æ®
 												console.log(obj);
 											},
 											
-										select : function(arg) { // ìº˜ë¦°ë”ì—ì„œ ë“œë˜ê·¸ë¡œ ì´ë²¤íŠ¸ë¥¼ ìƒì„±í•  ìˆ˜ ìˆë‹¤.
+										select : function(arg) { // Ä¶¸°´õ¿¡¼­ µå·¡±×·Î ÀÌº¥Æ®¸¦ »ı¼ºÇÒ ¼ö ÀÖ´Ù.
 											//insertModalOpen(arg);
 											var title = prompt('Event Title:');
 											if (title) {
@@ -523,18 +501,29 @@
 											}
 											calendar.unselect()
 										},
-									// ê°€ì ¸ì˜¤ê¸°
-									/* eventSources: [
-										{
-											url:
+										events:[
+											{
+												title: 'ÇĞ¿ø°¡¾ßÇÔ',
+											    start: '2023-04-01 09:00:00',
+											    end: '2023-04-01 10:00:00',
+											},
+											{
+												title: 'Àú³á¾à¼Ó',
+												start: '2023-04-04 21:00:00',
+												end: '2023-04-01 22:00:00',
+												
+											},
+											{
+												title : 'ÇÁ·ÎÁ§Æ®',
+												start: '2023-04-01',
+												end: '2023-04-07',
+												
+											}
 											
-										}
-										
-									] */
-										
-										
+											
+										]
 									});
-							// ìº˜ë¦°ë” ëœë”ë§
+							// Ä¶¸°´õ ·£´õ¸µ
 							calendar.render();
 						});
 					</script>
@@ -574,13 +563,13 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">Ã—</span>
+                        <span aria-hidden="true">¡¿</span>
                     </button>
                 </div>
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="login.jsp">Logout</a>
                 </div>
             </div>
         </div>
@@ -606,4 +595,4 @@
 
 </body>
 
-</html>
+</html></html>

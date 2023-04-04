@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,14 +39,14 @@
 		<ul
 			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
 			id="accordionSidebar">
-			<!-- Sidebar - Brand ÎèôÌò∏ÌöåÎ™Ö-->
+			<!-- Sidebar - Brand µø»£»∏∏Ì-->
 			<a
 				class="sidebar-brand d-flex align-items-center justify-content-center"
-				href="index.html">
+				href="index.jsp">
 				<div class="sidebar-brand-icon rotate-n-15">
 					<i class="fas fa-laugh-wink"></i>
 				</div>
-				<div class="sidebar-brand-text mx-3">ÎèôÌò∏ÌöåÎ™Ö</div>
+				<div class="sidebar-brand-text mx-3">µø»£»∏∏Ì</div>
 			</a>
 
 			<!-- Divider -->
@@ -52,57 +54,38 @@
 
 			<!-- Nav Item - Dashboard -->
 			<li class="nav-item active"><a class="nav-link"
-				href="index.html"> <i class="fas fa-fw fa-home"></i> <span>ÌôàÏúºÎ°ú</span></a>
+				href="index.jsp"> <i class="fas fa-fw fa-home"></i> <span>»®¿∏∑Œ</span></a>
 			</li>
 
 			<!-- Divider -->
 			<hr class="sidebar-divider" />
 
-			<!-- Heading Î©îÎâ¥-->
-			<div class="sidebar-heading">Î©îÎâ¥</div>
+			<!-- Heading ∏ﬁ¥∫-->
+			<div class="sidebar-heading">∏ﬁ¥∫</div>
 
-			<!-- Nav Item - Pages Collapse Menu -->
-			<li class="nav-item"><a class="nav-link collapsed" href="#"
-				data-toggle="collapse" data-target="#collapsePages"
-				aria-expanded="true" aria-controls="collapsePages"> <i
-					class="fas fa-fw fa-folder"></i> <span>Pages</span>
-			</a>
-				<div id="collapsePages" class="collapse"
-					aria-labelledby="headingPages" data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
-						<h6 class="collapse-header">Login Screens:</h6>
-						<a class="collapse-item" href="login.html">Login</a> <a
-							class="collapse-item" href="register.html">Register</a> <a
-							class="collapse-item" href="forgot-password.html">Forgot
-							Password</a>
-						<div class="collapse-divider"></div>
-						<h6 class="collapse-header">Other Pages:</h6>
-						<a class="collapse-item" href="404.html">404 Page</a> <a
-							class="collapse-item" href="blank.html">Blank Page</a>
-					</div>
-				</div></li>
+			
 
 			<!-- Nav Item - Charts -->
-			<li class="nav-item"><a class="nav-link" href="charts.html">
-					<i class="fas fa-fw fa-chart-area"></i> <span>Í≥µÏßÄÏÇ¨Ìï≠</span>
+			<li class="nav-item"><a class="nav-link" href="charts.jsp">
+					<i class="fas fa-fw fa-chart-area"></i> <span>∞¯¡ˆªÁ«◊</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="calendar.html">
-					<i class="fas fa-fw fa-calendar"></i> <span>Îã¨Î†•</span>
+			<li class="nav-item"><a class="nav-link" href="calendar.jsp">
+					<i class="fas fa-fw fa-calendar"></i> <span>¥ﬁ∑¬</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="board.html">
-					<i class="fas fa-fw fa-list"></i> <span>Í≤åÏãúÌåê</span>
+			<li class="nav-item"><a class="nav-link" href="board.jsp">
+					<i class="fas fa-fw fa-list"></i> <span>∞‘Ω√∆«</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="ballot.html">
-					<i class="fas fa-fw fa-check"></i> <span>Ìà¨Ìëú</span>
+			<li class="nav-item"><a class="nav-link" href="ballot.jsp">
+					<i class="fas fa-fw fa-check"></i> <span>≈ı«•</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="chat.html"> <i
-					class="fas fa-fw fa-comments"></i> <span>Ï±ÑÌåÖ</span>
+			<li class="nav-item"><a class="nav-link" href="chat.jsp"> <i
+					class="fas fa-fw fa-comments"></i> <span>√§∆√</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="matching.html">
-					<i class="fas fa-fw fa-handshake"></i> <span>Îß§Ïπ≠</span>
+			<li class="nav-item"><a class="nav-link" href="matching.jsp">
+					<i class="fas fa-fw fa-handshake"></i> <span>∏≈ƒ™</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="analysis.html">
-					<i class="fas fa-fw fa-chart-bar"></i> <span>Î∂ÑÏÑù</span>
+			<li class="nav-item"><a class="nav-link" href="analysis.jsp">
+					<i class="fas fa-fw fa-chart-bar"></i> <span>∫–ºÆ</span>
 			</a></li>
 
 			<!-- Divider -->
@@ -170,122 +153,117 @@
                             </div>
                         </li>
 
-                        <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw"></i>
-                                <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">3+</span>
-                            </a>
-                            <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="alertsDropdown">
-                                <h6 class="dropdown-header">
-                                    Alerts Center
-                                </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <i class="fas fa-file-alt text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 12, 2019</div>
-                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-success">
-                                            <i class="fas fa-donate text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 7, 2019</div>
-                                        $290.29 has been deposited into your account!
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-warning">
-                                            <i class="fas fa-exclamation-triangle text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="small text-gray-500">December 2, 2019</div>
-                                        Spending Alert: We've noticed unusually high spending for your account.
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                            </div>
-                        </li>
+                        		<!-- Nav Item - Alerts -->
+						<li class="nav-item dropdown no-arrow mx-1"><a
+							class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
+							role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"> <i class="fas fa-bell fa-fw"></i> <!-- Counter - Alerts -->
+								<span class="badge badge-danger badge-counter">4+</span>
+						</a> <!-- Dropdown - Alerts -->
+							<div
+								class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+								aria-labelledby="alertsDropdown">
+								<h6 class="dropdown-header">Alerts Center</h6>
+								<a class="dropdown-item d-flex align-items-center" href="notification.jsp">
+									<div class="mr-3">
+										<div class="icon-circle bg-primary">
+											<i class="fas fa-bookmark text-white"></i>
+										</div>
+									</div>
+									<div>
+										<div class="small text-gray-500">2023-04-03</div>
+										<span class="font-weight-bold">ªı∑ŒøÓ ∞¯¡ˆªÁ«◊¿Ã µÓ∑œµ«æ˙Ω¿¥œ¥Ÿ.</span>
+									</div>
+								</a> <a class="dropdown-item d-flex align-items-center" href="#">
+									<div class="mr-3">
+										<div class="icon-circle bg-success">
+											<i class="fas fa-heart text-white"></i>
+										</div>
+									</div>
+									<div>
+										<div class="small text-gray-500">2023-04-01</div>
+										ªı∑ŒøÓ ƒ£±∏Ω≈√ª¿Ã ¿÷Ω¿¥œ¥Ÿ!
+									</div>
+								</a> <a class="dropdown-item d-flex align-items-center" href="#">
+									<div class="mr-3">
+										<div class="icon-circle bg-success">
+											<i class="fas fa-heart text-white"></i>
+										</div>
+									</div>
+									<div>
+										<div class="small text-gray-500">2023-04-01</div>
+										ªı∑ŒøÓ ƒ£±∏Ω≈√ª¿Ã ¿÷Ω¿¥œ¥Ÿ!
+									</div>
+								</a> <a class="dropdown-item d-flex align-items-center" href="#">
+									<div class="mr-3">
+										<div class="icon-circle bg-warning">
+											<i class="fas fa-exclamation-triangle text-white"></i>
+										</div>
+									</div>
+									<div>
+										<div class="small text-gray-500">2023-03-30</div>
+										ªı∑ŒøÓ ≈ı«•∞° ¡¯«‡¡ﬂ¿‘¥œ¥Ÿ.
+									</div>
+								</a> <a class="dropdown-item text-center small text-gray-500"
+									href="#">¥ı∫∏±‚</a>
+							</div></li>
 
-                        <!-- Nav Item - Messages -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-envelope fa-fw"></i>
-                                <!-- Counter - Messages -->
-                                <span class="badge badge-danger badge-counter">7</span>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="messagesDropdown">
-                                <h6 class="dropdown-header">
-                                    Message Center
-                                </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
-                                            alt="...">
-                                        <div class="status-indicator bg-success"></div>
-                                    </div>
-                                    <div class="font-weight-bold">
-                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
-                                            problem I've been having.</div>
-                                        <div class="small text-gray-500">Emily Fowler ¬∑ 58m</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
-                                            alt="...">
-                                        <div class="status-indicator"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">I have the photos that you ordered last month, how
-                                            would you like them sent to you?</div>
-                                        <div class="small text-gray-500">Jae Chun ¬∑ 1d</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
-                                            alt="...">
-                                        <div class="status-indicator bg-warning"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">Last month's report looks great, I am very happy with
-                                            the progress so far, keep up the good work!</div>
-                                        <div class="small text-gray-500">Morgan Alvarez ¬∑ 2d</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
-                                            alt="...">
-                                        <div class="status-indicator bg-success"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                                            told me that people say this to all dogs, even if they aren't good...</div>
-                                        <div class="small text-gray-500">Chicken the Dog ¬∑ 2w</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-                            </div>
-                        </li>
+
+                       <!-- Nav Item - Messages -->
+						<li class="nav-item dropdown no-arrow mx-1"><a
+							class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
+							role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"> <i class="fas fa-envelope fa-fw"></i>
+								<!-- Counter - Messages --> <span
+								class="badge badge-danger badge-counter">7</span>
+						</a> <!-- Dropdown - Messages -->
+							<div
+								class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+								aria-labelledby="messagesDropdown">
+								<h6 class="dropdown-header text-s">¬ ¡ˆ«‘</h6>
+								<a class="dropdown-item d-flex align-items-center" href="#">
+									<div class="dropdown-list-image mr-3">
+										<img class="rounded-circle" src="img/undraw_profile_1.svg"
+											alt="..." />
+										<div class="status-indicator bg-success"></div>
+									</div>
+									<div class="font-weight-bold">
+										<div class="text-truncate">≥ª¿œ ¿˙≥·ø° ππ«‘</div>
+										<div class="small text-gray-500">æÁ¡¯øµ °§ 58∫– ¿¸</div>
+									</div>
+								</a> <a class="dropdown-item d-flex align-items-center" href="#">
+									<div class="dropdown-list-image mr-3">
+										<img class="rounded-circle" src="img/undraw_profile_2.svg"
+											alt="..." />
+										<div class="status-indicator"></div>
+									</div>
+									<div>
+										<div class="text-truncate">≥ª¿œ ¡¯øµ¿Ã∞° ∞∞¿Ã π‰∏‘¿⁄¥¬µ•?? ¥‘ ∞•≤®¿”??</div>
+										<div class="small text-gray-500">¿Âøµ¡÷ °§ 1Ω√∞£ 22∫– ¿¸</div>
+									</div>
+								</a> <a class="dropdown-item d-flex align-items-center" href="#">
+									<div class="dropdown-list-image mr-3">
+										<img class="rounded-circle" src="img/undraw_profile_3.svg"
+											alt="..." />
+										<div class="status-indicator bg-warning"></div>
+									</div>
+									<div>
+										<div class="text-truncate">±◊∑≥ ¥Ÿ¿Ω ∞Ê±‚ø° ∫∏¿⁄</div>
+										<div class="small text-gray-500">«ÿ∏ºˆ °§ 2¿œ ¿¸</div>
+									</div>
+								</a> <a class="dropdown-item d-flex align-items-center" href="#">
+									<div class="dropdown-list-image mr-3">
+										<img class="rounded-circle"
+											src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="..." />
+										<div class="status-indicator bg-success"></div>
+									</div>
+									<div>
+										<div class="text-truncate">æ∆¥œ æÓ¡¶ π´Ωº¿œ ¿÷æ˙¥¬¡ˆ æÀæ∆? ±◊≥… µ⁄ø°º≠ ≥Ó∞Ì¿÷æ˙∞≈µÁ?? ±Ÿµ• ∞©¿⁄±‚ ¡¯øµ¿Ã∞° º≈«√ √„¿ª √ﬂ¥¬∞≈æﬂ ¥Îπ⁄¿Ã¡ˆ æ ≥ƒ</div>
+										<div class="small text-gray-500">¡§Ω¬ø¯ °§ 4¿œ ¿¸</div>
+									</div>
+								</a> <a class="dropdown-item text-center small text-gray-500"
+									href="#">¥ı∫∏±‚</a>
+							</div></li>
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -329,7 +307,7 @@
                 <div class="container-fluid">
 
                   <!-- Page Heading -->
-                    <h1 class="logo_effect" align="center"><img src="img/board_icon.png" style="height:80px; margin-right:50px;" "/></h1>
+                    <h1 class="logo_effect" align="center"><img src="img/noticeboard_icon.png" style="height:80px; margin-right:50px;" "/></h1>
 
 					 <div class="row">
                     	<div class="col-md-12 mb-4 margin-top">
@@ -337,25 +315,25 @@
 								<div class="card-body">
 					<div class="content">
 						<div class="container">
-							<!-- Ï†úÎ™© -->
-							<!-- <h1 class="mb-5">Í≤åÏãúÌåê</h1> -->
+							<!-- ¡¶∏Ò -->
+							<!-- <h1 class="mb-5">∞‘Ω√∆«</h1> -->
 							<div class="table-responsive">
-								<!-- Í≤åÏãúÌåê
-					Î≤àÌò∏(#), Ï†úÎ™©, Ïù¥Î¶Ñ, ÏûëÏÑ±ÏùºÏûê, (ÏÇ≠Ï†ú=x) -->
+								<!-- ∞‘Ω√∆«
+					π¯»£(#), ¡¶∏Ò, ¿Ã∏ß, ¿€º∫¿œ¿⁄, (ªË¡¶=x) -->
 								<table class="table">
 									<thead>
 										<tr>
 											<th scope="col">#</th>
-											<th scope="col">Ï†úÎ™©</th>
-											<th scope="col">Ïù¥Î¶Ñ</th>
-											<th scope="col">ÏûëÏÑ±ÏùºÏûê</th>
+											<th scope="col">¡¶∏Ò</th>
+											<th scope="col">¿Ã∏ß</th>
+											<th scope="col">¿€º∫¿œ¿⁄</th>
 											<th></th>
 										</tr>
 									</thead>
 									<tbody class="table-group-divider">
 										<tr>
 											<th scope="row">1</th>
-											<td><a href="boardDetail.jsp">Ïù¥ÏàòÌò∏</a></td>
+											<td><a href="boardDetail.jsp">¿Ãºˆ»£</a></td>
 											<td>Otto</td>
 											<td>@mdo</td>
 											<td><a href="#">x</a></td>
@@ -376,7 +354,7 @@
 										</tr>
 									</tbody>
 								</table>
-								<!-- ÌöåÏõêÎ¶¨Ïä§Ìä∏ ÌéòÏù¥ÏßÄ ÌéòÏù¥ÏßÄ ÎÑòÍ∏∞Í∏∞ -->
+								<!-- »∏ø¯∏ÆΩ∫∆Æ ∆‰¿Ã¡ˆ ∆‰¿Ã¡ˆ ≥—±‚±‚ -->
 								<nav aria-label="Page navigation">
 									<ul class="pagination justify-content-center">
 										<li class="page-item"><a class="page-link" href="#"
@@ -391,7 +369,7 @@
 									</ul>
 									<div class="d-grid gap-2 d-md-flex justify-content-md-end">
 										<a href="boardWrite.jsp"><button
-												class="btn btn-primary me-md-2" type="button">ÏûëÏÑ±ÌïòÍ∏∞</button></a>
+												class="btn btn-primary me-md-2" type="button">¿€º∫«œ±‚</button></a>
 										<!-- <button class="btn btn-primary" type="button">Button</button> -->
 									</div>
 
@@ -440,13 +418,13 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">√ó</span>
+                        <span aria-hidden="true">°ø</span>
                     </button>
                 </div>
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="login.jsp">Logout</a>
                 </div>
             </div>
         </div>

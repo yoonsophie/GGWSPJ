@@ -21,11 +21,10 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <!-- 게시판 버튼 -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
 </head>
 
-<body id="page-top" >
+<body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -59,7 +58,6 @@
 			<div class="sidebar-heading">메뉴</div>
 
 			
-
 			<!-- Nav Item - Charts -->
 			<li class="nav-item"><a class="nav-link" href="notification.jsp">
 					<i class="fas fa-fw fa-chart-area"></i> <span>공지사항</span>
@@ -73,15 +71,14 @@
 			<li class="nav-item"><a class="nav-link" href="ballot.jsp">
 					<i class="fas fa-fw fa-check"></i> <span>투표</span>
 			</a></li>
-
-			<!-- Nav Item - Tables -->
 			<li class="nav-item"><a class="nav-link" href="chat.jsp">
 					<i class="fas fa-fw fa-comments"></i> <span>채팅</span>
 			</a></li>
-
-			<!-- Nav Item - calendar -->
 			<li class="nav-item"><a class="nav-link" href="matching.jsp">
 					<i class="fas fa-fw fa-handshake"></i> <span>매칭</span>
+			</a></li>
+			<li class="nav-item"><a class="nav-link" href="analysis.jsp">
+					<i class="fas fa-fw fa-chart-bar"></i> <span>분석</span>
 			</a></li>
 
 			<!-- Divider -->
@@ -149,7 +146,7 @@
                             </div>
                         </li>
 
-                     		<!-- Nav Item - Alerts -->
+                        		<!-- Nav Item - Alerts -->
 						<li class="nav-item dropdown no-arrow mx-1"><a
 							class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -205,7 +202,7 @@
 							</div></li>
 
 
-                    <!-- Nav Item - Messages -->
+                       <!-- Nav Item - Messages -->
 						<li class="nav-item dropdown no-arrow mx-1"><a
 							class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -301,70 +298,10 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
- 				  <!-- Page Heading -->
-                    <h1 class="logo_effect" align="center"><img src="img/writing_icon.png" style="height:80px; margin-right:50px;" "/></h1>
 
-
-
-					 <div class="row" >
-                    	<div class="col-md-12 mb-4 margin-top">
-							<div class="card shadow h-100 py-2">
-								<div class="card-body">
-
-                                 
-                    <div class="content" >
-						<div class="container" style="overflow-x:hidden; overflow-y:auto;">
-							<!-- <h1 class="mb-5">게시글 작성</h1> -->
-							<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-							  <a href="board.jsp"><button class="btn btn-primary" type="button">뒤로가기</button></a>
-							 <!--  <button class="btn btn-primary" type="button">Button</button> -->
-							</div>
-							<p></p>
-							<div class="table-responsive" >
-								<form action="BoardWriteService" method="post" enctype="multipart/form-data">
-								<!-- 제목 입력 -->
-								  <div class="row mb-3">
-								    <label for="inputEmail3" class="col-sm-2 col-form-label">제목</label>
-								    <div class="col-sm-10">
-								      <input type="text" class="form-control" placeholder="제목을 입력하세요." name="title">
-								    </div>
-								  </div>
-								  <!-- 작성자 입력 -->
-								  <div class="row mb-3">
-								    <label for="inputPassword3" class="col-sm-2 col-form-label" >작성자</label>
-								    <div class="col-sm-10">
-								      <input type="text" class="form-control" placeholder="작성자를 입력하세요." name="writer">
-								    </div>
-								  </div>
-								  <!-- 내용 입력 -->
-								  <div class="row mb-3">
-								    <label for="inputPassword3" class="col-sm-2 col-form-label">내용</label>
-								    <div class="col-sm-10">				    	
-								      <textarea class="form-control" rows="5" placeholder="내용을 입력하세요." name="contents"></textarea>
-								   <!-- 파일 업로드 -->   
-								    </div>
-								  </div>
-								  <div class="row mb-2">
-								    <label for="inputEmail3" class="col-sm-3 col-form-label">파일등록</label>
-								    <div class="col-sm-10">
-								      <input type="file" name="filename">
-								    </div>
-								  </div>
-								  <!-- 등록 및 초기화 -->
-								   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-										 <button type="reset" class="btn btn-primary me-md-2">초기화</button>
-										 <button class="btn btn-primary me-md-2" type="submit">등록하기</button>
-										  <!-- <button class="btn btn-primary" type="button">Button</button> -->
-									</div>
-								</form>  
-								</div>
-							</div>
-		</div>
-		</div>
-		</div>
-		</div>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
+                 <!-- Page Heading -->
+                    <h1 class="logo_effect" align="center"><img src="img/megaphone_icon.png" style="height:80px; margin-right:50px;" "/></h1>
+                  
                    
             <!-- End of Main Content -->
 

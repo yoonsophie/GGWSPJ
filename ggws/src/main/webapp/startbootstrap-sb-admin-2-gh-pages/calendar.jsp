@@ -10,7 +10,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+	 <meta charset='utf-8' />
+  <!-- 화면 해상도에 따라 글자 크기 대응(모바일 대응) -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <!-- jquery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- fullcalendar CDN -->
+  <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.css' rel='stylesheet' />
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
+  <!-- fullcalendar 언어 CDN -->
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js'></script>
+  
+   <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+<style>
+  /* body 스타일 */
+  html, body {
+    overflow: hidden;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+   /*  font-size: 14px; */
+  }
+  /* 캘린더 위의 해더 스타일(날짜가 있는 부분) */
+  .fc-header-toolbar {
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+</style>
     <title>SB Admin 2 - Charts</title>
 
     <!-- Custom fonts for this template-->
@@ -21,11 +52,10 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <!-- 게시판 버튼 -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
 </head>
 
-<body id="page-top" >
+<body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -61,7 +91,7 @@
 			
 
 			<!-- Nav Item - Charts -->
-			<li class="nav-item"><a class="nav-link" href="notification.jsp">
+			<li class="nav-item"><a class="nav-link" href="charts.jsp">
 					<i class="fas fa-fw fa-chart-area"></i> <span>공지사항</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="calendar.jsp">
@@ -73,15 +103,14 @@
 			<li class="nav-item"><a class="nav-link" href="ballot.jsp">
 					<i class="fas fa-fw fa-check"></i> <span>투표</span>
 			</a></li>
-
-			<!-- Nav Item - Tables -->
-			<li class="nav-item"><a class="nav-link" href="chat.jsp">
-					<i class="fas fa-fw fa-comments"></i> <span>채팅</span>
+			<li class="nav-item"><a class="nav-link" href="chat.jsp"> <i
+					class="fas fa-fw fa-comments"></i> <span>채팅</span>
 			</a></li>
-
-			<!-- Nav Item - calendar -->
 			<li class="nav-item"><a class="nav-link" href="matching.jsp">
 					<i class="fas fa-fw fa-handshake"></i> <span>매칭</span>
+			</a></li>
+			<li class="nav-item"><a class="nav-link" href="analysis.jsp">
+					<i class="fas fa-fw fa-chart-bar"></i> <span>분석</span>
 			</a></li>
 
 			<!-- Divider -->
@@ -149,7 +178,7 @@
                             </div>
                         </li>
 
-                     		<!-- Nav Item - Alerts -->
+                        		<!-- Nav Item - Alerts -->
 						<li class="nav-item dropdown no-arrow mx-1"><a
 							class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -205,7 +234,7 @@
 							</div></li>
 
 
-                    <!-- Nav Item - Messages -->
+                       <!-- Nav Item - Messages -->
 						<li class="nav-item dropdown no-arrow mx-1"><a
 							class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -301,74 +330,150 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
- 				  <!-- Page Heading -->
-                    <h1 class="logo_effect" align="center"><img src="img/writing_icon.png" style="height:80px; margin-right:50px;" "/></h1>
 
+                  <!-- Page Heading -->
+                    <h1 class="logo_effect" align="center"><img src="img/calendar_icon.png" style="height:80px; margin-right:50px;" "/></h1>
 
-
-					 <div class="row" >
-                    	<div class="col-md-12 mb-4 margin-top">
-							<div class="card shadow h-100 py-2">
-								<div class="card-body">
-
-                                 
-                    <div class="content" >
-						<div class="container" style="overflow-x:hidden; overflow-y:auto;">
-							<!-- <h1 class="mb-5">게시글 작성</h1> -->
-							<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-							  <a href="board.jsp"><button class="btn btn-primary" type="button">뒤로가기</button></a>
-							 <!--  <button class="btn btn-primary" type="button">Button</button> -->
-							</div>
-							<p></p>
-							<div class="table-responsive" >
-								<form action="BoardWriteService" method="post" enctype="multipart/form-data">
-								<!-- 제목 입력 -->
-								  <div class="row mb-3">
-								    <label for="inputEmail3" class="col-sm-2 col-form-label">제목</label>
-								    <div class="col-sm-10">
-								      <input type="text" class="form-control" placeholder="제목을 입력하세요." name="title">
-								    </div>
-								  </div>
-								  <!-- 작성자 입력 -->
-								  <div class="row mb-3">
-								    <label for="inputPassword3" class="col-sm-2 col-form-label" >작성자</label>
-								    <div class="col-sm-10">
-								      <input type="text" class="form-control" placeholder="작성자를 입력하세요." name="writer">
-								    </div>
-								  </div>
-								  <!-- 내용 입력 -->
-								  <div class="row mb-3">
-								    <label for="inputPassword3" class="col-sm-2 col-form-label">내용</label>
-								    <div class="col-sm-10">				    	
-								      <textarea class="form-control" rows="5" placeholder="내용을 입력하세요." name="contents"></textarea>
-								   <!-- 파일 업로드 -->   
-								    </div>
-								  </div>
-								  <div class="row mb-2">
-								    <label for="inputEmail3" class="col-sm-3 col-form-label">파일등록</label>
-								    <div class="col-sm-10">
-								      <input type="file" name="filename">
-								    </div>
-								  </div>
-								  <!-- 등록 및 초기화 -->
-								   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-										 <button type="reset" class="btn btn-primary me-md-2">초기화</button>
-										 <button class="btn btn-primary me-md-2" type="submit">등록하기</button>
-										  <!-- <button class="btn btn-primary" type="button">Button</button> -->
-									</div>
-								</form>  
+					<div class="col-xl-12">
+						<div class="card shadow">
+							<div class="card-body">
+								<div id='calendar-container'>
+									<div id='calendar'></div>
 								</div>
 							</div>
-		</div>
-		</div>
-		</div>
-		</div>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+						</div>
+						
+					</div>
+					<script>
+					
+							$(function() {
+								// calendar element 취득
+								var calendarEl = $('#calendar')[0];
+								// full-calendar 생성하기
+								var calendar = new FullCalendar.Calendar(
+										calendarEl,
+										{
+											height : '700px', // calendar 높이 설정
+											expandRows : true, // 화면에 맞게 높이 재설정
+											slotMinTime : '08:00', // Day 캘린더에서 시작 시간
+											slotMaxTime : '24:00', // Day 캘린더에서 종료 시간
+											// 해더에 표시할 툴바
+											headerToolbar : {
+												left : 'prev,next today',
+												center : 'title',
+												right : 'dayGridMonth,timeGridWeek,timeGridDay listWeek'
+											},
+											initialView : 'dayGridMonth', // 초기 로드 될때 보이는 캘린더 화면(기본 설정: 달)
+											//initialDate: '2021-07-15', // 초기 날짜 설정 (설정하지 않으면 오늘 날짜가 보인다.)
+											navLinks : true, // 날짜를 선택하면 Day 캘린더나 Week 캘린더로 링크
+											editable : true, // 수정 가능?
+											selectable : true, // 달력 일자 드래그 설정가능
+											selectMirror : true,
+											nowIndicator : true, // 현재 시간 마크
+											dayMaxEvents : true, // 이벤트가 오버되면 높이 제한 (+ 몇 개식으로 표현)
+											
+											locale : 'ko', // 한국어 설정
+											/* select: function() {
+												$("#myModal").modal("show");	//일자 클릭 시 모달 호출
+										      }, */
+										      eventClick: function(arg) {
+										    	  insertModalOpen(arg);//이벤트 클릭 시 모달 호출
+										      },
+											  
+											eventAdd : function(obj) { // 이벤트가 추가되면 발생하는 이벤트
+												console.log(obj);
+											},
+											eventChange : function(obj) { // 이벤트가 수정되면 발생하는 이벤트
+												console.log(obj);
 
-                   
-            <!-- End of Main Content -->
+											},
+											eventRemove : function(obj) { // 이벤트가 삭제되면 발생하는 이벤트
+												console.log(obj);
+											},
+											
+										select : function(arg) { // 캘린더에서 드래그로 이벤트를 생성할 수 있다.
+											//insertModalOpen(arg);
+											var title = prompt('Event Title:');
+											if (title) {
+												calendar.addEvent({
+													title : title,
+													start : arg.start,
+													end : arg.end,
+													allDay : arg.allDay
+												})
+											}
+										    var allEvent = calendar.getEvents(); // .getEvents() 함수로 모든 이벤트를 Array 형식으로 가져온다. (FullCalendar 기능 참조)
+										    
+				                            var events = new Array(); // Json 데이터를 받기 위한 배열 선언
+				                            for (var i = 0; i < allEvent.length; i++) {
+				                                var obj = new Object();     // Json 을 담기 위해 Object 선언
+				                                // alert(allEvent[i]._def.title); // 이벤트 명칭 알람
+				                                obj.title = allEvent[i]._def.title; // 이벤트 명칭  ConsoleLog 로 확인 가능.
+				                                obj.start = allEvent[i]._instance.range.start; // 시작
+				                                obj.end = allEvent[i]._instance.range.end; // 끝
+				 
+				                                events.push(obj);
+				                            }
+				                            var jsondata = JSON.stringify(events);
+				                            console.log(jsondata);
+				                            // saveData(jsondata);
+				 
+				                            $(function saveData(jsondata) {
+				                                $.ajax({
+				                                    url: "/full-calendar/calendar-admin-update",
+				                                    method: "POST",
+				                                    dataType: "text",
+				                                    data: JSON.stringify(events),
+				                                    contentType: 'application/json',
+				                                })
+				                                    .done(function (result) {
+				                                        // alert(result);
+				                                    })
+				                                    .fail(function (request, status, error) {
+				                                         alert("에러 발생" + error);
+				                                    });
+				                                calendar.unselect()
+				                            });
+				                        },
+										 events:[
+											{
+												title: '학원가야함',
+											    start: '2023-04-01 09:00:00',
+											    end: '2023-04-01 10:00:00',
+											},
+											{
+												title: '저녁약속',
+												start: '2023-04-04 21:00:00',
+												end: '2023-04-01 22:00:00',
+												
+											},
+											{
+												title : '프로젝트',
+												start: '2023-04-01',
+												end: '2023-04-07',
+												
+											}
+											
+											
+										] 
+									});
+							// 캘린더 랜더링
+							calendar.render();
+						});
+					</script>
+					</div>
+					</div>
+					</div>
+					</div>
+					<script
+						src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+						integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+						crossorigin="anonymous"></script>
 
-            <!-- Footer -->
+
+					<!-- End of Main Content -->
+
+					<!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">

@@ -43,20 +43,43 @@
 					<div id="main">
 
 						<!-- Introduction -->
+						<%String names[] = {"최강 축구", "축구만이살길", "football is my life", "축생", "행복한 Soccer", "내인생은 축구다"}; %>
+						<%String pics[] = {"images/soccer_pic.jpg", "https://cdn.pixabay.com/photo/2016/05/16/21/07/football-1396740__340.jpg", "https://cdn.pixabay.com/photo/2017/06/26/19/53/team-2444978__340.jpg", "https://cdn.pixabay.com/photo/2016/04/26/22/41/people-1355497__340.jpg", "https://cdn.pixabay.com/photo/2016/03/21/21/18/door-husband-1271621__340.jpg", "https://cdn.pixabay.com/photo/2015/01/21/00/56/soccer-606235__340.jpg"}; %>
 						<%for(int i = 0; i < 6; i++) {%>
 							<section id="intro" class="main">
 								<div class="spotlight">
 									<div class="content">
 										<header class="major">
 										
-											<h2>축구 <%=i+1 %>팀</h2>
+											<h2><%=names[i] %></h2>
 										</header>
-										<p>우리 동호회는 말이여 암튼 사람들이 친절허구 말이여 어쩌구 말이여 </p>
+										<%if(i==0){ %>
+										<p>- 긍정적인 생각! 긍정적인 축구! 긍생~긍축</p>
+										<p>- 행복한 축구를 하고자 합니다 E환영♬</p>
+										<p>- 신생이라 포지션 상관없이 구하고 있어요</p>
+										<p>- ☆카★풀☆가★능</p>
+										<%} else if(i==1){ %>
+										<p>- 매주 일요일 오전 9시 마다 축구를 하는 최강 축구팀 입니다</p>
+										<p>- 평균 연령 : 40대</p>
+										<p>- FK포지션 모집중입니다</p>
+										<p>- 광산구 거주자 환영해요~</p>
+										<%} else if(i==2){%>
+										<p>- Football Is My Life</p>
+										<p>- 노래 잘하시는 분 모집합니다</p>
+										<p>- 평균 연령 : 30대</p>
+										<p>- 회식 좋아하시고 술 좋아하신다면 바로 이곳이에요</p>
+										<%} else if(i==3){%>
+										<p>- 축구는 뭐라고 생각하시나요</p>
+										<p>- 저는 그렇게 생각합니다</p>
+										<p>- 우리 인생이라고 말이죠</p>
+										<%} else{%>
+										<p>- 어쩌고</p>
+										<%} %>
 										<ul class="actions">
 											<li><a href="../startbootstrap-sb-admin-2-gh-pages/index.jsp" class="button">들어가기</a></li>
 										</ul>
 									</div>
-									<span class="image"><img src="images/soccer_pic.jpg" alt="" style="width:150; height:300px"/></span>
+									<span class="image"><img src=<%=pics[i] %> alt="" style="width:150; height:300px"/></span>
 								</div>
 							</section>
 											<%} %>

@@ -20,12 +20,21 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <!-- 게시판 버튼 -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/sb-admin-2.css" rel="stylesheet">
+    
+    <!-- sweet Alert -->
+    <script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
+" rel="stylesheet">
+   
+
 </head>
 
-<body id="page-top" >
+<body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -58,7 +67,7 @@
 			<!-- Heading 메뉴-->
 			<div class="sidebar-heading">메뉴</div>
 
-			
+		
 
 			<!-- Nav Item - Charts -->
 			<li class="nav-item"><a class="nav-link" href="notification.jsp">
@@ -73,15 +82,14 @@
 			<li class="nav-item"><a class="nav-link" href="ballot.jsp">
 					<i class="fas fa-fw fa-check"></i> <span>투표</span>
 			</a></li>
-
-			<!-- Nav Item - Tables -->
 			<li class="nav-item"><a class="nav-link" href="chat.jsp">
 					<i class="fas fa-fw fa-comments"></i> <span>채팅</span>
 			</a></li>
-
-			<!-- Nav Item - calendar -->
 			<li class="nav-item"><a class="nav-link" href="matching.jsp">
 					<i class="fas fa-fw fa-handshake"></i> <span>매칭</span>
+			</a></li>
+			<li class="nav-item"><a class="nav-link" href="analysis.jsp">
+					<i class="fas fa-fw fa-chart-bar"></i> <span>분석</span>
 			</a></li>
 
 			<!-- Divider -->
@@ -205,7 +213,7 @@
 							</div></li>
 
 
-                    <!-- Nav Item - Messages -->
+                       <!-- Nav Item - Messages -->
 						<li class="nav-item dropdown no-arrow mx-1"><a
 							class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -260,7 +268,8 @@
 								</a> <a class="dropdown-item text-center small text-gray-500"
 									href="#">더보기</a>
 							</div></li>
-
+							
+							
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
@@ -300,73 +309,214 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
- 				  <!-- Page Heading -->
-                    <h1 class="logo_effect" align="center"><img src="img/writing_icon.png" style="height:80px; margin-right:50px;" "/></h1>
+                <div class = "tab_menu">
+                <div class="container-fluid"> 
 
-
-
-					 <div class="row" >
+                    <!-- Page Heading -->
+                    <h1 class="logo_effect" align="center"><img src="img/handshake_icon.png" style="height:80px; margin-right:50px;" "/></h1>
+               
+               
+               
+                    <!-- 매칭... -->
+                
+                   <div class="row">
                     	<div class="col-md-12 mb-4 margin-top">
 							<div class="card shadow h-100 py-2">
 								<div class="card-body">
-
-                                 
-                    <div class="content" >
-						<div class="container" style="overflow-x:hidden; overflow-y:auto;">
-							<!-- <h1 class="mb-5">게시글 작성</h1> -->
-							<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-							  <a href="board.jsp"><button class="btn btn-primary" type="button">뒤로가기</button></a>
-							 <!--  <button class="btn btn-primary" type="button">Button</button> -->
-							</div>
-							<p></p>
-							<div class="table-responsive" >
-								<form action="BoardWriteService" method="post" enctype="multipart/form-data">
-								<!-- 제목 입력 -->
-								  <div class="row mb-3">
-								    <label for="inputEmail3" class="col-sm-2 col-form-label">제목</label>
-								    <div class="col-sm-10">
-								      <input type="text" class="form-control" placeholder="제목을 입력하세요." name="title">
-								    </div>
-								  </div>
-								  <!-- 작성자 입력 -->
-								  <div class="row mb-3">
-								    <label for="inputPassword3" class="col-sm-2 col-form-label" >작성자</label>
-								    <div class="col-sm-10">
-								      <input type="text" class="form-control" placeholder="작성자를 입력하세요." name="writer">
-								    </div>
-								  </div>
-								  <!-- 내용 입력 -->
-								  <div class="row mb-3">
-								    <label for="inputPassword3" class="col-sm-2 col-form-label">내용</label>
-								    <div class="col-sm-10">				    	
-								      <textarea class="form-control" rows="5" placeholder="내용을 입력하세요." name="contents"></textarea>
-								   <!-- 파일 업로드 -->   
-								    </div>
-								  </div>
-								  <div class="row mb-2">
-								    <label for="inputEmail3" class="col-sm-3 col-form-label">파일등록</label>
-								    <div class="col-sm-10">
-								      <input type="file" name="filename">
-								    </div>
-								  </div>
-								  <!-- 등록 및 초기화 -->
-								   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-										 <button type="reset" class="btn btn-primary me-md-2">초기화</button>
-										 <button class="btn btn-primary me-md-2" type="submit">등록하기</button>
-										  <!-- <button class="btn btn-primary" type="button">Button</button> -->
+				<!-- Nav -->
+					<nav id="nav_custom" style="width:100%">
+						<ul class="list">
+							<li class="is_on"><a class='btn' href="#tab1">축구</a></li>
+							<li><a class='btn' href="#tab2">야구</a></li>
+							<li><a class='btn' href="#tab3">농구</a></li>
+							<li><a class='btn' href="#tab4">배구</a></li>
+						</ul>
+					</nav>
+					<script>
+					function request_team(seq){
+						Swal.fire({
+						  title: '신청하시겠습니까?',
+						  text: "신청을 누르면 신청이 가고 심청이가 와서 인당수에 공양미삼백석을 바치니까 고양이 삼백마리가 나왔어요",
+						  showCancelButton: true,
+						  confirmButtonColor: '#3085d6',
+						  cancelButtonColor: '#bbd7f2',
+						  confirmButtonText: '신청',
+						  cancelButtonText: '취소',
+						  reverseButtons: true
+						}).then((result) => {
+							  if (result.isConfirmed) { // 만약 모달창에서 confirm 버튼을 눌렀다면
+							    	// ...실행
+							    } else if (result.isDismissed) { // 만약 모달창에서 cancel 버튼을 눌렀다면
+							    	// ...실행
+							    }
+						})
+					}
+					
+					</script>
+				
+				<div class="cont_area">
+				<!-- Main -->
+				<div id="tab1" class="cont" style="margin-top:40px">
+					<div id="main_custom" >
+						<!-- Introduction -->
+						<%String names[] = {"최강 축구", "football is my life", "축생", "행복한 Soccer", "내인생은 축구다"}; %>
+						<%String borders[] = {"border-bottom-primary", "border-bottom-warning", "border-bottom-info","border-bottom-danger","border-bottom-success"}; %>
+						<%String times[] = {"2023-04-05 09:00 보라매축구장", "2023-04-22 20:00 광주과학기술원축구장", "2023-04-23 10:00 해모수축구장", "2023-04-23 14:00 수호네축구장", "2023-05-01 19:00 저기어디축구장"}; %>
+						<%for(int i = 0; i < names.length; i++) {%>
+							<section id="intro" class="main_custom">
+								<div class="card <%=borders[i] %> shadow h-100 ">
+								<div class="card-body" >
+									<div class="row no-gutters align-items-center ">
+										<div class="container-fluid">
+											<div class="d-sm-flex align-items-start justify-content-between mb-4">
+									
+											<h2><%=names[i] %></h2>
+											<button class="button_custom" onclick="javascript:request_team()">신청하기</button>
+											</div>
+											<p><%=times[i] %></p>
+										</div>
 									</div>
-								</form>  
+									</div>
 								</div>
-							</div>
-		</div>
-		</div>
-		</div>
-		</div>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+							</section>
+							<%} %>
+						</div>
+						</div>
+						
+						<div id="tab2" class="cont" style="margin-top:40px">
+						<!-- Main -->
+					<div id="main_custom" >
 
-                   
-            <!-- End of Main Content -->
+						<!-- Introduction -->
+						<%String names2[] = {"야구", "최강 야구", "야! 구!", "안타만이살길"}; %>
+						<%String borders2[] = {"border-bottom-primary", "border-bottom-warning", "border-bottom-info","border-bottom-danger"}; %>
+						<%String times2[] = {"2023-04-06 11:00 덕흥동야구장", "2023-04-06 17:30 첨단야구장", "2023-04-18 19:00 도산리야구장", "2023-04-20 10:00 시골쥐야구장"}; %>
+						<%for(int i = 0; i < 4; i++) {%>
+							<section id="intro" class="main_custom">
+								<div class="card <%=borders2[i] %> shadow h-100 ">
+								<div class="card-body" >
+									<div class="row no-gutters align-items-center ">
+										<div class="container-fluid">
+											<div class="d-sm-flex align-items-start justify-content-between mb-4">
+									
+											<h2><%=names2[i] %></h2>
+											<button class="button_custom" onclick="javascript:request_team()">신청하기</button>
+											</div>
+											<p><%=times2[i] %></p>
+										</div>
+									</div>
+									</div>
+								</div>
+							</section>
+							<%} %>
+							</div>
+							</div>
+							
+							<div id="tab3" class="cont" style="margin-top:40px">
+							<!-- Main -->
+					<div id="main_custom" >
+
+						<!-- Introduction -->
+						<%String names3[] = {"농구사랑", "신장이아니라 심장으로하는거야", "키크는 운동", "버저비터"}; %>
+					    <%String borders4[] = {"border-bottom-primary", "border-bottom-warning", "border-bottom-info","border-bottom-danger"}; %>
+						<%String times3[] = {"2023-04-08 09:30 풍영체육시설단지농구장", "2023-04-08 20:30 조선대학교일팔극장농구장", "2023-04-16 19:30 전남대학교내농구장", "2023-04-22 10:00 아침부터농구장"}; %>
+						<%for(int i = 0; i < names3.length; i++) {%>
+							<section id="intro" class="main_custom">
+								<div class="card <%=borders4[i] %> shadow h-100 ">
+								<div class="card-body" >
+									<div class="row no-gutters align-items-center ">
+										<div class="container-fluid">
+											<div class="d-sm-flex align-items-start justify-content-between mb-4">
+									
+											<h2><%=names3[i] %></h2>
+											<button class="button_custom" onclick="javascript:request_team()">신청하기</button>
+											</div>
+											<p><%=times3[i] %></p>
+										</div>
+									</div>
+									</div>
+								</div>
+							</section>
+							<%} %>
+							</div>
+							</div>
+							
+									<div id="tab4" class="cont" style="margin-top:40px">
+							<!-- Main -->
+					<div id="main_custom" >
+
+						<!-- Introduction -->
+					<%String names4[] = {"손목에 멍좀 들어봤니", "스파이크장인", "배구는 사랑이다"}; %>
+					<%String borders5[] = {"border-bottom-primary", "border-bottom-warning", "border-bottom-info"}; %>
+					<%String times4[] = {"2023-04-16 15:30 송산근린공원배구장", "2023-04-17 19:00 송산근린공원배구장", "2023-04-28 09:30 운림중배구장"}; %>
+						<%for(int i = 0; i < names4.length; i++) {%>
+							<section id="intro" class="main_custom">
+								<div class="card <%=borders5[i] %> shadow h-100 ">
+								<div class="card-body" >
+									<div class="row no-gutters align-items-center ">
+										<div class="container-fluid">
+											<div class="d-sm-flex align-items-start justify-content-between mb-4">
+									
+											<h2><%=names4[i] %></h2>
+											<button class="button_custom" onclick="javascript:request_team()">신청하기</button>
+											</div>
+											<p><%=times4[i] %></p>
+										</div>
+									</div>
+									</div>
+								</div>
+							</section>
+							<%} %>
+							</div>
+							</div>
+					
+					
+					
+    				</div>
+    				</div>
+    				</div>
+    				</div>
+    				</div>
+    				</div>
+</div>
+</div>
+
+						<script>
+							const tabList = document
+									.querySelectorAll('.tab_menu #nav_custom .list li');
+							const contents = document
+									.querySelectorAll('.cont_area .cont')
+							let activeCont = ''; // 현재 활성화 된 컨텐츠 (기본:#tab1 활성화)
+
+							for (var i = 0; i < tabList.length; i++) {
+								tabList[i]
+										.querySelector('.btn')
+										.addEventListener(
+												'click',
+												function(e) {
+													e.preventDefault();
+													for (var j = 0; j < tabList.length; j++) {
+														// 나머지 버튼 클래스 제거
+														tabList[j].classList
+																.remove('is_on');
+
+														// 나머지 컨텐츠 display:none 처리
+														contents[j].style.display = 'none';
+													}
+
+													// 버튼 관련 이벤트
+													this.parentNode.classList
+															.add('is_on');
+
+													// 버튼 클릭시 컨텐츠 전환
+													activeCont = this
+															.getAttribute('href');
+													document
+															.querySelector(activeCont).style.display = 'block';
+												});
+							}
+						</script>
+						<!-- End of Main Content -->
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">

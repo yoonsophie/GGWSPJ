@@ -21,11 +21,10 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <!-- 게시판 버튼 -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
 </head>
 
-<body id="page-top" >
+<body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -58,8 +57,7 @@
 			<!-- Heading 메뉴-->
 			<div class="sidebar-heading">메뉴</div>
 
-			
-
+		
 			<!-- Nav Item - Charts -->
 			<li class="nav-item"><a class="nav-link" href="notification.jsp">
 					<i class="fas fa-fw fa-chart-area"></i> <span>공지사항</span>
@@ -73,17 +71,16 @@
 			<li class="nav-item"><a class="nav-link" href="ballot.jsp">
 					<i class="fas fa-fw fa-check"></i> <span>투표</span>
 			</a></li>
-
-			<!-- Nav Item - Tables -->
-			<li class="nav-item"><a class="nav-link" href="chat.jsp">
-					<i class="fas fa-fw fa-comments"></i> <span>채팅</span>
+			<li class="nav-item"><a class="nav-link" href="chat.jsp"> <i
+					class="fas fa-fw fa-comments"></i> <span>채팅</span>
 			</a></li>
-
-			<!-- Nav Item - calendar -->
 			<li class="nav-item"><a class="nav-link" href="matching.jsp">
 					<i class="fas fa-fw fa-handshake"></i> <span>매칭</span>
 			</a></li>
-
+			<li class="nav-item"><a class="nav-link" href="analysis.jsp">
+					<i class="fas fa-fw fa-chart-bar"></i> <span>분석</span>
+			</a></li>
+			
 			<!-- Divider -->
 			<hr class="sidebar-divider d-none d-md-block" />
 
@@ -149,7 +146,7 @@
                             </div>
                         </li>
 
-                     		<!-- Nav Item - Alerts -->
+                      		<!-- Nav Item - Alerts -->
 						<li class="nav-item dropdown no-arrow mx-1"><a
 							class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -205,7 +202,7 @@
 							</div></li>
 
 
-                    <!-- Nav Item - Messages -->
+                       <!-- Nav Item - Messages -->
 						<li class="nav-item dropdown no-arrow mx-1"><a
 							class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -260,7 +257,8 @@
 								</a> <a class="dropdown-item text-center small text-gray-500"
 									href="#">더보기</a>
 							</div></li>
-
+							
+							
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
@@ -301,70 +299,209 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
- 				  <!-- Page Heading -->
-                    <h1 class="logo_effect" align="center"><img src="img/writing_icon.png" style="height:80px; margin-right:50px;" "/></h1>
 
-
-
-					 <div class="row" >
+                    <!-- Page Heading -->
+                         <!-- Page Heading -->
+                    <h1 class="logo_effect" align="center"><img src="img/newbie_icon.png" style="height:80px; margin-right:50px;" "/></h1>
+                  
+                    
+                    
+                    
+					 <div class="row">
                     	<div class="col-md-12 mb-4 margin-top">
 							<div class="card shadow h-100 py-2">
 								<div class="card-body">
+          
+          	
+          		<div class="content">
+    
+    <div class="container">
+      <!-- 회원검색 -->
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      </div>
 
-                                 
-                    <div class="content" >
-						<div class="container" style="overflow-x:hidden; overflow-y:auto;">
-							<!-- <h1 class="mb-5">게시글 작성</h1> -->
-							<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-							  <a href="board.jsp"><button class="btn btn-primary" type="button">뒤로가기</button></a>
-							 <!--  <button class="btn btn-primary" type="button">Button</button> -->
-							</div>
-							<p></p>
-							<div class="table-responsive" >
-								<form action="BoardWriteService" method="post" enctype="multipart/form-data">
-								<!-- 제목 입력 -->
-								  <div class="row mb-3">
-								    <label for="inputEmail3" class="col-sm-2 col-form-label">제목</label>
-								    <div class="col-sm-10">
-								      <input type="text" class="form-control" placeholder="제목을 입력하세요." name="title">
-								    </div>
-								  </div>
-								  <!-- 작성자 입력 -->
-								  <div class="row mb-3">
-								    <label for="inputPassword3" class="col-sm-2 col-form-label" >작성자</label>
-								    <div class="col-sm-10">
-								      <input type="text" class="form-control" placeholder="작성자를 입력하세요." name="writer">
-								    </div>
-								  </div>
-								  <!-- 내용 입력 -->
-								  <div class="row mb-3">
-								    <label for="inputPassword3" class="col-sm-2 col-form-label">내용</label>
-								    <div class="col-sm-10">				    	
-								      <textarea class="form-control" rows="5" placeholder="내용을 입력하세요." name="contents"></textarea>
-								   <!-- 파일 업로드 -->   
-								    </div>
-								  </div>
-								  <div class="row mb-2">
-								    <label for="inputEmail3" class="col-sm-3 col-form-label">파일등록</label>
-								    <div class="col-sm-10">
-								      <input type="file" name="filename">
-								    </div>
-								  </div>
-								  <!-- 등록 및 초기화 -->
-								   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-										 <button type="reset" class="btn btn-primary me-md-2">초기화</button>
-										 <button class="btn btn-primary me-md-2" type="submit">등록하기</button>
-										  <!-- <button class="btn btn-primary" type="button">Button</button> -->
-									</div>
-								</form>  
-								</div>
-							</div>
-		</div>
-		</div>
-		</div>
-		</div>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+      <!-- 회원메뉴탭 -->	      
+		      <ul class="nav nav-tabs">
+		        <li class="nav-item">
+		          <a class="nav-link" aria-current="page" href="memberMng.jsp">전체회원</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link active" aria-current="page" href="#">가입신청 회원</a>
+		        </li>
+		        <li class="nav-item">
+		          <a class="nav-link" aria-current="page" href="ghostMemberMng.jsp">휴면회원</a>
+		        </li>        
+		      </ul>
+      <div class="table-responsive">
+        <form action="#">
+          <table class="table table-striped custom-table">
+            <thead>
+            <!-- <th scope="col">회원테이블 헤더</th> -->
+              <tr>
+                <th scope="col">
+                  <label class="control control--checkbox">
+                  <input type="checkbox" class="js-check-all"/>
+                  <div class="control__indicator"></div>
+                  </label>
+                </th>
+                <th scope="col" style="width:190px">이름(계정)</th>
+                <th scope="col">나이</th>
+                <th scope="col">성별</th>
+                <th scope="col">지역</th>
+                <th scope="col" style="width:200px">포지션</th>
+                <th scope="col">신청일자</th>
+                <th scope="col"></th>
+                <!-- <th scope="col"></th> -->
+              </tr>
+            </thead>
+            
+            <!-- <tfoot>
+            회원테이블 푸터(회원등급 변경)
+              <tr>
+                <th colspan="2" ></th>
+                <th colspan="1" scope="row">선택한 회원</th>
+                  <th>
+                    <select name="grade" aria-label=".form-select-lg example">
+                      <option value="grade_A">정회원</option>
+                      <option value="grade_B">준회원</option>
+                      <option value="grade_C">신규회원</option>
+                      <option value="admin">관리자</option>
+                    </select>
+                  </th>
+                  <th><span>(으)로</span></th>
+                  <th></th>
+                  <th></th>
+                  <th><input type="submit" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                      <label class="btn btn-outline-primary" for="btnradio1">변경</label>
+                  </th>
+              </tr>
+              </tfoot> -->
+              
+	           <tbody>
+	           <!-- 회원테이블 회원리스트
+	           		이름(ID), 회원등급, 가입일자, 성별, 신뢰도 -->
+	             <tr scope="row">
+	              <td>
+	                <label class="control control--checkbox">
+	                <input type="checkbox" />
+	                <div class="control__indicator"></div>
+	                </label>
+	              </td>
+	              <td>
+	                <strong>이수호</strong>
+	                <small class="d-block">(dltngh123)</small>
+	              </td>
+	              <td>26</td>
+	              <td>남</td>
+	              <td>광주</td>
+	              <td>FW</td>
+	              <td>2023-03-26</td>
+	              <td><a href="#" class="more">수락</a>
+	              <a href="#" class="more" style="color:red">거절</a></td> 
+	             </tr>
+	             <tr scope="row">
+	              <td>
+	                <label class="control control--checkbox">
+	                <input type="checkbox" />
+	                <div class="control__indicator"></div>
+	                </label>
+	              </td>
+	              <td>
+	                <strong>이수호</strong>
+	                <small class="d-block">(dltngh123)</small>
+	              </td>
+	             <td>26</td>
+	              <td>남</td>
+	              <td>광주</td>
+	              <td>DF</td>
+	              <td>2023-03-26</td>
+	              <td><a href="#" class="more">수락</a>
+	              	<a href="#" class="more" style="color:red">거절</a></td> 
+	             </tr>
+	             <tr scope="row">
+	              <td>
+	                <label class="control control--checkbox">
+	                <input type="checkbox" />
+	                <div class="control__indicator"></div>
+	                </label>
+	              </td>
+	              <td>
+	                <strong>이수호</strong>
+	                <small class="d-block">(dltngh123)</small>
+	              </td>
+	              <td>26</td>
+	              <td>남</td>
+	              <td>광주</td>
+	              <td>MF</td>
+	              <td>2023-03-26</td>
+	              <td><a href="#" class="more">수락</a>
+	              	<a href="#" class="more" style="color:red">거절</a></td> 
+	             </tr>
+	              <tr scope="row">
+	              <td>
+	                <label class="control control--checkbox">
+	                <input type="checkbox" />
+	                <div class="control__indicator"></div>
+	                </label>
+	              </td>
+	              <td>
+	                <strong>이수호</strong>
+	                <small class="d-block">(dltngh123)</small>
+	              </td>
+	              <td>26</td>
+	              <td>남</td>
+	              <td>광주</td>
+	              <td>GK</td>
+	              <td>2023-03-26</td>
+	              <td><a href="#" class="more">수락</a>
+	              <a href="#" class="more" style="color:red">거절</a></td> 
+	             </tr>                      
+	           </tbody>
+	          </table>
+	          
+          <!-- 회원리스트 페이지 페이지 넘기기 -->
+          <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </form>
+      </div>
 
+    </div>
+
+  </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery-3-3-1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+          
+          
+          
+          
                    
             <!-- End of Main Content -->
 

@@ -1,6 +1,3 @@
-<%@page import="ch.qos.logback.core.net.SyslogOutputStream"%>
-<%@page import="com.ggws.controller.LoginService"%>
-<%@page import="com.ggws.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -14,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>SB Admin 2 - Forgot Password</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -40,47 +37,31 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block" style="background-position: center; background-size: cover;">
-                            	<img alt="" src="img/sports_pic.png"></div>
+                            <div class="col-lg-6 d-none d-lg-block">
+                            	<img alt="" src="img/sad_icon.png" style="width:400px; margin:15px">
+                            </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">어서오세용</h1>
+                                        <h1 class="h4 text-gray-900 mb-2">비밀번호를 잊어버리셨나요?</h1>
+                                        <p class="mb-4">이메일 주소를 적어주세요. 이메일로 새로운 비밀번호를 보내드립니다!</p>
                                     </div>
-									<form class="user" action="../LoginService.do" method="post">
+                                    <form class="user">
                                         <div class="form-group">
-                                            <input type="text" name="user_id" class="form-control form-control-user"
+                                            <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="아이디">
+                                                placeholder="이메일 주소">
                                         </div>
-                                        <div class="form-group">
-                                            <input type="password" name="user_pw" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="비밀번호">
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">기억하기</label>
-                                            </div>
-                                        </div>
-                                        <!-- <button><input type="submit" value="확인"></button> -->
-                                        <button class="btn btn-primary btn-user btn-block">로그인</button>
-                                       <!--  <a  class="btn btn-primary btn-user btn-block">
-                                            로그인
-                                        </a>
-										 -->
-                                        <hr>
-                                        <a  class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> 구글 로그인
+                                        <a href="login.jsp" class="btn btn-primary btn-user btn-block">
+                                            비밀번호 재발급
                                         </a>
                                     </form>
-                                       
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.jsp">비밀번호를 잊어버리셨나요?</a>
+                                        <a class="small" href="register.jsp">회원가입</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="register.jsp">회원가입</a>
+                                        <a class="small" href="login.jsp">로그인</a>
                                     </div>
                                 </div>
                             </div>

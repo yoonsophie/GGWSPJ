@@ -5,12 +5,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.ggws.db.calendarMapper">
 	
-	<insert id="insertCalendar" parameterType="calendarVO">
-        insert into calendar values(#{title},#{startday},#{endday}, 'true')
-     </insert>
-     
-     <select id="showCalendar" resultType="calendarVO">
-       	select * from calendar
-     </select>
+	<resultMap id="calendarRM" type="com.ggws.model.Calendar">
+    <id property="calendarNo" column="CALENDAR_NO" />
+    <result property="calendarTitle" column="CALENDAR_TITLE" />
+    <result property="calendarMemo" column="CALENDAR_MEMO" />
+    <result property="calendarStart" column="CALENDAR_START" />
+    <result property="calendarEnd" column="CALENDAR_END" />
+  </resultMap>
+	
+	<select id="calendarList" resultMap="calendarRM">
+		select * from calendar 
+	</select>
 	
 </mapper>
