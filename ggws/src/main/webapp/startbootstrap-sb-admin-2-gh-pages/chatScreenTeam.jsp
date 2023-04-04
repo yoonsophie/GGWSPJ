@@ -22,7 +22,6 @@
 		if(login_vo2 != null){
 			fromID=login_vo2.getUser_email();
 			fromName = login_vo2.getUser_nick();
-			System.out.println("chatSrrees 들어옴    "+fromID	);	
 		}else{			
 			System.out.println("                                                   로긴VO가 NULL이다                   ");
 		}
@@ -86,9 +85,6 @@
 					if(res==null) {console.log("없음")}
 					for(var i = 0; i < res.length; i++){
 						if(res[i].fromID==fromID){
-							//res[i].fromID = '나'	
-							//str = res[i].fromID.split('@');
-							//res[i].fromID = str[0]
 							res[i].fromID = fromName;
 						} 
 						addChat(res[i].fromID, res[i].chatContent, res[i].chatTime); 
@@ -155,7 +151,7 @@
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			chatListFunction("team");
+			chatListFunction("ten");
 			getInfiniteChat();
 		})
 	</script>

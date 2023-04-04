@@ -1,3 +1,7 @@
+<%@page import="com.ggws.model.psaDAO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.ggws.model.MemberDAO"%>
+<%@page import="com.ggws.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -17,7 +21,7 @@
 <!-- sytle -->
 <link rel="stylesheet" href="assets/css/style.css">
 
-    <title>SB Admin 2 - Charts</title>
+    <title>이모저모</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -31,7 +35,18 @@
 </head>
 
 <body id="page-top">
-
+		<%
+				MemberVO login_vo = (MemberVO) session.getAttribute("login_vo");
+				if (login_vo != null) {
+					System.out.print(login_vo.getUser_id());
+				}
+				
+				MemberDAO dao = new MemberDAO();
+				List<MemberVO> list = dao.selectAllMember();
+				
+				psaDAO pdao = new psaDAO();
+				String psa = pdao.getPsa(login_vo.getUser_id());
+			%>
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -78,7 +93,7 @@
 			<li class="nav-item"><a class="nav-link" href="ballot.jsp">
 					<i class="fas fa-fw fa-check"></i> <span>투표</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="chat.jsp"> <i
+			<li class="nav-item"><a class="nav-link" href="chatTeam.jsp"> <i
 					class="fas fa-fw fa-comments"></i> <span>채팅</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="matching.jsp">
@@ -271,9 +286,15 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                                <%=login_vo.getUser_nick() %>
+								<!-- 프로필 사진 프사 -->
+								</span> 
+								<% if(psa==null){%>
+									<img class='img-profile rounded-circle' alt='이미지' src='img/regi_pic.png' >
+								<%}else{ %>
+									<img class='img-profile rounded-circle' alt='이미지' src='./profilePic/<%=psa%>'>
+								<%} %> 
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

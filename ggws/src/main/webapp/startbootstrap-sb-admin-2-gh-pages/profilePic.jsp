@@ -3,7 +3,7 @@
 <%@page import="java.util.List"%>
 <%@page import="com.ggws.model.MemberDAO"%>
 <%@page import="com.ggws.model.MemberVO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -399,7 +399,7 @@
 									<form action="psaService.do" method="post" enctype="multipart/form-data">
 										<table style = "border : 1px solid blue" >
 										<tr>
-											<td colspan="2" text-align="center">
+											<td colspan="2" align="center">
 												<%-- <h3><%=psaVO.getContent() %></h3><br> --%>
 												<%-- <img alt="이미지" src="./profilePic/<%=psaVO.getPsa()%>"><br> --%>
 												<% if(psa==null){%>

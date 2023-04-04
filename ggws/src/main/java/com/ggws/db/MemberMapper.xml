@@ -17,7 +17,7 @@
     
     	<!-- 전체 회원 정보 -->
 	<select id="selectAllMember" resultType="MemberVO">
-		select * from user_info where not(user_id='admin')
+		select * from user_info
 	</select>
 	
 	<!-- 프사 업로드 -->

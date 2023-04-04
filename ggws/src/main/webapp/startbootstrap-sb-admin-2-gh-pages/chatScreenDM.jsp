@@ -22,7 +22,6 @@
 		if(login_vo2 != null){
 			fromID=login_vo2.getUser_email();
 			fromName = login_vo2.getUser_nick();
-			System.out.println("chatSrrees2 들어옴    "+fromID+" , " +fromName);	
 		}else{			
 			System.out.println("                                                   로긴VO가 NULL이다                   ");
 		}

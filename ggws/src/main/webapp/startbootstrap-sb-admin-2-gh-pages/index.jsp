@@ -113,16 +113,12 @@
 			<li class="nav-item"><a class="nav-link" href="ballot.jsp">
 					<i class="fas fa-fw fa-check"></i> <span>투표</span>
 			</a></li>
-<<<<<<< HEAD
 			<li class="nav-item"><a class="nav-link" href="chatTeam.jsp"> <i
-=======
-			<li class="nav-item"><a class="nav-link" href="chat.jsp"> <i
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 					class="fas fa-fw fa-comments"></i> <span>채팅</span></a></li>
-			<li class="nav-item"><a class="nav-link" href="matching.jsp">
+			<li class="nav-item"><a class="nav-link" href="matching.html">
 					<i class="fas fa-fw fa-handshake"></i> <span>매칭</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="analysis.jsp"> <i
+			<li class="nav-item"><a class="nav-link" href="analysis.html"> <i
 					class="fas fa-fw fa-chart-bar"></i> <span>분석</span></a></li>
 			<li class="nav-item"><a class="nav-link" href="memberMng.jsp"> <i
 					class="fas fa-fw fa-ghost"></i> <span>회원관리</span></a></li>
@@ -329,28 +325,19 @@
 								class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
 								aria-labelledby="userDropdown">
 								<a class="dropdown-item" href="#"> <i
-									class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> 프로필
+									class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile
 								</a> <a class="dropdown-item" href="#"> <i
 									class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-<<<<<<< HEAD
 									Settings
 								</a> <a class="dropdown-item" href="profilePic.jsp"> <i
-=======
-									설정
-								</a> <a class="dropdown-item" href="#"> <i
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 									class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-<<<<<<< HEAD
 									프로필 사진 프사 변경
-=======
-									알림
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 								</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="#" data-toggle="modal"
 									data-target="#logoutModal"> <i
 									class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-									로그아웃
+									Logout
 								</a>
 							</div></li>
 					</ul>
@@ -578,11 +565,12 @@
 							data-toggle="dropdown"
 							aria-haspopup="true"
 							aria-expanded="false">
-						<!-- <i class="fas fa-fw fa-hashtag"></i>  -->
-						<img
-		                    class="img-profile rounded-circle"
-		                    src="img/undraw_profile_3.svg"
-		                 />
+							<% String psa2 = pdao.getPsa(u.getUser_id());
+								 if(psa2==null){%>
+									<img class='img-profile rounded-circle' alt='이미지' src='img/regi_pic.png'>
+							<%}else{ %>
+									<img class='img-profile rounded-circle' alt='이미지' src='./profilePic/<%=psa2%>'>
+							<%} %> 
 						<span> <%=u.getUser_nick() %> </span>
 				        </a>
 		                <!-- Dropdown - User Information -->

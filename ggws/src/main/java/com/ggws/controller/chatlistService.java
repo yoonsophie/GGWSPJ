@@ -48,15 +48,10 @@ public class chatlistService implements com.ggws.Command.Command {
 		com.ggws.model.chatDAO dao = new chatDAO();
 		List<chatVO> chatList = dao.getChatListByRecent(fromID, toID,chatID);
 		if(chatList.size() == 0) return "";		
-		System.out.println("chatListchat"+chatList.get(0));
-		System.out.println("첫번째 끝");
 		List<String> myName = null;
 		for(int i = 0; i<chatList.size(); i++) {
 			chatList.get(i).setToID((dao.getChatName(toID)));
 		}
-		System.out.println("chatListchatListchatListchatListchatListchatListchatListchatList"+chatList.get(0));
-		System.out.println("끝");
-
 		Gson gson = new Gson();
 		String result1 = gson.toJson(chatList);
 		return result1;

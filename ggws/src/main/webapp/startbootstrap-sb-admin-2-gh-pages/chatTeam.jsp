@@ -1,3 +1,4 @@
+<%@page import="com.ggws.model.psaDAO"%>
 <%@page import="com.ggws.model.chatDAO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.ggws.model.MemberVO"%>
@@ -53,7 +54,9 @@
 			MemberDAO dao = new MemberDAO();
 			List<MemberVO> list = dao.selectAllMember();
 			System.out.print(list.size());
-			
+		
+			psaDAO pdao = new psaDAO();
+			String psa = pdao.getPsa(login_vo.getUser_id());
 		
 	%>
 
@@ -66,7 +69,7 @@
 			<!-- Sidebar - Brand -->
 			<a
 				class="sidebar-brand d-flex align-items-center justify-content-center"
-				href="index.html">
+				href="index.jsp">
 				<div class="sidebar-brand-icon rotate-n-15">
 					<i class="fas fa-laugh-wink"></i>
 				</div>
@@ -78,7 +81,7 @@
 
 			<!-- Nav Item - 홈으로 -->
 			<li class="nav-item active"><a class="nav-link"
-				href="index.html"> <i class="fas fa-fw fa-home"></i> <span>홈으로</span></a>
+				href="index.jsp"> <i class="fas fa-fw fa-home"></i> <span>홈으로</span></a>
 			</li>
 
 			<!-- Divider -->
@@ -87,47 +90,28 @@
 			<!-- Heading 메뉴-->
 			<div class="sidebar-heading">메뉴</div>
 
-			<!-- Nav Item - Pages Collapse Menu -->
-			<li class="nav-item"><a class="nav-link collapsed" href="#"
-				data-toggle="collapse" data-target="#collapsePages"
-				aria-expanded="true" aria-controls="collapsePages">
-					<i class="fas fa-fw fa-folder"></i> <span>Pages</span>
-			</a>
-				<div id="collapsePages" class="collapse"
-					aria-labelledby="headingPages" data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
-						<h6 class="collapse-header">Login Screens:</h6>
-						<a class="collapse-item" href="login.html">Login</a> <a
-							class="collapse-item" href="register.html">Register</a> <a
-							class="collapse-item" href="forgot-password.html">Forgot
-							Password</a>
-						<div class="collapse-divider"></div>
-						<h6 class="collapse-header">Other Pages:</h6>
-						<a class="collapse-item" href="404.html">404 Page</a> <a
-							class="collapse-item" href="blank.html">Blank Page</a>
-					</div>
-				</div></li>
-
 			<!-- Nav Item - Charts -->
-			<li class="nav-item"><a class="nav-link" href="notification.html">
-					<i class="fas fa-fw fa-star"></i> <span>공지사항</span>
+			<li class="nav-item"><a class="nav-link" href="notification.jsp">
+					<i class="fas fa-fw fa-bookmark"></i> <span>공지사항</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="calendar.html">
+			<li class="nav-item"><a class="nav-link" href="calendar.jsp">
 					<i class="fas fa-fw fa-calendar"></i> <span>달력</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="board.html">
+			<li class="nav-item"><a class="nav-link" href="board.jsp">
 					<i class="fas fa-fw fa-list"></i> <span>게시판</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="ballot.html">
+			<li class="nav-item"><a class="nav-link" href="ballot.jsp">
 					<i class="fas fa-fw fa-check"></i> <span>투표</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="chatTeam.jsp"> <i
 					class="fas fa-fw fa-comments"></i> <span>채팅</span></a></li>
-			<li class="nav-item"><a class="nav-link" href="matching.html">
+			<li class="nav-item"><a class="nav-link" href="matching.jps">
 					<i class="fas fa-fw fa-handshake"></i> <span>매칭</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="analysis.html"> <i
+			<li class="nav-item"><a class="nav-link" href="analysis.jsp"> <i
 					class="fas fa-fw fa-chart-bar"></i> <span>분석</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="memberMng.jsp"> <i
+					class="fas fa-fw fa-ghost"></i> <span>회원관리</span></a></li>
 	
 
 
@@ -318,8 +302,13 @@
 							aria-expanded="false"> <span
 								class="mr-2 d-none d-lg-inline text-gray-600 small">
 								<%=login_vo.getUser_nick() %>
-								</span> <img class="img-profile rounded-circle"
-								src="img/undraw_profile.svg" />
+								<!-- 프로필 사진 프사 -->
+								</span> 
+								<% if(psa==null){%>
+									<img class='img-profile rounded-circle' alt='이미지' src='img/regi_pic.png' >
+								<%}else{ %>
+									<img class='img-profile rounded-circle' alt='이미지' src='./profilePic/<%=psa%>'>
+								<%} %> 
 						</a> <!-- Dropdown - User Information -->
 							<div
 								class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -347,29 +336,18 @@
 				<div class="container-fluid">
 					<!-- <h1 class="h3 mb-1 text-gray-800">CHATTING</h1> -->
 					<p class="mb-4">
-						<!-- 채팅채팅 회원들이랑 채팅채팅 -->
-<%-- 					 <%
-						if(login_vo != null){ %>
-					<h1><%=login_vo.getName() %> 님 환영합니다!</h1> 
-					<%} %> --%>
-						            
 					</p>
 					<div class="row">
-
 						<div class>
-							<!-- col-lg-6 : 너비 바꾸는 class  -->
 							<%
 							String recieveName = null;
 							chatDAO namedao = new chatDAO();
 							if(recieveID != null){
 								recieveName = namedao.getChatName(recieveID);	
 							}
-							
-							
 							%>
 							<div class="card mb-4">
 								<div class="card-header py-3">
-									<%-- <h6 class="m-0 font-weight-bold text-primary"><%=recieveName %>님과 채팅</h6> --%>
 									<h6 class="m-0 font-weight-bold text-primary">팀 채팅</h6>
 								</div>
 								<div class="card-body">
@@ -379,7 +357,6 @@
 						</div>
 					</div>
 				</div>
-
 				<!-- End of Main Content -->
 			</div>
 
@@ -394,10 +371,8 @@
 			<!-- End of Footer -->
 		</div>
 		
-		
-	<%-- <%@ include file="showlist.jsp"%>	 --%>
 		<!-- 오른쪽 회원목록 -->
-      <ul
+   	   <ul
 			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
 			id="accordionSidebar">
 
@@ -427,10 +402,12 @@
 							aria-haspopup="true"
 							aria-expanded="false">
 						<!-- <i class="fas fa-fw fa-hashtag"></i>  -->
-						<img
-		                    class="img-profile rounded-circle"
-		                    src="img/undraw_profile_3.svg"
-		                 />
+							<% String psa2 = pdao.getPsa(u.getUser_id());
+								 if(psa2==null){%>
+									<img class='img-profile rounded-circle' alt='이미지' src='img/regi_pic.png'>
+							<%}else{ %>
+									<img class='img-profile rounded-circle' alt='이미지' src='./profilePic/<%=psa2%>'>
+							<%} %> 
 						<span> <%=u.getUser_nick() %> </span>
 				        </a>
 		                <!-- Dropdown - User Information -->

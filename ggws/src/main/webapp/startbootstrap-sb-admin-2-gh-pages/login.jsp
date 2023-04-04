@@ -1,4 +1,4 @@
-<%@page import="ch.qos.logback.core.net.SyslogOutputStream"%>
+
 <%@page import="com.ggws.controller.LoginService"%>
 <%@page import="com.ggws.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -56,6 +56,7 @@
                                         <div class="form-group">
                                             <input type="password" name="user_pw" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="비밀번호">
+                                    
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
