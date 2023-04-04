@@ -73,7 +73,7 @@ var myLineChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 30,
+          max: 20,
           maxTicksLimit: 5,
           padding: 10,
           // Include a dollar sign in the ticks

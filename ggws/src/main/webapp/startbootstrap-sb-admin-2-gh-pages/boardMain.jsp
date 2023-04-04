@@ -1,7 +1,7 @@
-<%@page import="com.ggws.model.psaDAO"%>
-<%@page import="java.util.List"%>
-<%@page import="com.ggws.model.MemberDAO"%>
 <%@page import="com.ggws.model.MemberVO"%>
+<%@page import="com.ggws.model.BoardVO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.ggws.model.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,8 +14,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <title>이모저모</title>
+<!-- sytle -->
+<link rel="stylesheet" href="assets/css/style.css">
+
+    <title>SB Admin 2 - Charts</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -25,48 +31,15 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <!-- 게시판 버튼 -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-	
-	  <style >
-    			@font-face {
-    font-family: 'ARCHISCULPTURE_v200';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2303@1.0/ARCHISCULPTURE_v200.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-     @font-face {
-    font-family: 'Dovemayo_gothic';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-  
-        .w-font {
-            font-family: 'Dovemayo_gothic', sans-serif; /* 웹 폰트 지정 */
-        }
-        .w-title{
-        	 font-family: 'ARCHISCULPTURE_v200', sans-serif;
-        }
-       
-    </style>
-
 
 </head>
 
-<body id="page-top" class="w-font">
-		<%
-				MemberVO login_vo = (MemberVO) session.getAttribute("login_vo");
-				if (login_vo != null) {
-					System.out.print(login_vo.getUser_id());
-				}
-				
-				MemberDAO dao = new MemberDAO();
-				List<MemberVO> list = dao.selectAllMember();
-				
-				psaDAO pdao = new psaDAO();
-				String psa = pdao.getPsa(login_vo.getUser_id());
-			%>
+<body id="page-top" style="text-align: center;">
+	<%
+	BoardDAO dao = new BoardDAO();
+	List<BoardVO> list = dao.showBoard();	
+	MemberVO login_vo = (MemberVO) session.getAttribute("login_vo");
+	%>	
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -77,7 +50,7 @@
 			<!-- Sidebar - Brand 동호회명-->
 			<a
 				class="sidebar-brand d-flex align-items-center justify-content-center"
-				href="index.jsp">
+				href="index.html">
 				<div class="sidebar-brand-icon rotate-n-15">
 					<i class="fas fa-laugh-wink"></i>
 				</div>
@@ -88,12 +61,8 @@
 			<hr class="sidebar-divider my-0" />
 
 			<!-- Nav Item - Dashboard -->
-<<<<<<< HEAD
-			<li class="nav-item active"><a class="nav-link">
-=======
 			<li class="nav-item active"><a class="nav-link"
-				href="index.jsp"> <i class="fas fa-fw fa-home"></i> <span>홈으로</span></a>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
+				href="index.html"> <i class="fas fa-fw fa-home"></i> <span>홈으로</span></a>
 			</li>
 
 			<!-- Divider -->
@@ -102,84 +71,48 @@
 			<!-- Heading 메뉴-->
 			<div class="sidebar-heading">메뉴</div>
 
-			
+			<!-- Nav Item - Pages Collapse Menu -->
+			<li class="nav-item"><a class="nav-link collapsed" href="#"
+				data-toggle="collapse" data-target="#collapsePages"
+				aria-expanded="true" aria-controls="collapsePages"> <i
+					class="fas fa-fw fa-folder"></i> <span>Pages</span>
+			</a>
+				<div id="collapsePages" class="collapse"
+					aria-labelledby="headingPages" data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<h6 class="collapse-header">Login Screens:</h6>
+						<a class="collapse-item" href="login.html">Login</a> <a
+							class="collapse-item" href="register.html">Register</a> <a
+							class="collapse-item" href="forgot-password.html">Forgot
+							Password</a>
+						<div class="collapse-divider"></div>
+						<h6 class="collapse-header">Other Pages:</h6>
+						<a class="collapse-item" href="404.html">404 Page</a> <a
+							class="collapse-item" href="blank.html">Blank Page</a>
+					</div>
+				</div></li>
 
 			<!-- Nav Item - Charts -->
-<<<<<<< HEAD
 			<li class="nav-item"><a class="nav-link" href="notification.html">
 					<i class="fas fa-fw fa-chart-area"></i> <span>공지사항</span>
-=======
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
-			<li class="nav-item"><a class="nav-link" href="notification.jsp">
-<<<<<<< HEAD
-					<i class="fas fa-fw fa-chart-area"></i> <span>��������</span>
-=======
-					<i class="fas fa-fw fa-chart-area"></i> <span>공지사항</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</a></li>
-<<<<<<< HEAD
 			<li class="nav-item"><a class="nav-link" href="calendar.html">
 					<i class="fas fa-fw fa-calendar"></i> <span>달력</span>
-=======
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
-			<li class="nav-item"><a class="nav-link" href="calendar.jsp">
-<<<<<<< HEAD
-					<i class="fas fa-fw fa-calendar"></i> <span>�޷�</span>
-=======
-					<i class="fas fa-fw fa-calendar"></i> <span>달력</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</a></li>
-<<<<<<< HEAD
 			<li class="nav-item"><a class="nav-link" href="boardMain.jsp">
 					<i class="fas fa-fw fa-list"></i> <span>게시판</span>
-=======
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
-			<li class="nav-item"><a class="nav-link" href="board.jsp">
-<<<<<<< HEAD
-					<i class="fas fa-fw fa-list"></i> <span>�Խ���</span>
-=======
-					<i class="fas fa-fw fa-list"></i> <span>게시판</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</a></li>
-<<<<<<< HEAD
 			<li class="nav-item"><a class="nav-link" href="ballot.html">
 					<i class="fas fa-fw fa-check"></i> <span>투표</span>
-=======
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
-			<li class="nav-item"><a class="nav-link" href="ballot.jsp">
-<<<<<<< HEAD
-					<i class="fas fa-fw fa-check"></i> <span>��ǥ</span>
-=======
-					<i class="fas fa-fw fa-check"></i> <span>투표</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</a></li>
-<<<<<<< HEAD
-
-			<!-- Nav Item - Tables -->
-			<li class="nav-item"><a class="nav-link" href="chat.html">
-=======
-			<li class="nav-item"><a class="nav-link" href="chatTeam.jsp">
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
-					<i class="fas fa-fw fa-comments"></i> <span>채팅</span>
-<<<<<<< HEAD
-			<li class="nav-item"><a class="nav-link" href="chat.jsp">
-					<i class="fas fa-fw fa-comments"></i> <span>ä��</span>
-=======
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
+			<li class="nav-item"><a class="nav-link" href="chat.html"> <i
+					class="fas fa-fw fa-comments"></i> <span>채팅</span>
 			</a></li>
-<<<<<<< HEAD
-
-			<!-- Nav Item - calendar -->
 			<li class="nav-item"><a class="nav-link" href="matching.html">
 					<i class="fas fa-fw fa-handshake"></i> <span>매칭</span>
-=======
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
-			<li class="nav-item"><a class="nav-link" href="matching.jsp">
-<<<<<<< HEAD
-					<i class="fas fa-fw fa-handshake"></i> <span>��Ī</span>
-=======
-					<i class="fas fa-fw fa-handshake"></i> <span>매칭</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
+			</a></li>
+			<li class="nav-item"><a class="nav-link" href="analysis.jsp">
+					<i class="fas fa-fw fa-chart-bar"></i> <span>분석</span>
 			</a></li>
 
 			<!-- Divider -->
@@ -247,60 +180,56 @@
                             </div>
                         </li>
 
-                     		<!-- Nav Item - Alerts -->
-						<li class="nav-item dropdown no-arrow mx-1"><a
-							class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
-							role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"> <i class="fas fa-bell fa-fw"></i> <!-- Counter - Alerts -->
-								<span class="badge badge-danger badge-counter">4+</span>
-						</a> <!-- Dropdown - Alerts -->
-							<div
-								class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-								aria-labelledby="alertsDropdown">
-								<h6 class="dropdown-header">Alerts Center</h6>
-								<a class="dropdown-item d-flex align-items-center" href="notification.jsp">
-									<div class="mr-3">
-										<div class="icon-circle bg-primary">
-											<i class="fas fa-bookmark text-white"></i>
-										</div>
-									</div>
-									<div>
-										<div class="small text-gray-500">2023-04-03</div>
-										<span class="font-weight-bold">���ο� ���������� ��ϵǾ����ϴ�.</span>
-									</div>
-								</a> <a class="dropdown-item d-flex align-items-center" href="#">
-									<div class="mr-3">
-										<div class="icon-circle bg-success">
-											<i class="fas fa-heart text-white"></i>
-										</div>
-									</div>
-									<div>
-										<div class="small text-gray-500">2023-04-01</div>
-										���ο� ģ����û�� �ֽ��ϴ�!
-									</div>
-								</a> <a class="dropdown-item d-flex align-items-center" href="#">
-									<div class="mr-3">
-										<div class="icon-circle bg-success">
-											<i class="fas fa-heart text-white"></i>
-										</div>
-									</div>
-									<div>
-										<div class="small text-gray-500">2023-04-01</div>
-										���ο� ģ����û�� �ֽ��ϴ�!
-									</div>
-								</a> <a class="dropdown-item d-flex align-items-center" href="#">
-									<div class="mr-3">
-										<div class="icon-circle bg-warning">
-											<i class="fas fa-exclamation-triangle text-white"></i>
-										</div>
-									</div>
-									<div>
-										<div class="small text-gray-500">2023-03-30</div>
-										���ο� ��ǥ�� �������Դϴ�.
-									</div>
-								</a> <a class="dropdown-item text-center small text-gray-500"
-									href="#">������</a>
-							</div></li>
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span class="badge badge-danger badge-counter">3+</span>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Alerts Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 12, 2019</div>
+                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-success">
+                                            <i class="fas fa-donate text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 7, 2019</div>
+                                        $290.29 has been deposited into your account!
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-warning">
+                                            <i class="fas fa-exclamation-triangle text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">December 2, 2019</div>
+                                        Spending Alert: We've noticed unusually high spending for your account.
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                            </div>
+                        </li>
 
                         <!-- Nav Item - Messages -->
                         <li class="nav-item dropdown no-arrow mx-1">
@@ -367,82 +296,16 @@
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                             </div>
                         </li>
-<<<<<<< HEAD
 
-                    <!-- Nav Item - Messages -->
-						<li class="nav-item dropdown no-arrow mx-1"><a
-							class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
-							role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"> <i class="fas fa-envelope fa-fw"></i>
-								<!-- Counter - Messages --> <span
-								class="badge badge-danger badge-counter">7</span>
-						</a> <!-- Dropdown - Messages -->
-							<div
-								class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-								aria-labelledby="messagesDropdown">
-								<h6 class="dropdown-header text-s">������</h6>
-								<a class="dropdown-item d-flex align-items-center" href="#">
-									<div class="dropdown-list-image mr-3">
-										<img class="rounded-circle" src="img/undraw_profile_1.svg"
-											alt="..." />
-										<div class="status-indicator bg-success"></div>
-									</div>
-									<div class="font-weight-bold">
-										<div class="text-truncate">���� ���ῡ ����</div>
-										<div class="small text-gray-500">������ �� 58�� ��</div>
-									</div>
-								</a> <a class="dropdown-item d-flex align-items-center" href="#">
-									<div class="dropdown-list-image mr-3">
-										<img class="rounded-circle" src="img/undraw_profile_2.svg"
-											alt="..." />
-										<div class="status-indicator"></div>
-									</div>
-									<div>
-										<div class="text-truncate">���� �����̰� ���� ����ڴµ�?? �� ������??</div>
-										<div class="small text-gray-500">�念�� �� 1�ð� 22�� ��</div>
-									</div>
-								</a> <a class="dropdown-item d-flex align-items-center" href="#">
-									<div class="dropdown-list-image mr-3">
-										<img class="rounded-circle" src="img/undraw_profile_3.svg"
-											alt="..." />
-										<div class="status-indicator bg-warning"></div>
-									</div>
-									<div>
-										<div class="text-truncate">�׷� ���� ��⿡ ����</div>
-										<div class="small text-gray-500">�ظ�� �� 2�� ��</div>
-									</div>
-								</a> <a class="dropdown-item d-flex align-items-center" href="#">
-									<div class="dropdown-list-image mr-3">
-										<img class="rounded-circle"
-											src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="..." />
-										<div class="status-indicator bg-success"></div>
-									</div>
-									<div>
-										<div class="text-truncate">�ƴ� ���� ������ �־����� �˾�? �׳� �ڿ��� ����־��ŵ�?? �ٵ� ���ڱ� �����̰� ���� ���� �ߴ°ž� ������� �ʳ�</div>
-										<div class="small text-gray-500">���¿� �� 4�� ��</div>
-									</div>
-								</a> <a class="dropdown-item text-center small text-gray-500"
-									href="#">������</a>
-							</div></li>
-
-=======
-
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                               <%=login_vo.getUser_nick() %>
-								<!-- 프로필 사진 -->
-								</span> 
-								<% if(psa==null){%>
-									<img class='img-profile rounded-circle' alt='�̹���' src='img/regi_pic.png' >
-								<%}else{ %>
-									<img class='img-profile rounded-circle' alt='�̹���' src='./profilePic/<%=psa%>'>
-								<%} %> 
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -474,104 +337,84 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
- 				  <!-- Page Heading -->
-                    <h1 class="logo_effect" align="center"><img src="img/writing_icon.png" style="height:80px; margin-right:50px;" "/></h1>
 
-                    <!-- Page Heading -->
-                    <h1 class="mb-5 text-gray-800 text-center">게시글 작성</h1>
+                  <!-- Page Heading -->
+                    <h1 class="logo_effect" align="center"><img src="img/board_icon.png" style="height:80px; margin-right:50px;" "/></h1>
 
-
-					 <div class="row" >
+					 <div class="row">
                     	<div class="col-md-12 mb-4 margin-top">
 							<div class="card shadow h-100 py-2">
 								<div class="card-body">
+					<div class="content">
+		<div class="container">
+		<!-- 제목 -->
+			<h1 class="mb-5">게시판</h1>
+			<div class="table-responsive">
+			<!-- 게시판
+					번호(#), 제목, 이름, 작성일자, (삭제=x) -->
+				<table class="table">
+				  <thead>
+				    <tr>
+				      <th scope="col">#</th>
+				      <th scope="col">제목</th>
+				      <th scope="col">이름</th>
+				      <th scope="col">작성일자</th>
+				      <th></th>
+				    </tr>
+				  </thead>
+				  <tbody class="table-group-divider">
+				    <%for(int i=0; i<list.size();i++){ %>
+				    	<tr>
+				      		<th scope="row"><%=i+1 %></th>
+				      		<td><a href="boardDetail.jsp?board_seq=<%=list.get(i).getBoard_seq()%>"><%=list.get(i).getBoard_title()%></a></td>
+				      		<td><%=list.get(i).getUser_id() %></td>
+				      		<td><%=list.get(i).getBoard_date() %></td>
+				      		<%if(login_vo.getUser_id().equals("admin")){ %>
+				      		<td><a href="BoardDeleteService.do?board_title=<%=list.get(i).getBoard_title()%>">Delete</a></td>
+							<%} %>    
+				    	</tr>
+				  	</tbody>
+				   <%} %>
+				</table>
+				 <!-- 회원리스트 페이지 페이지 넘기기 -->
+		          <nav aria-label="Page navigation">
+		            <ul class="pagination justify-content-center">
+		              <li class="page-item">
+		                <a class="page-link" href="#" aria-label="Previous">
+		                  <span aria-hidden="true">&laquo;</span>
+		                </a>
+		              </li>
+		              <li class="page-item"><a class="page-link" href="#">1</a></li>
+		              <li class="page-item"><a class="page-link" href="#">2</a></li>
+		              <li class="page-item"><a class="page-link" href="#">3</a></li>
+		              <li class="page-item">
+		                <a class="page-link" href="#" aria-label="Next">
+		                  <span aria-hidden="true">&raquo;</span>
+		                </a>
+		              </li>
+		            </ul>
+		            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+						 <a href="boardWrite.jsp"><button class="btn btn-primary" type="button">작성하기</button></a> 
+						  <!-- <button class="btn btn-primary" type="button">Button</button> -->
+					</div>
+		              
+		          </nav>
+				</div>
+			</div>
+		</div>
+					</div>
+					</div>
+					</div>
+					</div>
+					<script
+						src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+						integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+						crossorigin="anonymous"></script>
 
-<<<<<<< HEAD
-                                 
-=======
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
-                    <div class="content">
-						<div class="container">
-							<!-- <h1 class="mb-5">게시글 작성</h1> -->
-<<<<<<< HEAD
-                    <div class="content" style="overflow-x:hidden;">
-						<div class="container" style="overflow-x:hidden; overflow-y:auto;">
-							<!-- <h1 class="mb-5">�Խñ� �ۼ�</h1> -->
-=======
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
-							<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-							  <a href="boardMain.jsp"><button class="btn btn-primary" type="button">뒤로가기</button></a>
-<<<<<<< HEAD
-							  <a href="board.jsp"><button class="btn btn-primary" type="button">�ڷΰ���</button></a>
-=======
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
-							 <!--  <button class="btn btn-primary" type="button">Button</button> -->
-							</div>
-							<p></p>
-<<<<<<< HEAD
-							
-=======
-							<div class="table-responsive">
-								<form action="BoardWriteService.do" method="post" enctype="multipart/form-data">
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
-								<!-- 제목 입력 -->
-<<<<<<< HEAD
-							<div class="table-responsive" style="overflow-x:hidden;">
-								<form action="BoardWriteService" method="post" enctype="multipart/form-data">
-								<!-- ���� �Է� -->
-=======
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
-								  <div class="row mb-3">
-								    <label for="inputEmail3" class="col-sm-2 col-form-label">제목</label>
-								    <div class="col-sm-10">
-								      <input type="text" class="form-control" placeholder="제목을 입력하세요." name="board_title">
-								    </div>
-								  </div>
-								  <!-- 작성자 입력 -->
-								  <div class="row mb-3">
-								    <label for="inputPassword3" class="col-sm-2 col-form-label" >작성자</label>
-								    <div class="col-sm-10">
-								      <input type="text" class="form-control" placeholder="작성자를 입력하세요." name="user_id">
-								    </div>
-								  </div>
-								  <!-- 내용 입력 -->
-								  <div class="row mb-3">
-								    <label for="inputPassword3" class="col-sm-2 col-form-label">내용</label>
-								    <div class="col-sm-10">				    	
-								      <textarea class="form-control" rows="5" placeholder="내용을 입력하세요." name="board_content"></textarea>
-								   <!-- 파일 업로드 -->   
-								    </div>
-								  </div>
-								  <div class="row mb-3">
-								    <label for="inputEmail3" class="col-sm-2 col-form-label">파일등록</label>
-<<<<<<< HEAD
-								  <div class="row mb-2">
-								    <label for="inputEmail3" class="col-sm-3 col-form-label">���ϵ��</label>
-=======
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
-								    <div class="col-sm-10">
-								      <input type="file" name="filename">
-								    </div>
-								  </div>
-								  <!-- 등록 및 초기화 -->
-								   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-										 <button type="reset" class="btn btn-primary me-md-2">초기화</button>
-										 <button class="btn btn-primary me-md-2" type="submit">등록하기</button>
-										  <!-- <button class="btn btn-primary" type="button">Button</button> -->
-									</div>
-								</form>  
-								</div>
-							
-		</div>
-		</div>
-		</div>
-		</div>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
-                   
-            <!-- End of Main Content -->
+					<!-- End of Main Content -->
 
-            <!-- Footer -->
+					<!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
@@ -606,7 +449,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.jsp">Logout</a>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
                 </div>
             </div>
         </div>

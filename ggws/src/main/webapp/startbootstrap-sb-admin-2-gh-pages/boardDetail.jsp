@@ -92,11 +92,8 @@
 			<li class="nav-item"><a class="nav-link" href="calendar.jsp">
 					<i class="fas fa-fw fa-calendar"></i> <span>달력</span>
 			</a></li>
-<<<<<<< HEAD
 			<li class="nav-item"><a class="nav-link" href="boardMain.jsp">
-=======
 			<li class="nav-item"><a class="nav-link" href="board.jsp">
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 					<i class="fas fa-fw fa-list"></i> <span>게시판</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="ballot.jsp">
@@ -346,9 +343,10 @@
 			<h1 class="mb-5">이수호 게시글</h1>
 			<div class="table-responsive">
 				<%
-				int board_seq = Integer.parseInt(request.getParameter("board_seq")); 
-				BoardDAO dao = new BoardDAO();
-				BoardVO detail_vo = dao.detailBoard(board_seq);%>
+					int board_seq = Integer.parseInt(request.getParameter("board_seq")); 
+					BoardDAO dao = new BoardDAO();
+					BoardVO detail_vo = dao.detailBoard(board_seq);
+				%>
 				<form >
 				<!-- 제목 -->
 				  <div class="row mb-3">
@@ -381,11 +379,8 @@
 				  <!-- 등록 및 초기화 -->
 				  
 				   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-<<<<<<< HEAD
 					<a href="boardMain.jsp"><button class="btn btn-primary me-md-2" type="button">뒤로가기</button></a> 
-=======
 					<a href="BoardMain.jsp"><button class="btn btn-primary me-md-2" type="button">뒤로가기</button></a> 
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 					</div>
 
 				</form>  

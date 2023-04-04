@@ -132,7 +132,14 @@
 			<li class="nav-item"><a class="nav-link" href="calendar.jsp">
 					<i class="fas fa-fw fa-calendar"></i> <span>달력</span>
 			</a></li>
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+			<li class="nav-item"><a class="nav-link" href="boardMain.jsp">
+=======
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			<li class="nav-item"><a class="nav-link" href="board.jsp">
 					<i class="fas fa-fw fa-list"></i> <span>게시판</span>
 			</a></li>

@@ -24,11 +24,11 @@
 	<title>회원관리</title>
 </head>
 <body style="text-align: center;">
-<%-- 	<%
+ 	<%
 		MemberDAO dao = new MemberDAO();
 		List<MemberVO> list = dao.select();
 		System.out.print(list.size());
-	%> --%>
+	%>
 	<div class="content">
     
     <div class="container">
@@ -99,7 +99,7 @@
 	           <tbody>
 	           <!-- 회원테이블 회원리스트
 	           		이름(ID), 회원등급, 가입일자, 성별, 신뢰도 -->
-<%-- 	             <%for(MemberVO m:list){ %>
+ 	             <%for(MemberVO m:list){ %>
 		             <tr scope="row">
 		              <td>
 		                <label class="control control--checkbox">
@@ -118,7 +118,7 @@
 		              <td><%=m.getUser_date() %></td>
 		              <td><a href="#" class="more">Delete</a></td> 
 		             </tr>	
-	             <%} %>       --%>
+	             <%} %>
 	           </tbody>
 	          </table>
 	          

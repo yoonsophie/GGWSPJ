@@ -11,7 +11,14 @@ import javax.servlet.http.HttpServletResponse;
 import com.ggws.Command.Command;
 import com.ggws.controller.BoardDeleteService;
 import com.ggws.controller.BoardWriteService;
+import com.ggws.controller.DeleteMember;
 import com.ggws.controller.LoginService;
+<<<<<<< HEAD
+import com.ggws.controller.MemberUpdateService;
+
+
+
+=======
 import com.ggws.controller.chatlistService;
 import com.ggws.controller.chatlistServiceTeam;
 import com.ggws.controller.chatsubmitService;
@@ -29,21 +36,20 @@ public class frontController extends HttpServlet {
 				
 				// 어떤 요청이 들어왔는지 구분
 				String reqURI =  request.getRequestURI();
-				//System.out.println("ㅇㄷㅇㄷ" + reqURI);
+				System.out.println("ㅇㄷㅇㄷ" + reqURI);
 				
 				// ContextRoot출력
 				String contextPath = request.getContextPath();
-				//System.out.println(contextPath);
+				System.out.println(contextPath);
 				
 				// 요청한 값만 출력하기(substring 메소드 사용)
 				// substring( start ) : start 위치부터 끝까지 문자열 자르기
 				// substring( start, end ) : start 위치부터 end 전까지 문자열 자르기
 				String result =  reqURI.substring(contextPath.length()+1);
-				//System.out.println(result);
-				
-				Command service = null;
-				
-				
+				System.out.println(result);
+
+		Command service = null;
+
 		if (result.equals("LoginService.do")) {
 			// 로그인기능
 			service = new LoginService();
