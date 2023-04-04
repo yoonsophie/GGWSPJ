@@ -394,7 +394,7 @@
 		              </li>
 		            </ul>
 		            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-						 <a href="boardWrite.jsp"><button class="btn btn-primary me-md-2" type="button">작성하기</button></a> 
+						 <a href="boardWrite.jsp"><button class="btn btn-primary" type="button">작성하기</button></a> 
 						  <!-- <button class="btn btn-primary" type="button">Button</button> -->
 					</div>
 		              

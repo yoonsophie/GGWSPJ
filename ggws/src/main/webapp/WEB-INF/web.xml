@@ -81,6 +81,12 @@
   	<description></description>
   	<servlet-class>com.ggws.controller.ballotDetailService</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>MemberUpdateService</servlet-name>
+  	<display-name>MemberUpdateService</display-name>
+  	<description></description>
+  	<servlet-class>com.ggws.controller.MemberUpdateService</servlet-class>
+  </servlet>
  
   
   <servlet-mapping>
@@ -122,6 +128,10 @@
   <servlet-mapping>
   	<servlet-name>ballotDetailService</servlet-name>
   	<url-pattern>/ballotDetailService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MemberUpdateService</servlet-name>
+  	<url-pattern>/MemberUpdateService</url-pattern>
   </servlet-mapping>
 
  

@@ -48,12 +48,7 @@
 			<hr class="sidebar-divider my-0" />
 
 			<!-- Nav Item - Dashboard -->
-			<li class="nav-item active"><a class="nav-link"
-<<<<<<< HEAD
-				href="index.html"> <i class="fas fa-fw fa-home"></i> <span>í™ˆìœ¼ë¡œ</span></a>
-=======
-				href="index.jsp"> <i class="fas fa-fw fa-home"></i> <span>È¨À¸·Î</span></a>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
+			<li class="nav-item active"><a class="nav-link">
 			</li>
 
 			<!-- Divider -->
@@ -65,57 +60,39 @@
 			
 
 			<!-- Nav Item - Charts -->
-<<<<<<< HEAD
 			<li class="nav-item"><a class="nav-link" href="notification.html">
 					<i class="fas fa-fw fa-chart-area"></i> <span>ê³µì§€ì‚¬í•­</span>
-=======
 			<li class="nav-item"><a class="nav-link" href="notification.jsp">
-					<i class="fas fa-fw fa-chart-area"></i> <span>°øÁö»çÇ×</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
+					<i class="fas fa-fw fa-chart-area"></i> <span>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span>
 			</a></li>
-<<<<<<< HEAD
 			<li class="nav-item"><a class="nav-link" href="calendar.html">
 					<i class="fas fa-fw fa-calendar"></i> <span>ë‹¬ë ¥</span>
-=======
 			<li class="nav-item"><a class="nav-link" href="calendar.jsp">
-					<i class="fas fa-fw fa-calendar"></i> <span>´Þ·Â</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
+					<i class="fas fa-fw fa-calendar"></i> <span>ï¿½Þ·ï¿½</span>
 			</a></li>
-<<<<<<< HEAD
 			<li class="nav-item"><a class="nav-link" href="boardMain.jsp">
 					<i class="fas fa-fw fa-list"></i> <span>ê²Œì‹œíŒ</span>
-=======
 			<li class="nav-item"><a class="nav-link" href="board.jsp">
-					<i class="fas fa-fw fa-list"></i> <span>°Ô½ÃÆÇ</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
+					<i class="fas fa-fw fa-list"></i> <span>ï¿½Ô½ï¿½ï¿½ï¿½</span>
 			</a></li>
-<<<<<<< HEAD
 			<li class="nav-item"><a class="nav-link" href="ballot.html">
 					<i class="fas fa-fw fa-check"></i> <span>íˆ¬í‘œ</span>
-=======
 			<li class="nav-item"><a class="nav-link" href="ballot.jsp">
-					<i class="fas fa-fw fa-check"></i> <span>ÅõÇ¥</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
+					<i class="fas fa-fw fa-check"></i> <span>ï¿½ï¿½Ç¥</span>
 			</a></li>
 
 			<!-- Nav Item - Tables -->
-<<<<<<< HEAD
 			<li class="nav-item"><a class="nav-link" href="chat.html">
 					<i class="fas fa-fw fa-comments"></i> <span>ì±„íŒ…</span>
-=======
 			<li class="nav-item"><a class="nav-link" href="chat.jsp">
-					<i class="fas fa-fw fa-comments"></i> <span>Ã¤ÆÃ</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
+					<i class="fas fa-fw fa-comments"></i> <span>Ã¤ï¿½ï¿½</span>
 			</a></li>
 
 			<!-- Nav Item - calendar -->
-<<<<<<< HEAD
 			<li class="nav-item"><a class="nav-link" href="matching.html">
 					<i class="fas fa-fw fa-handshake"></i> <span>ë§¤ì¹­</span>
-=======
 			<li class="nav-item"><a class="nav-link" href="matching.jsp">
-					<i class="fas fa-fw fa-handshake"></i> <span>¸ÅÄª</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
+					<i class="fas fa-fw fa-handshake"></i> <span>ï¿½ï¿½Äª</span>
 			</a></li>
 
 			<!-- Divider -->
@@ -202,7 +179,7 @@
 									</div>
 									<div>
 										<div class="small text-gray-500">2023-04-03</div>
-										<span class="font-weight-bold">»õ·Î¿î °øÁö»çÇ×ÀÌ µî·ÏµÇ¾ú½À´Ï´Ù.</span>
+										<span class="font-weight-bold">ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ÏµÇ¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.</span>
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="mr-3">
@@ -212,7 +189,7 @@
 									</div>
 									<div>
 										<div class="small text-gray-500">2023-04-01</div>
-										»õ·Î¿î Ä£±¸½ÅÃ»ÀÌ ÀÖ½À´Ï´Ù!
+										ï¿½ï¿½ï¿½Î¿ï¿½ Ä£ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½!
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="mr-3">
@@ -222,7 +199,7 @@
 									</div>
 									<div>
 										<div class="small text-gray-500">2023-04-01</div>
-										»õ·Î¿î Ä£±¸½ÅÃ»ÀÌ ÀÖ½À´Ï´Ù!
+										ï¿½ï¿½ï¿½Î¿ï¿½ Ä£ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½!
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="mr-3">
@@ -232,13 +209,12 @@
 									</div>
 									<div>
 										<div class="small text-gray-500">2023-03-30</div>
-										»õ·Î¿î ÅõÇ¥°¡ ÁøÇàÁßÀÔ´Ï´Ù.
+										ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.
 									</div>
 								</a> <a class="dropdown-item text-center small text-gray-500"
-									href="#">´õº¸±â</a>
+									href="#">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>
 							</div></li>
 
-<<<<<<< HEAD
                         <!-- Nav Item - Messages -->
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
@@ -304,7 +280,6 @@
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                             </div>
                         </li>
-=======
 
                     <!-- Nav Item - Messages -->
 						<li class="nav-item dropdown no-arrow mx-1"><a
@@ -317,7 +292,7 @@
 							<div
 								class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
 								aria-labelledby="messagesDropdown">
-								<h6 class="dropdown-header text-s">ÂÊÁöÇÔ</h6>
+								<h6 class="dropdown-header text-s">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</h6>
 								<a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="dropdown-list-image mr-3">
 										<img class="rounded-circle" src="img/undraw_profile_1.svg"
@@ -325,8 +300,8 @@
 										<div class="status-indicator bg-success"></div>
 									</div>
 									<div class="font-weight-bold">
-										<div class="text-truncate">³»ÀÏ Àú³á¿¡ ¹¹ÇÔ</div>
-										<div class="small text-gray-500">¾çÁø¿µ ¡¤ 58ºÐ Àü</div>
+										<div class="text-truncate">ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½á¿¡ ï¿½ï¿½ï¿½ï¿½</div>
+										<div class="small text-gray-500">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ 58ï¿½ï¿½ ï¿½ï¿½</div>
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="dropdown-list-image mr-3">
@@ -335,8 +310,8 @@
 										<div class="status-indicator"></div>
 									</div>
 									<div>
-										<div class="text-truncate">³»ÀÏ Áø¿µÀÌ°¡ °°ÀÌ ¹ä¸ÔÀÚ´Âµ¥?? ´Ô °¥²¨ÀÓ??</div>
-										<div class="small text-gray-500">Àå¿µÁÖ ¡¤ 1½Ã°£ 22ºÐ Àü</div>
+										<div class="text-truncate">ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ú´Âµï¿½?? ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½??</div>
+										<div class="small text-gray-500">ï¿½å¿µï¿½ï¿½ ï¿½ï¿½ 1ï¿½Ã°ï¿½ 22ï¿½ï¿½ ï¿½ï¿½</div>
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="dropdown-list-image mr-3">
@@ -345,8 +320,8 @@
 										<div class="status-indicator bg-warning"></div>
 									</div>
 									<div>
-										<div class="text-truncate">±×·³ ´ÙÀ½ °æ±â¿¡ º¸ÀÚ</div>
-										<div class="small text-gray-500">ÇØ¸ð¼ö ¡¤ 2ÀÏ Àü</div>
+										<div class="text-truncate">ï¿½×·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½â¿¡ ï¿½ï¿½ï¿½ï¿½</div>
+										<div class="small text-gray-500">ï¿½Ø¸ï¿½ï¿½ ï¿½ï¿½ 2ï¿½ï¿½ ï¿½ï¿½</div>
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="dropdown-list-image mr-3">
@@ -355,13 +330,12 @@
 										<div class="status-indicator bg-success"></div>
 									</div>
 									<div>
-										<div class="text-truncate">¾Æ´Ï ¾îÁ¦ ¹«½¼ÀÏ ÀÖ¾ú´ÂÁö ¾Ë¾Æ? ±×³É µÚ¿¡¼­ ³î°íÀÖ¾ú°Åµç?? ±Ùµ¥ °©ÀÚ±â Áø¿µÀÌ°¡ ¼ÅÇÃ ÃãÀ» Ãß´Â°Å¾ß ´ë¹ÚÀÌÁö ¾Ê³Ä</div>
-										<div class="small text-gray-500">Á¤½Â¿ø ¡¤ 4ÀÏ Àü</div>
+										<div class="text-truncate">ï¿½Æ´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë¾ï¿½? ï¿½×³ï¿½ ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ö¾ï¿½ï¿½Åµï¿½?? ï¿½Ùµï¿½ ï¿½ï¿½ï¿½Ú±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß´Â°Å¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê³ï¿½</div>
+										<div class="small text-gray-500">ï¿½ï¿½ï¿½Â¿ï¿½ ï¿½ï¿½ 4ï¿½ï¿½ ï¿½ï¿½</div>
 									</div>
 								</a> <a class="dropdown-item text-center small text-gray-500"
-									href="#">´õº¸±â</a>
+									href="#">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>
 							</div></li>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -406,10 +380,8 @@
  				  <!-- Page Heading -->
                     <h1 class="logo_effect" align="center"><img src="img/writing_icon.png" style="height:80px; margin-right:50px;" "/></h1>
 
-<<<<<<< HEAD
                     <!-- Page Heading -->
                     <h1 class="mb-5 text-gray-800 text-center">ê²Œì‹œê¸€ ìž‘ì„±</h1>
-=======
 
 
 					 <div class="row" >
@@ -417,35 +389,24 @@
 							<div class="card shadow h-100 py-2">
 								<div class="card-body">
 
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
                                  
-<<<<<<< HEAD
                     <div class="content">
 						<div class="container">
 							<!-- <h1 class="mb-5">ê²Œì‹œê¸€ ìž‘ì„±</h1> -->
-=======
-                    <div class="content" >
+                    <div class="content" style="overflow-x:hidden;">
 						<div class="container" style="overflow-x:hidden; overflow-y:auto;">
-							<!-- <h1 class="mb-5">°Ô½Ã±Û ÀÛ¼º</h1> -->
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
+							<!-- <h1 class="mb-5">ï¿½Ô½Ã±ï¿½ ï¿½Û¼ï¿½</h1> -->
 							<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-<<<<<<< HEAD
 							  <a href="boardMain.jsp"><button class="btn btn-primary" type="button">ë’¤ë¡œê°€ê¸°</button></a>
-=======
-							  <a href="board.jsp"><button class="btn btn-primary" type="button">µÚ·Î°¡±â</button></a>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
+							  <a href="board.jsp"><button class="btn btn-primary" type="button">ï¿½Ú·Î°ï¿½ï¿½ï¿½</button></a>
 							 <!--  <button class="btn btn-primary" type="button">Button</button> -->
 							</div>
 							<p></p>
-<<<<<<< HEAD
-							<div class="table-responsive">
-								<form action="BoardWriteService.do" method="post" enctype="multipart/form-data">
+							
 								<!-- ì œëª© ìž…ë ¥ -->
-=======
-							<div class="table-responsive" >
+							<div class="table-responsive" style="overflow-x:hidden;">
 								<form action="BoardWriteService" method="post" enctype="multipart/form-data">
-								<!-- Á¦¸ñ ÀÔ·Â -->
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
+								<!-- ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ -->
 								  <div class="row mb-3">
 								    <label for="inputEmail3" class="col-sm-2 col-form-label">ì œëª©</label>
 								    <div class="col-sm-10">
@@ -467,13 +428,10 @@
 								   <!-- íŒŒì¼ ì—…ë¡œë“œ -->   
 								    </div>
 								  </div>
-<<<<<<< HEAD
 								  <div class="row mb-3">
 								    <label for="inputEmail3" class="col-sm-2 col-form-label">íŒŒì¼ë“±ë¡</label>
-=======
 								  <div class="row mb-2">
-								    <label for="inputEmail3" class="col-sm-3 col-form-label">ÆÄÀÏµî·Ï</label>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
+								    <label for="inputEmail3" class="col-sm-3 col-form-label">ï¿½ï¿½ï¿½Ïµï¿½ï¿½</label>
 								    <div class="col-sm-10">
 								      <input type="file" name="filename">
 								    </div>
@@ -486,7 +444,7 @@
 									</div>
 								</form>  
 								</div>
-							</div>
+							
 		</div>
 		</div>
 		</div>

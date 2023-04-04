@@ -387,8 +387,7 @@
 	           		이름(ID), 회원등급, 가입일자, 성별, 신뢰도 -->
  	             <%
 	 	            MemberDAO dao = new MemberDAO();
-	 	    		List<MemberVO> list = dao.select(); 
-                    		  System.out.print(list.size());
+	 	    		List<MemberVO> list = dao.select();
  	            	 for(int i = 0 ;i<list.size();i++){ 
  	            	 	if(list.get(i).getClub_user_tier().intValue() != 4){%>
 		             <tr scope="row">
@@ -408,7 +407,7 @@
 		              <td><%=list.get(i).getUser_area() %></td>
 		              <td><%=list.get(i).getMember_reg_date() %></td>
 		              
-		              <td><a href="DeleteService.do?user_id=<%=list.get(i).getUser_id() %>" class="more">Delete</a></td> 
+		              <td><a href="DeleteMember.do?user_id=<%=list.get(i).getUser_id()%>" class="more">Delete</a></td> 
 		             </tr>	
 	             <%}} %>
 	           </tbody>

@@ -13,6 +13,9 @@ import com.ggws.controller.BoardDeleteService;
 import com.ggws.controller.BoardWriteService;
 import com.ggws.controller.DeleteMember;
 import com.ggws.controller.LoginService;
+import com.ggws.controller.MemberUpdateService;
+
+
 
 
 public class frontController extends HttpServlet {
@@ -53,7 +56,11 @@ public class frontController extends HttpServlet {
 				}else if(result.equals("startbootstrap-sb-admin-2-gh-pages/DeleteMember.do")) {
 					// 동호회회원 삭제
 					service = new DeleteMember();
+				}else if(result.equals("startbootstrap-sb-admin-2-gh-pages/MemberUpdateService.do")) { 
+					// 동호회원 수락 
+					service = new MemberUpdateService(); 
 				}
+					 
 				
 				String moveURL = service.execute(request, response);
 				response.sendRedirect(moveURL);

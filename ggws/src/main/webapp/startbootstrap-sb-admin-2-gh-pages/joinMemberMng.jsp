@@ -386,8 +386,8 @@
 	              <td><%=list.get(i).getUser_area() %></td>
 	              <td>fw</td>
 	              <td><%=list.get(i).getMember_reg_date() %></td>
-	              <td><a href="memberUpdateService.do" class="more">수락</a>
-	              <a href="#" class="more" style="color:red">거절</a></td> 
+	              <td><a href="MemberUpdateService.do?user_id=<%=list.get(i).getUser_id()%>" class="more">수락</a>
+	              <a href="DeleteMember.do?user_id=<%=list.get(i).getUser_id() %>" class="more" style="color:red">거절</a></td> 
 	             </tr>
 	             <%}} %>                 
 	           </tbody>

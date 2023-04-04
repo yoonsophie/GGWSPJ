@@ -17,10 +17,12 @@
 	and   A.user_id = B.user_id
 	</select>	
 	<delete id="deleteMember" parameterType="String">
-		delete form affiliated_club where user_id=#{user_id}
-	</delete>
-	
+		delete from affiliated_club where user_id=#{user_id}
+	</delete>	
 	<select id="loginMember" resultType="MemberVO" parameterType="MemberVO">
 	  	select * from user_info where user_id=#{user_id} and user_pw=#{user_pw}
     </select>
+     <update id="updateMember" parameterType="String">
+    	update affiliated_club set club_user_tier = 3 where user_id=#{user_id}
+    </update>
 </mapper>

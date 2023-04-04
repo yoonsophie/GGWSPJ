@@ -15,8 +15,8 @@ public class DeleteMember extends HttpServlet implements Command {
 
 
     public String execute(HttpServletRequest request, HttpServletResponse response)  { 
-    		String user_id = request.getParameter("user_id");
     		
+    		String user_id = request.getParameter("user_id");
     		MemberDAO dao = new MemberDAO();
     		int cnt = dao.delete(user_id);
     	
