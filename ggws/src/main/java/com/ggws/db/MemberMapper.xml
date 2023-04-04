@@ -4,11 +4,20 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ggws.db.MemberMapper">
 	<select id="selectall" resultType="MemberVO">
-		select * from user_info
-	</select>
-	
-	<delete id="deletemember" parameterType="String">
-		delete form affiliated_club where user_id=#{id}
+	select B.user_nick
+    	,  A.user_id
+    	,  B.user_gender
+   	 	,  B.user_age
+    	,  B.user_area
+    	,  A.member_reg_date
+    	,  A.club_user_tier
+	from affiliated_club A
+    	,user_info B
+	where A.club_seq = 3
+	and   A.user_id = B.user_id
+	</select>	
+	<delete id="deleteMember" parameterType="String">
+		delete form affiliated_club where user_id=#{user_id}
 	</delete>
 	
 	<select id="loginMember" resultType="MemberVO" parameterType="MemberVO">

@@ -1,5 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@page import="com.ggws.model.MemberVO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.ggws.model.MemberDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +27,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" style="text-align:center">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -33,14 +36,14 @@
 		<ul
 			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
 			id="accordionSidebar">
-			<!-- Sidebar - Brand µ¿È£È¸¸í-->
+			<!-- Sidebar - Brand ë™í˜¸íšŒëª…-->
 			<a
 				class="sidebar-brand d-flex align-items-center justify-content-center"
 				href="index.jsp">
 				<div class="sidebar-brand-icon rotate-n-15">
 					<i class="fas fa-laugh-wink"></i>
 				</div>
-				<div class="sidebar-brand-text mx-3">µ¿È£È¸¸í</div>
+				<div class="sidebar-brand-text mx-3">ë™í˜¸íšŒëª…</div>
 			</a>
 
 			<!-- Divider -->
@@ -48,37 +51,37 @@
 
 			<!-- Nav Item - Dashboard -->
 			<li class="nav-item active"><a class="nav-link"
-				href="index.jsp"> <i class="fas fa-fw fa-home"></i> <span>È¨À¸·Î</span></a>
+				href="index.jsp"> <i class="fas fa-fw fa-home"></i> <span>í™ˆìœ¼ë¡œ</span></a>
 			</li>
 
 			<!-- Divider -->
 			<hr class="sidebar-divider" />
 
-			<!-- Heading ¸Þ´º-->
-			<div class="sidebar-heading">¸Þ´º</div>
+			<!-- Heading ë©”ë‰´-->
+			<div class="sidebar-heading">ë©”ë‰´</div>
 
 		
 			<!-- Nav Item - Charts -->
 			<li class="nav-item"><a class="nav-link" href="notification.jsp">
-					<i class="fas fa-fw fa-chart-area"></i> <span>°øÁö»çÇ×</span>
+					<i class="fas fa-fw fa-chart-area"></i> <span>ê³µì§€ì‚¬í•­</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="calendar.jsp">
-					<i class="fas fa-fw fa-calendar"></i> <span>´Þ·Â</span>
+					<i class="fas fa-fw fa-calendar"></i> <span>ë‹¬ë ¥</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="board.jsp">
-					<i class="fas fa-fw fa-list"></i> <span>°Ô½ÃÆÇ</span>
+					<i class="fas fa-fw fa-list"></i> <span>ê²Œì‹œíŒ</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="ballot.jsp">
-					<i class="fas fa-fw fa-check"></i> <span>ÅõÇ¥</span>
+					<i class="fas fa-fw fa-check"></i> <span>íˆ¬í‘œ</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="chat.jsp"> <i
-					class="fas fa-fw fa-comments"></i> <span>Ã¤ÆÃ</span>
+					class="fas fa-fw fa-comments"></i> <span>ì±„íŒ…</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="matching.jsp">
-					<i class="fas fa-fw fa-handshake"></i> <span>¸ÅÄª</span>
+					<i class="fas fa-fw fa-handshake"></i> <span>ë§¤ì¹­</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="analysis.jsp">
-					<i class="fas fa-fw fa-chart-bar"></i> <span>ºÐ¼®</span>
+					<i class="fas fa-fw fa-chart-bar"></i> <span>ë¶„ì„</span>
 			</a></li>
 			
 			<!-- Divider -->
@@ -165,7 +168,7 @@
 									</div>
 									<div>
 										<div class="small text-gray-500">2023-04-03</div>
-										<span class="font-weight-bold">»õ·Î¿î °øÁö»çÇ×ÀÌ µî·ÏµÇ¾ú½À´Ï´Ù.</span>
+										<span class="font-weight-bold">ìƒˆë¡œìš´ ê³µì§€ì‚¬í•­ì´ ë“±ë¡ë˜ì—ˆìŠµë‹ˆë‹¤.</span>
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="mr-3">
@@ -175,7 +178,7 @@
 									</div>
 									<div>
 										<div class="small text-gray-500">2023-04-01</div>
-										»õ·Î¿î Ä£±¸½ÅÃ»ÀÌ ÀÖ½À´Ï´Ù!
+										ìƒˆë¡œìš´ ì¹œêµ¬ì‹ ì²­ì´ ìžˆìŠµë‹ˆë‹¤!
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="mr-3">
@@ -185,7 +188,7 @@
 									</div>
 									<div>
 										<div class="small text-gray-500">2023-04-01</div>
-										»õ·Î¿î Ä£±¸½ÅÃ»ÀÌ ÀÖ½À´Ï´Ù!
+										ìƒˆë¡œìš´ ì¹œêµ¬ì‹ ì²­ì´ ìžˆìŠµë‹ˆë‹¤!
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="mr-3">
@@ -195,10 +198,10 @@
 									</div>
 									<div>
 										<div class="small text-gray-500">2023-03-30</div>
-										»õ·Î¿î ÅõÇ¥°¡ ÁøÇàÁßÀÔ´Ï´Ù.
+										ìƒˆë¡œìš´ íˆ¬í‘œê°€ ì§„í–‰ì¤‘ìž…ë‹ˆë‹¤.
 									</div>
 								</a> <a class="dropdown-item text-center small text-gray-500"
-									href="#">´õº¸±â</a>
+									href="#">ë”ë³´ê¸°</a>
 							</div></li>
 
 
@@ -213,7 +216,7 @@
 							<div
 								class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
 								aria-labelledby="messagesDropdown">
-								<h6 class="dropdown-header text-s">ÂÊÁöÇÔ</h6>
+								<h6 class="dropdown-header text-s">ìª½ì§€í•¨</h6>
 								<a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="dropdown-list-image mr-3">
 										<img class="rounded-circle" src="img/undraw_profile_1.svg"
@@ -221,8 +224,8 @@
 										<div class="status-indicator bg-success"></div>
 									</div>
 									<div class="font-weight-bold">
-										<div class="text-truncate">³»ÀÏ Àú³á¿¡ ¹¹ÇÔ</div>
-										<div class="small text-gray-500">¾çÁø¿µ ¡¤ 58ºÐ Àü</div>
+										<div class="text-truncate">ë‚´ì¼ ì €ë…ì— ë­í•¨</div>
+										<div class="small text-gray-500">ì–‘ì§„ì˜ Â· 58ë¶„ ì „</div>
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="dropdown-list-image mr-3">
@@ -231,8 +234,8 @@
 										<div class="status-indicator"></div>
 									</div>
 									<div>
-										<div class="text-truncate">³»ÀÏ Áø¿µÀÌ°¡ °°ÀÌ ¹ä¸ÔÀÚ´Âµ¥?? ´Ô °¥²¨ÀÓ??</div>
-										<div class="small text-gray-500">Àå¿µÁÖ ¡¤ 1½Ã°£ 22ºÐ Àü</div>
+										<div class="text-truncate">ë‚´ì¼ ì§„ì˜ì´ê°€ ê°™ì´ ë°¥ë¨¹ìžëŠ”ë°?? ë‹˜ ê°ˆêº¼ìž„??</div>
+										<div class="small text-gray-500">ìž¥ì˜ì£¼ Â· 1ì‹œê°„ 22ë¶„ ì „</div>
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="dropdown-list-image mr-3">
@@ -241,8 +244,8 @@
 										<div class="status-indicator bg-warning"></div>
 									</div>
 									<div>
-										<div class="text-truncate">±×·³ ´ÙÀ½ °æ±â¿¡ º¸ÀÚ</div>
-										<div class="small text-gray-500">ÇØ¸ð¼ö ¡¤ 2ÀÏ Àü</div>
+										<div class="text-truncate">ê·¸ëŸ¼ ë‹¤ìŒ ê²½ê¸°ì— ë³´ìž</div>
+										<div class="small text-gray-500">í•´ëª¨ìˆ˜ Â· 2ì¼ ì „</div>
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="dropdown-list-image mr-3">
@@ -251,11 +254,11 @@
 										<div class="status-indicator bg-success"></div>
 									</div>
 									<div>
-										<div class="text-truncate">¾Æ´Ï ¾îÁ¦ ¹«½¼ÀÏ ÀÖ¾ú´ÂÁö ¾Ë¾Æ? ±×³É µÚ¿¡¼­ ³î°íÀÖ¾ú°Åµç?? ±Ùµ¥ °©ÀÚ±â Áø¿µÀÌ°¡ ¼ÅÇÃ ÃãÀ» Ãß´Â°Å¾ß ´ë¹ÚÀÌÁö ¾Ê³Ä</div>
-										<div class="small text-gray-500">Á¤½Â¿ø ¡¤ 4ÀÏ Àü</div>
+										<div class="text-truncate">ì•„ë‹ˆ ì–´ì œ ë¬´ìŠ¨ì¼ ìžˆì—ˆëŠ”ì§€ ì•Œì•„? ê·¸ëƒ¥ ë’¤ì—ì„œ ë†€ê³ ìžˆì—ˆê±°ë“ ?? ê·¼ë° ê°‘ìžê¸° ì§„ì˜ì´ê°€ ì…”í”Œ ì¶¤ì„ ì¶”ëŠ”ê±°ì•¼ ëŒ€ë°•ì´ì§€ ì•Šëƒ</div>
+										<div class="small text-gray-500">ì •ìŠ¹ì› Â· 4ì¼ ì „</div>
 									</div>
 								</a> <a class="dropdown-item text-center small text-gray-500"
-									href="#">´õº¸±â</a>
+									href="#">ë”ë³´ê¸°</a>
 							</div></li>
 							
 							
@@ -316,7 +319,7 @@
           		<div class="content">
     
     <div class="container">
-      <!-- È¸¿ø°Ë»ö -->
+      <!-- íšŒì›ê²€ìƒ‰ -->
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -324,23 +327,23 @@
       </form>
       </div>
 
-      <!-- È¸¿ø¸Þ´ºÅÇ -->	      
+      <!-- íšŒì›ë©”ë‰´íƒ­ -->	      
 		      <ul class="nav nav-tabs">
 		        <li class="nav-item">
-		          <a class="nav-link" aria-current="page" href="memberMng.jsp">ÀüÃ¼È¸¿ø</a>
+		          <a class="nav-link" aria-current="page" href="memberMng.jsp">ì „ì²´íšŒì›</a>
 		        </li>
 		        <li class="nav-item">
-		          <a class="nav-link active" aria-current="page" href="#">°¡ÀÔ½ÅÃ» È¸¿ø</a>
+		          <a class="nav-link active" aria-current="page" href="#">ê°€ìž…ì‹ ì²­ íšŒì›</a>
 		        </li>
 		        <li class="nav-item">
-		          <a class="nav-link" aria-current="page" href="ghostMemberMng.jsp">ÈÞ¸éÈ¸¿ø</a>
+		          <a class="nav-link" aria-current="page" href="ghostMemberMng.jsp">íœ´ë©´íšŒì›</a>
 		        </li>        
 		      </ul>
       <div class="table-responsive">
         <form action="#">
           <table class="table table-striped custom-table">
             <thead>
-            <!-- <th scope="col">È¸¿øÅ×ÀÌºí Çì´õ</th> -->
+            <!-- <th scope="col">íšŒì›í…Œì´ë¸” í—¤ë”</th> -->
               <tr>
                 <th scope="col">
                   <label class="control control--checkbox">
@@ -348,42 +351,25 @@
                   <div class="control__indicator"></div>
                   </label>
                 </th>
-                <th scope="col" style="width:190px">ÀÌ¸§(°èÁ¤)</th>
-                <th scope="col">³ªÀÌ</th>
-                <th scope="col">¼ºº°</th>
-                <th scope="col">Áö¿ª</th>
-                <th scope="col" style="width:200px">Æ÷Áö¼Ç</th>
-                <th scope="col">½ÅÃ»ÀÏÀÚ</th>
+                <th scope="col" style="width:190px">ì´ë¦„(ê³„ì •)</th>
+                <th scope="col">ë‚˜ì´</th>
+                <th scope="col">ì„±ë³„</th>
+                <th scope="col">ì§€ì—­</th>
+                <th scope="col" style="width:200px">í¬ì§€ì…˜</th>
+                <th scope="col">ì‹ ì²­ì¼ìž</th>
                 <th scope="col"></th>
                 <!-- <th scope="col"></th> -->
               </tr>
             </thead>
-            
-            <!-- <tfoot>
-            È¸¿øÅ×ÀÌºí ÇªÅÍ(È¸¿øµî±Þ º¯°æ)
-              <tr>
-                <th colspan="2" ></th>
-                <th colspan="1" scope="row">¼±ÅÃÇÑ È¸¿ø</th>
-                  <th>
-                    <select name="grade" aria-label=".form-select-lg example">
-                      <option value="grade_A">Á¤È¸¿ø</option>
-                      <option value="grade_B">ÁØÈ¸¿ø</option>
-                      <option value="grade_C">½Å±ÔÈ¸¿ø</option>
-                      <option value="admin">°ü¸®ÀÚ</option>
-                    </select>
-                  </th>
-                  <th><span>(À¸)·Î</span></th>
-                  <th></th>
-                  <th></th>
-                  <th><input type="submit" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                      <label class="btn btn-outline-primary" for="btnradio1">º¯°æ</label>
-                  </th>
-              </tr>
-              </tfoot> -->
-              
+                  <%
+	 	            MemberDAO dao = new MemberDAO();
+	 	    		List<MemberVO> list = dao.select(); 
+ 	            	 for(int i = 0 ;i<list.size();i++){ 
+ 	            	 	if(list.get(i).getClub_user_tier().intValue() == 4){%>
 	           <tbody>
-	           <!-- È¸¿øÅ×ÀÌºí È¸¿ø¸®½ºÆ®
-	           		ÀÌ¸§(ID), È¸¿øµî±Þ, °¡ÀÔÀÏÀÚ, ¼ºº°, ½Å·Úµµ -->
+	           <!-- íšŒì›í…Œì´ë¸” íšŒì›ë¦¬ìŠ¤íŠ¸
+	           		ì´ë¦„(ID), íšŒì›ë“±ê¸‰, ê°€ìž…ì¼ìž, ì„±ë³„, ì‹ ë¢°ë„ -->
+	           		
 	             <tr scope="row">
 	              <td>
 	                <label class="control control--checkbox">
@@ -392,78 +378,22 @@
 	                </label>
 	              </td>
 	              <td>
-	                <strong>ÀÌ¼öÈ£</strong>
-	                <small class="d-block">(dltngh123)</small>
+	                <strong><%=list.get(i).getUser_nick() %></strong>
+	                <small class="d-block"><%=list.get(i).getUser_id() %></small>
 	              </td>
-	              <td>26</td>
-	              <td>³²</td>
-	              <td>±¤ÁÖ</td>
-	              <td>FW</td>
-	              <td>2023-03-26</td>
-	              <td><a href="#" class="more">¼ö¶ô</a>
-	              <a href="#" class="more" style="color:red">°ÅÀý</a></td> 
+	              <td><%=list.get(i).getUser_age() %></td>
+	              <td><%=list.get(i).getUser_gender() %></td>
+	              <td><%=list.get(i).getUser_area() %></td>
+	              <td>fw</td>
+	              <td><%=list.get(i).getMember_reg_date() %></td>
+	              <td><a href="memberUpdateService.do" class="more">ìˆ˜ë½</a>
+	              <a href="#" class="more" style="color:red">ê±°ì ˆ</a></td> 
 	             </tr>
-	             <tr scope="row">
-	              <td>
-	                <label class="control control--checkbox">
-	                <input type="checkbox" />
-	                <div class="control__indicator"></div>
-	                </label>
-	              </td>
-	              <td>
-	                <strong>ÀÌ¼öÈ£</strong>
-	                <small class="d-block">(dltngh123)</small>
-	              </td>
-	             <td>26</td>
-	              <td>³²</td>
-	              <td>±¤ÁÖ</td>
-	              <td>DF</td>
-	              <td>2023-03-26</td>
-	              <td><a href="#" class="more">¼ö¶ô</a>
-	              	<a href="#" class="more" style="color:red">°ÅÀý</a></td> 
-	             </tr>
-	             <tr scope="row">
-	              <td>
-	                <label class="control control--checkbox">
-	                <input type="checkbox" />
-	                <div class="control__indicator"></div>
-	                </label>
-	              </td>
-	              <td>
-	                <strong>ÀÌ¼öÈ£</strong>
-	                <small class="d-block">(dltngh123)</small>
-	              </td>
-	              <td>26</td>
-	              <td>³²</td>
-	              <td>±¤ÁÖ</td>
-	              <td>MF</td>
-	              <td>2023-03-26</td>
-	              <td><a href="#" class="more">¼ö¶ô</a>
-	              	<a href="#" class="more" style="color:red">°ÅÀý</a></td> 
-	             </tr>
-	              <tr scope="row">
-	              <td>
-	                <label class="control control--checkbox">
-	                <input type="checkbox" />
-	                <div class="control__indicator"></div>
-	                </label>
-	              </td>
-	              <td>
-	                <strong>ÀÌ¼öÈ£</strong>
-	                <small class="d-block">(dltngh123)</small>
-	              </td>
-	              <td>26</td>
-	              <td>³²</td>
-	              <td>±¤ÁÖ</td>
-	              <td>GK</td>
-	              <td>2023-03-26</td>
-	              <td><a href="#" class="more">¼ö¶ô</a>
-	              <a href="#" class="more" style="color:red">°ÅÀý</a></td> 
-	             </tr>                      
+	             <%}} %>                 
 	           </tbody>
 	          </table>
 	          
-          <!-- È¸¿ø¸®½ºÆ® ÆäÀÌÁö ÆäÀÌÁö ³Ñ±â±â -->
+          <!-- íšŒì›ë¦¬ìŠ¤íŠ¸ íŽ˜ì´ì§€ íŽ˜ì´ì§€ ë„˜ê¸°ê¸° -->
           <nav aria-label="Page navigation">
             <ul class="pagination justify-content-center">
               <li class="page-item">
@@ -534,7 +464,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">¡¿</span>
+                        <span aria-hidden="true">Ã—</span>
                     </button>
                 </div>
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>

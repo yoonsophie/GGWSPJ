@@ -21,9 +21,9 @@ public class MemberDAO {
 			return list;
 		}
 	// 회원삭제
-	public int delete(String id) {
+	public int delete(String user_id) {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		int cnt = sqlSession.delete("com.ggws.db.MemberMapper.deleteMember",id);
+		int cnt = sqlSession.delete("com.ggws.db.MemberMapper.deleteMember",user_id);
 		sqlSession.close();
 		return cnt;
 		}

@@ -35,7 +35,7 @@ var myLineChart = new Chart(ctx, {
   data: {
     labels: ["team1","team2", "team3", "team4"],
     datasets: [{
-      label: "전체경기횟수",
+      label: "경기",
       backgroundColor: "#4e73df",
       hoverBackgroundColor: "#2e59d9",
       borderColor: "#4e73df",
@@ -69,7 +69,7 @@ var myLineChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 30,
+          max: 20,
           maxTicksLimit: 5,
           padding: 10,
           // Include a dollar sign in the ticks
@@ -104,7 +104,7 @@ var myLineChart = new Chart(ctx, {
       callbacks: {
         label: function(tooltipItem, chart) {
           var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-          return datasetLabel + ' : ' + number_format(tooltipItem.yLabel);
+          return number_format(tooltipItem.yLabel)+datasetLabel;
         }
       }
     },

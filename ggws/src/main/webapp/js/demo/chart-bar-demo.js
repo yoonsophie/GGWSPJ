@@ -34,7 +34,7 @@ var myBarChart = new Chart(ctx, {
   data: {
     labels: ["team1","team2", "team3", "team4"],
     datasets: [{
-      label: "경기 승",
+      label: "승리 횟수",
       backgroundColor: "#4e73df",
       hoverBackgroundColor: "#2e59d9",
       borderColor: "#4e73df",
@@ -68,7 +68,7 @@ var myBarChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 20,
+          max: 15,
           maxTicksLimit: 5,
           padding: 10,
           // Include a dollar sign in the ticks
@@ -103,7 +103,7 @@ var myBarChart = new Chart(ctx, {
       callbacks: {
         label: function(tooltipItem, chart) {
           var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-          return datasetLabel + ' : ' + number_format(tooltipItem.yLabel);
+          return number_format(tooltipItem.yLabel) + datasetLabel;
         }
       }
     },
