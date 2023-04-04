@@ -1,0 +1,10 @@
+.ballot-content {
+	text-align : center;
+}
+.col-sm-12 {
+	display: inline;
+}
+
+.pagination {
+	float: right;
+}

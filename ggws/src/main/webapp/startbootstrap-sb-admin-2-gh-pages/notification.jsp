@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,11 +21,10 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <!-- Í≤åÏãúÌåê Î≤ÑÌäº -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
 </head>
 
-<body id="page-top" >
+<body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -34,14 +33,14 @@
 		<ul
 			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
 			id="accordionSidebar">
-			<!-- Sidebar - Brand ÎèôÌò∏ÌöåÎ™Ö-->
+			<!-- Sidebar - Brand µø»£»∏∏Ì-->
 			<a
 				class="sidebar-brand d-flex align-items-center justify-content-center"
 				href="index.jsp">
 				<div class="sidebar-brand-icon rotate-n-15">
 					<i class="fas fa-laugh-wink"></i>
 				</div>
-				<div class="sidebar-brand-text mx-3">ÎèôÌò∏ÌöåÎ™Ö</div>
+				<div class="sidebar-brand-text mx-3">µø»£»∏∏Ì</div>
 			</a>
 
 			<!-- Divider -->
@@ -49,73 +48,37 @@
 
 			<!-- Nav Item - Dashboard -->
 			<li class="nav-item active"><a class="nav-link"
-<<<<<<< HEAD
-				href="index.html"> <i class="fas fa-fw fa-home"></i> <span>ÌôàÏúºÎ°ú</span></a>
-=======
 				href="index.jsp"> <i class="fas fa-fw fa-home"></i> <span>»®¿∏∑Œ</span></a>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</li>
 
 			<!-- Divider -->
 			<hr class="sidebar-divider" />
 
-			<!-- Heading Î©îÎâ¥-->
-			<div class="sidebar-heading">Î©îÎâ¥</div>
+			<!-- Heading ∏ﬁ¥∫-->
+			<div class="sidebar-heading">∏ﬁ¥∫</div>
 
 			
-
 			<!-- Nav Item - Charts -->
-<<<<<<< HEAD
-			<li class="nav-item"><a class="nav-link" href="notification.html">
-					<i class="fas fa-fw fa-chart-area"></i> <span>Í≥µÏßÄÏÇ¨Ìï≠</span>
-=======
 			<li class="nav-item"><a class="nav-link" href="notification.jsp">
 					<i class="fas fa-fw fa-chart-area"></i> <span>∞¯¡ˆªÁ«◊</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</a></li>
-<<<<<<< HEAD
-			<li class="nav-item"><a class="nav-link" href="calendar.html">
-					<i class="fas fa-fw fa-calendar"></i> <span>Îã¨Î†•</span>
-=======
 			<li class="nav-item"><a class="nav-link" href="calendar.jsp">
 					<i class="fas fa-fw fa-calendar"></i> <span>¥ﬁ∑¬</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</a></li>
-<<<<<<< HEAD
-			<li class="nav-item"><a class="nav-link" href="boardMain.jsp">
-					<i class="fas fa-fw fa-list"></i> <span>Í≤åÏãúÌåê</span>
-=======
 			<li class="nav-item"><a class="nav-link" href="board.jsp">
 					<i class="fas fa-fw fa-list"></i> <span>∞‘Ω√∆«</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</a></li>
-<<<<<<< HEAD
-			<li class="nav-item"><a class="nav-link" href="ballot.html">
-					<i class="fas fa-fw fa-check"></i> <span>Ìà¨Ìëú</span>
-=======
 			<li class="nav-item"><a class="nav-link" href="ballot.jsp">
 					<i class="fas fa-fw fa-check"></i> <span>≈ı«•</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</a></li>
-
-			<!-- Nav Item - Tables -->
-<<<<<<< HEAD
-			<li class="nav-item"><a class="nav-link" href="chat.html">
-					<i class="fas fa-fw fa-comments"></i> <span>Ï±ÑÌåÖ</span>
-=======
 			<li class="nav-item"><a class="nav-link" href="chat.jsp">
 					<i class="fas fa-fw fa-comments"></i> <span>√§∆√</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</a></li>
-
-			<!-- Nav Item - calendar -->
-<<<<<<< HEAD
-			<li class="nav-item"><a class="nav-link" href="matching.html">
-					<i class="fas fa-fw fa-handshake"></i> <span>Îß§Ïπ≠</span>
-=======
 			<li class="nav-item"><a class="nav-link" href="matching.jsp">
 					<i class="fas fa-fw fa-handshake"></i> <span>∏≈ƒ™</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
+			</a></li>
+			<li class="nav-item"><a class="nav-link" href="analysis.jsp">
+					<i class="fas fa-fw fa-chart-bar"></i> <span>∫–ºÆ</span>
 			</a></li>
 
 			<!-- Divider -->
@@ -183,7 +146,7 @@
                             </div>
                         </li>
 
-                     		<!-- Nav Item - Alerts -->
+                        		<!-- Nav Item - Alerts -->
 						<li class="nav-item dropdown no-arrow mx-1"><a
 							class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -238,75 +201,8 @@
 									href="#">¥ı∫∏±‚</a>
 							</div></li>
 
-<<<<<<< HEAD
-                        <!-- Nav Item - Messages -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-envelope fa-fw"></i>
-                                <!-- Counter - Messages -->
-                                <span class="badge badge-danger badge-counter">7</span>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="messagesDropdown">
-                                <h6 class="dropdown-header">
-                                    Message Center
-                                </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
-                                            alt="...">
-                                        <div class="status-indicator bg-success"></div>
-                                    </div>
-                                    <div class="font-weight-bold">
-                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
-                                            problem I've been having.</div>
-                                        <div class="small text-gray-500">Emily Fowler ¬∑ 58m</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
-                                            alt="...">
-                                        <div class="status-indicator"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">I have the photos that you ordered last month, how
-                                            would you like them sent to you?</div>
-                                        <div class="small text-gray-500">Jae Chun ¬∑ 1d</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
-                                            alt="...">
-                                        <div class="status-indicator bg-warning"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">Last month's report looks great, I am very happy with
-                                            the progress so far, keep up the good work!</div>
-                                        <div class="small text-gray-500">Morgan Alvarez ¬∑ 2d</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
-                                            alt="...">
-                                        <div class="status-indicator bg-success"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                                            told me that people say this to all dogs, even if they aren't good...</div>
-                                        <div class="small text-gray-500">Chicken the Dog ¬∑ 2w</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-                            </div>
-                        </li>
-=======
 
-                    <!-- Nav Item - Messages -->
+                       <!-- Nav Item - Messages -->
 						<li class="nav-item dropdown no-arrow mx-1"><a
 							class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -361,7 +257,6 @@
 								</a> <a class="dropdown-item text-center small text-gray-500"
 									href="#">¥ı∫∏±‚</a>
 							</div></li>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -403,96 +298,10 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
- 				  <!-- Page Heading -->
-                    <h1 class="logo_effect" align="center"><img src="img/writing_icon.png" style="height:80px; margin-right:50px;" "/></h1>
 
-<<<<<<< HEAD
-                    <!-- Page Heading -->
-                    <h1 class="mb-5 text-gray-800 text-center">Í≤åÏãúÍ∏Ä ÏûëÏÑ±</h1>
-=======
-
-
-					 <div class="row" >
-                    	<div class="col-md-12 mb-4 margin-top">
-							<div class="card shadow h-100 py-2">
-								<div class="card-body">
-
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
-                                 
-<<<<<<< HEAD
-                    <div class="content">
-						<div class="container">
-							<!-- <h1 class="mb-5">Í≤åÏãúÍ∏Ä ÏûëÏÑ±</h1> -->
-=======
-                    <div class="content" >
-						<div class="container" style="overflow-x:hidden; overflow-y:auto;">
-							<!-- <h1 class="mb-5">∞‘Ω√±€ ¿€º∫</h1> -->
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
-							<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-<<<<<<< HEAD
-							  <a href="boardMain.jsp"><button class="btn btn-primary" type="button">Îí§Î°úÍ∞ÄÍ∏∞</button></a>
-=======
-							  <a href="board.jsp"><button class="btn btn-primary" type="button">µ⁄∑Œ∞°±‚</button></a>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
-							 <!--  <button class="btn btn-primary" type="button">Button</button> -->
-							</div>
-							<p></p>
-<<<<<<< HEAD
-							<div class="table-responsive">
-								<form action="BoardWriteService.do" method="post" enctype="multipart/form-data">
-								<!-- Ï†úÎ™© ÏûÖÎ†• -->
-=======
-							<div class="table-responsive" >
-								<form action="BoardWriteService" method="post" enctype="multipart/form-data">
-								<!-- ¡¶∏Ò ¿‘∑¬ -->
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
-								  <div class="row mb-3">
-								    <label for="inputEmail3" class="col-sm-2 col-form-label">Ï†úÎ™©</label>
-								    <div class="col-sm-10">
-								      <input type="text" class="form-control" placeholder="Ï†úÎ™©ÏùÑ ÏûÖÎ†•ÌïòÏÑ∏Ïöî." name="board_title">
-								    </div>
-								  </div>
-								  <!-- ÏûëÏÑ±Ïûê ÏûÖÎ†• -->
-								  <div class="row mb-3">
-								    <label for="inputPassword3" class="col-sm-2 col-form-label" >ÏûëÏÑ±Ïûê</label>
-								    <div class="col-sm-10">
-								      <input type="text" class="form-control" placeholder="ÏûëÏÑ±ÏûêÎ•º ÏûÖÎ†•ÌïòÏÑ∏Ïöî." name="user_id">
-								    </div>
-								  </div>
-								  <!-- ÎÇ¥Ïö© ÏûÖÎ†• -->
-								  <div class="row mb-3">
-								    <label for="inputPassword3" class="col-sm-2 col-form-label">ÎÇ¥Ïö©</label>
-								    <div class="col-sm-10">				    	
-								      <textarea class="form-control" rows="5" placeholder="ÎÇ¥Ïö©ÏùÑ ÏûÖÎ†•ÌïòÏÑ∏Ïöî." name="board_content"></textarea>
-								   <!-- ÌååÏùº ÏóÖÎ°úÎìú -->   
-								    </div>
-								  </div>
-<<<<<<< HEAD
-								  <div class="row mb-3">
-								    <label for="inputEmail3" class="col-sm-2 col-form-label">ÌååÏùºÎì±Î°ù</label>
-=======
-								  <div class="row mb-2">
-								    <label for="inputEmail3" class="col-sm-3 col-form-label">∆ƒ¿œµÓ∑œ</label>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
-								    <div class="col-sm-10">
-								      <input type="file" name="filename">
-								    </div>
-								  </div>
-								  <!-- Îì±Î°ù Î∞è Ï¥àÍ∏∞Ìôî -->
-								   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-										 <button type="reset" class="btn btn-primary me-md-2">Ï¥àÍ∏∞Ìôî</button>
-										 <button class="btn btn-primary me-md-2" type="submit">Îì±Î°ùÌïòÍ∏∞</button>
-										  <!-- <button class="btn btn-primary" type="button">Button</button> -->
-									</div>
-								</form>  
-								</div>
-							</div>
-		</div>
-		</div>
-		</div>
-		</div>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
+                 <!-- Page Heading -->
+                    <h1 class="logo_effect" align="center"><img src="img/megaphone_icon.png" style="height:80px; margin-right:50px;" "/></h1>
+                  
                    
             <!-- End of Main Content -->
 
@@ -525,7 +334,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">√ó</span>
+                        <span aria-hidden="true">°ø</span>
                     </button>
                 </div>
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>

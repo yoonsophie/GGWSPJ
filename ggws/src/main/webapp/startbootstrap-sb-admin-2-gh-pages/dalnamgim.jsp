@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +10,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+	 <meta charset='utf-8' />
+  <!-- »≠∏È «ÿªÛµµø° µ˚∂Û ±€¿⁄ ≈©±‚ ¥Î¿¿(∏πŸ¿œ ¥Î¿¿) -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <!-- jquery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- fullcalendar CDN -->
+  <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.css' rel='stylesheet' />
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
+  <!-- fullcalendar ææÓ CDN -->
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js'></script>
+  
+   <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+<style>
+  /* body Ω∫≈∏¿œ */
+  html, body {
+    overflow: hidden;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+   /*  font-size: 14px; */
+  }
+  /* ƒ∂∏∞¥ı ¿ß¿« «ÿ¥ı Ω∫≈∏¿œ(≥Ø¬•∞° ¿÷¥¬ ∫Œ∫–) */
+  .fc-header-toolbar {
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+</style>
     <title>SB Admin 2 - Charts</title>
 
     <!-- Custom fonts for this template-->
@@ -21,11 +52,10 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <!-- Í≤åÏãúÌåê Î≤ÑÌäº -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
 </head>
 
-<body id="page-top" >
+<body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -34,14 +64,14 @@
 		<ul
 			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
 			id="accordionSidebar">
-			<!-- Sidebar - Brand ÎèôÌò∏ÌöåÎ™Ö-->
+			<!-- Sidebar - Brand µø»£»∏∏Ì-->
 			<a
 				class="sidebar-brand d-flex align-items-center justify-content-center"
 				href="index.jsp">
 				<div class="sidebar-brand-icon rotate-n-15">
 					<i class="fas fa-laugh-wink"></i>
 				</div>
-				<div class="sidebar-brand-text mx-3">ÎèôÌò∏ÌöåÎ™Ö</div>
+				<div class="sidebar-brand-text mx-3">µø»£»∏∏Ì</div>
 			</a>
 
 			<!-- Divider -->
@@ -49,74 +79,38 @@
 
 			<!-- Nav Item - Dashboard -->
 			<li class="nav-item active"><a class="nav-link"
-<<<<<<< HEAD
-				href="index.html"> <i class="fas fa-fw fa-home"></i> <span>ÌôàÏúºÎ°ú</span></a>
-=======
 				href="index.jsp"> <i class="fas fa-fw fa-home"></i> <span>»®¿∏∑Œ</span></a>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</li>
 
 			<!-- Divider -->
 			<hr class="sidebar-divider" />
 
-			<!-- Heading Î©îÎâ¥-->
-			<div class="sidebar-heading">Î©îÎâ¥</div>
+			<!-- Heading ∏ﬁ¥∫-->
+			<div class="sidebar-heading">∏ﬁ¥∫</div>
 
 			
 
 			<!-- Nav Item - Charts -->
-<<<<<<< HEAD
-			<li class="nav-item"><a class="nav-link" href="notification.html">
-					<i class="fas fa-fw fa-chart-area"></i> <span>Í≥µÏßÄÏÇ¨Ìï≠</span>
-=======
 			<li class="nav-item"><a class="nav-link" href="notification.jsp">
 					<i class="fas fa-fw fa-chart-area"></i> <span>∞¯¡ˆªÁ«◊</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</a></li>
-<<<<<<< HEAD
-			<li class="nav-item"><a class="nav-link" href="calendar.html">
-					<i class="fas fa-fw fa-calendar"></i> <span>Îã¨Î†•</span>
-=======
 			<li class="nav-item"><a class="nav-link" href="calendar.jsp">
 					<i class="fas fa-fw fa-calendar"></i> <span>¥ﬁ∑¬</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</a></li>
-<<<<<<< HEAD
-			<li class="nav-item"><a class="nav-link" href="boardMain.jsp">
-					<i class="fas fa-fw fa-list"></i> <span>Í≤åÏãúÌåê</span>
-=======
 			<li class="nav-item"><a class="nav-link" href="board.jsp">
 					<i class="fas fa-fw fa-list"></i> <span>∞‘Ω√∆«</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</a></li>
-<<<<<<< HEAD
-			<li class="nav-item"><a class="nav-link" href="ballot.html">
-					<i class="fas fa-fw fa-check"></i> <span>Ìà¨Ìëú</span>
-=======
 			<li class="nav-item"><a class="nav-link" href="ballot.jsp">
 					<i class="fas fa-fw fa-check"></i> <span>≈ı«•</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</a></li>
-
-			<!-- Nav Item - Tables -->
-<<<<<<< HEAD
-			<li class="nav-item"><a class="nav-link" href="chat.html">
-					<i class="fas fa-fw fa-comments"></i> <span>Ï±ÑÌåÖ</span>
-=======
 			<li class="nav-item"><a class="nav-link" href="chat.jsp">
 					<i class="fas fa-fw fa-comments"></i> <span>√§∆√</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</a></li>
-
-			<!-- Nav Item - calendar -->
-<<<<<<< HEAD
-			<li class="nav-item"><a class="nav-link" href="matching.html">
-					<i class="fas fa-fw fa-handshake"></i> <span>Îß§Ïπ≠</span>
-=======
 			<li class="nav-item"><a class="nav-link" href="matching.jsp">
 					<i class="fas fa-fw fa-handshake"></i> <span>∏≈ƒ™</span>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</a></li>
+			<li class="nav-item"><a class="nav-link" href="analysis.jsp"> <i
+					class="fas fa-fw fa-chart-bar"></i> <span>∫–ºÆ</span></a></li>
 
 			<!-- Divider -->
 			<hr class="sidebar-divider d-none d-md-block" />
@@ -183,7 +177,7 @@
                             </div>
                         </li>
 
-                     		<!-- Nav Item - Alerts -->
+                        		<!-- Nav Item - Alerts -->
 						<li class="nav-item dropdown no-arrow mx-1"><a
 							class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -238,75 +232,8 @@
 									href="#">¥ı∫∏±‚</a>
 							</div></li>
 
-<<<<<<< HEAD
-                        <!-- Nav Item - Messages -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-envelope fa-fw"></i>
-                                <!-- Counter - Messages -->
-                                <span class="badge badge-danger badge-counter">7</span>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="messagesDropdown">
-                                <h6 class="dropdown-header">
-                                    Message Center
-                                </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
-                                            alt="...">
-                                        <div class="status-indicator bg-success"></div>
-                                    </div>
-                                    <div class="font-weight-bold">
-                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
-                                            problem I've been having.</div>
-                                        <div class="small text-gray-500">Emily Fowler ¬∑ 58m</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
-                                            alt="...">
-                                        <div class="status-indicator"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">I have the photos that you ordered last month, how
-                                            would you like them sent to you?</div>
-                                        <div class="small text-gray-500">Jae Chun ¬∑ 1d</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
-                                            alt="...">
-                                        <div class="status-indicator bg-warning"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">Last month's report looks great, I am very happy with
-                                            the progress so far, keep up the good work!</div>
-                                        <div class="small text-gray-500">Morgan Alvarez ¬∑ 2d</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
-                                            alt="...">
-                                        <div class="status-indicator bg-success"></div>
-                                    </div>
-                                    <div>
-                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                                            told me that people say this to all dogs, even if they aren't good...</div>
-                                        <div class="small text-gray-500">Chicken the Dog ¬∑ 2w</div>
-                                    </div>
-                                </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-                            </div>
-                        </li>
-=======
 
-                    <!-- Nav Item - Messages -->
+                       <!-- Nav Item - Messages -->
 						<li class="nav-item dropdown no-arrow mx-1"><a
 							class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -361,7 +288,6 @@
 								</a> <a class="dropdown-item text-center small text-gray-500"
 									href="#">¥ı∫∏±‚</a>
 							</div></li>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -401,113 +327,225 @@
                 </nav>
                 <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
- 				  <!-- Page Heading -->
-                    <h1 class="logo_effect" align="center"><img src="img/writing_icon.png" style="height:80px; margin-right:50px;" "/></h1>
+				<!-- Begin Page Content -->
+				<div class="container-fluid">
 
-<<<<<<< HEAD
-                    <!-- Page Heading -->
-                    <h1 class="mb-5 text-gray-800 text-center">Í≤åÏãúÍ∏Ä ÏûëÏÑ±</h1>
-=======
-
-
-					 <div class="row" >
-                    	<div class="col-md-12 mb-4 margin-top">
-							<div class="card shadow h-100 py-2">
-								<div class="card-body">
-
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
-                                 
-<<<<<<< HEAD
-                    <div class="content">
-						<div class="container">
-							<!-- <h1 class="mb-5">Í≤åÏãúÍ∏Ä ÏûëÏÑ±</h1> -->
-=======
-                    <div class="content" >
-						<div class="container" style="overflow-x:hidden; overflow-y:auto;">
-							<!-- <h1 class="mb-5">∞‘Ω√±€ ¿€º∫</h1> -->
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
-							<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-<<<<<<< HEAD
-							  <a href="boardMain.jsp"><button class="btn btn-primary" type="button">Îí§Î°úÍ∞ÄÍ∏∞</button></a>
-=======
-							  <a href="board.jsp"><button class="btn btn-primary" type="button">µ⁄∑Œ∞°±‚</button></a>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
-							 <!--  <button class="btn btn-primary" type="button">Button</button> -->
-							</div>
-							<p></p>
-<<<<<<< HEAD
-							<div class="table-responsive">
-								<form action="BoardWriteService.do" method="post" enctype="multipart/form-data">
-								<!-- Ï†úÎ™© ÏûÖÎ†• -->
-=======
-							<div class="table-responsive" >
-								<form action="BoardWriteService" method="post" enctype="multipart/form-data">
-								<!-- ¡¶∏Ò ¿‘∑¬ -->
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
-								  <div class="row mb-3">
-								    <label for="inputEmail3" class="col-sm-2 col-form-label">Ï†úÎ™©</label>
-								    <div class="col-sm-10">
-								      <input type="text" class="form-control" placeholder="Ï†úÎ™©ÏùÑ ÏûÖÎ†•ÌïòÏÑ∏Ïöî." name="board_title">
-								    </div>
-								  </div>
-								  <!-- ÏûëÏÑ±Ïûê ÏûÖÎ†• -->
-								  <div class="row mb-3">
-								    <label for="inputPassword3" class="col-sm-2 col-form-label" >ÏûëÏÑ±Ïûê</label>
-								    <div class="col-sm-10">
-								      <input type="text" class="form-control" placeholder="ÏûëÏÑ±ÏûêÎ•º ÏûÖÎ†•ÌïòÏÑ∏Ïöî." name="user_id">
-								    </div>
-								  </div>
-								  <!-- ÎÇ¥Ïö© ÏûÖÎ†• -->
-								  <div class="row mb-3">
-								    <label for="inputPassword3" class="col-sm-2 col-form-label">ÎÇ¥Ïö©</label>
-								    <div class="col-sm-10">				    	
-								      <textarea class="form-control" rows="5" placeholder="ÎÇ¥Ïö©ÏùÑ ÏûÖÎ†•ÌïòÏÑ∏Ïöî." name="board_content"></textarea>
-								   <!-- ÌååÏùº ÏóÖÎ°úÎìú -->   
-								    </div>
-								  </div>
-<<<<<<< HEAD
-								  <div class="row mb-3">
-								    <label for="inputEmail3" class="col-sm-2 col-form-label">ÌååÏùºÎì±Î°ù</label>
-=======
-								  <div class="row mb-2">
-								    <label for="inputEmail3" class="col-sm-3 col-form-label">∆ƒ¿œµÓ∑œ</label>
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
-								    <div class="col-sm-10">
-								      <input type="file" name="filename">
-								    </div>
-								  </div>
-								  <!-- Îì±Î°ù Î∞è Ï¥àÍ∏∞Ìôî -->
-								   <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-										 <button type="reset" class="btn btn-primary me-md-2">Ï¥àÍ∏∞Ìôî</button>
-										 <button class="btn btn-primary me-md-2" type="submit">Îì±Î°ùÌïòÍ∏∞</button>
-										  <!-- <button class="btn btn-primary" type="button">Button</button> -->
-									</div>
-								</form>  
+					<!-- Page Heading -->
+                    <h1 class="logo_effect" align="center"><img src="img/calendar_icon.png" style="height:80px; margin-right:50px;" "/></h1>
+					
+					
+					<div class="col-xl-12">
+						<div class="card shadow">
+							<div class="card-body">
+								<div id='calendar-container'>
+									<div id='calendar'></div>
 								</div>
 							</div>
-		</div>
-		</div>
-		</div>
-		</div>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+						</div>
+						<!-- insertModal -->
+						<div class="modal fade insertModal" id="myModal">
+							<div class="modal-dialog">
+								<div class="modal-content">
 
-                   
-            <!-- End of Main Content -->
+									<!-- Modal Header -->
+									<div class="modal-header">
+										<h4 class="modal-title">¿œ¡§ µÓ∑œ</h4>
+										<button type="button" class="close"
+											onclick="initModal('insertModal', g_arg)">&times;</button>
+									</div>
+									<!-- Modal body -->
+									<div class="modal-body">
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+										<div class="form-group">
+											<label for="title">¿œ¡§≥ªøÎ:</label> <input type="textbox"
+												class="form-control" placeholder="" id="title" name="title">
+										</div>
+										<div class="form-group">
+											<label for="start">Ω√¿€Ω√∞£:</label> <select class="form-control"
+												id="start" onchange="startChange()">
+												<option value="09:00">09:00</option>
+												<option value="09:30">09:30</option>
+												<option value="10:00">10:00</option>
+												<option value="10:30">10:30</option>
+												<option value="11:00">11:00</option>
+												<option value="11:30">11:30</option>
+												<option value="12:00">12:00</option>
+												<option value="12:30">12:30</option>
+												<option value="13:00">13:00</option>
+												<option value="13:30">13:30</option>
+												<option value="14:00">14:00</option>
+												<option value="14:30">14:30</option>
+												<option value="15:00">15:00</option>
+												<option value="15:30">15:30</option>
+												<option value="16:00">16:00</option>
+												<option value="16:30">16:30</option>
+												<option value="17:00">17:00</option>
+												<option value="17:30">17:30</option>
+												<option value="18:00">18:00</option>
+												<option value="18:30">18:30</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="end">¡æ∑·Ω√∞£:</label> <select class="form-control"
+												id="end">
+												<option value="09:30">09:30</option>
+												<option value="10:00">10:00</option>
+												<option value="10:30">10:30</option>
+												<option value="11:00">11:00</option>
+												<option value="11:30">11:30</option>
+												<option value="12:00">12:00</option>
+												<option value="12:30">12:30</option>
+												<option value="13:00">13:00</option>
+												<option value="13:30">13:30</option>
+												<option value="14:00">14:00</option>
+												<option value="14:30">14:30</option>
+												<option value="15:00">15:00</option>
+												<option value="15:30">15:30</option>
+												<option value="16:00">16:00</option>
+												<option value="16:30">16:30</option>
+												<option value="17:00">17:00</option>
+												<option value="17:30">17:30</option>
+												<option value="18:00">18:00</option>
+												<option value="18:30">18:30</option>
+												<option value="19:00">19:00</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="allDay">¡æ¿œø©∫Œ:</label>
+											<div class="form-check">
+												<label class="form-check-label"> <input type="radio"
+													class="form-check-input" value="true" name="allDay">øπ
+												</label>
+											</div>
 
-        </div>
-        <!-- End of Content Wrapper -->
+											<div class="form-check">
+												<label class="form-check-label"> <input type="radio"
+													checked="checked" class="form-check-input" value="false"
+													name="allDay">æ∆¥œø¿
+												</label>
+											</div>
+										</div>
+									</div>
+									<!-- Modal footer -->
+									<div class="modal-footer">
+										<button type="button"
+											class="btn btn-dark  float-right deleteBtn"
+											onclick="deleteSch('insertModal', g_arg)">ªË¡¶</button>
+										<button type="button"
+											class="btn btn-warning float-right insertBtn"
+											onclick="insertSch('insertModal', g_arg)">µÓ∑œ</button>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<script>
+					
+							$(function() {
+								// calendar element √ÎµÊ
+								var calendarEl = $('#calendar')[0];
+								// full-calendar ª˝º∫«œ±‚
+								var calendar = new FullCalendar.Calendar(
+										calendarEl,
+										{
+											height : '700px', // calendar ≥Ù¿Ã º≥¡§
+											expandRows : true, // »≠∏Èø° ∏¬∞‘ ≥Ù¿Ã ¿Áº≥¡§
+											slotMinTime : '08:00', // Day ƒ∂∏∞¥ıø°º≠ Ω√¿€ Ω√∞£
+											slotMaxTime : '24:00', // Day ƒ∂∏∞¥ıø°º≠ ¡æ∑· Ω√∞£
+											// «ÿ¥ıø° «•Ω√«“ ≈¯πŸ
+											headerToolbar : {
+												left : 'prev,next today',
+												center : 'title',
+												right : 'dayGridMonth,timeGridWeek,timeGridDay listWeek'
+											},
+											initialView : 'dayGridMonth', // √ ±‚ ∑ŒµÂ µ…∂ß ∫∏¿Ã¥¬ ƒ∂∏∞¥ı »≠∏È(±‚∫ª º≥¡§: ¥ﬁ)
+											//initialDate: '2021-07-15', // √ ±‚ ≥Ø¬• º≥¡§ (º≥¡§«œ¡ˆ æ ¿∏∏È ø¿¥√ ≥Ø¬•∞° ∫∏¿Œ¥Ÿ.)
+											navLinks : true, // ≥Ø¬•∏¶ º±≈√«œ∏È Day ƒ∂∏∞¥ı≥™ Week ƒ∂∏∞¥ı∑Œ ∏µ≈©
+											editable : true, // ºˆ¡§ ∞°¥…?
+											selectable : true, // ¥ﬁ∑¬ ¿œ¿⁄ µÂ∑°±◊ º≥¡§∞°¥…
+											selectMirror : true,
+											nowIndicator : true, // «ˆ¿Á Ω√∞£ ∏∂≈©
+											dayMaxEvents : true, // ¿Ã∫•∆Æ∞° ø¿πˆµ«∏È ≥Ù¿Ã ¡¶«— (+ ∏Ó ∞≥Ωƒ¿∏∑Œ «•«ˆ)
+											
+											locale : 'ko', // «—±πæÓ º≥¡§
+											/* select: function() {
+												$("#myModal").modal("show");	//¿œ¿⁄ ≈¨∏Ø Ω√ ∏¥ﬁ »£√‚
+										      }, */
+										      eventClick: function(arg) {
+										    	  insertModalOpen(arg);//¿Ã∫•∆Æ ≈¨∏Ø Ω√ ∏¥ﬁ »£√‚
+										      },
+											  
+											eventAdd : function(obj) { // ¿Ã∫•∆Æ∞° √ﬂ∞°µ«∏È πﬂª˝«œ¥¬ ¿Ã∫•∆Æ
+												console.log(obj);
+											},
+											eventChange : function(obj) { // ¿Ã∫•∆Æ∞° ºˆ¡§µ«∏È πﬂª˝«œ¥¬ ¿Ã∫•∆Æ
+												console.log(obj);
+
+											},
+											eventRemove : function(obj) { // ¿Ã∫•∆Æ∞° ªË¡¶µ«∏È πﬂª˝«œ¥¬ ¿Ã∫•∆Æ
+												console.log(obj);
+											},
+											
+										select : function(arg) { // ƒ∂∏∞¥ıø°º≠ µÂ∑°±◊∑Œ ¿Ã∫•∆Æ∏¶ ª˝º∫«“ ºˆ ¿÷¥Ÿ.
+											//insertModalOpen(arg);
+											var title = prompt('Event Title:');
+											if (title) {
+												calendar.addEvent({
+													title : title,
+													start : arg.start,
+													end : arg.end,
+													allDay : arg.allDay
+												})
+											}
+											calendar.unselect()
+										},
+										events:[
+											{
+												title: '«–ø¯∞°æﬂ«‘',
+											    start: '2023-04-01 09:00:00',
+											    end: '2023-04-01 10:00:00',
+											},
+											{
+												title: '¿˙≥·æ‡º”',
+												start: '2023-04-04 21:00:00',
+												end: '2023-04-01 22:00:00',
+												
+											},
+											{
+												title : '«¡∑Œ¡ß∆Æ',
+												start: '2023-04-01',
+												end: '2023-04-07',
+												
+											}
+											
+											
+										]
+									});
+							// ƒ∂∏∞¥ı ∑£¥ı∏µ
+							calendar.render();
+						});
+					</script>
+
+
+
+
+					<!-- End of Main Content -->
+
+					<!-- Footer -->
+				
+					<footer class="sticky-footer bg-white">
+						<div class="container my-auto">
+							<div class="copyright text-center my-auto">
+								<span>Copyright &copy; Your Website 2020</span>
+							</div>
+						</div>
+					</footer>
+					<!-- End of Footer -->
+
+				</div>
+				<!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
@@ -525,7 +563,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">√ó</span>
+                        <span aria-hidden="true">°ø</span>
                     </button>
                 </div>
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
@@ -557,4 +595,4 @@
 
 </body>
 
-</html>
+</html></html>
