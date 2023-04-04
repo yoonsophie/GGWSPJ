@@ -22,26 +22,26 @@
 			</div>
 			<p></p>
 			<div class="table-responsive">
-				<form action="#" method="post" enctype="multipart/form-data">
+				<form action="BoardWriteService.do" method="post" enctype="multipart/form-data">
 				<!-- 제목 입력 -->
 				  <div class="row mb-3">
 				    <label for="inputEmail3" class="col-sm-2 col-form-label">제목</label>
 				    <div class="col-sm-10">
-				      <input type="text" class="form-control" placeholder="제목을 입력하세요.">
+				      <input name ="board_title" type="text" class="form-control" placeholder="제목을 입력하세요.">
 				    </div>
 				  </div>
 				  <!-- 작성자 입력 -->
 				  <div class="row mb-3">
 				    <label for="inputPassword3" class="col-sm-2 col-form-label" >작성자</label>
 				    <div class="col-sm-10">
-				      <input type="text" class="form-control" placeholder="작성자를 입력하세요.">
+				      <input name="user_id"type="text" class="form-control" placeholder="작성자를 입력하세요.">
 				    </div>
 				  </div>
 				  <!-- 내용 입력 -->
 				  <div class="row mb-3">
 				    <label for="inputPassword3" class="col-sm-2 col-form-label">내용</label>
 				    <div class="col-sm-10">				    	
-				      <textarea class="form-control" rows="5" placeholder="내용을 입력하세요."></textarea>
+				      <textarea name="board_content" class="form-control" rows="5" placeholder="내용을 입력하세요."></textarea>
 				   <!-- 파일 업로드 -->   
 				    </div>
 				  </div>

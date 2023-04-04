@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ggws.db.matchAnalysisMapper">
+	<select id="matchselecta" resultType="matchAnalysisVO">
+		select a_club_seq, count(*) as a_club_game from game_info group by a_club_seq
+	</select>
+	<select id="matchselecth" resultType="matchAnalysisVO">
+		select h_club_seq, count(*) as h_club_game from game_info group by h_club_seq
+	</select>
+	<select id="matchselectmy" resultType="matchAnalysisVO">
+		select h_club_seq, count(*) as myteamgame from game_info where h_club_seq=3 or a_club_seq=3 group by h_club_seq
+	</select>
+	<select id="matchselect1team" resultType="matchAnalysisVO">
+		select winner_club, count(*) as winner from game_info where (h_club_seq=3 and a_club_seq=1) or (h_club_seq=1 and a_club_seq=3) group by winner_club
+	</select>
+	<select id="matchselect4team" resultType="matchAnalysisVO">
+		select winner_club, count(*) as winner from game_info where (h_club_seq=3 and a_club_seq=4) or (h_club_seq=4 and a_club_seq=3) group by winner_club
+	</select>
+	<select id="matchselectwin" resultType="matchAnalysisVO">
+		select winner_club, count(*) as winner from game_info group by winner_club order by winner_club
+	</select>
+</mapper>

@@ -58,7 +58,7 @@
 </head>
 
 <body id="page-top">
-		<%
+			<%
 				MemberVO login_vo = (MemberVO) session.getAttribute("login_vo");
 				if (login_vo != null) {
 					System.out.print(login_vo.getUser_id());
@@ -108,7 +108,11 @@
 			<li class="nav-item"><a class="nav-link" href="calendar.jsp">
 					<i class="fas fa-fw fa-calendar"></i> <span>달력</span>
 			</a></li>
+<<<<<<< HEAD
+			<li class="nav-item"><a class="nav-link" href="boardMain.jsp">
+=======
 			<li class="nav-item"><a class="nav-link" href="board.jsp">
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 					<i class="fas fa-fw fa-list"></i> <span>게시판</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="ballot.jsp">

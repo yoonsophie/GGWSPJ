@@ -12,10 +12,11 @@ import lombok.RequiredArgsConstructor;
 @Getter
 public class BoardVO {
 		
-	private int num;
-	@NonNull private String title;
-	@NonNull private String writer;
-	@NonNull private String filename;
-	@NonNull private String content;
-	private String b_date;
+	private int board_seq;
+	private int club_seq;
+	@NonNull private String board_title;
+	@NonNull private String user_id;
+	@NonNull private String board_content;
+	private String board_date;
+	private String board_mod_date;
 }

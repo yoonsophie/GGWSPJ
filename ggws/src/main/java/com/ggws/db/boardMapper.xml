@@ -4,6 +4,15 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ggws.db.boardMapper">
 	<insert id="boardinsert" parameterType="BoardVO">
-		insert into web_board values(seq_board.nextval,,#{writer},#{title},#{filename},#{content},sysdate)
+		insert into club_board values(seq_board.nextval,1,#{user_id},#{board_title},#{board_content},sysdate,sysdate)
 	</insert>
+	<select id="selectAll" resultType="BoardVO">
+		select * from club_board order by board_date desc
+	</select>
+	<select id="selectone" resultType="BoardVO">
+		select * from club_board where board_seq=#{board_seq}
+	</select>
+	<delete id="boarddelete" parameterType="String">
+		delete from club_board where board_title=#{board_title}
+	</delete>
 </mapper>

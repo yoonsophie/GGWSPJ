@@ -27,18 +27,19 @@ function number_format(number, decimals, dec_point, thousands_sep) {
   return s.join(dec);
 }
 
+ 
 // Area Chart Example
 var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["January", "February", "March", "April", "May", "June"],
+    labels: ["team1","team2", "team3", "team4"],
     datasets: [{
       label: "전체경기횟수",
       backgroundColor: "#4e73df",
       hoverBackgroundColor: "#2e59d9",
       borderColor: "#4e73df",
-      data: [10, 12, 20 , 6, 3, 15],
+      data: [num1,, num3, num4],
     }],
   },
   options: {

@@ -3,12 +3,14 @@ package com.ggws.frontController;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.ggws.Command.Command;
+import com.ggws.controller.BoardDeleteService;
+import com.ggws.controller.BoardWriteService;
 import com.ggws.controller.LoginService;
 import com.ggws.controller.chatlistService;
 import com.ggws.controller.chatlistServiceTeam;
@@ -16,7 +18,7 @@ import com.ggws.controller.chatsubmitService;
 import com.ggws.controller.chatsubmitServiceTeam;
 import com.ggws.controller.psaService;
 
-@WebServlet("*.do")
+
 public class frontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -44,6 +46,7 @@ public class frontController extends HttpServlet {
 				
 				if(result.equals("LoginService.do")) {
 					// 로그인기능		
+<<<<<<< HEAD
 					 service = new LoginService();
 				}else if (result.equals("startbootstrap-sb-admin-2-gh-pages/chatsubmitService.do")) {
 					//1대1 채팅 테이블 insert 기능
@@ -62,6 +65,16 @@ public class frontController extends HttpServlet {
 					service = new psaService();
 				}else {
 					System.out.println("실패");
+=======
+					 service = new LoginService();		
+				}else if(result.equals("startbootstrap-sb-admin-2-gh-pages/BoardDeleteService.do")) {
+					System.out.println("게시글삭제");
+					// 게시글 삭제
+					service = new BoardDeleteService();
+				}else if(result.equals("startbootstrap-sb-admin-2-gh-pages/BoardWriteService.do")) {
+					// 게시글 업로드
+					service = new BoardWriteService();
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 				}
 				
 				String moveURL = service.execute(request, response);

@@ -9,8 +9,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<typeAlias type="com.ggws.model.calendarVO" alias="CalendarVO"/>
 		<typeAlias type="com.ggws.model.BoardVO" alias="BoardVO"/>
 		<typeAlias type="com.ggws.model.MemberVO" alias="MemberVO"/>
+<<<<<<< HEAD
 		<typeAlias type="com.ggws.model.chatVO" alias="chatVO"/>
 
+=======
+		<typeAlias type="com.ggws.model.matchAnalysisVO" alias="matchAnalysisVO"/>
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 	</typeAliases>
 
 
@@ -33,7 +37,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<mapper resource="com/ggws/db/calendarMapper.xml"/>
 		<mapper resource="com/ggws/db/MemberMapper.xml"/>
 		<mapper resource="com/ggws/db/boardMapper.xml"/>
+<<<<<<< HEAD
 		<mapper resource="com/ggws/db/chatMapper.xml"/>
 
+=======
+		<mapper resource="com/ggws/db/matchAnalysisMapper.xml"/>
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 	</mappers>
 </configuration>
