@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>이모저모</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -78,6 +78,7 @@
                                         <div class="form-group">
                                             <input type="password" name="user_pw" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="비밀번호">
+                                    
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">

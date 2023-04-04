@@ -12,12 +12,17 @@ import com.ggws.Command.Command;
 import com.ggws.controller.BoardDeleteService;
 import com.ggws.controller.BoardWriteService;
 import com.ggws.controller.LoginService;
-
+import com.ggws.controller.chatlistService;
+import com.ggws.controller.chatlistServiceTeam;
+import com.ggws.controller.chatsubmitService;
+import com.ggws.controller.chatsubmitServiceTeam;
+import com.ggws.controller.psaService;
 
 public class frontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		// post방식 인코딩
 				request.setCharacterEncoding("UTF-8");
@@ -39,25 +44,45 @@ public class frontController extends HttpServlet {
 				Command service = null;
 				
 				
-				if(result.equals("LoginService.do")) {
-					// 로그인기능		
-					 service = new LoginService();		
-				}else if(result.equals("startbootstrap-sb-admin-2-gh-pages/BoardDeleteService.do")) {
-					System.out.println("게시글삭제");
-					// 게시글 삭제
-					service = new BoardDeleteService();
-				}else if(result.equals("startbootstrap-sb-admin-2-gh-pages/BoardWriteService.do")) {
-					// 게시글 업로드
-					service = new BoardWriteService();
-				}
-				
-				String moveURL = service.execute(request, response);
-				response.sendRedirect(moveURL);
+		if (result.equals("LoginService.do")) {
+			// 로그인기능
+			service = new LoginService();
+		} else if (result.equals("startbootstrap-sb-admin-2-gh-pages/chatsubmitService.do")) {
+			// 1대1 채팅 테이블 insert 기능
+			service = new chatsubmitService();
+		} else if (result.equals("startbootstrap-sb-admin-2-gh-pages/chatsubmitServiceTeam.do")) {
+			// 팀 채팅창 서브밋
+			service = new chatsubmitServiceTeam();
+		} else if (result.equals("startbootstrap-sb-admin-2-gh-pages/chatlistService.do")) {
+			// 1대1 채팅창
+			service = new chatlistService();
+		} else if (result.equals("startbootstrap-sb-admin-2-gh-pages/chatlistServiceTeam.do")) {
+			// 팀 채팅창
+			service = new chatlistServiceTeam();
+		} else if (result.equals("startbootstrap-sb-admin-2-gh-pages/psaService.do")) {
+			// 프사
+			service = new psaService();
+		} else if (result.equals("startbootstrap-sb-admin-2-gh-pages/BoardDeleteService.do")) {
+			System.out.println("게시글삭제");
+			// 게시글 삭제
+			service = new BoardDeleteService();
+		} else if (result.equals("startbootstrap-sb-admin-2-gh-pages/BoardWriteService.do")) {
+			// 게시글 업로드
+			service = new BoardWriteService();
+		} else {
+			System.out.println("실패");
+		}
 
-				
-	
-	
-	
+		String moveURL = service.execute(request, response);
+		// response.sendRedirect(moveURL);
+
+		if (moveURL.length() > 50) {
+			response.setCharacterEncoding("UTF-8");
+			response.getWriter().print(moveURL);
+		} else {
+			response.sendRedirect(moveURL);
+		}
+
 	}
 
 }

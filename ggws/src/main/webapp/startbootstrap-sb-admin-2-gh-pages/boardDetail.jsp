@@ -81,7 +81,11 @@
 			</a></li>
 
 			<!-- Nav Item - Tables -->
+<<<<<<< HEAD
+			<li class="nav-item"><a class="nav-link" href="chatTeam.jsp">
+=======
 			<li class="nav-item"><a class="nav-link" href="chat.jsp">
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 					<i class="fas fa-fw fa-comments"></i> <span>Ã¤ÆÃ</span>
 			</a></li>
 

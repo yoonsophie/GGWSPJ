@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-
 import com.ggws.db.SqlSessionManager;
+
 
 
 
@@ -36,6 +36,13 @@ public class MemberDAO {
 			return resultVO;
 		}
 		
-	
+	// 모든 회원 조회
+	public List<MemberVO> selectAllMember() {
+		List<MemberVO> list = null;
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		list = sqlSession.selectList("selectAllMember"); 
+		sqlSession.close();
+		return list;
+	}
 	
 }

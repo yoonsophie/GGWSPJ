@@ -1,9 +1,11 @@
 <%@page import="com.ggws.model.psaDAO"%>
+<%@page import="com.ggws.model.chatDAO"%>
 <%@page import="java.util.List"%>
-<%@page import="com.ggws.model.MemberDAO"%>
 <%@page import="com.ggws.model.MemberVO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@page import="com.ggws.model.MemberDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,144 +15,104 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<meta charset='utf-8' />
-<!-- È­¸é ÇØ»óµµ¿¡ µû¶ó ±ÛÀÚ Å©±â ´ëÀÀ(¸ğ¹ÙÀÏ ´ëÀÀ) -->
-<meta name="viewport"
-	content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<!-- jquery CDN -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- fullcalendar CDN -->
-<link
-	href='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.css'
-	rel='stylesheet' />
-<script
-	src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
-<!-- fullcalendar ¾ğ¾î CDN -->
-<script
-	src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js'></script>
-<style>
-/* body ½ºÅ¸ÀÏ */
-/* html, body {
-    overflow: hidden;
-    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-    font-size: 14px;
-  } */
-/* Ä¶¸°´õ À§ÀÇ ÇØ´õ ½ºÅ¸ÀÏ(³¯Â¥°¡ ÀÖ´Â ºÎºĞ) */
-.fc-header-toolbar {
-	font-size: 13px;
-	padding-top: 1em;
-	padding-left: 1em;
-	padding-right: 1em;
-}
 
-	
-		@font-face {
-    font-family: 'ARCHISCULPTURE_v200';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2303@1.0/ARCHISCULPTURE_v200.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-     @font-face {
-    font-family: 'Dovemayo_gothic';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-  
-        .w-font {
-            font-family: 'Dovemayo_gothic', sans-serif; /* À¥ ÆùÆ® ÁöÁ¤ */
-        }
-        .w-title{
-        	 font-family: 'ARCHISCULPTURE_v200', sans-serif;
-        }
-       
+<title>include - ì±„íŒ…</title>
 
-		
-</style>
-
-<title>ÀÌ¸ğÀú¸ğ</title>
-
-<!-- Custom fonts for this template-->
+<!-- Custom fonts for this template -->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
 	type="text/css" />
 <link
 	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
 	rel="stylesheet" />
 
-<!-- Custom styles for this template-->
+<!-- Custom styles for this template -->
 <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+
+<!-- Custom styles for this page -->
+<link href="vendor/datatables/dataTables.bootstrap4.min.css"
+	rel="stylesheet" />
 </head>
 
-<body id="page-top" class="w-font">
-			<%
-				MemberVO login_vo = (MemberVO) session.getAttribute("login_vo");
-				if (login_vo != null) {
-					System.out.print(login_vo.getUser_id());
-				}
-				
-				MemberDAO dao = new MemberDAO();
-				List<MemberVO> list = dao.selectAllMember();
-				
-				psaDAO pdao = new psaDAO();
-				String psa = pdao.getPsa(login_vo.getUser_id());
-				System.out.println("ÇÁ»ç ÀÎµ¦½º È­¸é : "+psa);
-			%>
+<body id="page-top">
+	<%
+		MemberVO login_vo = (MemberVO) session.getAttribute("login_vo");
+		
+			if(login_vo != null){
+				System.out.print(login_vo.getUser_email());			
+			}
+			
+			String userID=null;
+			if(login_vo != null){
+				userID=login_vo.getUser_nick();
+			}
+			
+			String recieveID= null;
+			if(request.getParameter("toID") != null){
+				recieveID = (String) request.getParameter("toID");
+			}
+			
+			MemberDAO dao = new MemberDAO();
+			List<MemberVO> list = dao.selectAllMember();
+			System.out.print(list.size());
+		
+			psaDAO pdao = new psaDAO();
+			String psa = pdao.getPsa(login_vo.getUser_id());
+		
+	%>
+
 	<!-- Page Wrapper -->
 	<div id="wrapper">
 		<!-- Sidebar -->
 		<ul
 			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
 			id="accordionSidebar">
-			<!-- Sidebar - Brand µ¿È£È¸¸í-->
+			<!-- Sidebar - Brand -->
 			<a
 				class="sidebar-brand d-flex align-items-center justify-content-center"
 				href="index.jsp">
 				<div class="sidebar-brand-icon rotate-n-15">
 					<i class="fas fa-laugh-wink"></i>
 				</div>
-				<div class="sidebar-brand-text mx-3">µ¿È£È¸¸í</div>
+				<div class="sidebar-brand-text mx-3">ìŠ¤ë™ìœ„ì—…ê´€ì‹œ</div>
 			</a>
 
 			<!-- Divider -->
 			<hr class="sidebar-divider my-0" />
 
-			<!-- Nav Item - Dashboard -->
+			<!-- Nav Item - í™ˆìœ¼ë¡œ -->
 			<li class="nav-item active"><a class="nav-link"
-				href="index.jsp"> <i class="fas fa-fw fa-home"></i> <span>È¨À¸·Î</span></a>
+				href="index.jsp"> <i class="fas fa-fw fa-home"></i> <span>í™ˆìœ¼ë¡œ</span></a>
 			</li>
 
 			<!-- Divider -->
 			<hr class="sidebar-divider" />
 
-			<!-- Heading ¸Ş´º-->
-			<div class="sidebar-heading">¸Ş´º</div>
+			<!-- Heading ë©”ë‰´-->
+			<div class="sidebar-heading">ë©”ë‰´</div>
 
 			<!-- Nav Item - Charts -->
-			<li class="nav-item"><a class="nav-link" href="../noticeBoardService">
-					<i class="fas fa-fw fa-bookmark"></i> <span>°øÁö»çÇ×</span>
+			<li class="nav-item"><a class="nav-link" href="notification.jsp">
+					<i class="fas fa-fw fa-bookmark"></i> <span>ê³µì§€ì‚¬í•­</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="calendar.jsp">
-					<i class="fas fa-fw fa-calendar"></i> <span>´Ş·Â</span>
+					<i class="fas fa-fw fa-calendar"></i> <span>ë‹¬ë ¥</span>
 			</a></li>
-<<<<<<< HEAD
-			
-=======
->>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			<li class="nav-item"><a class="nav-link" href="board.jsp">
-					<i class="fas fa-fw fa-list"></i> <span>°Ô½ÃÆÇ</span>
+					<i class="fas fa-fw fa-list"></i> <span>ê²Œì‹œíŒ</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="ballot.jsp">
-					<i class="fas fa-fw fa-check"></i> <span>ÅõÇ¥</span>
+					<i class="fas fa-fw fa-check"></i> <span>íˆ¬í‘œ</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="chatTeam.jsp"> <i
-					class="fas fa-fw fa-comments"></i> <span>Ã¤ÆÃ</span></a></li>
-			<li class="nav-item"><a class="nav-link" href="matching.html">
-					<i class="fas fa-fw fa-handshake"></i> <span>¸ÅÄª</span>
+					class="fas fa-fw fa-comments"></i> <span>ì±„íŒ…</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="matching.jps">
+					<i class="fas fa-fw fa-handshake"></i> <span>ë§¤ì¹­</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="analysis.html"> <i
-					class="fas fa-fw fa-chart-bar"></i> <span>ºĞ¼®</span></a></li>
+			<li class="nav-item"><a class="nav-link" href="analysis.jsp"> <i
+					class="fas fa-fw fa-chart-bar"></i> <span>ë¶„ì„</span></a></li>
 			<li class="nav-item"><a class="nav-link" href="memberMng.jsp"> <i
-					class="fas fa-fw fa-ghost"></i> <span>È¸¿ø°ü¸®</span></a></li>
+					class="fas fa-fw fa-ghost"></i> <span>íšŒì›ê´€ë¦¬</span></a></li>
+	
 
 
 			<!-- Divider -->
@@ -160,10 +122,9 @@
 			<div class="text-center d-none d-md-inline">
 				<button class="rounded-circle border-0" id="sidebarToggle"></button>
 			</div>
-
-			
 		</ul>
 		<!-- End of Sidebar -->
+
 
 		<!-- Content Wrapper -->
 		<div id="content-wrapper" class="d-flex flex-column">
@@ -173,10 +134,12 @@
 				<nav
 					class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 					<!-- Sidebar Toggle (Topbar) -->
-					<button id="sidebarToggleTop"
-						class="btn btn-link d-md-none rounded-circle mr-3">
-						<i class="fa fa-bars"></i>
-					</button>
+					<form class="form-inline">
+						<button id="sidebarToggleTop"
+							class="btn btn-link d-md-none rounded-circle mr-3">
+							<i class="fa fa-bars"></i>
+						</button>
+					</form>
 
 					<!-- Topbar Search -->
 					<form
@@ -224,41 +187,32 @@
 							class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false"> <i class="fas fa-bell fa-fw"></i> <!-- Counter - Alerts -->
-								<span class="badge badge-danger badge-counter">4+</span>
+								<span class="badge badge-danger badge-counter">3+</span>
 						</a> <!-- Dropdown - Alerts -->
 							<div
 								class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
 								aria-labelledby="alertsDropdown">
 								<h6 class="dropdown-header">Alerts Center</h6>
-								<a class="dropdown-item d-flex align-items-center" href="notification.jsp">
+								<a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="mr-3">
 										<div class="icon-circle bg-primary">
-											<i class="fas fa-bookmark text-white"></i>
+											<i class="fas fa-file-alt text-white"></i>
 										</div>
 									</div>
 									<div>
-										<div class="small text-gray-500">2023-04-03</div>
-										<span class="font-weight-bold">»õ·Î¿î °øÁö»çÇ×ÀÌ µî·ÏµÇ¾ú½À´Ï´Ù.</span>
+										<div class="small text-gray-500">December 12, 2019</div>
+										<span class="font-weight-bold">A new monthly report is
+											ready to download!</span>
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="mr-3">
 										<div class="icon-circle bg-success">
-											<i class="fas fa-heart text-white"></i>
+											<i class="fas fa-donate text-white"></i>
 										</div>
 									</div>
 									<div>
-										<div class="small text-gray-500">2023-04-01</div>
-										»õ·Î¿î Ä£±¸½ÅÃ»ÀÌ ÀÖ½À´Ï´Ù!
-									</div>
-								</a> <a class="dropdown-item d-flex align-items-center" href="#">
-									<div class="mr-3">
-										<div class="icon-circle bg-success">
-											<i class="fas fa-heart text-white"></i>
-										</div>
-									</div>
-									<div>
-										<div class="small text-gray-500">2023-04-01</div>
-										»õ·Î¿î Ä£±¸½ÅÃ»ÀÌ ÀÖ½À´Ï´Ù!
+										<div class="small text-gray-500">December 7, 2019</div>
+										$290.29 has been deposited into your account!
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="mr-3">
@@ -267,11 +221,12 @@
 										</div>
 									</div>
 									<div>
-										<div class="small text-gray-500">2023-03-30</div>
-										»õ·Î¿î ÅõÇ¥°¡ ÁøÇàÁßÀÔ´Ï´Ù.
+										<div class="small text-gray-500">December 2, 2019</div>
+										Spending Alert: We've noticed unusually high spending for your
+										account.
 									</div>
 								</a> <a class="dropdown-item text-center small text-gray-500"
-									href="#">´õº¸±â</a>
+									href="#">Show All Alerts</a>
 							</div></li>
 
 						<!-- Nav Item - Messages -->
@@ -285,7 +240,7 @@
 							<div
 								class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
 								aria-labelledby="messagesDropdown">
-								<h6 class="dropdown-header text-s">ÂÊÁöÇÔ</h6>
+								<h6 class="dropdown-header">Message Center</h6>
 								<a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="dropdown-list-image mr-3">
 										<img class="rounded-circle" src="img/undraw_profile_1.svg"
@@ -293,8 +248,9 @@
 										<div class="status-indicator bg-success"></div>
 									</div>
 									<div class="font-weight-bold">
-										<div class="text-truncate">³»ÀÏ Àú³á¿¡ ¹¹ÇÔ</div>
-										<div class="small text-gray-500">¾çÁø¿µ ¡¤ 58ºĞ Àü</div>
+										<div class="text-truncate">Hi there! I am wondering if
+											you can help me with a problem I've been having.</div>
+										<div class="small text-gray-500">Emily Fowler Â· 58m</div>
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="dropdown-list-image mr-3">
@@ -303,8 +259,9 @@
 										<div class="status-indicator"></div>
 									</div>
 									<div>
-										<div class="text-truncate">³»ÀÏ Áø¿µÀÌ°¡ °°ÀÌ ¹ä¸ÔÀÚ´Âµ¥?? ´Ô °¥²¨ÀÓ??</div>
-										<div class="small text-gray-500">Àå¿µÁÖ ¡¤ 1½Ã°£ 22ºĞ Àü</div>
+										<div class="text-truncate">I have the photos that you
+											ordered last month, how would you like them sent to you?</div>
+										<div class="small text-gray-500">Jae Chun Â· 1d</div>
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="dropdown-list-image mr-3">
@@ -313,8 +270,10 @@
 										<div class="status-indicator bg-warning"></div>
 									</div>
 									<div>
-										<div class="text-truncate">±×·³ ´ÙÀ½ °æ±â¿¡ º¸ÀÚ</div>
-										<div class="small text-gray-500">ÇØ¸ğ¼ö ¡¤ 2ÀÏ Àü</div>
+										<div class="text-truncate">Last month's report looks
+											great, I am very happy with the progress so far, keep up the
+											good work!</div>
+										<div class="small text-gray-500">Morgan Alvarez Â· 2d</div>
 									</div>
 								</a> <a class="dropdown-item d-flex align-items-center" href="#">
 									<div class="dropdown-list-image mr-3">
@@ -323,15 +282,16 @@
 										<div class="status-indicator bg-success"></div>
 									</div>
 									<div>
-										<div class="text-truncate">¾Æ´Ï ¾îÁ¦ ¹«½¼ÀÏ ÀÖ¾ú´ÂÁö ¾Ë¾Æ? ±×³É µÚ¿¡¼­ ³î°íÀÖ¾ú°Åµç?? ±Ùµ¥ °©ÀÚ±â Áø¿µÀÌ°¡ ¼ÅÇÃ ÃãÀ» Ãß´Â°Å¾ß ´ë¹ÚÀÌÁö ¾Ê³Ä</div>
-										<div class="small text-gray-500">Á¤½Â¿ø ¡¤ 4ÀÏ Àü</div>
+										<div class="text-truncate">Am I a good boy? The reason I
+											ask is because someone told me that people say this to all
+											dogs, even if they aren't good...</div>
+										<div class="small text-gray-500">Chicken the Dog Â· 2w</div>
 									</div>
 								</a> <a class="dropdown-item text-center small text-gray-500"
-									href="#">´õº¸±â</a>
+									href="#">Read More Messages</a>
 							</div></li>
 
 						<div class="topbar-divider d-none d-sm-block"></div>
-
 						<%
 							String login_id = request.getParameter("login_id");
 						%>
@@ -342,12 +302,12 @@
 							aria-expanded="false"> <span
 								class="mr-2 d-none d-lg-inline text-gray-600 small">
 								<%=login_vo.getUser_nick() %>
-								<!-- ÇÁ·ÎÇÊ »çÁø ÇÁ»ç -->
+								<!-- í”„ë¡œí•„ ì‚¬ì§„ í”„ì‚¬ -->
 								</span> 
 								<% if(psa==null){%>
-									<img class='img-profile rounded-circle' alt='ÀÌ¹ÌÁö' src='img/regi_pic.png' >
+									<img class='img-profile rounded-circle' alt='ì´ë¯¸ì§€' src='img/regi_pic.png' >
 								<%}else{ %>
-									<img class='img-profile rounded-circle' alt='ÀÌ¹ÌÁö' src='./profilePic/<%=psa%>'>
+									<img class='img-profile rounded-circle' alt='ì´ë¯¸ì§€' src='./profilePic/<%=psa%>'>
 								<%} %> 
 						</a> <!-- Dropdown - User Information -->
 							<div
@@ -358,9 +318,9 @@
 								</a> <a class="dropdown-item" href="#"> <i
 									class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
 									Settings
-								</a> <a class="dropdown-item" href="profilePic.jsp"> <i
+								</a> <a class="dropdown-item" href="#"> <i
 									class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-									ÇÁ·ÎÇÊ »çÁø ÇÁ»ç º¯°æ
+									Activity Log
 								</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="#" data-toggle="modal"
@@ -373,199 +333,46 @@
 				</nav>
 				<!-- End of Topbar -->
 
-				<!-- Begin Page Content -->
 				<div class="container-fluid">
-					<!-- Page Heading -->
-					<div
-						class="d-sm-flex align-items-center justify-content-between mb-4">
-						<h1 class="h3 mb-0 text-gray-800"></h1>
-					
-					</div>
-
-					<!-- Content Row -->
+					<!-- <h1 class="h3 mb-1 text-gray-800">CHATTING</h1> -->
+					<p class="mb-4">
+					</p>
 					<div class="row">
-						<!-- Earnings (Monthly) Card Example -->
-						<div class="col-md-6 mb-4">
-							<div class="card border-left-primary shadow h-100 py-2">
+						<div class>
+							<%
+							String recieveName = null;
+							chatDAO namedao = new chatDAO();
+							if(recieveID != null){
+								recieveName = namedao.getChatName(recieveID);	
+							}
+							%>
+							<div class="card mb-4">
+								<div class="card-header py-3">
+									<h6 class="m-0 font-weight-bold text-primary">íŒ€ ì±„íŒ…</h6>
+								</div>
 								<div class="card-body">
-									<div class="row no-gutters align-items-center">
-										<div class="col mr-2">
-											<div
-												class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-												°øÁö»çÇ×</div>
-											<div class="h5 mb-0 font-weight-bold text-gray-800">
-												¿À´Ã »õ·Î¿î ÆÀ¿ø ¿µÀÔ ½ÃÀÛÇÕ´Ï´Ù</div>
-										</div>
-										<div class="col-auto">
-											<i class="fas fa-bookmark fa-2x text-gray-300"></i>
-										</div>
-									</div>
+										<%@ include file="chatScreenTeam.jsp"%>
 								</div>
 							</div>
 						</div>
-
-						<!-- Earnings (Monthly) Card Example -->
-						<div class="col-md-6 mb-4">
-							<div class="card border-left-success shadow h-100 py-2">
-								<div class="card-body">
-									<div class="row no-gutters align-items-center">
-										<div class="col mr-2">
-											<div
-												class="text-xs font-weight-bold text-success text-uppercase mb-1">
-												ÅõÇ¥°¡ ÁøÇàÁßÀÔ´Ï´Ù</div>
-											<div class="h5 mb-0 font-weight-bold text-gray-800">
-												ÆÀº¹ µğÀÚÀÎ °ñ¶óÁÖ¼¼¿ä</div>
-										</div>
-										<div class="col-auto">
-											<i class="fas fa-check fa-2x text-gray-300"></i>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-					
 					</div>
-
-					<!-- Content Row -->
-
-					<div class="row">
-						<!-- Area Chart -->
-						<div class="col-xl-12">
-							<div class="card shadow">
-								<!-- Card Header - Dropdown -->
-								<div
-									class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-									<h6 class="m-0 font-weight-bold text-primary">´Ş·Â</h6>
-
-								</div>
-								<!-- Card Body -->
-								<div class="card-body">
-									<!-- ´Ş·ÂºÎºĞ -->
-									<div id='calendar-container'>
-										<div id='calendar'></div>
-									</div>
-								
-									<script>
-					
-							$(function() {
-								// calendar element Ãëµæ
-								var calendarEl = $('#calendar')[0];
-								// full-calendar »ı¼ºÇÏ±â
-								var calendar = new FullCalendar.Calendar(
-										calendarEl,
-										{
-											height : '700px', // calendar ³ôÀÌ ¼³Á¤
-											expandRows : true, // È­¸é¿¡ ¸Â°Ô ³ôÀÌ Àç¼³Á¤
-											slotMinTime : '08:00', // Day Ä¶¸°´õ¿¡¼­ ½ÃÀÛ ½Ã°£
-											slotMaxTime : '24:00', // Day Ä¶¸°´õ¿¡¼­ Á¾·á ½Ã°£
-											// ÇØ´õ¿¡ Ç¥½ÃÇÒ Åø¹Ù
-											headerToolbar : {
-												left : 'prev,next today',
-												center : 'title',
-												right : 'dayGridMonth,timeGridWeek,timeGridDay listWeek'
-											},
-											initialView : 'dayGridMonth', // ÃÊ±â ·Îµå µÉ¶§ º¸ÀÌ´Â Ä¶¸°´õ È­¸é(±âº» ¼³Á¤: ´Ş)
-											//initialDate: '2021-07-15', // ÃÊ±â ³¯Â¥ ¼³Á¤ (¼³Á¤ÇÏÁö ¾ÊÀ¸¸é ¿À´Ã ³¯Â¥°¡ º¸ÀÎ´Ù.)
-											//navLinks : true, // ³¯Â¥¸¦ ¼±ÅÃÇÏ¸é Day Ä¶¸°´õ³ª Week Ä¶¸°´õ·Î ¸µÅ©
-											//editable : true, // ¼öÁ¤ °¡´É?
-											//selectable : true, // ´Ş·Â ÀÏÀÚ µå·¡±× ¼³Á¤°¡´É
-											//selectMirror : true,
-											nowIndicator : true, // ÇöÀç ½Ã°£ ¸¶Å©
-											dayMaxEvents : true, // ÀÌº¥Æ®°¡ ¿À¹öµÇ¸é ³ôÀÌ Á¦ÇÑ (+ ¸î °³½ÄÀ¸·Î Ç¥Çö)
-											
-											locale : 'ko', // ÇÑ±¹¾î ¼³Á¤
-											/* select: function() {
-												$("#myModal").modal("show");	//ÀÏÀÚ Å¬¸¯ ½Ã ¸ğ´Ş È£Ãâ
-										      }, */
-										      eventClick: function(arg) {
-										    	  insertModalOpen(arg);//ÀÌº¥Æ® Å¬¸¯ ½Ã ¸ğ´Ş È£Ãâ
-										      },
-											  
-											eventAdd : function(obj) { // ÀÌº¥Æ®°¡ Ãß°¡µÇ¸é ¹ß»ıÇÏ´Â ÀÌº¥Æ®
-												console.log(obj);
-											},
-											eventChange : function(obj) { // ÀÌº¥Æ®°¡ ¼öÁ¤µÇ¸é ¹ß»ıÇÏ´Â ÀÌº¥Æ®
-												console.log(obj);
-
-											},
-											eventRemove : function(obj) { // ÀÌº¥Æ®°¡ »èÁ¦µÇ¸é ¹ß»ıÇÏ´Â ÀÌº¥Æ®
-												console.log(obj);
-											},
-											
-										select : function(arg) { // Ä¶¸°´õ¿¡¼­ µå·¡±×·Î ÀÌº¥Æ®¸¦ »ı¼ºÇÒ ¼ö ÀÖ´Ù.
-											//insertModalOpen(arg);
-											var title = prompt('Event Title:');
-											if (title) {
-												calendar.addEvent({
-													title : title,
-													start : arg.start,
-													end : arg.end,
-													allDay : arg.allDay
-												})
-											}
-											calendar.unselect()
-										},
-										events:[
-											{
-												title: 'ÇĞ¿ø°¡¾ßÇÔ',
-											    start: '2023-04-01 09:00:00',
-											    end: '2023-04-01 10:00:00',
-											},
-											{
-												title: 'Àú³á¾à¼Ó',
-												start: '2023-04-04 21:00:00',
-												end: '2023-04-01 22:00:00',
-												
-											},
-											{
-												title : 'ÇÁ·ÎÁ§Æ®',
-												start: '2023-04-01',
-												end: '2023-04-07',
-												
-											}
-											
-											
-										]
-									});
-							// Ä¶¸°´õ ·£´õ¸µ
-							calendar.render();
-						});
-					</script>
-
-
-
-
-
-								</div>
-							
-				<!-- /.container-fluid -->
+				</div>
+				<!-- End of Main Content -->
 			</div>
-			<!-- End of Main Content -->
-
-
-
-</div>
-</div>
-</div>
-</div>
 
 			<!-- Footer -->
 			<footer class="sticky-footer bg-white">
 				<div class="container my-auto">
 					<div class="copyright text-center my-auto">
-						<span>Copyright &copy; Your Website 2021</span>
+						<span>Copyright &copy; Your Website 2020</span>
 					</div>
 				</div>
 			</footer>
-
 			<!-- End of Footer -->
 		</div>
-
 		
-		
-				<!-- ¿À¸¥ÂÊ È¸¿ø¸ñ·Ï -->
-      <ul
+		<!-- ì˜¤ë¥¸ìª½ íšŒì›ëª©ë¡ -->
+   	   <ul
 			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
 			id="accordionSidebar">
 
@@ -574,14 +381,14 @@
 
 			<!-- Nav Item - Dashboard -->
 			<li class="nav-item active"><a class="nav-link"
-				href="index.jsp"> <i class="fas fa-fw fa-crown"></i> <span>È¸Àå¾ÆÀÌµğ</span></a>
+				href="index.html"> <i class="fas fa-fw fa-crown"></i> <span>íšŒì¥ì•„ì´ë””</span></a>
 			</li>
 
 			<!-- Divider -->
 			<hr class="sidebar-divider" />
 
 			<!-- Heading -->
-			<div class="sidebar-heading">È¸¿ø¸ñ·Ï</div>
+			<div class="sidebar-heading">íšŒì›ëª©ë¡</div>
 
 			<!-- Nav Item - Charts -->
 			<% for(MemberVO u:list){ %>
@@ -594,11 +401,12 @@
 							data-toggle="dropdown"
 							aria-haspopup="true"
 							aria-expanded="false">
+						<!-- <i class="fas fa-fw fa-hashtag"></i>  -->
 							<% String psa2 = pdao.getPsa(u.getUser_id());
 								 if(psa2==null){%>
-									<img class='img-profile rounded-circle' alt='ÀÌ¹ÌÁö' src='img/regi_pic.png'>
+									<img class='img-profile rounded-circle' alt='ì´ë¯¸ì§€' src='img/regi_pic.png'>
 							<%}else{ %>
-									<img class='img-profile rounded-circle' alt='ÀÌ¹ÌÁö' src='./profilePic/<%=psa2%>'>
+									<img class='img-profile rounded-circle' alt='ì´ë¯¸ì§€' src='./profilePic/<%=psa2%>'>
 							<%} %> 
 						<span> <%=u.getUser_nick() %> </span>
 				        </a>
@@ -630,6 +438,22 @@
 		                </div>
 		             </li>
 			<%} %>
+			
+			
+
+			<!-- Divider -->
+			<hr class="sidebar-divider d-none d-md-block" />	
+	  </ul>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		<!-- End of Content Wrapper -->
 	</div>
 	<!-- End of Page Wrapper -->
@@ -645,17 +469,18 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">·Î±×¾Æ¿ô ÇÏ½Ã°Ú½À´Ï±î?</h5>
+					<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
 					<button class="close" type="button" data-dismiss="modal"
 						aria-label="Close">
-						<span aria-hidden="true">¡¿</span>
+						<span aria-hidden="true">Ã—</span>
 					</button>
 				</div>
-				<div class="modal-body">·Î±×¾Æ¿ô ÇÏ½Ã·Á¸é ¾Æ·¡ ¹öÆ°À» ´­·¯ÁÖ¼¼¿ä</div>
+				<div class="modal-body">Select "Logout" below if you are ready
+					to end your current session.</div>
 				<div class="modal-footer">
 					<button class="btn btn-secondary" type="button"
-						data-dismiss="modal">Ãë¼Ò</button>
-					<a class="btn btn-primary" href="login.jsp">·Î±×¾Æ¿ô</a>
+						data-dismiss="modal">Cancel</button>
+					<a class="btn btn-primary" href="login.html">Logout</a>
 				</div>
 			</div>
 		</div>
@@ -672,10 +497,10 @@
 	<script src="js/sb-admin-2.min.js"></script>
 
 	<!-- Page level plugins -->
-	<script src="vendor/chart.js/Chart.min.js"></script>
+	<script src="vendor/datatables/jquery.dataTables.min.js"></script>
+	<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
 	<!-- Page level custom scripts -->
-	<script src="js/demo/chart-area-demo.js"></script>
-	<script src="js/demo/chart-pie-demo.js"></script>
+	<script src="js/demo/datatables-demo.js"></script>
 </body>
 </html>

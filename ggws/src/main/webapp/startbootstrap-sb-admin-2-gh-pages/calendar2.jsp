@@ -1,9 +1,11 @@
 <%@page import="com.ggws.model.psaDAO"%>
-<%@page import="java.util.List"%>
 <%@page import="com.ggws.model.MemberDAO"%>
 <%@page import="com.ggws.model.MemberVO"%>
+<%@page import="com.ggws.model.Calendar"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +16,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+	 <meta charset='utf-8' />
+  <!-- 화면 해상도에 따라 글자 크기 대응(모바일 대응) -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <!-- jquery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- fullcalendar CDN -->
+  <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.css' rel='stylesheet' />
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
+  <!-- fullcalendar 언어 CDN -->
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js'></script>
+  
+   <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+<style>
+  /* body 스타일 */
+  html, body {
+    overflow: hidden;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+   /*  font-size: 14px; */
+  }
+  /* 캘린더 위의 해더 스타일(날짜가 있는 부분) */
+  .fc-header-toolbar {
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+</style>
     <title>이모저모</title>
 
     <!-- Custom fonts for this template-->
@@ -72,10 +105,10 @@
 			<!-- Heading 메뉴-->
 			<div class="sidebar-heading">메뉴</div>
 
-		
+			
 
 			<!-- Nav Item - Charts -->
-			<li class="nav-item"><a class="nav-link" href="notification.jsp">
+			<li class="nav-item"><a class="nav-link" href="charts.jsp">
 					<i class="fas fa-fw fa-chart-area"></i> <span>공지사항</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="calendar.jsp">
@@ -161,7 +194,8 @@
                                 </form>
                             </div>
                         </li>
-		<!-- Nav Item - Alerts -->
+
+                        		<!-- Nav Item - Alerts -->
 						<li class="nav-item dropdown no-arrow mx-1"><a
 							class="nav-link dropdown-toggle" href="#" id="alertsDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -217,7 +251,7 @@
 							</div></li>
 
 
-                      <!-- Nav Item - Messages -->
+                       <!-- Nav Item - Messages -->
 						<li class="nav-item dropdown no-arrow mx-1"><a
 							class="nav-link dropdown-toggle" href="#" id="messagesDropdown"
 							role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -280,7 +314,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                              <%=login_vo.getUser_nick() %>
+								<%=login_vo.getUser_nick() %>
 								<!-- 프로필 사진 프사 -->
 								</span> 
 								<% if(psa==null){%>
@@ -320,87 +354,60 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
+                  <!-- Page Heading -->
+                    <h1 class="logo_effect" align="center"><img src="img/calendar_icon.png" style="height:80px; margin-right:50px;" "/></h1>
 
-				     <!-- Page Heading -->
-                    <h1 class="logo_effect" align="center"><img src="img/vote_icon.png" style="height:80px; margin-right:50px;" "/></h1>
-                  
-                  <div class="row">
-                    	<div class="col-md-12 mb-4 margin-top">
-							<div class="card shadow h-100 py-2">
-								<div class="card-body">
-                 
-
-		
-		
-			<%
-	String userId = "test";
-	int clubSeq = 1;
-	%>
-
-		<div class="container">
-			<div class="card">
-				<h5 class="card-header border border-primary-subtitle">투표함</h5>
-				<div class="card-body">
-					<form action="ballotService" method="post">
-						<div class="row mb-3">
-							<label for="ballotTitle3" class="col-sm-2 col-form-label"
-								autofocus>제목</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" id="ballotTitle3"
-									name="ballotTitle">
+					<div class="col-xl-10">
+						<div class="card shadow">
+							<div class="card-body">
+								<div id='calendar-container'>
+									<div id='calendar'></div>
+								</div>
 							</div>
 						</div>
-						<div class="row mb-3">
-							<label for="ballotContent1" class="col-sm-2 col-form-label">항목</label>
-							<div class="col-sm-10">
-								<input type="text" class="form-control" id="ballotContent1"
-									name="ballotContent">
-							</div>
-						</div>
-						<div class="row mb-3">
-							<div class="col bbox-content-add" align="center">
-								<button type="button" class="btn btn-outline-primary"
-									id="addContentBtn">항목 추가</button>
-								<button type="button" class="btn btn-outline-primary btn-sm"
-									id="delContentBtn">삭제</button>
-							</div>
-						</div>
-						<div class="row mb-3">
-							<label for="ballotEndDate3" class="col-sm-2 col-form-label">종료일</label>
-							<div class="col-sm-10">
-								<input type="date" class="form-control" id="ballotEndDate3"
-									name="ballotEndDate">
-							</div>
-						</div>
-						<input type="hidden" value="<%=userId%>" name="userId"> <input
-							type="hidden" value="<%=clubSeq%>" name="clubSeq">
-							<div align="right">
-						<button type="submit" class="btn btn-primary">생성</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
+						
+					</div>
+					
+					  <script>
+						
+					  document.addEventListener('DOMContentLoaded', function() {
+							var calendarEl = document.getElementById('calendar');
+							var calendar = new FullCalendar.Calendar(calendarEl, {
+								initialView : 'dayGridMonth',
+								locale : 'ko', // 한국어 설정
+								headerToolbar : {
+						        	
+						            start : "prev next today",
+						            center : "title",
+						            end : 'dayGridMonth,dayGridWeek,dayGridDay'
+						            },
+							selectable : true,
+							droppable : true,
+							editable : true,
+							events : [ 
+						    	    <%List<Calendar> calendarList = (List<Calendar>)request.getAttribute("calendarList");%>
+						            <%if (calendarList != null) {%>
+						            <%for (Calendar vo : calendarList) {%>
+						            {
+						            	title : '<%=vo.getCalendarTitle()%>',
+						                start : '<%=vo.getCalendarStart()%>',
+						                end : '<%=vo.getCalendarEnd()%>',
+						                color : '#' + Math.round(Math.random() * 0xffffff).toString(16)
+						             },
+							<%}
+						}%>
+										]
+										
+									});
+									calendar.render();
+								});
+							
+    </script>
 
-	<script src="./assets/js/writeBallot.js" type="text/javascript"></script>
-	
-	</div>
-	</div>
-	</div>
-	</div>
 
-	
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
-		crossorigin="anonymous"></script>
-	<script src="./JS/ballot.js" type="text/javascript"></script>
-	<script type="text/javascript"
-		src="./static/vendor/datatables/jquery.dataTables.min.js"></script>
-                 
-                 
-            <!-- End of Main Content -->
-            <!-- Footer -->
+					<!-- End of Main Content -->
+
+					<!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
