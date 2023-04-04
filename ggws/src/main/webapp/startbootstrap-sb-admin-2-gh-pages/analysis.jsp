@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+<%@page import="com.ggws.model.psaDAO"%>
+<%@page import="com.ggws.model.MemberDAO"%>
+<%@page import="com.ggws.model.MemberVO"%>
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 <%@page import="java.math.BigDecimal"%>
 <%@page import="java.util.List"%>
 <%@page import="com.ggws.model.matchAnalysisVO"%>
@@ -8,14 +14,13 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Charts</title>
+    <title>이모저모</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -29,7 +34,16 @@
 </head>
 
 <body id="page-top">
-		
+			<%
+				MemberVO login_vo = (MemberVO) session.getAttribute("login_vo");
+				if (login_vo != null) {
+					System.out.print(login_vo.getUser_id());
+				}
+				
+				psaDAO pdao = new psaDAO();
+				String psa = pdao.getPsa(login_vo.getUser_id());
+				System.out.println("프사 인덱스 화면 : "+psa);
+			%>		
     	
 
     <!-- Page Wrapper -->
@@ -85,26 +99,26 @@
 				</div></li>
 
 			<!-- Nav Item - Charts -->
-			<li class="nav-item"><a class="nav-link" href="notification.html">
+			<li class="nav-item"><a class="nav-link" href="notification.jsp">
 					<i class="fas fa-fw fa-chart-area"></i> <span>공지사항</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="calendar.html">
+			<li class="nav-item"><a class="nav-link" href="calendar.jsp">
 					<i class="fas fa-fw fa-calendar"></i> <span>달력</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="boardMain.jsp">
 					<i class="fas fa-fw fa-list"></i> <span>게시판</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="ballot.html">
+			<li class="nav-item"><a class="nav-link" href="ballot.jsp">
 					<i class="fas fa-fw fa-check"></i> <span>투표</span>
 			</a></li>
 
 			<!-- Nav Item - Tables -->
-			<li class="nav-item"><a class="nav-link" href="chat.html">
+			<li class="nav-item"><a class="nav-link" href="chat.jsp">
 					<i class="fas fa-fw fa-comments"></i> <span>채팅</span>
 			</a></li>
 
 			<!-- Nav Item - calendar -->
-			<li class="nav-item"><a class="nav-link" href="matching.html">
+			<li class="nav-item"><a class="nav-link" href="matching.jsp">
 					<i class="fas fa-fw fa-handshake"></i> <span>매칭</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link" href="analysis.jsp">
@@ -299,9 +313,15 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                               <%=login_vo.getUser_nick() %>
+								<!-- 프로필 사진 프사 -->
+								</span> 
+								<% if(psa==null){%>
+									<img class='img-profile rounded-circle' alt='이미지' src='img/regi_pic.png' >
+								<%}else{ %>
+									<img class='img-profile rounded-circle' alt='이미지' src='./profilePic/<%=psa%>'>
+								<%} %> 
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -496,6 +516,65 @@
     let win3 = parseInt(team3_win);
     let win4 = parseInt(team4_win);
     </script>
+<<<<<<< HEAD
+=======
+
+					<!-- End of Main Content -->
+
+					<!-- Footer -->
+					<footer class="sticky-footer bg-white">
+						<div class="container my-auto">
+							<div class="copyright text-center my-auto">
+								<span>Copyright &copy; Your Website 2020</span>
+							</div>
+						</div>
+					</footer>
+					<!-- End of Footer -->
+
+				</div>
+				<!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">��</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.jsp">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ggws.db.chatMapper">
+
+	<!-- 채팅 전송 -->
+	<insert id="submitChat" parameterType="chatVO">
+		insert into table_chat values(num_chatid.nextval, #{fromID}, #{toID}, #{chatContent}, sysdate)
+	</insert>
+
+	<!-- 최근 채팅 메시지 내역 -->
+	<select id="chatSelect" parameterType="chatVO" resultType="chatVO">
+ 		select * from table_chat where (
+ 		(fromID=#{fromID} and toID=#{toID}) or 
+ 		(toID=#{fromID} and fromID=#{toID})
+ 		)  and
+ 		(chatID > #{chatID})
+ 		order by chatTime
+	</select>
+
+	<!-- 채팅 내역 -->
+	<select id="getChatListByRecent" parameterType="chatVO" resultType="chatVO">
+ 		select * from table_chat where (
+ 		(fromID=#{fromID} and toID=#{toID}) or 
+ 		(toID=#{fromID} and fromID=#{toID})
+ 		) <!-- and
+ 		(chatID >= (select max(chatID) - #{chatID} from table_chat)) -->
+ 		order by chatTime
+	</select>
+	
+	
+		
+	<!-- 최근 팀채팅 메시지 내역 -->
+	<select id="chatSelectTeam" parameterType="chatVO" resultType="chatVO">
+ 		select * from table_TeamChat where (
+ 		(toID = 'team') and
+ 		(chatID > #{chatID}))
+ 		order by chatTime
+	</select>
+
+	<!-- 팀 채팅 내역 -->
+	<select id="getChatListByRecentTeam" parameterType="chatVO" resultType="chatVO">
+ 		select * from table_TeamChat where (
+ 		toID = 'team'
+ 		order by chatTime
+	</select>
+	
+	
+	<!-- 팀채팅 전송 -->
+	<insert id="submitChatTeam" parameterType="chatVO">
+		insert into table_TeamChat values(num_chatid.nextval, #{fromID}, #{toID}, #{chatContent}, sysdate)
+	</insert>
+	
+	
+	<!-- 회원이름 -->
+	<select id="selectName" parameterType="String" resultType="String"> 
+		select user_nick
+		from user_info
+		where user_id= #{toID}
+	 </select>
+	 
+	 	<!-- 회원이름 -->
+	<select id="selectMyName" parameterType="String" resultType="String"> 
+		select user_nick
+		from user_info
+		where user_email= #{FromID}
+	 </select>
+
+</mapper>

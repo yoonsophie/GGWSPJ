@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-
 import com.ggws.db.SqlSessionManager;
+
 
 
 
@@ -35,6 +35,7 @@ public class MemberDAO {
 			MemberVO resultVO = sqlSession.selectOne("com.ggws.db.MemberMapper.loginMember", vo); 
 			sqlSession.close();
 			return resultVO;
+<<<<<<< HEAD
 			}
 			
 			// 회원수락 
@@ -46,5 +47,17 @@ public class MemberDAO {
 			}
 			 
 	
+=======
+		}
+		
+	// 모든 회원 조회
+	public List<MemberVO> selectAllMember() {
+		List<MemberVO> list = null;
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		list = sqlSession.selectList("selectAllMember"); 
+		sqlSession.close();
+		return list;
+	}
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 	
 }

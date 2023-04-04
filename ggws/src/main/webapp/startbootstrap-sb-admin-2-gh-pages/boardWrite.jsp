@@ -1,3 +1,7 @@
+<%@page import="com.ggws.model.psaDAO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.ggws.model.MemberDAO"%>
+<%@page import="com.ggws.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,7 +15,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Charts</title>
+    <title>이모저모</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -26,7 +30,18 @@
 </head>
 
 <body id="page-top" >
-
+		<%
+				MemberVO login_vo = (MemberVO) session.getAttribute("login_vo");
+				if (login_vo != null) {
+					System.out.print(login_vo.getUser_id());
+				}
+				
+				MemberDAO dao = new MemberDAO();
+				List<MemberVO> list = dao.selectAllMember();
+				
+				psaDAO pdao = new psaDAO();
+				String psa = pdao.getPsa(login_vo.getUser_id());
+			%>
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -48,7 +63,12 @@
 			<hr class="sidebar-divider my-0" />
 
 			<!-- Nav Item - Dashboard -->
+<<<<<<< HEAD
 			<li class="nav-item active"><a class="nav-link">
+=======
+			<li class="nav-item active"><a class="nav-link"
+				href="index.jsp"> <i class="fas fa-fw fa-home"></i> <span>홈으로</span></a>
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</li>
 
 			<!-- Divider -->
@@ -60,39 +80,81 @@
 			
 
 			<!-- Nav Item - Charts -->
+<<<<<<< HEAD
 			<li class="nav-item"><a class="nav-link" href="notification.html">
 					<i class="fas fa-fw fa-chart-area"></i> <span>공지사항</span>
+=======
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			<li class="nav-item"><a class="nav-link" href="notification.jsp">
+<<<<<<< HEAD
 					<i class="fas fa-fw fa-chart-area"></i> <span>��������</span>
+=======
+					<i class="fas fa-fw fa-chart-area"></i> <span>공지사항</span>
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</a></li>
+<<<<<<< HEAD
 			<li class="nav-item"><a class="nav-link" href="calendar.html">
 					<i class="fas fa-fw fa-calendar"></i> <span>달력</span>
+=======
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			<li class="nav-item"><a class="nav-link" href="calendar.jsp">
+<<<<<<< HEAD
 					<i class="fas fa-fw fa-calendar"></i> <span>�޷�</span>
+=======
+					<i class="fas fa-fw fa-calendar"></i> <span>달력</span>
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</a></li>
+<<<<<<< HEAD
 			<li class="nav-item"><a class="nav-link" href="boardMain.jsp">
 					<i class="fas fa-fw fa-list"></i> <span>게시판</span>
+=======
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			<li class="nav-item"><a class="nav-link" href="board.jsp">
+<<<<<<< HEAD
 					<i class="fas fa-fw fa-list"></i> <span>�Խ���</span>
+=======
+					<i class="fas fa-fw fa-list"></i> <span>게시판</span>
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</a></li>
+<<<<<<< HEAD
 			<li class="nav-item"><a class="nav-link" href="ballot.html">
 					<i class="fas fa-fw fa-check"></i> <span>투표</span>
+=======
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			<li class="nav-item"><a class="nav-link" href="ballot.jsp">
+<<<<<<< HEAD
 					<i class="fas fa-fw fa-check"></i> <span>��ǥ</span>
+=======
+					<i class="fas fa-fw fa-check"></i> <span>투표</span>
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</a></li>
+<<<<<<< HEAD
 
 			<!-- Nav Item - Tables -->
 			<li class="nav-item"><a class="nav-link" href="chat.html">
+=======
+			<li class="nav-item"><a class="nav-link" href="chatTeam.jsp">
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 					<i class="fas fa-fw fa-comments"></i> <span>채팅</span>
+<<<<<<< HEAD
 			<li class="nav-item"><a class="nav-link" href="chat.jsp">
 					<i class="fas fa-fw fa-comments"></i> <span>ä��</span>
+=======
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</a></li>
+<<<<<<< HEAD
 
 			<!-- Nav Item - calendar -->
 			<li class="nav-item"><a class="nav-link" href="matching.html">
 					<i class="fas fa-fw fa-handshake"></i> <span>매칭</span>
+=======
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			<li class="nav-item"><a class="nav-link" href="matching.jsp">
+<<<<<<< HEAD
 					<i class="fas fa-fw fa-handshake"></i> <span>��Ī</span>
+=======
+					<i class="fas fa-fw fa-handshake"></i> <span>매칭</span>
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 			</a></li>
 
 			<!-- Divider -->
@@ -280,6 +342,7 @@
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                             </div>
                         </li>
+<<<<<<< HEAD
 
                     <!-- Nav Item - Messages -->
 						<li class="nav-item dropdown no-arrow mx-1"><a
@@ -337,15 +400,24 @@
 									href="#">������</a>
 							</div></li>
 
+=======
+
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                               <%=login_vo.getUser_nick() %>
+								<!-- 프로필 사진 -->
+								</span> 
+								<% if(psa==null){%>
+									<img class='img-profile rounded-circle' alt='�̹���' src='img/regi_pic.png' >
+								<%}else{ %>
+									<img class='img-profile rounded-circle' alt='�̹���' src='./profilePic/<%=psa%>'>
+								<%} %> 
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -389,24 +461,41 @@
 							<div class="card shadow h-100 py-2">
 								<div class="card-body">
 
+<<<<<<< HEAD
                                  
+=======
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
                     <div class="content">
 						<div class="container">
 							<!-- <h1 class="mb-5">게시글 작성</h1> -->
+<<<<<<< HEAD
                     <div class="content" style="overflow-x:hidden;">
 						<div class="container" style="overflow-x:hidden; overflow-y:auto;">
 							<!-- <h1 class="mb-5">�Խñ� �ۼ�</h1> -->
+=======
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 							<div class="d-grid gap-2 d-md-flex justify-content-md-end">
 							  <a href="boardMain.jsp"><button class="btn btn-primary" type="button">뒤로가기</button></a>
+<<<<<<< HEAD
 							  <a href="board.jsp"><button class="btn btn-primary" type="button">�ڷΰ���</button></a>
+=======
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 							 <!--  <button class="btn btn-primary" type="button">Button</button> -->
 							</div>
 							<p></p>
+<<<<<<< HEAD
 							
+=======
+							<div class="table-responsive">
+								<form action="BoardWriteService.do" method="post" enctype="multipart/form-data">
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 								<!-- 제목 입력 -->
+<<<<<<< HEAD
 							<div class="table-responsive" style="overflow-x:hidden;">
 								<form action="BoardWriteService" method="post" enctype="multipart/form-data">
 								<!-- ���� �Է� -->
+=======
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 								  <div class="row mb-3">
 								    <label for="inputEmail3" class="col-sm-2 col-form-label">제목</label>
 								    <div class="col-sm-10">
@@ -430,8 +519,11 @@
 								  </div>
 								  <div class="row mb-3">
 								    <label for="inputEmail3" class="col-sm-2 col-form-label">파일등록</label>
+<<<<<<< HEAD
 								  <div class="row mb-2">
 								    <label for="inputEmail3" class="col-sm-3 col-form-label">���ϵ��</label>
+=======
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 								    <div class="col-sm-10">
 								      <input type="file" name="filename">
 								    </div>

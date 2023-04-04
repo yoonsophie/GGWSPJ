@@ -22,7 +22,34 @@
 	<select id="loginMember" resultType="MemberVO" parameterType="MemberVO">
 	  	select * from user_info where user_id=#{user_id} and user_pw=#{user_pw}
     </select>
+<<<<<<< HEAD
      <update id="updateMember" parameterType="String">
     	update affiliated_club set club_user_tier = 3 where user_id=#{user_id}
     </update>
+=======
+    
+    	<!-- 전체 회원 정보 -->
+	<select id="selectAllMember" resultType="MemberVO">
+		select * from user_info
+	</select>
+	
+	<!-- 프사 업로드 -->
+	<insert id="uploadPsa" parameterType="MemberVO">
+		insert into user_psa values(#{user_ID},#{userProfilePic}, num.nextval)
+	</insert>
+	
+	<!--  프사 가져오기 -->
+	<select id="getPsa" parameterType="String" resultType="String">
+		SELECT psa  FROM (
+	      		  SELECT psa, user_id
+	        	  FROM user_psa
+	        	 ORDER BY num DESC
+	    	  )
+			WHERE (user_ID = #{user_ID} ) and  ROWNUM =1 
+	</select>
+	
+	
+	
+	
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 </mapper>

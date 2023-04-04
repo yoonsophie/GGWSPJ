@@ -62,11 +62,19 @@
   	<description></description>
   	<servlet-class>com.ggws.controller.BoardDeleteService</servlet-class>
   </servlet>
+<<<<<<< HEAD
   	<servlet>
 	  	<servlet-name>test</servlet-name>
 	  	<display-name>test</display-name>
 	  	<description></description>
 	  	<servlet-class>com.ggws.controller.test</servlet-class>
+=======
+  <servlet>
+  	<servlet-name>test</servlet-name>
+  	<display-name>test</display-name>
+  	<description></description>
+  	<servlet-class>com.ggws.controller.test</servlet-class>
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
   	</servlet>
   	
   <servlet>
@@ -129,10 +137,13 @@
   	<servlet-name>ballotDetailService</servlet-name>
   	<url-pattern>/ballotDetailService</url-pattern>
   </servlet-mapping>
+<<<<<<< HEAD
   <servlet-mapping>
   	<servlet-name>MemberUpdateService</servlet-name>
   	<url-pattern>/MemberUpdateService</url-pattern>
   </servlet-mapping>
+=======
+>>>>>>> branch 'main' of https://github.com/yoonsophie/GGWSPJ.git
 
  
   
