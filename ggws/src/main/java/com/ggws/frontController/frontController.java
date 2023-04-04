@@ -13,12 +13,8 @@ import com.ggws.controller.BoardDeleteService;
 import com.ggws.controller.BoardWriteService;
 import com.ggws.controller.DeleteMember;
 import com.ggws.controller.LoginService;
-<<<<<<< HEAD
 import com.ggws.controller.MemberUpdateService;
 
-
-
-=======
 import com.ggws.controller.chatlistService;
 import com.ggws.controller.chatlistServiceTeam;
 import com.ggws.controller.chatsubmitService;
