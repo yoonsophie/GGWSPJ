@@ -1,3 +1,7 @@
+<%@page import="com.ggws.model.MemberVO"%>
+<%@page import="com.ggws.model.BoardVO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.ggws.model.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -31,7 +35,11 @@
 </head>
 
 <body id="page-top">
-
+<%
+	BoardDAO dao = new BoardDAO();
+	List<BoardVO> list = dao.showBoard();	
+	MemberVO login_vo = (MemberVO) session.getAttribute("login_vo");
+	%>	
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -303,80 +311,72 @@
                 </nav>
                 <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
+                   <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                   <!-- Page Heading -->
-                    <h1 class="logo_effect" align="center"><img src="img/noticeboard_icon.png" style="height:80px; margin-right:50px;" "/></h1>
+                    <h1 class="logo_effect" align="center"><img src="img/board_icon.png" style="height:80px; margin-right:50px;" "/></h1>
 
 					 <div class="row">
                     	<div class="col-md-12 mb-4 margin-top">
 							<div class="card shadow h-100 py-2">
 								<div class="card-body">
 					<div class="content">
-						<div class="container">
-							<!-- 제목 -->
-							<!-- <h1 class="mb-5">게시판</h1> -->
-							<div class="table-responsive">
-								<!-- 게시판
+		<div class="container">
+		<!-- 제목 -->
+			<div class="table-responsive">
+			<!-- 게시판
 					번호(#), 제목, 이름, 작성일자, (삭제=x) -->
-								<table class="table">
-									<thead>
-										<tr>
-											<th scope="col">#</th>
-											<th scope="col">제목</th>
-											<th scope="col">이름</th>
-											<th scope="col">작성일자</th>
-											<th></th>
-										</tr>
-									</thead>
-									<tbody class="table-group-divider">
-										<tr>
-											<th scope="row">1</th>
-											<td><a href="boardDetail.jsp">이수호</a></td>
-											<td>Otto</td>
-											<td>@mdo</td>
-											<td><a href="#">x</a></td>
-										</tr>
-										<tr>
-											<th scope="row">2</th>
-											<td><a href="boardDetail.jsp">Mark</a></td>
-											<td>Thornton</td>
-											<td>@fat</td>
-											<td><a href="#">x</a></td>
-										</tr>
-										<tr>
-											<th scope="row">3</th>
-											<td><a href="boardDetail.jsp">Mark</a></td>
-											<td>Thornton</td>
-											<td>@twitter</td>
-											<td><a href="#">x</a></td>
-										</tr>
-									</tbody>
-								</table>
-								<!-- 회원리스트 페이지 페이지 넘기기 -->
-								<nav aria-label="Page navigation">
-									<ul class="pagination justify-content-center">
-										<li class="page-item"><a class="page-link" href="#"
-											aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-										</a></li>
-										<li class="page-item"><a class="page-link" href="#">1</a></li>
-										<li class="page-item"><a class="page-link" href="#">2</a></li>
-										<li class="page-item"><a class="page-link" href="#">3</a></li>
-										<li class="page-item"><a class="page-link" href="#"
-											aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-										</a></li>
-									</ul>
-									<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-										<a href="boardWrite.jsp"><button
-												class="btn btn-primary me-md-2" type="button">작성하기</button></a>
-										<!-- <button class="btn btn-primary" type="button">Button</button> -->
-									</div>
-
-								</nav>
-							</div>
-						</div>
+				<table class="table" >
+				  <thead>
+				    <tr align="center">
+				      <th scope="col">#</th>
+				      <th scope="col">제목</th>
+				      <th scope="col">이름</th>
+				      <th scope="col">작성일자</th>
+				      <th></th>
+				    </tr>
+				  </thead>
+				  <tbody class="table-group-divider" >
+				    <%for(int i=0; i<list.size();i++){ %>
+				    	<tr align="center">
+				      		<th scope="row"><%=i+1 %></th>
+				      		<td><a href="boardDetail.jsp?board_seq=<%=list.get(i).getBoard_seq()%>"><%=list.get(i).getBoard_title()%></a></td>
+				      		<td><%=list.get(i).getUser_id() %></td>
+				      		<td><%=list.get(i).getBoard_date() %></td>
+				      		<%if(login_vo.getUser_id().equals("admin")){ %>
+				      		<td><a href="BoardDeleteService.do?board_title=<%=list.get(i).getBoard_title()%>">Delete</a></td>
+							<%} %>    
+				    	</tr>
+				  	</tbody>
+				   <%} %>
+				</table>
+				 <!-- 회원리스트 페이지 페이지 넘기기 -->
+		          <nav aria-label="Page navigation">
+		            <ul class="pagination justify-content-center">
+		              <li class="page-item">
+		                <a class="page-link" href="#" aria-label="Previous">
+		                  <span aria-hidden="true">&laquo;</span>
+		                </a>
+		              </li>
+		              <li class="page-item"><a class="page-link" href="#">1</a></li>
+		              <li class="page-item"><a class="page-link" href="#">2</a></li>
+		              <li class="page-item"><a class="page-link" href="#">3</a></li>
+		              <li class="page-item">
+		                <a class="page-link" href="#" aria-label="Next">
+		                  <span aria-hidden="true">&raquo;</span>
+		                </a>
+		              </li>
+		            </ul>
+		            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+						 <a href="boardWrite.jsp"><button class="btn btn-primary me-md-2" type="button">작성하기</button></a> 
+						  <!-- <button class="btn btn-primary" type="button">Button</button> -->
 					</div>
+		              
+		          </nav>
+				</div>
+			</div>
+		</div>
 					</div>
 					</div>
 					</div>

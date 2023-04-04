@@ -41,6 +41,29 @@
     padding-left: 1em;
     padding-right: 1em;
   }
+  
+  	
+		@font-face {
+    font-family: 'ARCHISCULPTURE_v200';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2303@1.0/ARCHISCULPTURE_v200.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+     @font-face {
+    font-family: 'Dovemayo_gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+        .w-font {
+            font-family: 'Dovemayo_gothic', sans-serif; /* 웹 폰트 지정 */
+        }
+        .w-title{
+        	 font-family: 'ARCHISCULPTURE_v200', sans-serif;
+        }
+       
+
 </style>
     <title>SB Admin 2 - Charts</title>
 
@@ -55,7 +78,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" class="w-font">
 
     <!-- Page Wrapper -->
     <div id="wrapper">

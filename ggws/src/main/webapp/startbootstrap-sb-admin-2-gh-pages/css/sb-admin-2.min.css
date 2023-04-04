@@ -47,13 +47,13 @@
     "Liberation Mono", "Courier New", monospace;
 }
 
-@font-face {
-    font-family: 'GangwonEdu_OTFBoldA';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+  @font-face {
+    font-family: 'Dovemayo_gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
-
+  
 /* Button */
 .button_custom {
 		-moz-appearance: none;
@@ -809,7 +809,7 @@ section {
     "Segoe UI Symbol", "Noto Color Emoji"; */
 
  @font-face {
-    font-family: 'ONE-Mobile-POP';
+    font-family: 'Dovemayo_gothic';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -819,7 +819,7 @@ section {
 
 body {
   margin: 0;
-  font-family: 'ONE-Mobile-POP';
+  font-family: 'Dovemayo_gothic';
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;

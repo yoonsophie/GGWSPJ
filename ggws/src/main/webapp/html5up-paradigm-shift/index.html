@@ -13,21 +13,30 @@
 		<meta name="keywords" content="" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-        	@font-face {
-    font-family: 'ONE-Mobile-POP';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
+		@font-face {
+    font-family: 'ARCHISCULPTURE_v200';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2303@1.0/ARCHISCULPTURE_v200.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
-        
+     @font-face {
+    font-family: 'Dovemayo_gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+  
         .w-font {
-            font-family: 'ONE-Mobile-POP', sans-serif; /* 웹 폰트 지정 */
+            font-family: 'Dovemayo_gothic', sans-serif; /* 웹 폰트 지정 */
+        }
+        .w-title{
+        	 font-family: 'ARCHISCULPTURE_v200', sans-serif;
         }
        
     </style>
 		
 	</head>
-	<body class="is-preload w-font">
+	<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -35,8 +44,8 @@
 				<!-- Intro -->
 					<section class="intro">
 						<header>
-							<h1 style="color:#202629" class="w-font">이모저모</h1>
-							<p>당신을 위한 스포츠 동호회 플랫폼</p>
+							<h1 style="color:#202629; font-size:150px" class="w-title">이모저모</h1>
+							<p class="w-font" style="font-size:17px">당신을 위한 스포츠 동호회 플랫폼</p>
 							<ul class="actions" >
 								<li ><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
 							</ul>
@@ -47,7 +56,7 @@
 					</section>
 
 				<!-- Section -->
-					<section id="first">
+					<section id="first" class="w-font">
 						<header>
 							<h2 style="color:#202629">시작하기</h2>
 							
@@ -66,7 +75,7 @@
 					</section>
 
 				<!-- Copyright -->
-					<div class="copyright">&copy; 이모저모 </a></div>
+					<div class="copyright w-font">&copy; 이모저모 </a></div>
 
 			</div>
 

@@ -24,6 +24,28 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 	
+	<style>
+		@font-face {
+    font-family: 'ARCHISCULPTURE_v200';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2303@1.0/ARCHISCULPTURE_v200.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+     @font-face {
+    font-family: 'Dovemayo_gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+        .w-font {
+            font-family: 'Dovemayo_gothic', sans-serif; /* 웹 폰트 지정 */
+        }
+        .w-title{
+        	 font-family: 'ARCHISCULPTURE_v200', sans-serif;
+        }
+       
+    </style>
 	
 </head>
 
@@ -45,9 +67,9 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4" >어서오세용</h1>
+                                        <h1 class="h1 mb-4 w-title" style="font-weight:bold; font-size:60px">이모저모</h1>
                                     </div>
-									<form class="user" action="../LoginService.do" method="post">
+									<form class="user w-font" action="../LoginService.do" method="post">
                                         <div class="form-group">
                                             <input type="text" name="user_id" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
@@ -75,11 +97,11 @@
                                         </a>
                                     </form>
                                        
-                                    <hr>
-                                    <div class="text-center">
+                                    <hr >
+                                    <div class="text-center w-font">
                                         <a class="small" href="forgot-password.jsp">비밀번호를 잊어버리셨나요?</a>
                                     </div>
-                                    <div class="text-center">
+                                    <div class="text-center w-font">
                                         <a class="small" href="register.jsp">회원가입</a>
                                     </div>
                                 </div>

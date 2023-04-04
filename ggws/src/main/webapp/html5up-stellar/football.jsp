@@ -14,49 +14,58 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		
 		<style>
-        	@font-face {
-    font-family: 'ONE-Mobile-POP';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
+		@font-face {
+    font-family: 'ARCHISCULPTURE_v200';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2303@1.0/ARCHISCULPTURE_v200.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
-        
+     @font-face {
+    font-family: 'Dovemayo_gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+  
         .w-font {
-            font-family: 'ONE-Mobile-POP', sans-serif; /* 웹 폰트 지정 */
+            font-family: 'Dovemayo_gothic', sans-serif; /* 웹 폰트 지정 */
+        }
+        .w-title{
+        	 font-family: 'ARCHISCULPTURE_v200', sans-serif;
         }
        
     </style>
-		
-		
+	
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
-			<div id="wrapper ">
+			<div id="wrapper">
+
 				<!-- Header -->
 					<header id="header" class="alt">
 						<span class="logo">
 							<img src="images/football_icon.png" alt="" style="height:150px"/> 
 						</span>
-						<h1>이모저모</h1>
-						<p>당신을 위한 스포츠 동호회 플랫폼<br />
+						<h1 class="w-title" style="font-size:100px;">이모저모</h1>
+						<p class="w-font">당신을 위한 스포츠 동호회 플랫폼<br />
 					</header>
 
-				<!-- Nav -->
-					<nav id="nav">
+
+					<!-- Nav -->
+					<nav id="nav" class="w-font">
 						<ul>
-							<li><a href="football.jsp" class="active">축구</a></li>
+							<li><a href="football.jsp">축구</a></li>
 							<li><a href="baseball.jsp">야구</a></li>
-							<li><a href="basketball.jsp">농구</a></li>
+							<li><a href="basketball.jsp" class="active">농구</a></li>
 							<li><a href="volleyball.jsp">배구</a></li>
 						</ul>
 					</nav>
 					
-				
+					
 				<!-- Main -->
-					<div id="main">
+					<div id="main" class="w-font">
 
 						<!-- Introduction -->
 						<%String names[] = {"최강 축구", "축구만이살길", "football is my life", "축생", "행복한 Soccer", "내인생은 축구다"}; %>
@@ -99,8 +108,7 @@
 								</div>
 							</section>
 											<%} %>
-							
-						
+		
 						
 						
 
@@ -118,7 +126,7 @@
 					</div>
 
 				<!-- Footer -->
-					<footer id="footer">
+					<footer id="footer" class="w-font">
 						<section>
 							<h2>동호회를 직접 만들고싶으신가요?</h2>
 							<p>어쩌고 해서 어쩌구 저쩌고 어쩌고 해서 어쩌구 저쩌고 어쩌고 해서 어쩌구 저쩌고 어쩌고 해서 어쩌구 저쩌고 어쩌고 해서 어쩌구 저쩌고 어쩌고 해서 어쩌구 저쩌고 </p>
